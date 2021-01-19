@@ -1,7 +1,8 @@
 
 // 1. NOTE: Webkit iOS: enable momentum scrolling on overflow elements
-// 2. NOTE: Prevent tap delay on touch devices
-// 3. NOTE: Prevent mobile devices from scaling font size
+// 2. NOTE: Force vertical scrollbar to avoid page shift
+// 3. NOTE: Prevent tap delay on touch devices
+// 4. NOTE: Prevent mobile devices from scaling font size
 
 * {
   position: relative;
@@ -22,8 +23,9 @@
 }
 
 html {
-  touch-action: manipulation; // 2
+  overflow-y: scroll; // 2
   -webkit-text-size-adjust: none; // 3
+  touch-action: manipulation; // 4
 }
 
 body {
