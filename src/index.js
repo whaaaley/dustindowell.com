@@ -22,8 +22,7 @@ const render = data => {
       noscript('Please enable JavaScript and try again.'),
       div({ id: 'app' }),
       data.scripts
-    ]),
-    script('window._ms = Date.now() - window._ms')
+    ])
   ])
 }
 

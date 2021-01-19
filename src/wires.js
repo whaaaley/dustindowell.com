@@ -26,10 +26,11 @@ export default ({ state, pages, rewrites }) => {
   listener('pushstate', routeHandler)
 
   listener('DOMContentLoaded', () => {
+    const date = Date.now()
     const html = document.getElementsByTagName('html')[0].outerHTML
 
     const benchmark = {
-      ms: window._ms,
+      ms: date - window._ms,
       kb: Math.round((html.length / 1000) * 10) / 10
     }
 
