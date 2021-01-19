@@ -37,7 +37,7 @@ const options = {
   scripts: PROD
     ? [
         script(readFileSync('./public/app.min.js', 'utf8')),
-        script({ defer: true, src: '//googletagmanager.com/gtm.js?id=GTM-KW3BBQZ' })
+        script({ defer: true, src: '//googletagmanager.com/gtm.js?id=GTM-TC9VHP2' })
       ]
     : [
         script({ defer: true, src: '/app.js' }),
