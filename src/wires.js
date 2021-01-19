@@ -24,4 +24,15 @@ export default ({ state, pages, rewrites }) => {
 
   listener('popstate', routeHandler)
   listener('pushstate', routeHandler)
+
+  listener('DOMContentLoaded', () => {
+    const html = document.getElementsByTagName('html')[0].outerHTML
+
+    const benchmark = {
+      ms: window._ms,
+      kb: Math.round((html.length / 1000) * 10) / 10
+    }
+
+    dispatch(() => ({ benchmark }))
+  })
 }

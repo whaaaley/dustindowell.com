@@ -27,12 +27,9 @@ const Second = 'I\'m looking for interesting projects where I\'m allowed to ' +
   'freedom to be creative and experimental. I love to write unique and ' +
   'effective software.'
 
-const ms = window._bench
-const html = document.getElementsByTagName('html')[0].outerHTML
-const kb = Math.round((html.length / 1000) * 10) / 10
-
 const Home = (state, dispatch) => {
   const Link = link(state, dispatch)
+  const { kb, ms } = state.benchmark
 
   return div({ class: 'home' }, [
     div({ class: 'card _topography' }, [
@@ -48,7 +45,7 @@ const Home = (state, dispatch) => {
     ]),
     div({ class: 'footer' }, [
       text('performance benchmarks\n'),
-      text(`index.html ${kb} kB - load time ${ms}ms\n`),
+      text(`index.html ${kb} kB - load time ${ms} ms\n`),
       text('©2021 Dustin Dowell')
     ])
   ])

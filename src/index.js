@@ -8,7 +8,7 @@ import { body, html, link, meta, noscript, script, style, title, div } from './l
 
 const render = data => {
   return html({ lang: 'en' }, [
-    script('window._bench = Date.now()'),
+    script('window._ms = Date.now()'),
     meta({ charset: 'utf-8' }),
     title(data.title),
     meta({ name: 'author', content: data.author }),
@@ -23,7 +23,7 @@ const render = data => {
       div({ id: 'app' }),
       data.scripts
     ]),
-    script('window._bench = Date.now() - window._bench')
+    script('window._ms = Date.now() - window._ms')
   ])
 }
 

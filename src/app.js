@@ -10,7 +10,11 @@ import Resume from './views/resume'
 
 app({
   state: {
-    router: router.state
+    router: router.state,
+    benchmark: {
+      ms: 0,
+      kb: 0
+    }
   },
   pages: {
     '/': Home,
