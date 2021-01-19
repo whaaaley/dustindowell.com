@@ -1,0 +1,57 @@
+
+// 1. NOTE: Webkit iOS: enable momentum scrolling on overflow elements
+// 2. NOTE: Prevent tap delay on touch devices
+// 3. NOTE: Prevent mobile devices from scaling font size
+
+* {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  -webkit-overflow-scrolling: touch; // 1
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  touch-action: manipulation; // 2
+  -webkit-text-size-adjust: none; // 3
+}
+
+body {
+  color: $light;
+  font: 400 1em/1 $font-gilroy;
+  background: $dark;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+// ::-webkit-scrollbar-track {
+//   background: $dark;
+// }
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: $blurple;
+}
+
+// NOTE: This sets the maximum site width when using this viewport meta tag.
+// Mobile devices will downscale from this size.
+// <meta name="viewport" content="width=device-width,maximum-scale=1">
+
+@media (max-width: 425px) {
+  body {
+    width: 425px;
+  }
+}

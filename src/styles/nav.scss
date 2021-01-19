@@ -1,0 +1,57 @@
+
+%active {
+  border-radius: 4px;
+  color: $background;
+  background: $blurple;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  padding: 36px;
+
+  div {
+    @extend %active;
+
+    width: 48px;
+    margin: 0 auto 0 0;
+    font: 800 36px/48px $font-goldbill;
+    text-align: center;
+  }
+
+  a {
+    font: 300 18px/48px $font-gilroy;
+
+    &.-active {
+      @extend %active;
+    }
+  }
+}
+
+// mobile only
+@media (max-width: 768px) {
+  nav {
+    max-width: 480px + 36px + 36px;
+
+    a {
+      flex: 1;
+      text-align: center;
+    }
+
+    div {
+      display: none;
+    }
+  }
+}
+
+// desktop only
+@media (min-width: 768px + 1px) {
+  nav {
+    max-width: 960px;
+
+    a {
+      padding: 0 24px;
+    }
+  }
+}

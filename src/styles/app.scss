@@ -1,0 +1,19 @@
+
+._topography {
+  background: url('/tile.png');
+  background-size: 256px;
+}
+
+._button {
+  margin: 12px auto 0;
+  padding: 0 24px;
+  border: 2px solid $light;
+  border-radius: 4px;
+  font: 300 18px/48px $font-gilroy;
+  cursor: pointer;
+
+  &:hover {
+    color: $background;
+    background: $light;
+  }
+}

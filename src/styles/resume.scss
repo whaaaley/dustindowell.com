@@ -1,0 +1,64 @@
+
+.resume {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 36px;
+}
+
+.header {
+  padding: 36px;
+  border-radius: 4px;
+  color: $background;
+  background: $gradient;
+
+  h1 {
+    font: 800 48px/1 $font-goldbill;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font: 100 24px/2 $font-goldbill;
+  }
+}
+
+.grid {
+  padding: 24px 12px;
+}
+
+.tile {
+  padding: 12px;
+
+  h1 {
+    margin: 0 0 0 -2px;
+    font: 800 48px/1 $font-goldbill;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    margin: 0 0 0 -1px;
+    font: 100 24px/36px $font-goldbill;
+  }
+
+  p {
+    margin: 0 0 24px;
+    font: 300 18px/30px $font-gilroy;
+  }
+}
+
+// desktop
+@media (min-width: 768px + 1px) {
+  .header {
+    h1 {
+      font: 800 72px/1 $font-goldbill;
+    }
+  }
+
+  .grid {
+    display: flex;
+    flex-flow: wrap;
+
+    div {
+      width: 50%;
+    }
+  }
+}
