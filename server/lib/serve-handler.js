@@ -31,15 +31,6 @@ function writeHandler (res) {
   }
 }
 
-function fileRewrites (url) {
-  switch (url) {
-    case '/reload.js':
-      return path.join(__dirname, '../reload.js')
-    default:
-      return path.join(directory, url)
-  }
-}
-
 function urlHandler (url) {
   const ext = path.extname(url)
 
@@ -50,8 +41,12 @@ function urlHandler (url) {
     }
   }
 
+  const file = url === '/reload.js'
+    ? path.join(__dirname, '../reload.js')
+    : path.join(directory, url)
+
   return {
-    file: fileRewrites(url),
+    file: file,
     ext: ext
   }
 }
