@@ -1,6 +1,6 @@
 
 // NOTE: Tags in this file are pulled from the WHATWG HTML Living Standard.
-// https://html.spec.whatwg.org/multipage/indices.html#elements-3
+// https://html.spec.whatwg.org/multipage/indices.html
 
 // NOTE: /* @__PURE__ */ annotations inform tools like ESBuild, Rollup, and
 // Uglify that these function calls do not produce side effects and can safely
