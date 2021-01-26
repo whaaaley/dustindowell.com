@@ -31,7 +31,9 @@ module.exports = function (root, callback) {
     for (let i = 0; i < children.length; i++) {
       const childPath = path.resolve(dir, children[i])
 
-      if (fs.statSync(childPath).isDirectory()) {
+      // NOTE: lstat() is identical to stat(), except when a path is a symlink,
+      // the link itself is stat-ed, not the file it refers to
+      if (fs.lstatSync(childPath).isDirectory()) {
         dirs.push(childPath)
       }
     }
