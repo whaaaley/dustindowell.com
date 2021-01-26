@@ -22,8 +22,7 @@ function writeHandler (res) {
     const stream = fs.createReadStream(file)
 
     stream.on('error', err => {
-      console.log(err.message)
-      res.writeHead(404)
+      console.log('\n', err.message)
       res.end()
     })
 
