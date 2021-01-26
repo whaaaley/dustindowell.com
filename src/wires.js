@@ -35,5 +35,15 @@ export default ({ state, pages, rewrites }) => {
     }
 
     dispatch(() => ({ benchmark }))
+
+    // ensure that gtm.js never affects load time performance
+    if (PROD === true) {
+      const script = document.createElement('script')
+
+      script.defer = true // ???
+      script.src = '//googletagmanager.com/gtm.js?id=GTM-TC9VHP2'
+
+      document.body.appendChild(script)
+    }
   })
 }

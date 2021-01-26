@@ -13,7 +13,7 @@ const render = data => {
     script('window._ms = Date.now()'),
     meta({ name: 'author', content: data.author }),
     meta({ name: 'description', content: data.description }),
-    meta({ name: 'theme-color', content: '#202225' }),
+    // meta({ name: 'theme-color', content: '#202225' }),
     meta({ name: 'viewport', content: 'width=device-width,maximum-scale=1' }),
     link({ rel: 'icon', href: '/favicon.svg' }),
     // link({ rel: 'manifest', href: '/manifest.webmanifest' }),
@@ -35,8 +35,8 @@ const options = {
     : link({ rel: 'stylesheet', href: '/main.css' }),
   scripts: PROD
     ? [
-        script(readFileSync('./public/app.min.js', 'utf8')),
-        script({ defer: true, src: '//googletagmanager.com/gtm.js?id=GTM-TC9VHP2' })
+        script(readFileSync('./public/app.min.js', 'utf8'))
+        // script({ defer: true, src: '//googletagmanager.com/gtm.js?id=GTM-TC9VHP2' })
       ]
     : [
         script({ defer: true, src: '/app.js' }),
