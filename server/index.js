@@ -17,7 +17,7 @@ const port = args['--port'] || 3000
 
 const host = 'http://localhost:' + port
 
-const server = http.createServer((req, res) => {
+const server = http.createServer(function (req, res) {
   if (req.url === '/reload') {
     reload.handler(res)
     return // stop execution
@@ -26,13 +26,13 @@ const server = http.createServer((req, res) => {
   serve.handler(req, res)
 })
 
-server.listen(port, () => {
+server.listen(port, function () {
   if (typeof bang === 'string') { // optional
     exec(bang)
   }
 
   if (typeof dir === 'string') {
-    watch(dir, (_eventType, filename) => {
+    watch(dir, function (_eventType, filename) {
       for (const key in args) {
         if (flags.includes(key) === true) {
           continue // next iteration

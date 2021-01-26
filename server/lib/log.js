@@ -1,6 +1,4 @@
 
-// brightRedBg: '\x1b[1;30;101m'
-
 const map = {
   black: '\x1b[30m',
   red: '\x1b[31m',
@@ -20,11 +18,11 @@ const map = {
   brightWhite: '\x1b[97m'
 }
 
-const color = (name, string) => {
+function color (name, string) {
   return map[name] + string + '\x1b[0m'
 }
 
-const dots = len => {
+function dots (len) {
   let target = ''
 
   for (let i = 0; i < len; i++) {

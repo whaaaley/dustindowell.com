@@ -1,5 +1,5 @@
 
-const parse = argv => {
+module.exports = function (argv) {
   const target = {}
 
   for (let i = 2; i < argv.length; i += 2) {
@@ -27,5 +27,3 @@ const parse = argv => {
 
   return target
 }
-
-module.exports = parse
