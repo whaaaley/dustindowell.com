@@ -3,6 +3,7 @@ const fs = require('fs')
 const path = require('path')
 
 const directory = path.join(process.cwd(), 'public')
+const reload = path.join(__dirname, '../reload.js')
 
 const mime = {
   '.css': 'text/css',
@@ -41,24 +42,20 @@ function urlHandler (url) {
     }
   }
 
-  const file = url === '/reload.js'
-    ? path.join(__dirname, '../reload.js')
-    : path.join(directory, url)
-
   return {
-    file: file,
+    file: url === '/reload.js' ? reload : path.join(directory, url),
     ext: ext
   }
 }
 
-function handler (req, res) {
-  const write = writeHandler(res)
-  const url = urlHandler(req.url)
+module.exports = {
+  handler: function (req, res) {
+    const write = writeHandler(res)
+    const url = urlHandler(req.url)
 
-  res.setHeader('access-control-allow-origin', '*')
-  res.setHeader('content-type', mime[url.ext] || 'text/plain')
+    res.setHeader('access-control-allow-origin', '*')
+    res.setHeader('content-type', mime[url.ext] || 'text/plain')
 
-  write(url.file)
+    write(url.file)
+  }
 }
-
-module.exports = { handler }
