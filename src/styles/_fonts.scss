@@ -1,27 +1,15 @@
 
-$font: '-apple-system', blinkmacsystemfont, sans-serif;
-
 //
 // Gilroy by Radomir Tinkov
 // https://www.myfonts.com/fonts/radomir-tinkov/gilroy/
 //
-
-$font-gilroy: gilroy, $font;
 
 @font-face {
   font-family: 'Gilroy-Light';
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url('/fonts/gilroy/Gilroy-Light.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Gilroy-ExtraBold';
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url('/fonts/gilroy/Gilroy-ExtraBold.woff2') format('woff2');
+  src: url('/fonts/Gilroy-Light.woff2') format('woff2');
 }
 
 //
@@ -29,22 +17,12 @@ $font-gilroy: gilroy, $font;
 // https://www.myfonts.com/fonts/wahyu-sani-co/goldbill/
 //
 
-$font-goldbill: goldbill, $font;
-
 @font-face {
   font-family: 'Goldbill';
   font-style: normal;
   font-weight: 100;
   font-display: swap;
-  src: url('fonts/goldbill/Goldbill-XLLight.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Goldbill';
-  font-style: italic;
-  font-weight: 100;
-  font-display: swap;
-  src: url('/fonts/goldbill/Goldbill-XLLightItalic.woff2') format('woff2');
+  src: url('fonts/Goldbill-XLLight.woff2') format('woff2');
 }
 
 @font-face {
@@ -52,13 +30,5 @@ $font-goldbill: goldbill, $font;
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url('/fonts/goldbill/Goldbill-XSExtraBold.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Goldbill';
-  font-style: italic;
-  font-weight: 800;
-  font-display: swap;
-  src: url('/fonts/goldbill/Goldbill-XSExtraBoldItalic.woff2') format('woff2');
+  src: url('/fonts/Goldbill-XSExtraBold.woff2') format('woff2');
 }

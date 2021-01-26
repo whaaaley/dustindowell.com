@@ -6,7 +6,7 @@
 [[headers]]
   for = '/fonts/*'
   [headers.value]
-    cache-control = 'max-age=31536000,immutable'
+    cache-control = 'public,max-age=31536000,immutable'
 
 [[redirects]]
   from = '/*'

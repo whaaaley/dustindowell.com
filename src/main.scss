@@ -2,13 +2,23 @@
 @import '@whaaaley/material-icons-scss/style/filled';
 @import 'styles/colors';
 
-@import 'styles/fonts';
+//
+$font: '-apple-system', blinkmacsystemfont, sans-serif;
+$font-gilroy: gilroy, $font;
+$font-goldbill: goldbill, $font;
+
+//
 @import 'styles/reset';
 
+//
 @import 'styles/app';
 @import 'styles/nav';
 
+// views
 @import 'styles/contact';
 @import 'styles/home';
 @import 'styles/missing';
 @import 'styles/resume';
+
+// blocking
+@import 'styles/fonts';
