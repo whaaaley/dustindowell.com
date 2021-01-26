@@ -1,8 +1,8 @@
 
-// 1. NOTE: Enable momentum scrolling on overflow elements
-// 2. NOTE: Non-standard and only supported on webkit/blink based browsers
-// 3. NOTE: Prevent mobile devices from scaling font size
-// 4. NOTE: Prevent tap delay on touch devices
+// 1. NOTE: (iOS Safari) Enable momentum scrolling on overflow elements
+// 2. NOTE: (Webkit/Blink) (Non-standard) Scrollbars overlay content
+// 3. NOTE: (Mobile devices) Prevent font-size scaling
+// 4. NOTE: (Touch devices) Prevent tap delay
 
 * {
   position: relative;
@@ -24,8 +24,8 @@
 
 html {
   overflow: overlay; // 2
-  -webkit-text-size-adjust: none; // 3
-  text-size-adjust: none; // 3
+  // -webkit-text-size-adjust: none; // 3
+  // text-size-adjust: none; // 3
   touch-action: manipulation; // 4
 }
 
@@ -37,16 +37,13 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 24px;
 }
 
-// ::-webkit-scrollbar-track {
-//   background: $dark;
-// }
-
 ::-webkit-scrollbar-thumb {
-  border-radius: 6px;
-  background-color: $blurple;
+  border: 8px solid transparent;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 4px $blurple;
 }
 
 // NOTE: This sets the maximum site width when using this viewport meta tag.
