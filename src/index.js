@@ -9,19 +9,18 @@ import { body, html, link, meta, noscript, script, style, title, div } from './l
 const render = data => {
   return html({ lang: 'en' }, [
     meta({ charset: 'utf-8' }),
-    title(data.title),
     script('window._ms = Date.now()'),
+    title(data.title),
     meta({ name: 'author', content: data.author }),
     meta({ name: 'description', content: data.description }),
-    // meta({ name: 'theme-color', content: '#202225' }),
     meta({ name: 'viewport', content: 'width=device-width,maximum-scale=1' }),
     link({ rel: 'icon', href: '/cache/favicon.svg' }),
-    // link({ rel: 'manifest', href: '/manifest.webmanifest' }),
     data.styles,
     body([
       noscript('Please enable JavaScript and try again.'),
       div({ id: 'app' }),
-      data.scripts
+      data.scripts,
+      data.reload
     ])
   ])
 }
@@ -34,14 +33,11 @@ const options = {
     ? style(readFileSync('./public/main.min.css', 'utf8'))
     : link({ rel: 'stylesheet', href: '/main.css' }),
   scripts: PROD
-    ? [
-        script(readFileSync('./public/app.min.js', 'utf8'))
-        // script({ defer: true, src: '//googletagmanager.com/gtm.js?id=GTM-TC9VHP2' })
-      ]
-    : [
-        script({ defer: true, src: '/app.js' }),
-        script({ defer: true, src: '/reload.js' })
-      ]
+    ? script(readFileSync('./public/app.min.js', 'utf8'))
+    : script({ defer: true, src: '/app.js' }),
+  reload: PROD
+    ? script({ defer: true, src: '/reload.js' })
+    : undefined
 }
 
 process.stdout.write('<!DOCTYPE html>' + render(options))
