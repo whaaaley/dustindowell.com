@@ -3,6 +3,11 @@
   command = 'make'
   publish = 'public'
 
+[[headers]]
+  for = '/fonts/*'
+  [headers.value]
+    cache-control: max-age=31536000,immutable
+
 [[redirects]]
   from = '/*'
   to = '/index.html'
