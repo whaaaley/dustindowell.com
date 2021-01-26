@@ -8,6 +8,11 @@
   [headers.values]
     cache-control = 'public,max-age=31536000,immutable'
 
+[[headers]]
+  for = '/cache/*'
+  [headers.values]
+    cache-control = 'public,max-age=604800,immutable'
+
 [[redirects]]
   from = '/*'
   to = '/index.html'
