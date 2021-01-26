@@ -17,8 +17,8 @@ clean:
 	rm -rf node_modules public tmp && mkdir {public,tmp}
 	rm -f package-lock.json
 
-start: prepare
-	node server --bang "$(MAKE) css js html" --scss "$(MAKE) css" --js "$(MAKE) js" --watch "src"
+start: prepare css js html
+	node server --scss "$(MAKE) css" --js "$(MAKE) js" --watch "src"
 
 prepare:
 	@echo ""

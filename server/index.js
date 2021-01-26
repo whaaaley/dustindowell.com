@@ -9,9 +9,8 @@ const reload = require('./lib/reload-handler')
 const serve = require('./lib/serve-handler')
 const watch = require('./lib/watch')
 
-const flags = ['--bang', '--port', '--watch']
+const flags = ['--port', '--watch']
 
-const bang = args['--bang']
 const dir = args['--watch']
 const port = args['--port'] || 3000
 
@@ -27,10 +26,6 @@ const server = http.createServer(function (req, res) {
 })
 
 server.listen(port, function () {
-  if (typeof bang === 'string') { // optional
-    exec(bang)
-  }
-
   if (typeof dir === 'string') {
     watch(dir, function (_eventType, filename) {
       for (const key in args) {
