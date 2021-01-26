@@ -15,7 +15,7 @@ const render = data => {
     meta({ name: 'description', content: data.description }),
     // meta({ name: 'theme-color', content: '#202225' }),
     meta({ name: 'viewport', content: 'width=device-width,maximum-scale=1' }),
-    link({ rel: 'icon', href: '/favicon.svg' }),
+    link({ rel: 'icon', href: '/cache/favicon.svg' }),
     // link({ rel: 'manifest', href: '/manifest.webmanifest' }),
     data.styles,
     body([
