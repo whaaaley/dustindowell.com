@@ -27,13 +27,13 @@ html {
   // -webkit-text-size-adjust: none; // 3
   // text-size-adjust: none; // 3
   touch-action: manipulation; // 4
+  box-sizing: border-box;
 }
 
 body {
   color: $light;
   font: 400 1em/1 sans-serif;
   background: $dark;
-  box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {
