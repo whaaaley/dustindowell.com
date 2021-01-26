@@ -8,15 +8,15 @@ import { body, html, link, meta, noscript, script, style, title, div } from './l
 
 const render = data => {
   return html({ lang: 'en' }, [
-    script('window._ms = Date.now()'),
     meta({ charset: 'utf-8' }),
     title(data.title),
+    script('window._ms = Date.now()'),
     meta({ name: 'author', content: data.author }),
     meta({ name: 'description', content: data.description }),
     meta({ name: 'theme-color', content: '#202225' }),
     meta({ name: 'viewport', content: 'width=device-width,maximum-scale=1' }),
     link({ rel: 'icon', href: '/favicon.svg' }),
-    link({ rel: 'manifest', href: '/manifest.webmanifest' }),
+    // link({ rel: 'manifest', href: '/manifest.webmanifest' }),
     data.styles,
     body([
       noscript('Please enable JavaScript and try again.'),
