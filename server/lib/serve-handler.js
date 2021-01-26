@@ -48,14 +48,16 @@ function urlHandler (url) {
   }
 }
 
+function handler (req, res) {
+  const write = writeHandler(res)
+  const url = urlHandler(req.url)
+
+  res.setHeader('access-control-allow-origin', '*')
+  res.setHeader('content-type', mime[url.ext] || 'text/plain')
+
+  write(url.file)
+}
+
 module.exports = {
-  handler: function (req, res) {
-    const write = writeHandler(res)
-    const url = urlHandler(req.url)
-
-    res.setHeader('access-control-allow-origin', '*')
-    res.setHeader('content-type', mime[url.ext] || 'text/plain')
-
-    write(url.file)
-  }
+  handler: handler
 }

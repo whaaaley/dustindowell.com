@@ -3,22 +3,25 @@ const child_process = require('child_process') // eslint-disable-line
 const log = require('./log')
 const reload = require('./reload-handler')
 
-const exec = command => {
-  const proc = child_process.exec(command, error => {
-    if (error) console.log(error)
-  })
+function execCallback (error) {
+  if (error) {
+    console.log(error)
+  }
+}
 
+module.exports = function (command) {
+  const proc = child_process.exec(command, execCallback)
   let output = ''
 
-  const handler = data => { output += data }
+  function handler (data) {
+    output += data
+  }
 
   proc.stdout.on('data', handler)
   proc.stderr.on('data', handler)
 
-  proc.on('close', () => {
+  proc.on('close', function () {
     log(command, output)
     reload.reload()
   })
 }
-
-module.exports = exec
