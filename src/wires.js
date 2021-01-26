@@ -5,7 +5,7 @@ import pocket from './lib/pocket'
 import router from './stores/router'
 
 const node = document.getElementById('app')
-const listener = window.addEventListener
+const addEventListener = window.addEventListener
 
 export default ({ state, pages, rewrites }) => {
   let route
@@ -22,11 +22,11 @@ export default ({ state, pages, rewrites }) => {
 
   routeHandler()
 
-  listener('popstate', routeHandler)
-  listener('pushstate', routeHandler)
+  addEventListener('popstate', routeHandler)
+  addEventListener('pushstate', routeHandler)
 
   // Just for fun benchmark. Results shouldn't be taken seriously.
-  listener('DOMContentLoaded', () => {
+  addEventListener('DOMContentLoaded', () => {
     const date = Date.now()
     const html = document.documentElement.outerHTML
 
@@ -40,7 +40,7 @@ export default ({ state, pages, rewrites }) => {
 
   // Ensure that gtm.js never affects load time performance.
   if (PROD === true) {
-    listener('load', () => {
+    addEventListener('load', () => {
       const script = document.createElement('script')
 
       script.defer = true // probably unnecessary
