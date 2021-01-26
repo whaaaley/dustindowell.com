@@ -1,7 +1,6 @@
 
 /**
  * Decodes a query string to an object.
- *
  * @function decode
  * @param data - Query string to decode
  */
@@ -21,7 +20,6 @@ const decode = data => {
 
 /**
  * Encodes an object into a query string.
- *
  * @function encode
  * @param data - Object to encode
  */
@@ -39,9 +37,8 @@ const encode = data => {
 }
 
 /**
- * Sets router state based on the `window.location` property and applies route
+ * Sets router state based on the `window.location` property and apply route
  * rewrites if any.
- *
  * @function routerInit
  * @example
  * dispatch(router.actions.routerInit, {
@@ -76,9 +73,7 @@ const routerInit = ({ router }) => data => {
 
 /**
  * Uses the History API to sync browser session history with router state.
- *
  * @function routerLink
- *
  * @example
  * dispatch(router.actions.routerLink, {
  *   to: '/foobar',
@@ -104,12 +99,8 @@ const routerLink = ({ router }) => data => {
 }
 
 /**
- * Minimal Router
- * @todo
- * + Document all params
- * + Document curried functions
- * + Add examples for every method
- * + Add TS support through JSDoc type annotations
+ * A minimal router using the History API.
+ * @module router
  */
 
 export default {
