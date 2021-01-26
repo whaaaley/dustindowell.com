@@ -21,7 +21,7 @@ nav {
   }
 
   a {
-    font: 300 18px/48px $font-gilroy;
+    font: 300 18px/48px sans-serif;
 
     &.-active {
       @extend %active;
