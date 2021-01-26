@@ -30,7 +30,7 @@ css:
 	sass src/main.scss public/main.css --embed-sources --no-error-css --load-path node_modules | tee
 
 js:
-	esbuild src/app.js --bundle --sourcemap=external --define:PROD=true --define:STATIC=false --outfile=public/app.js | tee
+	esbuild src/app.js --bundle --sourcemap=external --define:PROD=false --define:STATIC=false --outfile=public/app.js | tee
 
 html:
 	esbuild src/index.js --bundle --define:PROD=$(PROD) --define:STATIC=true --platform=node | node > public/index.html
