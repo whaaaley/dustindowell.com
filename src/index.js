@@ -19,8 +19,8 @@ const render = data => {
     body([
       noscript('Please enable JavaScript and try again.'),
       div({ id: 'app' }),
-      data.scripts
-      // data.reload
+      data.scripts,
+      data.reload
     ])
   ])
 }
@@ -29,13 +29,13 @@ const options = {
   title: 'Dustin Dowell | Personal Website',
   author: 'Dustin Dowell',
   description: 'My personal website.',
-  styles: PROD
+  styles: PROD === true
     ? style(readFileSync('./public/main.min.css', 'utf8'))
     : link({ rel: 'stylesheet', href: '/main.css' }),
-  scripts: PROD
+  scripts: PROD === true
     ? script(readFileSync('./public/app.min.js', 'utf8'))
     : script({ defer: true, src: '/app.js' }),
-  reload: PROD
+  reload: PROD === true
     ? undefined
     : script({ defer: true, src: '/reload.js' })
 }
