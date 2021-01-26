@@ -3,10 +3,8 @@
 @import 'styles/colors';
 
 //
-$font-goldbill: goldbill, sans-serif;
-
-//
 @import 'styles/reset';
+@import 'styles/fonts';
 
 //
 @import 'styles/app';
@@ -17,6 +15,3 @@ $font-goldbill: goldbill, sans-serif;
 @import 'styles/home';
 @import 'styles/missing';
 @import 'styles/resume';
-
-// blocking
-@import 'styles/fonts';
