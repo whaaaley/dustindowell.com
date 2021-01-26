@@ -19,8 +19,8 @@ const render = data => {
     body([
       noscript('Please enable JavaScript and try again.'),
       div({ id: 'app' }),
-      data.scripts,
-      data.reload
+      data.scripts
+      // data.reload
     ])
   ])
 }
@@ -36,8 +36,8 @@ const options = {
     ? script(readFileSync('./public/app.min.js', 'utf8'))
     : script({ defer: true, src: '/app.js' }),
   reload: PROD
-    ? script({ defer: true, src: '/reload.js' })
-    : undefined
+    ? undefined
+    : script({ defer: true, src: '/reload.js' })
 }
 
 process.stdout.write('<!DOCTYPE html>' + render(options))
