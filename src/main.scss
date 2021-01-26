@@ -3,9 +3,7 @@
 @import 'styles/colors';
 
 //
-$font: '-apple-system', blinkmacsystemfont, sans-serif;
-$font-gilroy: gilroy, $font;
-$font-goldbill: goldbill, $font;
+$font-goldbill: goldbill, sans-serif;
 
 //
 @import 'styles/reset';
