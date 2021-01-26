@@ -16,7 +16,7 @@ const mime = {
   '.woff2': 'font/woff2'
 }
 
-const writeHandler = function (res) {
+function writeHandler (res) {
   return function (file) {
     const stream = fs.createReadStream(file)
 
@@ -31,10 +31,8 @@ const writeHandler = function (res) {
   }
 }
 
-const fileHandler = url => {
+function fileRewrites (url) {
   switch (url) {
-    case '/':
-      return path.join(directory, 'index.html')
     case '/reload.js':
       return path.join(__dirname, '../reload.js')
     default:
@@ -42,15 +40,30 @@ const fileHandler = url => {
   }
 }
 
-const handler = function (req, res) {
+function urlHandler (url) {
+  const ext = path.extname(url)
+
+  if (ext === '') {
+    return {
+      file: path.join(directory, 'index.html'),
+      ext: '.html'
+    }
+  }
+
+  return {
+    file: fileRewrites(url),
+    ext: ext
+  }
+}
+
+function handler (req, res) {
   const write = writeHandler(res)
-  const file = fileHandler(req.url)
-  const ext = path.extname(file)
+  const url = urlHandler(req.url)
 
   res.setHeader('access-control-allow-origin', '*')
-  res.setHeader('content-type', mime[ext] || 'text/plain')
+  res.setHeader('content-type', mime[url.ext] || 'text/plain')
 
-  write(file)
+  write(url.file)
 }
 
 module.exports = { handler }
