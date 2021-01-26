@@ -35,10 +35,8 @@ const fileHandler = url => {
   switch (url) {
     case '/':
       return path.join(directory, 'index.html')
-
     case '/reload.js':
       return path.resolve(path.join(__dirname, '../reload.js'))
-
     default:
       return path.join(directory, url)
   }
