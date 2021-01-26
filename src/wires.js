@@ -39,14 +39,14 @@ export default ({ state, pages, rewrites }) => {
   })
 
   // Ensure that gtm.js never affects load time performance.
-  listener('load', () => {
-    if (PROD === true) {
+  if (PROD === true) {
+    listener('load', () => {
       const script = document.createElement('script')
 
-      script.defer = true // ???
+      script.defer = true // probably unnecessary
       script.src = '//googletagmanager.com/gtm.js?id=GTM-TC9VHP2'
 
       document.body.appendChild(script)
-    }
-  })
+    })
+  }
 }
