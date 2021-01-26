@@ -44,7 +44,7 @@ export default ({ state, pages, rewrites }) => {
       const script = document.createElement('script')
 
       script.defer = true // probably unnecessary
-      script.src = '//googletagmanager.com/gtm.js?id=GTM-TC9VHP2'
+      script.src = 'https://googletagmanager.com/gtm.js?id=GTM-TC9VHP2'
 
       document.body.appendChild(script)
     })
