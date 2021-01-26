@@ -24,6 +24,7 @@
 
 html {
   overflow: overlay; // 2
+  -webkit-text-size-adjust: none; // 3
   text-size-adjust: none; // 3
   touch-action: manipulation; // 4
 }
