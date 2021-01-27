@@ -4,26 +4,19 @@ import router from '../stores/router'
 const searchParams = data => router.lib.encode(data).slice(1)
 
 const submit = ({ netlifyForm }) => async data => {
-  console.log('>>>', netlifyForm)
-
-  const options = {
-    method: 'POST',
-    headers: {
-      'content-type': 'application/x-www-form-urlencoded'
-    },
-    body: searchParams({
-      name: netlifyForm.name,
-      email: netlifyForm.email,
-      message: netlifyForm.message
-    })
-  }
-
-  console.log(options)
-
   try {
-    console.log('Form successfully submitted')
-
-    const data = await fetch('/', options)
+    const data = await fetch('/', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      body: searchParams({
+        'form-name': 'contact',
+        'name': netlifyForm.name,
+        'email': netlifyForm.email,
+        'message': netlifyForm.message
+      })
+    })
 
     return {
       netlifyForm: {
@@ -33,6 +26,12 @@ const submit = ({ netlifyForm }) => async data => {
     }
   } catch (err) {
     console.log(err)
+
+    return {
+      netlifyForm: {
+        success: false
+      }
+    }
   }
 }
 
