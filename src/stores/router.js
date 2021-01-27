@@ -24,12 +24,14 @@ const decode = data => {
  * @param data - Object to encode
  */
 
+const foo = encodeURIComponent
+
 const encode = data => {
   let result = '?'
 
   for (const key in data) {
     if (data[key] != null) {
-      result += key + '=' + data[key] + '&'
+      result += foo(key) + '=' + foo(data[key]) + '&'
     }
   }
 
