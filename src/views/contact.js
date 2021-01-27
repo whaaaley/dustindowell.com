@@ -30,8 +30,8 @@ const Contact = (state, dispatch) => {
     div({ class: '_topography' }, [
       Text(h1, 'Contact'),
       Text(p, 'Send me something nice.'),
-      form({ name: 'contact', method: 'POST' }, [
-        input({ type: 'hidden', name: 'form-name', value: 'contact' }),
+      form({ name: 'contact' }, [
+        // input({ type: 'hidden', name: 'form-name', value: 'contact' }),
         Field(input, { type: 'text', name: 'name' }),
         Field(input, { type: 'email', name: 'email' }),
         Field(textarea, { name: 'message' }),

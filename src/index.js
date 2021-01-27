@@ -27,11 +27,11 @@ const render = data => {
     body([
       noscript('Please enable JavaScript and try again.'),
       div({ id: 'app' }),
-      form({ hidden: true, netlify: true, name: 'contact' }, [
-        input({ type: 'text', name: 'name' }),
-        input({ type: 'email', name: 'email' }),
-        textarea({ name: 'message' })
-      ]),
+      // form({ hidden: true, netlify: true, name: 'contact' }, [
+      //   input({ type: 'text', name: 'name' }),
+      //   input({ type: 'email', name: 'email' }),
+      //   textarea({ name: 'message' })
+      // ]),
       scripts
     ])
   ])
