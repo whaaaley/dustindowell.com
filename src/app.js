@@ -1,6 +1,7 @@
 
 import app from './wires'
 
+import netlifyForm from './stores/netlifyForm'
 import router from './stores/router'
 
 import Contact from './views/contact'
@@ -10,6 +11,7 @@ import Resume from './views/resume'
 
 app({
   state: {
+    netlifyForm: netlifyForm.state,
     router: router.state,
     benchmark: {
       ms: 0,

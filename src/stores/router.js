@@ -112,5 +112,9 @@ export default {
   actions: {
     routerLink,
     routerInit
+  },
+  lib: {
+    decode,
+    encode
   }
 }
