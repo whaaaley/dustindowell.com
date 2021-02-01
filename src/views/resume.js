@@ -25,7 +25,7 @@ const Design = () => {
     Text(h2, 'Graphic Design'),
     ul([
       Text(li, 'Great sense of design and acute attention to detail.'),
-      Text(li, 'Lots of experience creating designs for both print and digital.')
+      Text(li, 'Lots of experience designing for both print and digital.')
     ]),
 
     Text(h1, 'Technical'),
