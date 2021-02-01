@@ -1,21 +1,24 @@
 
-import app from './wires'
+import app from './lib/router'
 
-import netlifyForm from './stores/netlifyForm'
-import router from './stores/router'
+import form from './stores/form'
 
 import Contact from './views/contact'
 import Home from './views/home'
 import Missing from './views/missing'
 import Resume from './views/resume'
 
+import * as subscriptions from './subscriptions'
+
 app({
   state: {
-    netlifyForm: netlifyForm.state,
-    router: router.state,
+    form: form.state,
     benchmark: {
       ms: 0,
       kb: 0
+    },
+    footer: {
+      year: new Date().getFullYear()
     }
   },
   pages: {
@@ -27,6 +30,13 @@ app({
   rewrites: {
     '/detail': /^\/dp\/[0-9a-f]{24}$/i,
     '/user': /^\/user\/\w+$/i
+  },
+  mount: (state, dispatch) => {
+    const benchmark = subscriptions.benchmark(state, dispatch)
+    const gtmanager = subscriptions.gtmanager(state, dispatch)
+
+    benchmark()
+    gtmanager({ id: 'GTM-TC9VHP2' })
   }
 })
 
