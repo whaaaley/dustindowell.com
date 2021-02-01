@@ -26,22 +26,40 @@
 }
 
 .tile {
-  padding: 12px;
+  padding: 12px 12px 24px;
+
+  h1,
+  h2 {
+    text-transform: uppercase;
+  }
 
   h1 {
-    margin: 0 0 0 -2px;
+    margin: 0 0 24px -2px;
     font: 800 48px/1 $font-goldbill;
-    text-transform: uppercase;
   }
 
   h2 {
     margin: 0 0 0 -1px;
-    font: 100 24px/36px $font-goldbill;
+    font: 800 24px/36px $font-goldbill;
+  }
+
+  h3 {
+    font: 300 14px/24px sans-serif;
+    opacity: 0.5;
   }
 
   p {
     margin: 0 0 24px;
-    font: 300 18px/30px sans-serif;
+    font: 300 16px/24px sans-serif;
+  }
+
+  ul {
+    padding: 0 0 36px 24px;
+    font: 300 14px/24px sans-serif;
+  }
+
+  li {
+    padding: 6px 0 0;
   }
 }
 
