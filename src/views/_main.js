@@ -26,7 +26,7 @@ const Main = slot => (state, dispatch) => {
     nav({ class: state.menu && '-expand' }, [
       Text(div, 'D'),
       Link({ to: '/' }, 'Home'),
-      Link({ to: '/contact' }, 'Contact'),
+      // Link({ to: '/contact' }, 'Contact'),
       Link({ to: '/resume' }, 'Resume')
     ]),
     Slot
