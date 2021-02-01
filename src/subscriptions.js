@@ -27,7 +27,7 @@ export const gtmanager = (state, dispatch) => data => {
       const script = document.createElement('script')
 
       script.defer = true // probably unnecessary
-      script.src = 'https://googletagmanager.com/gtm.js?id=' + data
+      script.src = 'https://googletagmanager.com/gtm.js?id=' + data.id
 
       document.body.appendChild(script)
     })
