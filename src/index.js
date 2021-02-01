@@ -36,7 +36,7 @@ const options = {
   title: 'Dustin Dowell | Developer + Designer + Artist',
   author: 'Dustin Dowell',
   description: 'My personal website.',
-  viewport: 'width=device-width,maximum-scale=1'
+  viewport: 'width=device-width,maximum-scale=5'
 }
 
 process.stdout.write('<!DOCTYPE html>' + render(options))
