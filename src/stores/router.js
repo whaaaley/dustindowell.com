@@ -111,10 +111,8 @@ export default {
     query: null,
     to: '/'
   },
-  actions: {
-    routerLink,
-    routerInit
-  },
+  actions: { routerInit },
+  effects: { routerLink },
   lib: {
     decode,
     encode
