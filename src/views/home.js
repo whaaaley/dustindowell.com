@@ -46,7 +46,7 @@ const Home = (state, dispatch) => {
     div({ class: 'footer' }, [
       text('performance benchmarks\n'),
       text(`index.html ${kb} kB - load time ${ms} ms\n`),
-      text('©2021 Dustin Dowell')
+      text('©' + state.footer.year + ' Dustin Dowell')
     ])
   ])
 }
