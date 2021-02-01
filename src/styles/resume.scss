@@ -10,7 +10,7 @@
   background: $gradient;
 
   h1 {
-    margin: 0 0 12px;
+    margin: 0 0 12px -4px;
     font: 800 48px/1 $font-goldbill;
     text-transform: uppercase;
   }
@@ -69,11 +69,19 @@
   }
 
   .header {
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
     padding: 36px;
     border-radius: 4px;
 
+    div {
+      margin: 0 0 0 auto;
+      padding: 0 0 0 24px;
+    }
+
     h1 {
-      font: 800 72px/1 $font-goldbill;
+      font: 800 64px/1 $font-goldbill;
     }
   }
 
