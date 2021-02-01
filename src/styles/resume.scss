@@ -2,12 +2,12 @@
 .resume {
   max-width: 960px;
   margin: 0 auto;
-  padding: 0 36px;
+  // padding: 0 36px;
 }
 
 .header {
-  padding: 36px;
-  border-radius: 4px;
+  padding: 24px;
+  // border-radius: 4px;
   color: $background;
   background: $gradient;
 
@@ -65,7 +65,14 @@
 
 // desktop
 @media (min-width: 768px + 1px) {
+  .resume {
+    padding: 0 36px;
+  }
+
   .header {
+    padding: 36px;
+    border-radius: 4px;
+
     h1 {
       font: 800 72px/1 $font-goldbill;
     }
@@ -79,4 +86,8 @@
       width: 50%;
     }
   }
+
+  // .tile {
+  //   padding: 12px 24px 24px;
+  // }
 }
