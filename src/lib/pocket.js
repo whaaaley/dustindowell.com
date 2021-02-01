@@ -2,7 +2,7 @@
 import { patch } from 'superfine'
 
 /**
- * Spread an array of objects into Object.assign
+ * Spread an array of source objects into the target object
  * @function spread
  */
 
@@ -34,7 +34,7 @@ const enqueue = render => {
 }
 
 /**
- * Collect state updates unitl the next sheduled frame
+ * Collect state changes for batch updates
  * @function collect
  */
 
@@ -54,7 +54,7 @@ const collect = (state, render) => {
 }
 
 /**
- * Minimalist state manager with agressive optimization.
+ * Minimalist state manager with agressive optimization
  * @function pocket
  */
 
@@ -75,7 +75,7 @@ const pocket = (state, render) => {
 }
 
 /**
- * Wire Pocket and Superfine together.
+ * Wire Pocket and Superfine together
  * @module app
  */
 
