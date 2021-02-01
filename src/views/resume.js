@@ -7,7 +7,11 @@ const Text = (h, data) => h([text(data)])
 
 const Header = () => {
   return div({ class: 'header' }, [
-    Text(h1, 'Dustin Dowell')
+    Text(h1, 'Dustin Dowell'),
+    Text(h2, 'Frontend Developer'),
+    Text(h2, 'Des Moines, Iowa 50309'),
+    Text(h2, 'dustindowell22@gmail.com'),
+    Text(h2, '515-689-5648')
   ])
 }
 
@@ -49,7 +53,6 @@ const Design = () => {
     ]),
 
     Text(h1, 'Education'),
-    // Text(h2, 'AAS - 2014'),
     Text(h2, 'Associate of Arts and Sciences'),
     Text(h3, '2012 - 2014'),
     Text(h3, 'DMACC Ankeny Campus'),
@@ -66,7 +69,7 @@ const Experience = () => {
   return div({ class: 'tile' }, [
     Text(h1, 'Experience'),
 
-    Text(h2, 'Front-end Developer'),
+    Text(h2, 'Frontend Developer'),
     Text(h3, 'SevenVerbs - Urbandale, Iowa'),
     Text(h3, 'April - August 2014'),
     ul([
@@ -75,7 +78,7 @@ const Experience = () => {
       Text(li, 'Added features, tweaked designs, and updated content on existing apps.')
     ]),
 
-    Text(h2, 'Front-end Developer and Designer'),
+    Text(h2, 'Frontend Developer and Designer'),
     Text(h3, 'Self-employed - Indianola, Iowa'),
     Text(h3, 'August 2014 - February 2016'),
     ul([
@@ -97,7 +100,7 @@ const Experience = () => {
       Text(li, 'Implemented an email notification system using Sparkpost.')
     ]),
 
-    Text(h2, 'Front-end Developer'),
+    Text(h2, 'Frontend Developer'),
     Text(h3, 'Self-employed - Des Moines, Iowa'),
     Text(h3, 'November 2019 - Current'),
     ul([
