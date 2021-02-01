@@ -11,7 +11,7 @@ const svgText = (props, data) => h('text')(props, [text(data)])
 
 const Banner = () => {
   return svg({ viewBox: '0 0 52 26' }, [
-    svgStyle('text { font: 800 10px/1 Goldbill; fill: #1f1f23; }'),
+    svgStyle('text { font: 800 10px/1 Goldbill, sans-serif; fill: #1f1f23; }'),
     svgText({ x: '0', y: '0.75em' }, 'DEVELOPER +'),
     svgText({ x: '0', y: '1.625em' }, 'DESIGNER +'),
     svgText({ x: '0', y: '2.5em' }, 'ARTIST')
