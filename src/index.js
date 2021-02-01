@@ -4,7 +4,7 @@
 // + Optimize gtm.js
 
 import { readFileSync } from 'fs'
-import { body, html, link, meta, noscript, script, style, title, div, form, input, textarea } from './lib/vnodes/html'
+import { body, html, link, meta, noscript, script, style, title, div } from './lib/vnodes/html'
 
 const styles = PROD === true
   ? style(readFileSync('./public/main.min.css', 'utf8'))
@@ -27,11 +27,6 @@ const render = data => {
     body([
       noscript('Please enable JavaScript and try again.'),
       div({ id: 'app' }),
-      // form({ hidden: true, netlify: true, name: 'contact' }, [
-      //   input({ type: 'text', name: 'name' }),
-      //   input({ type: 'email', name: 'email' }),
-      //   textarea({ name: 'message' })
-      // ]),
       scripts
     ])
   ])
