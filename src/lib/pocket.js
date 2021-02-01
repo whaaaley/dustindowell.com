@@ -88,5 +88,5 @@ export default ({ state, view, mount }) => {
 
   mount(state, dispatch)
 
-  return dispatch
+  // return dispatch
 }
