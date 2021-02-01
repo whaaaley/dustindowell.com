@@ -15,3 +15,28 @@
 @import 'styles/home';
 @import 'styles/missing';
 @import 'styles/resume';
+
+@media print {
+  * {
+    color: black;
+    opacity: 1;
+  }
+
+  body {
+    background: none;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .tile {
+    h1 {
+      font-size: 36px !important;
+    }
+
+    h2 {
+      font-size: 24px !important;
+    }
+  }
+}
