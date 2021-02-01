@@ -2,22 +2,21 @@
 .resume {
   max-width: 960px;
   margin: 0 auto;
-  // padding: 0 36px;
 }
 
 .header {
   padding: 24px;
-  // border-radius: 4px;
   color: $background;
   background: $gradient;
 
   h1 {
+    margin: 0 0 12px;
     font: 800 48px/1 $font-goldbill;
     text-transform: uppercase;
   }
 
   h2 {
-    font: 100 24px/2 $font-goldbill;
+    font: 400 14px/24px sans-serif;
   }
 }
 
