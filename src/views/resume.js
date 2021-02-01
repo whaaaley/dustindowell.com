@@ -7,11 +7,15 @@ const Text = (h, data) => h([text(data)])
 
 const Header = () => {
   return div({ class: 'header' }, [
+
     Text(h1, 'Dustin Dowell'),
-    Text(h2, 'Frontend Developer'),
-    Text(h2, 'Des Moines, Iowa 50309'),
-    Text(h2, 'dustindowell22@gmail.com'),
-    Text(h2, '515-689-5648')
+    div([
+      Text(h2, 'Frontend Developer'),
+      Text(h2, 'Des Moines, Iowa 50309'),
+      Text(h2, 'dustindowell22@gmail.com'),
+      Text(h2, '515-689-5648')
+    ])
+
   ])
 }
 
