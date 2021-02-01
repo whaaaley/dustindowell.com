@@ -2,12 +2,12 @@
 /**
  * Decodes a query string to an object.
  * @function decode
- * @param data - Query string to decode
+ * @param {string} data - Query string to decode
  */
 
 const queryDelimeters = /[&=]/g
 
-const decode = data => {
+export const decode = data => {
   const query = data.slice(1).split(queryDelimeters)
   const result = {}
 
@@ -21,17 +21,17 @@ const decode = data => {
 /**
  * Encodes an object into a query string.
  * @function encode
- * @param data - Object to encode
+ * @param {Object} data - Query object to encode
  */
 
-const foo = encodeURIComponent
+const uri = encodeURIComponent
 
-const encode = data => {
+export const encode = data => {
   let result = '?'
 
   for (const key in data) {
     if (data[key] != null) {
-      result += foo(key) + '=' + foo(data[key]) + '&'
+      result += uri(key) + '=' + uri(data[key]) + '&'
     }
   }
 
@@ -49,7 +49,7 @@ const encode = data => {
  * })
  */
 
-const routerInit = ({ router }) => data => {
+export const routerInit = ({ router }) => data => {
   const { pathname, search } = window.location
 
   if (typeof search === 'string') {
@@ -87,17 +87,27 @@ const routerInit = ({ router }) => data => {
 
 const pushstateEvent = new CustomEvent('pushstate')
 
-const routerLink = ({ router }) => data => {
+export const routerLink = state => data => {
   if (data.to === window.history.state) {
     window.history.back()
     return // stop execution
   }
 
-  const to = typeof data.to === 'string' ? data.to : router.to
+  const to = typeof data.to === 'string' ? data.to : state.router.to
   const href = data.query ? to + encode(data.query) : to
 
-  window.history.pushState(router.to, null, href)
+  window.history.pushState(state.router.to, null, href)
   window.dispatchEvent(pushstateEvent)
+}
+
+/**
+ *
+ */
+
+export const state = {
+  id: null,
+  query: null,
+  to: '/'
 }
 
 /**
@@ -105,18 +115,20 @@ const routerLink = ({ router }) => data => {
  * @module router
  */
 
-export default {
-  state: {
-    id: null,
-    query: null,
-    to: '/'
-  },
-  actions: {
-    routerLink,
-    routerInit
-  },
-  lib: {
-    decode,
-    encode
-  }
-}
+// export default {
+//   state: {
+//     id: null,
+//     query: null,
+//     to: '/'
+//   },
+//   actions: {
+//     routerInit
+//   },
+//   effects: {
+//     routerLink
+//   },
+//   lib: {
+//     decode,
+//     encode
+//   }
+// }
