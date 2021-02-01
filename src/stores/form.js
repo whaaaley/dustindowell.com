@@ -1,12 +1,12 @@
 
-import router from './router'
+import * as router from '../lib/routerStore'
 import actions from '../actions'
 
 const Fetch = (state, dispatch) => data => {
   dispatch(actions.fetch, data)
 }
 
-const encode = data => router.lib.encode(data).slice(1)
+const encode = data => router.encode(data).slice(1)
 
 const send = (state, dispatch) => {
   const { form } = state

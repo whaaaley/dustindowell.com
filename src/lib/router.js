@@ -1,6 +1,6 @@
 
 import app from './pocket'
-import router from '../stores/router'
+import * as router from './routerStore'
 
 export default ({ state, pages, rewrites, mount }) => {
   let route
@@ -18,7 +18,7 @@ export default ({ state, pages, rewrites, mount }) => {
     },
     mount: (state, dispatch) => {
       const handler = () => {
-        dispatch(router.actions.routerInit, rewrites)
+        dispatch(router.routerInit, rewrites)
         route = pages[state.router.to] || pages['/missing']
       }
 

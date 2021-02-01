@@ -1,5 +1,5 @@
 
-import router from '../stores/router'
+import * as router from '../lib/routerStore'
 import { a, text } from '../lib/vnodes/html'
 
 const onclick = (state, data) => event => {
@@ -13,7 +13,7 @@ const onclick = (state, data) => event => {
   // pushstate event or the History API's popstate event.
 
   // router.effects.routerLink(state.router, { to: data.to, query: data.query })()
-  router.effects.routerLink(state)({ to: data.to, query: data.query })
+  router.routerLink(state)({ to: data.to, query: data.query })
 }
 
 const Link = state => (data, content) => {
