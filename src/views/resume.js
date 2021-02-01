@@ -17,45 +17,48 @@ const Design = () => {
 
     Text(h2, 'Web Design'),
     ul([
-      Text(li, 'Understands how to create responsive and adapative with new and old technlogoy.'),
-      Text(li, 'Knowledge of how to create and organize UI kits and style guidelines.'),
-      Text(li, 'Love for minimal, clean CSS.')
+      Text(li, 'Deep understanding of how to design responsive and adaptive mobile-first web apps.'),
+      Text(li, 'Knowledge of how to create and organize UI kits and implement style guidelines.'),
+      Text(li, 'Love for minimal CSS.')
     ]),
 
     Text(h2, 'Graphic Design'),
     ul([
       Text(li, 'Great sense of design and acute attention to detail.'),
-      Text(li, 'Graphic design is my passion.')
+      Text(li, 'Lots of experience creating designs for both print and digital.')
     ]),
 
     Text(h1, 'Technical'),
-    // Text(h2, 'Software'),
-    // Text(p, ''),
+    Text(h2, 'Software'),
+    ul([
+      Text(li, 'Experienced with all kinds of creative software like Blender, Autodesk 3ds Max, Photoshop, Illustrator, After Effects, Procreate, ArtStudio Pro, Medibang, and more.')
+    ]),
 
     Text(h2, 'Languages'),
     ul([
-      Text(li, 'Extensive knowledge of JavaScript.'),
+      Text(li, 'Extensive knowledge of JavaScript and JS frameworks.'),
       Text(li, 'Some experience using TypeScript.'),
-      Text(li, 'Hello world\'s completed in Ruby, Python, and Rust'),
+      Text(li, 'Hello world\'s completed in Ruby, Python, Elm, and Rust'),
       Text(li, 'Tons of experience with CSS preprocessors like Sass, Less, Stylus, and PostCSS')
     ]),
 
     Text(h2, 'Content Management Systems'),
     ul([
       Text(li, 'Extensive experience with WordPress, Drupal, Sitefinity, and Joomla.'),
-      Text(li, 'Some experience with Netlify CMS, Gravy CMS, Pico')
+      Text(li, 'Some experience with Netlify CMS, Grav CMS, Pico, Kirby, and Craft.')
     ]),
 
     Text(h1, 'Education'),
-    Text(h2, 'AAS - 2014'),
+    // Text(h2, 'AAS - 2014'),
+    Text(h2, 'Associate of Arts and Sciences'),
+    Text(h3, '2012 - 2014'),
+    Text(h3, 'DMACC Ankeny Campus'),
     ul([
-      Text(li, 'Graphic Design / Web Design Emphasis'),
-      Text(li, 'DMACC Ankeny Campus')
+      Text(li, 'Graphic Design with Web Emphasis')
     ]),
-    Text(h2, 'HS Diploma - 2012'),
-    ul([
-      Text(li, 'Southeast Warren Jr. / Sr. High School')
-    ])
+    Text(h2, 'High School Diploma'),
+    Text(h3, '2008 - 2012'),
+    Text(h3, 'Southeast Warren Jr. / Sr. High School')
   ])
 }
 
@@ -83,7 +86,7 @@ const Experience = () => {
     Text(h3, 'Access Publishing Inc. - Johnston, Iowa'),
     Text(h3, 'February 2016 - November 2019'),
     ul([
-      Text(li, 'Designed unique aesthetic mobile first web apps.'),
+      Text(li, 'Designed unique aesthetic mobile-first web apps.'),
       Text(li, 'Implemented a variety of responsive web apps from the ground up, for aggregating and leasing/financing semi-trucks, semi-trailers, and heavy machinery.'),
       Text(li, 'Worked on Node.js microservices to automate data uploads of hundreds of thousands of site listings and images daily from each client\'s unique data structures.'),
       Text(li, 'Heavily optimized web apps for SEO, mobile devices, and slow 3g connections, using micro-frameworks and a custom static rendering solution.'),
@@ -95,7 +98,7 @@ const Experience = () => {
     ]),
 
     Text(h2, 'Front-end Developer'),
-    Text(h3, 'Self-employeed - Des Moines, Iowa'),
+    Text(h3, 'Self-employed - Des Moines, Iowa'),
     Text(h3, 'November 2019 - Current'),
     ul([
       Text(li, 'Learning and creating new apps, libraries, and frameworks.'),
