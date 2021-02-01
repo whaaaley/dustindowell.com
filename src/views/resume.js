@@ -87,7 +87,7 @@ const Experience = () => {
     Text(h3, 'February 2016 - November 2019'),
     ul([
       Text(li, 'Designed unique aesthetic mobile-first web apps.'),
-      Text(li, 'Implemented a variety of responsive web apps from the ground up, for aggregating and leasing/financing semi-trucks, semi-trailers, and heavy machinery.'),
+      Text(li, 'Implemented a variety of responsive web apps from the ground up for aggregating and leasing/financing semi-trucks, semi-trailers, and heavy machinery.'),
       Text(li, 'Worked on Node.js microservices to automate data uploads of hundreds of thousands of site listings and images daily from each client\'s unique data structures.'),
       Text(li, 'Heavily optimized web apps for SEO, mobile devices, and slow 3g connections, using micro-frameworks and a custom static rendering solution.'),
       Text(li, 'Designed and implemented inventory management and leasing/financing dashboards for large semi-truck and heavy machinery dealerships and lessors.'),

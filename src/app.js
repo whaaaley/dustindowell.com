@@ -23,7 +23,7 @@ app({
   },
   pages: {
     '/': Home,
-    '/contact': Contact,
+    // '/contact': Contact,
     '/missing': Missing,
     '/resume': Resume
   },
