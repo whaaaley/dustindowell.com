@@ -1,5 +1,5 @@
 
-import app from './router'
+import app from './lib/router'
 
 import form from './stores/form'
 

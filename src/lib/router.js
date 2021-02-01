@@ -1,11 +1,15 @@
 
-import app from './lib/pocket'
-import router from './stores/router'
+import app from './pocket'
+import router from '../stores/router'
 
 export default ({ state, pages, rewrites, mount }) => {
   let route
 
-  state.router = router.state
+  state.router = {
+    id: null,
+    query: null,
+    to: '/'
+  }
 
   app({
     state,

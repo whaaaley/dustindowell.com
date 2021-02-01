@@ -106,11 +106,11 @@ const routerLink = ({ router }) => data => {
  */
 
 export default {
-  state: {
-    id: null,
-    query: null,
-    to: '/'
-  },
+  // state: {
+  //   id: null,
+  //   query: null,
+  //   to: '/'
+  // },
   actions: { routerInit },
   effects: { routerLink },
   lib: {
