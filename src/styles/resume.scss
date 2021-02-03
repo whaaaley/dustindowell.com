@@ -32,33 +32,31 @@
     text-transform: uppercase;
   }
 
+  h3,
+  ul {
+    font: 300 14px/24px sans-serif;
+  }
+
   h1 {
-    margin: 0 0 24px -2px;
-    font: 800 48px/1 $font-goldbill;
+    margin: 0 0 0 -2px;
+    font: 800 48px/72px $font-goldbill;
   }
 
   h2 {
     margin: 0 0 0 -1px;
-    font: 800 24px/36px $font-goldbill;
+    font: 800 24px/1 $font-goldbill;
   }
 
   h3 {
-    font: 300 14px/24px sans-serif;
     opacity: 0.5;
   }
 
-  p {
-    margin: 0 0 24px;
-    font: 300 16px/24px sans-serif;
-  }
-
   ul {
-    padding: 0 0 36px 24px;
-    font: 300 14px/24px sans-serif;
+    padding: 0 0 24px 24px;
   }
 
   li {
-    padding: 6px 0 0;
+    padding: 12px 0 0;
   }
 }
 
@@ -87,9 +85,9 @@
 
   .grid {
     display: flex;
+  }
 
-    div {
-      width: 50%;
-    }
+  .grid-item {
+    width: 50%;
   }
 }
