@@ -2,8 +2,9 @@
 import app from './lib/router'
 
 import form from './stores/form'
+import * as resume from './stores/resume'
 
-import Contact from './views/contact'
+// import Contact from './views/contact'
 import Home from './views/home'
 import Missing from './views/missing'
 import Resume from './views/resume'
@@ -13,6 +14,7 @@ import * as subscriptions from './subscriptions'
 app({
   state: {
     form: form.state,
+    resume: resume.state,
     benchmark: {
       ms: 0,
       kb: 0
@@ -34,6 +36,8 @@ app({
   mount: (state, dispatch) => {
     const benchmark = subscriptions.benchmark(state, dispatch)
     const gtmanager = subscriptions.gtmanager(state, dispatch)
+
+    dispatch(resume.fetchResume)
 
     benchmark()
     gtmanager({ id: 'GTM-TC9VHP2' })
