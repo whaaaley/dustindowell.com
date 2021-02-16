@@ -21,7 +21,7 @@ export default ({ state, pages, rewrites, mount }) => {
       const to = state.router.to
       const route = pages[to] || pages['/missing']
 
-      console.log('Route', to)
+      console.log('Route >>', to)
 
       if (typeof route.init === 'function') {
         route.init()
@@ -31,9 +31,9 @@ export default ({ state, pages, rewrites, mount }) => {
     },
     mount: register => (state, dispatch) => {
       const init = register('router.routerInit', actions.routerInit)
+      const handler = () => dispatch(init, rewrites)
 
-      const handler = () =>
-        dispatch(init, rewrites)
+      handler()
 
       listener('pushstate', handler)
       listener('popstate', handler)
