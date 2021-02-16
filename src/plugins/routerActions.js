@@ -7,8 +7,8 @@ import { encode, decode } from './routerLib'
  * @function routerInit
  * @example
  * dispatch(routerInit, {
- *   '/detail': /^\/dp\/[0-9a-f]{24}$/i,
- *   '/user': /^\/user\/\w+$/i
+ *   '/detail': '^\\/dp\\/[0-9a-f]{24}$',
+ *   '/user': '^\\/user\\/\\w+$'
  * })
  */
 
@@ -20,7 +20,7 @@ export const routerInit = ({ router }, data) => {
   }
 
   for (const key in data) {
-    const regexp = data[key]
+    const regexp = new RegExp(data[key], 'i')
     const result = regexp.exec(pathname)
 
     if (result != null) {

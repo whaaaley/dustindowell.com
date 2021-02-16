@@ -55,8 +55,8 @@ app([router, saga], {
     '/resume': Resume
   },
   rewrites: {
-    '/detail': /^\/dp\/[0-9a-f]{24}$/i,
-    '/user': /^\/user\/\w+$/i
+    '/detail': '^\\/dp\\/[0-9a-f]{24}$',
+    '/user': '^\\/user\\/\\w+$'
   },
   mount: (state, dispatch) => {
     const benchmark = subscriptions.benchmark(state, dispatch)
