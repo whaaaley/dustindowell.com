@@ -7,26 +7,13 @@
 .card {
   max-width: 480px;
   margin: 0 auto;
-  // background: url('/cache/tile.png');
-  // background-size: 256px;
 
   div {
     flex: 1;
     display: flex;
     flex-flow: column;
     padding: 36px;
-
-    &:first-child {
-      color: $background;
-      background: $gradient;
-    }
   }
-
-  // h1 {
-  //   font: 800 72px/64px $font-goldbill;
-  //   text-transform: uppercase;
-  //   white-space: pre;
-  // }
 
   p {
     margin: 0 0 12px;
@@ -49,6 +36,10 @@
   }
 }
 
+.banner {
+  background: $gradient;
+}
+
 .footer {
   margin: 24px auto;
   font: 14px/24px sans-serif;
@@ -66,11 +57,10 @@
 @media (min-width: 480px + 1px) {
   .card {
     border-radius: 4px;
+    overflow: hidden;
+  }
 
-    div {
-      &:first-child {
-        border-radius: 4px;
-      }
-    }
+  .banner {
+    border-radius: 0 0 4px 4px;
   }
 }

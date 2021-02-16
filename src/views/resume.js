@@ -104,7 +104,7 @@ const Grid = () => {
 console.log(JSON.stringify(Grid()))
 */
 
-const Resume = (state, dispatch) => {
+const Resume = r => (state, dispatch) => {
   return div({ class: 'resume' }, [
     Header(),
     state.resume.success && state.resume.data
@@ -112,8 +112,8 @@ const Resume = (state, dispatch) => {
 }
 
 export default {
-  view: main(Resume),
+  view: r => main(Resume(r)),
   init: () => {
-    console.log('resume')
+    // console.log('resume')
   }
 }

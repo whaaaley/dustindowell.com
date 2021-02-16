@@ -1,31 +1,56 @@
 
-import app from './lib/router'
+import app from './lib/pocket'
 
-import form from './stores/form'
-import * as resume from './stores/resume'
+import saga from './plugins/saga'
+import router from './plugins/router'
 
-// import Contact from './views/contact'
+import * as resume from './actions/resume'
+
 import Home from './views/home'
+import Blog from './views/blog'
+import Contact from './views/contact'
 import Missing from './views/missing'
 import Resume from './views/resume'
 
 import * as subscriptions from './subscriptions'
 
-app({
+app([router, saga], {
   state: {
-    form: form.state,
-    resume: resume.state,
     benchmark: {
       ms: 0,
       kb: 0
     },
     footer: {
       year: new Date().getFullYear()
+    },
+    form: {
+      data: null,
+      error: null,
+      loading: null,
+      success: null
+    },
+    formData: {
+      name: '',
+      email: '',
+      message: ''
+    },
+    github: {
+      data: null,
+      error: null,
+      loading: null,
+      success: null
+    },
+    resume: {
+      data: null,
+      error: null,
+      loading: null,
+      success: null
     }
   },
   pages: {
     '/': Home,
-    // '/contact': Contact,
+    '/blog': Blog,
+    '/contact': Contact,
     '/missing': Missing,
     '/resume': Resume
   },
