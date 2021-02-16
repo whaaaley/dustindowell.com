@@ -4,15 +4,13 @@ import main from './_main'
 
 const Text = (h, data) => h([text(data)])
 
-const Missing = r => (state, dispatch) => {
+const Missing = register => (state, dispatch) => {
   return div({ class: 'missing' }, [
     Text(div, '404 NOT FOUND')
   ])
 }
 
 export default {
-  view: r => main(Missing(r)),
-  init: () => {
-    // console.log('missing')
-  }
+  view: register => main(Missing(register)),
+  init: () => {}
 }

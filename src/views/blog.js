@@ -25,7 +25,7 @@ import main from './_main'
 
 const Text = (tag, data) => tag([text(data)])
 
-const Blog = reg => (state, dispatch) => {
+const Blog = register => (state, dispatch) => {
   const Link = link(state, dispatch)
 
   return div({ class: 'blog' }, [
@@ -65,8 +65,6 @@ const Blog = reg => (state, dispatch) => {
 }
 
 export default {
-  view: reg => main(Blog(reg)),
-  init: () => {
-    // console.log('blog')
-  }
+  view: register => main(Blog(register)),
+  init: () => {}
 }
