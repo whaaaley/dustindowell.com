@@ -42,7 +42,6 @@ build:
 build-classic:
 	esbuild src/app.js --bundle --minify --define:PROD=true --define:STATIC=false > tmp/app.bundle.js
 	tsc tmp/app.bundle.js --allowJs --lib DOM,ES2015 --target ES5 --outFile tmp/app.bundle.es5.js
-	# uglifyjs tmp/app.bundle.es5.js --toplevel -m -c drop_console=true,passes=3 > public/app.min.js
-	uglifyjs tmp/app.bundle.es5.js --toplevel -m -c drop_console=false,passes=3 > public/app.min.js
+	uglifyjs tmp/app.bundle.es5.js --toplevel -m -c drop_console=true,passes=3 > public/app.min.js
 	sass src/main.scss tmp/main.css --no-error-css --quiet --load-path node_modules
 	cleancss -O2 tmp/main.css --output public/main.min.css
