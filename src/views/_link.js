@@ -1,19 +1,21 @@
 
-import * as router from '../lib/routerStore'
+import { routerLink } from '../plugins/routerActions'
 import { a, text } from '../lib/vnodes/html'
+
+// Note: It might be worth exploring a way to wire this from the plugin.
+// something like doing a partial application from mount or effects.
 
 const onclick = (state, data) => event => {
   event.preventDefault()
 
-  console.log(data)
-
   // NOTE: Using this action directly rather than through dispatch prevents
-  // scheduling an unessecary render since router.actions.link doesn't return
-  // any state. Now we're only triggering the event lisenters for the custom
-  // pushstate event or the History API's popstate event.
-
-  // router.effects.routerLink(state.router, { to: data.to, query: data.query })()
-  router.routerLink(state)({ to: data.to, query: data.query })
+  // scheduling an unessecary render since routerLink doesn't return any state.
+  // Now we're only triggering the event lisenters for the custom pushstate
+  // event or the History API's popstate event.
+  routerLink(state, {
+    to: data.to,
+    query: data.query
+  })
 }
 
 const Link = state => (data, content) => {

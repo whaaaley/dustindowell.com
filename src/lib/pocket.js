@@ -2,17 +2,6 @@
 import { patch } from 'superfine'
 
 /**
- * Spread an array of source objects into the target object
- * @function spread
- */
-
-const spread = (target, batch) => {
-  batch.forEach(source => {
-    Object.assign(target, source)
-  })
-}
-
-/**
  * Debounce wrapper around window.requestAnimationFrame
  * @function enqueue
  */
@@ -39,11 +28,13 @@ const enqueue = render => {
  */
 
 const collect = (state, render) => {
-  let batch = []
+  // let batch = [{}, state]
+  let batch = [state]
 
   const schedule = enqueue(() => {
-    spread(state, batch)
-    batch = []
+    Object.assign.apply(Object, batch)
+    // batch = [{}, state]
+    batch = [state]
     render()
   })
 
@@ -62,31 +53,43 @@ const pocket = (state, render) => {
   const schedule = collect(state, render)
 
   const dispatch = (action, data) => {
-    let result = action(state, dispatch)
+    const result = action(state, data)
 
     if (typeof result === 'function') {
-      result = result(data)
+      const effect = result(dispatch)
+
+      if (effect && effect.then) {
+        effect.then(schedule)
+      }
+    } else {
+      schedule(result)
     }
 
-    schedule(result)
+    console.log('dispatch >>', action.name || '<anon>', result)
   }
 
   return dispatch
 }
 
 /**
- * Wire Pocket and Superfine together
- * @module app
+ * Initialize the app
+ * @module pocket
  */
 
 const node = document.getElementById('app')
 
-export default ({ state, view, mount }) => {
+export default (plugins, init) => {
+  for (let i = 0; i < plugins.length; i++) {
+    init = plugins[i](init)
+  }
+
+  console.log('init >>', init)
+
+  const { state, view, mount } = init
+
   const dispatch = pocket(state, () => {
     patch(node, view(state, dispatch))
   })
 
   mount(state, dispatch)
-
-  // return dispatch
 }

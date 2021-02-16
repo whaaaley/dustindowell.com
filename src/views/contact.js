@@ -1,21 +1,19 @@
 
-import { h } from 'superfine/index'
-
 import { a, div, form, h1, input, p, text, textarea } from '../lib/vnodes/html'
-import netlifyForm from '../stores/form'
+import * as formActions from '../actions/form'
 import main from './_main'
 
 const Text = (h, data) => h([text(data)])
 
 const SubmitHandler = dispatch => () => {
-  dispatch(netlifyForm.actions.send)
+  dispatch(formActions.send)
 }
 
 const FieldComponent = dispatch => (h, props) => {
   props.placeholder = props.name
 
   props.oninput = event => {
-    dispatch(netlifyForm.actions.update, [
+    dispatch(formActions.update, [
       props.name,
       event.target.value
     ])
@@ -36,7 +34,7 @@ const ErrorComponent = props => {
   return div({ key, hidden: true }) // placeholder
 }
 
-const Contact = (state, dispatch) => {
+const Contact = r => (x, dispatch) => {
   const Submit = SubmitHandler(dispatch)
   const Field = FieldComponent(dispatch)
 
@@ -59,8 +57,8 @@ const Contact = (state, dispatch) => {
 }
 
 export default {
-  view: main(Contact),
+  view: reg => main(Contact(reg)),
   init: () => {
-    console.log('contact')
+    // console.log('contact')
   }
 }

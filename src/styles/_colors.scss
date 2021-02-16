@@ -14,3 +14,14 @@ $blurple: mix($blue, $purple);
 
 $gradient: linear-gradient(45deg, $white -30%, $blue, $purple);
 $background: rgb(31, 31, 35);
+
+// New Lavender
+$lavender: rgb(137, 154, 239);
+
+// Desaturated Dark (Lab to sRGB)
+$dark-600: rgb(16, 17, 18); //  5 0 -1
+$dark-500: rgb(26, 28, 30); // 10 0 -2
+$dark-400: rgb(36, 38, 42); // 15 0 -3
+$dark-300: rgb(45, 49, 54); // 20 0 -4
+$dark-200: rgb(55, 60, 67); // 25 0 -5
+$dark-100: rgb(66, 71, 80); // 30 0 -6
