@@ -20,26 +20,22 @@ export const clear = () => {
   }
 }
 
-export default ({ state, view, mount }) => {
+export default ({ state, actions, view, mount }) => {
   const json = window.localStorage.getItem('saga-history')
-
-  state.registry = []
   state.history = json === null ? [] : JSON.parse(json).data
+  state.registry = []
+
+  // console.log(state.history)
 
   const register = (name, action) => {
     state.registry.push([name, action])
-
-    if (PROD === false) {
-      console.log('registered >>', name)
-    }
+    // actions[name] = action
+    console.log('Registered >>', name)
 
     return (state, data) => {
       state.history.push([name, data])
       setItem('saga-history', { data: state.history })
-
-      if (PROD === false) {
-        console.log('history >>', name, data)
-      }
+      console.log('History >>', name, data)
 
       return action(state, data)
     }
