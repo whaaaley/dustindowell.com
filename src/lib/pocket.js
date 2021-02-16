@@ -65,7 +65,11 @@ const pocket = (state, render) => {
       schedule(result)
     }
 
-    console.log('dispatch >>', action.name || '<anon>', result)
+    console.log(
+      'Dispatch >>',
+      action.name || '(anon)',
+      typeof result === 'function' ? '(effect)' : result
+    )
   }
 
   return dispatch
@@ -83,12 +87,13 @@ export default (plugins, init) => {
     init = plugins[i](init)
   }
 
-  console.log('init >>', init)
+  console.log('Init >>', init)
 
   const { state, view, mount } = init
 
   const dispatch = pocket(state, () => {
     patch(node, view(state, dispatch))
+    console.log('---')
   })
 
   mount(state, dispatch)

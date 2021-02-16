@@ -9,16 +9,30 @@ import * as resume from './actions/resume'
 import Home from './views/home'
 import Blog from './views/blog'
 import Contact from './views/contact'
+import Counter from './views/counter'
 import Missing from './views/missing'
 import Resume from './views/resume'
 
 import * as subscriptions from './subscriptions'
+
+// avert your eyes from the unethtical monkey patching
+// this is for demo purposes only
+window._logs = []
+console._log_old = console.log
+
+console.log = (...args) => {
+  window._logs.push(args)
+  console._log_old(...args)
+}
 
 app([router, saga], {
   state: {
     benchmark: {
       ms: 0,
       kb: 0
+    },
+    counter: {
+      data: 0
     },
     footer: {
       year: new Date().getFullYear()
@@ -51,6 +65,7 @@ app([router, saga], {
     '/': Home,
     '/blog': Blog,
     '/contact': Contact,
+    '/counter': Counter,
     '/missing': Missing,
     '/resume': Resume
   },
