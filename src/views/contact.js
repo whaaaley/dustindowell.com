@@ -34,7 +34,7 @@ const ErrorComponent = props => {
   return div({ key, hidden: true }) // placeholder
 }
 
-const Contact = r => (x, dispatch) => {
+const Contact = register => (x, dispatch) => {
   const Submit = SubmitHandler(dispatch)
   const Field = FieldComponent(dispatch)
 
@@ -57,8 +57,6 @@ const Contact = r => (x, dispatch) => {
 }
 
 export default {
-  view: reg => main(Contact(reg)),
-  init: () => {
-    // console.log('contact')
-  }
+  view: register => main(Contact(register)),
+  init: () => {}
 }
