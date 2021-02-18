@@ -4,15 +4,15 @@ import { encode, decode } from './routerLib'
 /**
  * Sets router state based on the `window.location` property and apply route
  * rewrites if any.
- * @function routerInit
+ * @function init
  * @example
- * dispatch(routerInit, {
+ * dispatch(init, {
  *   '/detail': '^\\/dp\\/[0-9a-f]{24}$',
  *   '/user': '^\\/user\\/\\w+$'
  * })
  */
 
-export const routerInit = ({ router }, data) => {
+export const init = ({ router }, data) => {
   const { pathname, search } = window.location
 
   if (typeof search === 'string') {
@@ -38,9 +38,9 @@ export const routerInit = ({ router }, data) => {
 
 /**
  * Uses the History API to sync browser session history with router state.
- * @function routerLink
+ * @function link
  * @example
- * routerLink(state)({
+ * link(state, {
  *   to: '/foobar',
  *   query: {
  *     foo: 'bar'
@@ -50,7 +50,7 @@ export const routerInit = ({ router }, data) => {
 
 const pushstateEvent = new CustomEvent('pushstate')
 
-export const routerLink = (state, data) => {
+export const link = (state, data) => {
   if (data.to === window.history.state) {
     window.history.back()
     return // stop execution

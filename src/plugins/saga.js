@@ -1,49 +1,101 @@
 
-const setItem = (name, data) =>
-  window.localStorage.setItem(name, JSON.stringify(data))
+import * as sagaActions from './sagaActions'
 
-export const rebuild = state => dispatch => {
-  const { history, registry } = state.saga
+/**
+ * blah blah blah serializes actions blah blah blah
+ * @module saga
+ */
 
-  for (let i = 0; i < history.length; ++i) {
-    const [name, data] = history[i]
-    dispatch(registry[name], data)
+export default init => {
+  const { state, actions, view, mount } = init
+
+  /**
+   *
+   */
+
+  const json = window.localStorage.getItem('saga')
+
+  state.saga = {
+    history: json === null ? [] : JSON.parse(json).data
   }
-}
 
-export const clear = () => {
-  const history = []
-  setItem('saga-history', { data: history })
-
-  return {
-    saga: { history }
+  actions.saga = {
+    clear: sagaActions.clear,
+    rebuild: sagaActions.rebuild
   }
-}
 
-export default ({ state, actions, view, mount }) => {
-  const json = window.localStorage.getItem('saga-history')
-  state.history = json === null ? [] : JSON.parse(json).data
-  state.registry = []
+  /**
+   * Add actions to the registry object and local storage.
+   *
+   * The `define` function returns an action that, when dispatched, updates
+   * saga's history object, stores a copy of saga's history object to local
+   * storage, and calls and returns the result of the action passed to it.
+   *
+   * By recording every action dispatched by the app we can easily reproduce
+   * bugs and implement features like time-travel and end-to-end testing.
+   *
+   * @function define
+   */
 
-  // console.log(state.history)
+  const registry = {}
 
-  const register = (name, action) => {
-    state.registry.push([name, action])
-    // actions[name] = action
-    console.log('Registered >>', name)
+  const define = (name, action) => {
+    registry[name] = action
+
+    // console.log('Registered >>', name)
 
     return (state, data) => {
-      state.history.push([name, data])
-      setItem('saga-history', { data: state.history })
-      console.log('History >>', name, data)
+      const { history } = state.saga
+
+      history.push([name, data])
+      window.localStorage.setItem('saga', JSON.stringify({ data: history }))
+
+      // console.log('History >>', name, data)
 
       return action(state, data)
     }
   }
 
-  return {
-    state,
-    view: view(register),
-    mount: mount(register)
+  /**
+   * This is the logic to expose the `actions` property on the init object. The
+   * actions object is sugar to define reusable actions.
+   *
+   * Defining all your actions in your view can pose mangability problems in
+   * some cases. For example, if you're using a router you may want to use your
+   * actions across different pages.
+   *
+   * The actions object offers a centralized place to put actions to avoid
+   * defining your actions multiple times throughout your app.
+   */
+
+  const wired = {}
+
+  for (const scope in actions) {
+    const item = actions[scope]
+
+    if (typeof item === 'function') {
+      wired[scope] = item
+    } else {
+      wired[scope] = {}
+
+      for (const name in item) {
+        wired[scope][name] = define(name, item[name])
+      }
+    }
   }
+
+  /**
+   * Mutate init
+   */
+
+  init.view = view(wired, define)
+  init.mount = mount(wired, define)
+
+  /**
+   * Clean up custom init properties this plugin exposes.
+   */
+
+  delete init.actions
+
+  return init
 }

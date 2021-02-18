@@ -1,5 +1,5 @@
 
-import { routerLink } from '../plugins/routerActions'
+import { link } from '../plugins/routerActions'
 import { a, text } from '../lib/vnodes/html'
 
 // Note: It might be worth exploring a way to wire this from the plugin.
@@ -12,7 +12,7 @@ const onclick = (state, data) => event => {
   // scheduling an unessecary render since routerLink doesn't return any state.
   // Now we're only triggering the event lisenters for the custom pushstate
   // event or the History API's popstate event.
-  routerLink(state, {
+  link(state, {
     to: data.to,
     query: data.query
   })

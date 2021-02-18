@@ -1,8 +1,9 @@
 
 import app from './lib/pocket'
 
-import saga from './plugins/saga'
+import stores from './plugins/stores'
 import router from './plugins/router'
+import saga from './plugins/saga'
 
 import * as resume from './actions/resume'
 
@@ -15,17 +16,22 @@ import Resume from './views/resume'
 
 import * as subscriptions from './subscriptions'
 
-// avert your eyes from the unethtical monkey patching
-// this is for demo purposes only
-window._logs = []
-console._log_old = console.log
+window._logs = [
+  ['The inline console is currently unavailable.'],
+  ['Open dev tools until this feature becomes stable.']
+]
 
-console.log = (...args) => {
-  window._logs.push(args)
-  console._log_old(...args)
-}
+// console._log_old = console.log
 
-app([router, saga], {
+// Avert your eyes from the unethtical monkey patching.
+// This is for demo purposes only.
+
+// console.log = (...args) => {
+//   window._logs.push(args)
+//   console._log_old(...args)
+// }
+
+app([stores, router, saga], {
   state: {
     benchmark: {
       ms: 0,
@@ -60,6 +66,12 @@ app([router, saga], {
       loading: null,
       success: null
     }
+  },
+  actions: {
+
+  },
+  stores: {
+
   },
   pages: {
     '/': Home,

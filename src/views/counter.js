@@ -25,10 +25,28 @@ const HistoryPanel = history => {
 const ConsoleWidget = () => {
   const target = []
 
-  for (let i = window._logs.length - 1; i >= 0; i--) {
+  target.push(
+    div([text('---')])
+  )
+
+  for (let i = window._logs.length; i--;) {
+    // const item = window._logs[i]
+    // let line = ''
+    //
+    // for (let i = 0; i < item.length; i++) {
+    //   const chunk = item[i]
+    //
+    //   if (chunk && typeof chunk === 'object' && Array.isArray(chunk) === false) {
+    //     line += ' ' + JSON.stringify(chunk, null, 2)
+    //   } else {
+    //     line += ' ' + chunk
+    //   }
+    // }
+
     target.push(
       div([
         text(window._logs[i].join(' '))
+        // text(line)
       ])
     )
   }
@@ -36,7 +54,7 @@ const ConsoleWidget = () => {
   return div({ class: 'console-widget' }, target)
 }
 
-const Counter = register => {
+const Counter = (actions, register) => {
   // <- register actions here ->
 
   const update = register('counter.update', ({ counter }, data) => {
@@ -49,7 +67,7 @@ const Counter = register => {
 
     return div({ class: 'counter' }, [
       div({ class: 'counter-dash' }, [
-        HistoryPanel(state.history),
+        HistoryPanel(state.saga.history),
         div({ class: 'counter-widget' }, [
           a({
             class: '-remove',
@@ -71,6 +89,6 @@ const Counter = register => {
 }
 
 export default {
-  view: register => main(Counter(register)),
+  view: (actions, register) => main(Counter(actions, register)),
   init: () => {}
 }
