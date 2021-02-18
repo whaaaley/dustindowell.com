@@ -29,6 +29,19 @@ const Banner = () => {
   ])
 }
 
+const HistoryPanel = history => {
+  const target = []
+
+  for (let i = 0; i < history.length; i++) {
+    const [name, data] = history[i]
+    const json = JSON.stringify(data, null, 2)
+
+    target.push(div([text(name + '\n'), text(json)]))
+  }
+
+  return div({ class: 'history-panel -attach' }, target)
+}
+
 const Home = register => {
   // <- register actions here ->
 
@@ -39,6 +52,7 @@ const Home = register => {
     const { year } = state.footer
 
     return div({ class: 'home' }, [
+      HistoryPanel(state.history),
       div({ class: 'card _topography' }, [
         Banner(),
         div([

@@ -27,15 +27,13 @@ const enqueue = render => {
  * @function collect
  */
 
-const collect = (state, render) => {
-  // let batch = [{}, state]
-  let batch = [state]
+const collect = (root, render) => {
+  let batch = [{}, root.state]
 
   const schedule = enqueue(() => {
-    Object.assign.apply(Object, batch)
-    // batch = [{}, state]
-    batch = [state]
-    render()
+    root.state = Object.assign.apply(Object, batch)
+    batch = [{}, root.state]
+    render(root.state)
   })
 
   return result => {
@@ -50,19 +48,20 @@ const collect = (state, render) => {
  */
 
 const pocket = (state, render) => {
-  const schedule = collect(state, render)
+  const root = { state }
+  const prompt = collect(root, render)
 
   const dispatch = (action, data) => {
-    const result = action(state, data)
+    const result = action(root.state, data)
 
     if (typeof result === 'function') {
       const effect = result(dispatch)
 
       if (effect && effect.then) {
-        effect.then(schedule)
+        effect.then(prompt)
       }
     } else {
-      schedule(result)
+      prompt(result)
     }
 
     console.log(
@@ -87,14 +86,12 @@ export default (plugins, init) => {
     init = plugins[i](init)
   }
 
-  console.log('Init >>', init)
+  // console.log('Init >>', init)
 
-  const { state, view, mount } = init
-
-  const dispatch = pocket(state, () => {
-    patch(node, view(state, dispatch))
-    console.log('---')
+  const dispatch = pocket(init.state, state => {
+    console.log('--- Patch ---')
+    patch(node, init.view(state, dispatch))
   })
 
-  mount(state, dispatch)
+  init.mount(init.state, dispatch)
 }
