@@ -3,6 +3,16 @@
 
 This project is hosted here https://dustindowell.com/
 
+## Todo
+[] Finish the blog.
+[] Make the apps page.
+[] Make a plugin for Facebook SDK.
+[] Add success and error ui to the contact form.
+[] Replace the Facebook SDK used for `/insights` with vanilla fetch.
+[] Find a solution for live console that retains line references in the real console.
+[] Add some notes to the readme about the plugin system, the router, and saga.
+[] Clean up `subscriptions.js`
+
 # Build and Develop
 
 Notable make targets. See the Makefile for a full list.
