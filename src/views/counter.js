@@ -2,7 +2,7 @@
 import { a, div, text } from '../lib/vnodes/html'
 import main from './_main'
 
-const HistoryPanel = history => {
+const HistoryList = history => {
   const target = []
 
   for (let i = history.length - 1; i >= 0; i--) {
@@ -19,7 +19,7 @@ const HistoryPanel = history => {
     ]))
   }
 
-  return div({ class: 'history-panel' }, target)
+  return div({ class: 'history-list' }, target)
 }
 
 const ConsoleWidget = () => {
@@ -67,7 +67,22 @@ const Counter = (actions, register) => {
 
     return div({ class: 'counter' }, [
       div({ class: 'counter-dash' }, [
-        HistoryPanel(state.saga.history),
+
+        div({ class: 'history-panel' }, [
+          div({ class: 'history-buttons' }, [
+            a({
+              class: state.saga.toggle ? '-active' : '',
+              onclick: () => dispatch(actions.saga.toggle, !state.saga.toggle)
+            }, [
+              text('Enable')
+            ]),
+            a({ onclick: () => dispatch(actions.saga.reset) }, [text('Reset')]),
+            a([text('Prev')]),
+            a([text('Next')])
+          ]),
+          HistoryList(state.saga.history)
+        ]),
+
         div({ class: 'counter-widget' }, [
           a({
             class: '-remove',

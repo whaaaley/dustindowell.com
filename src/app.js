@@ -5,13 +5,17 @@ import stores from './plugins/stores'
 import router from './plugins/router'
 import saga from './plugins/saga'
 
+import * as fb from './actions/facebook'
 import * as resume from './actions/resume'
 
 import Home from './views/home'
+import Apps from './views/apps'
 import Blog from './views/blog'
 import Contact from './views/contact'
 import Counter from './views/counter'
+import Insights from './views/insights'
 import Missing from './views/missing'
+import Policy from './views/policy'
 import Resume from './views/resume'
 
 import * as subscriptions from './subscriptions'
@@ -65,6 +69,57 @@ app([stores, router, saga], {
       error: null,
       loading: null,
       success: null
+    },
+
+    prompt: {
+      account: {
+        id: '124',
+        name: 'whaley'
+      },
+
+      active: null,
+      loading: null,
+      success: null
+    },
+
+    fbAccounts: {
+      data: null,
+      error: null,
+      loading: null,
+      success: null
+    },
+    fbLogin: {
+      data: null,
+      error: null,
+      loading: null,
+      success: null
+    },
+    fbMe: {
+      data: null,
+      error: null,
+      loading: null,
+      success: null
+    },
+
+    // media: {
+    //   data: null,
+    //   error: null,
+    //   loading: null,
+    //   success: null
+    // },
+    insights: {
+      data: null,
+      error: null,
+      loading: null,
+      success: null
+    },
+
+    // rename to instaAccount
+    igAccount: {
+      data: null,
+      error: null,
+      loading: null,
+      success: null
     }
   },
   actions: {
@@ -75,10 +130,13 @@ app([stores, router, saga], {
   },
   pages: {
     '/': Home,
+    '/apps': Apps,
     '/blog': Blog,
     '/contact': Contact,
     '/counter': Counter,
+    '/insights': Insights,
     '/missing': Missing,
+    '/policy': Policy,
     '/resume': Resume
   },
   rewrites: {
@@ -93,6 +151,35 @@ app([stores, router, saga], {
 
     benchmark()
     gtmanager({ id: 'GTM-TC9VHP2' })
+
+    //
+    // Facebook SDK
+    // Maybe there's a better place for this? Perhaps a plugin.
+    //
+
+    window.addEventListener('load', () => {
+      const script = document.createElement('script')
+
+      script.async = true
+      script.defer = true
+
+      script.id = 'facebook-jssdk'
+      script.src = 'https://connect.facebook.net/en_US/sdk.js'
+
+      document.body.appendChild(script)
+    })
+
+    window.fbAsyncInit = () => {
+      FB.init({
+        appId: '813793032539615',
+        cookie: true,
+        version: 'v10.0'
+      })
+
+      dispatch(fb.loginStatus)
+
+      FB.AppEvents.logPageView()
+    }
   }
 })
 

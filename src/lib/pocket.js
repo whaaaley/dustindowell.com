@@ -54,21 +54,21 @@ const pocket = (state, render) => {
   const dispatch = (action, data) => {
     const result = action(root.state, data)
 
-    if (typeof result === 'function') {
-      const effect = result(dispatch)
-
-      if (effect && effect.then) {
-        effect.then(prompt)
-      }
-    } else {
-      prompt(result)
-    }
-
     console.log(
       'Dispatch >>',
       action.name || '(anon)',
       typeof result === 'function' ? '(effect)' : result
     )
+
+    if (typeof result === 'function') {
+      const effect = result(dispatch)
+
+      if (effect && effect.then) {
+        return effect.then(prompt)
+      }
+    } else {
+      prompt(result)
+    }
   }
 
   return dispatch

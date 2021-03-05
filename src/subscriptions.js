@@ -4,6 +4,8 @@
  * @function benchmark
  */
 
+import { source } from './lib/vnodes/html'
+
 export const benchmark = (state, dispatch) => data => {
   const date = Date.now()
   const html = document.documentElement.outerHTML
@@ -21,15 +23,18 @@ export const benchmark = (state, dispatch) => data => {
  * @function gtm
  */
 
+const appendScript = src => {
+  const script = document.createElement('script')
+  script.async = true
+  script.defer = true
+  script.src = src
+  document.body.appendChild(script)
+}
+
 export const gtmanager = (state, dispatch) => data => {
   if (PROD) {
     window.addEventListener('load', () => {
-      const script = document.createElement('script')
-
-      script.defer = true // probably unnecessary
-      script.src = 'https://googletagmanager.com/gtm.js?id=' + data.id
-
-      document.body.appendChild(script)
+      appendScript('https://googletagmanager.com/gtm.js?id=' + data.id)
     })
   }
 }
