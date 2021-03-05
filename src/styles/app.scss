@@ -17,3 +17,11 @@
     background: $light;
   }
 }
+
+._spinner {
+  width: 48px;
+  height: 48px;
+  margin: auto;
+  background: url('/spinner.svg');
+  background-size: cover;
+}

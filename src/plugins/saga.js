@@ -9,20 +9,22 @@ import * as sagaActions from './sagaActions'
 export default init => {
   const { state, actions, view, mount } = init
 
-  /**
-   *
-   */
-
-  const json = window.localStorage.getItem('saga')
+  const json = localStorage.getItem('saga')
+  const history = json === null ? [] : JSON.parse(json).data
 
   state.saga = {
-    history: json === null ? [] : JSON.parse(json).data
+    history: history,
+    toggle: false,
+    index: history.length
   }
 
   actions.saga = {
-    clear: sagaActions.clear,
-    rebuild: sagaActions.rebuild
+    rebuild: sagaActions.rebuild,
+    reset: sagaActions.reset,
+    toggle: sagaActions.toggle
   }
+
+  localStorage.setItem('init', JSON.stringify({ data: state }))
 
   /**
    * Add actions to the registry object and local storage.
@@ -48,7 +50,7 @@ export default init => {
       const { history } = state.saga
 
       history.push([name, data])
-      window.localStorage.setItem('saga', JSON.stringify({ data: history }))
+      localStorage.setItem('saga', JSON.stringify({ data: history }))
 
       // console.log('History >>', name, data)
 
