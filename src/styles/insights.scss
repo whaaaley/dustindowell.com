@@ -149,22 +149,23 @@ $icon-thumb-up: ic-thumb-up-24px($white);
 //
 //
 
+.avatar {
+  width: 72px;
+  height: 72px;
+  margin: 0 18px 0 0;
+  border: 6px solid $dark-400;
+  border-radius: 36px;
+  background-size: cover;
+
+  &.-instagram {
+    margin: 0 18px 0 (0 - 18px - 18px - 6px);
+  }
+}
+
 .insights-head {
   display: flex;
   padding: 0 6px 18px;
   font: 600 16px/64px sans-serif;
-
-  .avatar {
-    width: 64px;
-    height: 64px;
-    margin: 0 18px 0 0;
-    border-radius: 32px;
-    background-size: cover;
-
-    &.-instagram {
-      margin: 0 18px 0 (0 - 18px - 18px);
-    }
-  }
 
   .logout {
     margin: auto 0 auto auto;
