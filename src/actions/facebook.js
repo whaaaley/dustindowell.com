@@ -1,5 +1,5 @@
 
-import * as lib from './facebookLib'
+import * as lib from '../stores/facebookLib'
 import * as router from '../plugins/routerLib'
 
 /**
