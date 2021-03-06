@@ -8,6 +8,8 @@ import saga from './plugins/saga'
 import * as fb from './actions/facebook'
 import * as resume from './actions/resume'
 
+import facebook from './stores/facebook'
+
 import Home from './views/home'
 import Apps from './views/apps'
 import Blog from './views/blog'
@@ -47,59 +49,24 @@ app([stores, router, saga], {
     footer: {
       year: new Date().getFullYear()
     },
-    form: {
-      data: null,
-      error: null,
-      loading: null,
-      success: null
-    },
-    formData: {
-      name: '',
-      email: '',
-      message: ''
-    },
-    github: {
-      data: null,
-      error: null,
-      loading: null,
-      success: null
-    },
-    resume: {
-      data: null,
-      error: null,
-      loading: null,
-      success: null
-    },
+    form: { data: null, error: null, loading: null, success: null },
+    formData: { name: '', email: '', message: '' },
+    github: { data: null, error: null, loading: null, success: null },
+    resume: { data: null, error: null, loading: null, success: null },
 
     prompt: {
       account: {
         id: '124',
         name: 'whaley'
       },
-
       active: null,
       loading: null,
       success: null
     },
 
-    fbAccounts: {
-      data: null,
-      error: null,
-      loading: null,
-      success: null
-    },
-    fbLogin: {
-      data: null,
-      error: null,
-      loading: null,
-      success: null
-    },
-    fbMe: {
-      data: null,
-      error: null,
-      loading: null,
-      success: null
-    },
+    fbAccounts: { data: null, error: null, loading: null, success: null },
+    fbLogin: { data: null, error: null, loading: null, success: null },
+    fbMe: { data: null, error: null, loading: null, success: null },
 
     // media: {
     //   data: null,
@@ -107,26 +74,16 @@ app([stores, router, saga], {
     //   loading: null,
     //   success: null
     // },
-    insights: {
-      data: null,
-      error: null,
-      loading: null,
-      success: null
-    },
+    insights: { data: null, error: null, loading: null, success: null },
 
     // rename to instaAccount
-    igAccount: {
-      data: null,
-      error: null,
-      loading: null,
-      success: null
-    }
+    igAccount: { data: null, error: null, loading: null, success: null }
   },
   actions: {
 
   },
   stores: {
-
+    facebook
   },
   pages: {
     '/': Home,

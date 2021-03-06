@@ -10,6 +10,8 @@ export const fbFetch = (path, params) => new Promise(resolve => {
   }, params)
 })
 
+export const api = fbFetch
+
 /**
  * Promise wrapper around Facebook FB.login
  * @function fbLogin
@@ -32,6 +34,8 @@ export const fbLogin = params => new Promise(resolve => {
   }, params)
 })
 
+export const login = fbLogin
+
 /**
  * Promise wrapper around Facebook FB.logout
  * @function fbLogout
@@ -42,3 +46,5 @@ export const fbLogout = () => new Promise(resolve => {
     resolve(res)
   })
 })
+
+export const logout = fbLogout
