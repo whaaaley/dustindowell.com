@@ -1,5 +1,5 @@
 
-import { svg, h } from '../lib/vnodes/html'
+import { svg, h, div } from '../lib/vnodes/html'
 
 export const svgPath = props => h('path')(props)
 export const svgCircle = props => h('circle')(props)
@@ -63,7 +63,9 @@ const randomChart = () => {
 
 export default data => {
   if (data.insights.data === null) {
-    return randomChart()
+    return div({ class: 'chart -overlay' }, [
+      randomChart()
+    ])
   }
 
   const insights = data.insights.data
@@ -81,13 +83,15 @@ export default data => {
     points.push([x, 240 - y])
   }
 
-  return svg({ viewBox: '0 0 480 240' }, [
-    ...gridLines(),
-    ...pointsFromPoints(points),
-    svgPath({
-      'stroke': '#1877f2',
-      'fill': 'none',
-      'd': pathFromPoints(points)
-    })
+  return div({ class: 'chart' }, [
+    svg({ viewBox: '0 0 480 240' }, [
+      ...gridLines(),
+      ...pointsFromPoints(points),
+      svgPath({
+        'stroke': '#1877f2',
+        'fill': 'none',
+        'd': pathFromPoints(points)
+      })
+    ])
   ])
 }

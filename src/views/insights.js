@@ -129,14 +129,6 @@ const PromptView = data => {
   ]
 }
 
-const Overlay = data => {
-  if (data.insights.success == null) {
-    return div({ class: 'chart-overlay' }, [
-      div({ class: 'prompt' }, PromptView(data))
-    ])
-  }
-}
-
 const xHead = (state, dispatch) => () => {
   if (state.prompt.success) {
     const id = state.fbMe.data.id
@@ -165,17 +157,22 @@ const xHead = (state, dispatch) => () => {
   }
 }
 
+const Prompt = data => {
+  if (data.insights.success == null) {
+    return div({ class: 'prompt-wrap' }, [
+      div({ class: 'prompt' }, PromptView(data))
+    ])
+  }
+}
+
 const Insights = register => {
   return (state, dispatch) => {
     const Head = xHead(state, dispatch)
 
     return div({ class: 'insights' }, [
       Head(),
-      div({ class: 'chart' }, [
-        Chart({
-          insights: state.insights
-        }),
-        Overlay({
+      div([
+        Prompt({
           // media: state.media,
           accounts: state.fbAccounts,
           igAccount: state.igAccount,
@@ -224,11 +221,11 @@ const Insights = register => {
               id: state.igAccount.data.instagram_business_account.id
             })
           }
-        })
-      ]),
-      Posts({
-        insights: state.insights
-      })
+        }),
+        Chart({ insights: state.insights }),
+        Posts({ insights: state.insights })
+      ])
+
     ])
   }
 }
