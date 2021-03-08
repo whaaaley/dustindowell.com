@@ -1,15 +1,14 @@
 
 import { div, nav, text } from '../lib/vnodes/html'
-import link from './_link'
+import Link from './_link'
 
 const Text = (h, data) => h([text(data)])
 
 const Main = slot => (state, dispatch) => {
-  const Link = link(state, dispatch)
   const Slot = slot(state, dispatch)
 
   return div([
-    nav({ class: state.menu && '-expand' }, [
+    nav([
       Text(div, 'D'),
       Link({ to: '/' }, 'Home'),
       Link({ to: '/apps' }, 'Apps'),
