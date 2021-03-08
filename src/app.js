@@ -10,7 +10,7 @@ import * as fb from './actions/facebook'
 import facebook from './stores/facebook'
 
 import Home from './views/home'
-import AppStore from './views/appstore'
+import Apps from './views/apps'
 import Blog from './views/blog'
 import Contact from './views/contact'
 import Counter from './views/counter'
@@ -89,7 +89,7 @@ app([stores, router, saga], {
   },
   pages: {
     '/': Home,
-    '/apps': AppStore,
+    '/apps': Apps,
     '/blog': Blog,
     '/contact': Contact,
     '/counter': Counter,
