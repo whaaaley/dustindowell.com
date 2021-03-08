@@ -58,5 +58,5 @@ const Contact = register => (x, dispatch) => {
 
 export default {
   view: register => main(Contact(register)),
-  init: () => {}
+  onroute: () => () => {}
 }
