@@ -11,7 +11,7 @@ This project is hosted here https://dustindowell.com/
 [] Replace the Facebook SDK used for `/insights` with vanilla fetch.
 [] Find a solution for live console that retains line references in the real console.
 [] Add some notes to the readme about the plugin system, the router, and saga.
-[] Clean up `subscriptions.js`
+[] e2e testing plugin - spinner bottom corner to show the current action running
 
 # Build and Develop
 
