@@ -64,7 +64,7 @@ $icon-facebook: ic-facebook-24px($light);
     display: flex;
     // height: 72px;
     padding: 24px 6px 0;
-    background: $dark-550;
+    background: $dark-450;
 
     div {
       margin: 0 6px;
@@ -87,7 +87,7 @@ $icon-facebook: ic-facebook-24px($light);
       padding: 12px;
 
       &:nth-child(odd) {
-        background: $dark-550;
+        background: $dark-450;
       }
     }
   }
