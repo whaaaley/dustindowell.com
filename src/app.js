@@ -6,7 +6,6 @@ import router from './plugins/router'
 import saga from './plugins/saga'
 
 import * as fb from './actions/facebook'
-import * as resume from './actions/resume'
 
 import facebook from './stores/facebook'
 
@@ -15,7 +14,11 @@ import Apps from './views/apps'
 import Blog from './views/blog'
 import Contact from './views/contact'
 import Counter from './views/counter'
-import Insights from './views/insights'
+// import Insights from './views/insights'
+
+import Insights from './views/insights2'
+import Interface from './views/interface'
+
 import Missing from './views/missing'
 import Policy from './views/policy'
 import Resume from './views/resume'
@@ -54,6 +57,14 @@ app([stores, router, saga], {
     github: { data: null, error: null, loading: null, success: null },
     resume: { data: null, error: null, loading: null, success: null },
 
+    interface: {
+      activeTab: 'stats'
+    },
+
+    foo: {
+      persist: true
+    },
+
     prompt: {
       account: {
         id: '124',
@@ -67,16 +78,7 @@ app([stores, router, saga], {
     fbAccounts: { data: null, error: null, loading: null, success: null },
     fbLogin: { data: null, error: null, loading: null, success: null },
     fbMe: { data: null, error: null, loading: null, success: null },
-
-    // media: {
-    //   data: null,
-    //   error: null,
-    //   loading: null,
-    //   success: null
-    // },
     insights: { data: null, error: null, loading: null, success: null },
-
-    // rename to instaAccount
     igAccount: { data: null, error: null, loading: null, success: null }
   },
   actions: {
@@ -91,7 +93,8 @@ app([stores, router, saga], {
     '/blog': Blog,
     '/contact': Contact,
     '/counter': Counter,
-    '/insights': Insights,
+    '/insights': Insights, // insights/login ???
+    '/insights/interface': Interface,
     '/missing': Missing,
     '/policy': Policy,
     '/resume': Resume
@@ -106,11 +109,26 @@ app([stores, router, saga], {
     subs.fbsdk()
 
     //
+    // Simple session state persistence
     //
 
+    window.addEventListener('beforeunload', () => {
+      dispatch(state => {
+        if (state.foo.persist === false) {
+          return // do nothing
+        }
 
+        const { fbAccounts, fbLogin, fbMe, igAccount, insights, prompt } = state
+        const data = { fbAccounts, fbLogin, fbMe, igAccount, insights, prompt }
 
+        sessionStorage.setItem('state', JSON.stringify(data))
+      })
+    })
 
+    window.addEventListener('DOMContentLoaded', () => {
+      dispatch(() => {
+        return JSON.parse(sessionStorage.getItem('state'))
+      })
     })
 
     //

@@ -7,7 +7,7 @@ export const svgCircle = props => h('circle')(props)
 export const randomPoints = () => {
   const target = []
   for (let i = 0; i < 24; i++) {
-    const x = Math.round(480 / 24 * i) + 480 / 48
+    const x = Math.round((1024 / 24) * i) + 1024 / 48
     const y = Math.floor(Math.random() * Math.floor(60)) + 90
     target.push([x, y])
   }
@@ -27,7 +27,7 @@ export const pointsFromPoints = points => {
   const target = []
   for (let i = 0; i < points.length; i++) {
     const [x, y] = points[i]
-    target.push(svgCircle({ cx: x, cy: y, r: 2, fill: '#1877f2' }))
+    target.push(svgCircle({ cx: x, cy: y, r: 4, fill: '#0F77EF' }))
   }
   return target
 }
@@ -35,33 +35,38 @@ export const pointsFromPoints = points => {
 export const gridLines = () => {
   const target = []
   for (let i = 1; i < 12; i++) {
-    const x = 240 / 12 * i
-    const path = svgPath({ stroke: '#24262a', d: `M 0 ${x} L 960 ${x}` })
+    const x = 320 / 12 * i
+    const path = svgPath({ stroke: '#24262a', d: `M 0 ${x} L 1024 ${x}` })
     target.push(path)
   }
   return target
 }
 
 /**
- *
- *
+ * Generate a chart from a random set of points
+ * @function randomChart
  */
 
 const points = randomPoints()
 
-const randomChart = () => {
-  return svg({ viewBox: '0 0 480 240' }, [
+export const randomChart = () => {
+  return svg([
     ...gridLines(),
     ...pointsFromPoints(points),
     svgPath({
-      'stroke': '#1877f2',
+      'stroke': '#0F77EF',
+      'stroke-width': 2,
       'fill': 'none',
       'd': pathFromPoints(points)
     })
   ])
 }
 
-export default data => {
+/**
+ *
+ */
+
+export const charat = data => {
   if (data.insights.data === null) {
     return div({ class: 'chart -overlay' }, [
       randomChart()

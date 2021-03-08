@@ -5,7 +5,44 @@ $icon-download: ic-file-download-24px($white);
 $icon-check-circle: ic-check-circle-24px($white);
 $icon-check-circle-outline: ic-check-circle-outline-24px($white);
 
-$icon-thumb-up: ic-thumb-up-24px($white);
+// $icon-thumb-up: ic-thumb-up-24px($white);
+$icon-delete: ic-delete-forever-24px($white);
+
+.insights {
+  background: $dark-400;
+
+  a {
+    margin: 12px auto 0;
+    padding: 12px 18px;
+    border-radius: 3px;
+    color: $dark-400;
+    color: $white;
+    font: 600 16px/1 sans-serif;
+    background: $facebook-blue;
+    cursor: pointer;
+
+    &.-delete {
+      padding: 12px 12px 12px (12px + 24px + 6px);
+      background: $facebook-blue url($icon-delete) 12px no-repeat;
+    }
+
+    &.-disable {
+      opacity: 0.5;
+      background-color: mix($dark-400, $white, 75%);
+      pointer-events: none;
+    }
+
+    &.-facebook {
+      padding: 12px 12px 12px 48px;
+      background: $facebook-blue url($icon-facebook) 12px/30px no-repeat;
+    }
+
+    &.-import {
+      padding: 12px 12px 12px 48px;
+      background: $facebook-blue url($icon-download) 12px/30px no-repeat;
+    }
+  }
+}
 
 .prompt {
   display: flex;
@@ -14,7 +51,6 @@ $icon-thumb-up: ic-thumb-up-24px($white);
   min-height: 196px;
   margin: auto;
   padding: 24px;
-  border-radius: 6px;
   background: $dark-400;
   user-select: none;
 }
@@ -35,12 +71,31 @@ $icon-thumb-up: ic-thumb-up-24px($white);
   }
 }
 
+.posts-row {
+  display: flex;
+  justify-content: space-around;
+  padding: 12px;
+
+  &:nth-child(odd) {
+    background: $dark-500;
+  }
+
+  div {
+    flex: 1;
+    text-align: right;
+  }
+}
+
 @media (min-width: 960px) {
   .insights {
     max-width: 960px;
     margin: auto;
     padding: 24px;
     border-radius: 6px;
+  }
+
+  .posts-row {
+    padding: 12px 96px;
   }
 }
 
@@ -63,41 +118,23 @@ $icon-thumb-up: ic-thumb-up-24px($white);
     border-radius: 6px;
     overflow: hidden;
   }
-}
 
-//
-//
-//
+  .posts-row {
+    padding: 12px 48px;
 
-.insights {
-  a {
-    margin: 12px auto 0;
-    padding: 12px 18px;
-    border-radius: 3px;
-    color: $dark-400;
-    color: $white;
-    font: 600 16px/1 sans-serif;
-    background: $facebook-blue;
-    cursor: pointer;
-
-    &.-import {
-      padding: 12px 12px 12px 48px;
-      background: $facebook-blue url($icon-download) 12px/30px no-repeat;
-    }
-
-    &.-disable {
-      opacity: 0.5;
-      background-color: mix($dark-400, $white, 75%);
-      pointer-events: none;
-    }
-
-    &.-facebook {
-      padding: 12px 12px 12px 48px;
-      background: $facebook-blue url($icon-facebook) 12px/30px no-repeat;
+    &:nth-child(odd) {
+      border-radius: 3px;
     }
   }
 }
 
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -189,53 +226,25 @@ $icon-thumb-up: ic-thumb-up-24px($white);
 
 .insights-head {
   display: flex;
-  padding: 0 6px 18px;
+  // min-height: 90px;
+  // padding: 0 6px 18px;
+  padding: 0 0 18px;
   font: 600 16px/64px sans-serif;
 
-  .logout {
-    margin: auto 0 auto auto;
-  }
-}
+  a {
+    margin: auto 0;
 
-.insights {
-  // max-width: 960px;
-  // padding: 24px;
-  background: $dark-400;
+    &.-refresh {
+      margin: auto 0 auto auto;
+    }
 
-  .connect {
-    margin: auto;
-  }
-
-  .connect {
-    display: flex;
-    width: 320px;
-    height: 240px;
-    margin-top: 24px;
-    border: 2px dashed $lavender;
-
-    div {
-      margin: auto;
+    &.-logout {
+      margin: auto 0 auto 12px;
     }
   }
 }
 
 //
-
-.posts-row {
-  display: flex;
-  justify-content: space-around;
-  padding: 12px 96px;
-
-  &:nth-child(odd) {
-    border-radius: 3px;
-    background: $dark-500;
-  }
-
-  div {
-    flex: 1;
-    text-align: right;
-  }
-}
 
 .posts {
   min-height: 120px;

@@ -7,23 +7,21 @@ import * as sagaActions from './sagaActions'
  */
 
 export default init => {
+  const { state, actions, mount } = init
 
-  const json = localStorage.getItem('saga')
+  const json = sessionStorage.getItem('saga')
   const history = json === null ? [] : JSON.parse(json).data
 
   state.saga = {
-    history: history,
-    toggle: false,
-    index: history.length
+    history: history
   }
 
   actions.saga = {
-    rebuild: sagaActions.rebuild,
-    reset: sagaActions.reset,
-    toggle: sagaActions.toggle
+    replay: sagaActions.replay,
+    reset: sagaActions.reset
   }
 
-  localStorage.setItem('init', JSON.stringify({ data: state }))
+  sessionStorage.setItem('init', JSON.stringify({ data: state }))
 
   /**
    * Add actions to the registry object and local storage.
@@ -43,13 +41,13 @@ export default init => {
   const define = (name, action) => {
     registry[name] = action
 
-    // console.log('Registered >>', name)
+    console.log('Registered >>', name)
 
     return (state, data) => {
       const { history } = state.saga
 
       history.push([name, data])
-      localStorage.setItem('saga', JSON.stringify({ data: history }))
+      sessionStorage.setItem('saga', JSON.stringify({ data: history }))
 
       // console.log('History >>', name, data)
 

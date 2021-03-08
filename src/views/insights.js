@@ -130,10 +130,19 @@ const PromptView = data => {
 }
 
 const xHead = (state, dispatch) => () => {
-  if (state.prompt.success) {
+  if (state.fbMe.success && state.prompt.success) {
     const id = state.fbMe.data.id
     const name = state.fbMe.data.first_name
     const instaID = state.prompt.active
+
+    const logout = () => {
+      dispatch(state => {
+        state.foo.persist = false
+        return { foo: state.foo }
+      })
+      sessionStorage.removeItem('state')
+      dispatch(fb.logout)
+    }
 
     return div({ class: 'insights-head' }, [
       div({
@@ -146,11 +155,16 @@ const xHead = (state, dispatch) => () => {
       }),
       text(`${name} / ${state.prompt.account.name}`),
       a({
-        class: 'logout -facebook',
+        class: '-refresh',
         onclick: () => {
-          dispatch(fb.logout)
+          dispatch(fb.insights, {
+            id: state.igAccount.data.instagram_business_account.id
+          })
         }
       }, [
+        text('Refresh')
+      ]),
+      a({ class: '-logout -facebook', onclick: logout }, [
         text('Logout')
       ])
     ])

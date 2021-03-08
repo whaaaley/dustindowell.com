@@ -1,0 +1,81 @@
+
+$icon-facebook: ic-facebook-24px($white);
+
+.insights {
+  .card {
+    max-width: 375px;
+    padding: 12px 30px;
+    background: $dark-400;
+  }
+
+  .graphic {
+    div {
+      width: 100%;
+      padding: 0 0 100%;
+      background: url('/graphic.svg') center/contain no-repeat;
+    }
+  }
+
+  .body {
+    margin: (0 - 48px - 12px) 0 0;
+
+    h1 {
+      font: 600 36px/48px sans-serif;
+      text-align: center;
+    }
+
+    h2 {
+      font: 600 14px/24px sans-serif;
+      text-align: center;
+    }
+
+    p {
+      margin: 18px 0 0;
+      font: 400 16px/30px sans-serif;
+    }
+  }
+
+  .button {
+    display: flex;
+    padding: 24px 0;
+
+    a {
+      margin: auto;
+      padding: 12px 18px;
+      border-radius: 3px;
+      color: $dark-400;
+      color: $white;
+      font: 600 16px/1 sans-serif;
+      background: $blue;
+      cursor: pointer;
+
+      &.-facebook {
+        padding: 12px 12px 12px 48px;
+        background: $blue url($icon-facebook) 12px/30px no-repeat;
+      }
+    }
+  }
+}
+
+// mobile {
+@media (max-width: 375px) {
+  .insights {
+    .card {
+      min-height: 100vh;
+    }
+  }
+}
+
+// desktop
+@media (min-width: 375px + 1px) {
+  .insights {
+    display: flex;
+    min-height: 87.5vh;
+    padding: 48px 0;
+
+    .card {
+      margin: auto;
+      border-radius: 12px;
+    }
+  }
+}
