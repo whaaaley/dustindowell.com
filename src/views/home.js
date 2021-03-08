@@ -1,7 +1,7 @@
 
 import { div, h, p, svg, text } from '../lib/vnodes/html'
 
-import link from './_link'
+import Link from './_link'
 import main from './_main'
 
 const Text = (h, data) => h([text(data)])
@@ -46,8 +46,6 @@ const Home = register => {
   // <- register actions here ->
 
   return (state, dispatch) => {
-    const Link = link(state, dispatch)
-
     const { kb, ms } = state.benchmark
     const { year } = state.footer
 
