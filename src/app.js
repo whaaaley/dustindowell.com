@@ -20,7 +20,7 @@ import Missing from './views/missing'
 import Policy from './views/policy'
 import Resume from './views/resume'
 
-import * as subscriptions from './subscriptions'
+import * as subs from './subscriptions'
 
 window._logs = [
   ['The inline console is currently unavailable.'],
@@ -101,30 +101,22 @@ app([stores, router, saga], {
     '/user': '^\\/user\\/\\w+$'
   },
   mount: (state, dispatch) => {
-    const benchmark = subscriptions.benchmark(state, dispatch)
-    const gtmanager = subscriptions.gtmanager(state, dispatch)
+    subs.benchmark(dispatch)
+    subs.gtm({ id: 'GTM-TC9VHP2' })
+    subs.fbsdk()
 
-    dispatch(resume.fetchResume)
+    //
+    //
 
-    benchmark()
-    gtmanager({ id: 'GTM-TC9VHP2' })
+
+
+
+    })
 
     //
     // Facebook SDK
     // Maybe there's a better place for this? Perhaps a plugin.
     //
-
-    window.addEventListener('load', () => {
-      const script = document.createElement('script')
-
-      script.async = true
-      script.defer = true
-
-      script.id = 'facebook-jssdk'
-      script.src = 'https://connect.facebook.net/en_US/sdk.js'
-
-      document.body.appendChild(script)
-    })
 
     window.fbAsyncInit = () => {
       FB.init({
