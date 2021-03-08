@@ -83,7 +83,7 @@ export default init => {
           query: location.search
         })
 
-        route = registeredPages[state.router.to] || pages['/missing']
+        route = registeredPages[state.router.to] || registeredPages['/missing']
 
         if (typeof route.onroute === 'function') {
           route.onroute(state, dispatch)
