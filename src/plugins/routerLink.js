@@ -2,10 +2,9 @@
 import { encode } from './routerLib'
 
 /**
- * Uses the History API to sync browser session history with router state.
  * @function link
  * @example
- * link(state, {
+ * link({
  *   to: '/foobar',
  *   query: {
  *     foo: 'bar'
@@ -13,20 +12,18 @@ import { encode } from './routerLib'
  * })
  */
 
-const dispatchEvent = window.dispatchEvent
-const history = window.history
-
 const pushstateEvent = new CustomEvent('pushstate')
 
-export default (state, data) => {
+export default data => {
   if (data.to === history.state) {
-    history.back()
-    return // stop execution
+    return history.back()
   }
 
-  const to = typeof data.to === 'string' ? data.to : state.router.to
+  const path = location.pathname
+
+  const to = typeof data.to === 'string' ? data.to : path
   const href = data.query ? to + encode(data.query) : to
 
-  history.pushState(state.router.to, null, href)
+  history.pushState(path, null, href)
   dispatchEvent(pushstateEvent)
 }
