@@ -1,6 +1,8 @@
 
-import { a, div, text } from '../lib/vnodes/html'
+import { a, div, h1, text } from '../lib/vnodes/html'
 import main from './_main'
+
+const h = (tag, data) => tag([text(data)])
 
 const HistoryList = history => {
   const target = []
@@ -9,17 +11,15 @@ const HistoryList = history => {
     const [name, data] = history[i]
     const json = JSON.stringify(data, null, 2)
 
-    target.push(div({ key: i, class: 'history-item' }, [
-      div([
-        text('name: ' + name + '\n')
-      ]),
-      div([
-        text('data: ' + json)
-      ])
-    ]))
+    const item = div({ key: i, class: 'item' }, [
+      h(div, 'name: ' + name + '\n'),
+      h(div, 'data: ' + json)
+    ])
+
+    target.push(item)
   }
 
-  return div({ class: 'history-list' }, target)
+  return div({ class: 'list' }, target)
 }
 
 const ConsoleWidget = () => {
@@ -54,7 +54,31 @@ const ConsoleWidget = () => {
   return div({ class: 'console-widget' }, target)
 }
 
-const Counter = (actions, register) => {
+const HistoryButtons = data => {
+  return div({ class: 'buttons' }, [
+    // a({
+    //   class: data.enable ? '-active' : '',
+    //   onclick: data.onToggle
+    // }, [
+    //   text('Enable')
+    // ]),
+    // a({ onclick: data.onPrevious }, [text('Prev')]),
+    // a({ onclick: data.onNext }, [text('Next')])
+    a({ onclick: data.onReplay }, [text('Replay')]),
+    a({ onclick: data.onReset }, [text('Reset')])
+  ])
+}
+
+const Counter = data => {
+  return div({ class: 'counter-widget' }, [
+    h(h1, data.title),
+    a({ class: '-remove', onclick: data.onMinus }),
+    h(div, data.count),
+    a({ class: '-add', onclick: data.onPlus })
+  ])
+}
+
+const Workbench = (actions, register) => {
   // <- register actions here ->
 
   const update = register('counter.update', ({ counter }, data) => {
@@ -65,45 +89,44 @@ const Counter = (actions, register) => {
   return (state, dispatch) => {
     const count = state.counter.data
 
-    return div({ class: 'counter' }, [
-      div({ class: 'counter-dash' }, [
-
-        div({ class: 'history-panel' }, [
-          div({ class: 'history-buttons' }, [
-            a({
-              class: state.saga.toggle ? '-active' : '',
-              onclick: () => dispatch(actions.saga.toggle, !state.saga.toggle)
-            }, [
-              text('Enable')
-            ]),
-            a({ onclick: () => dispatch(actions.saga.reset) }, [text('Reset')]),
-            a([text('Prev')]),
-            a([text('Next')])
-          ]),
-          HistoryList(state.saga.history)
+    return div({ class: 'workbench' }, [
+      div({ class: 'area' }, [
+        div({ class: 'side' }, [
+          div({ class: 'history-widget' }, [
+            HistoryButtons({
+              enable: state.saga.toggle,
+              onReplay: () => dispatch(actions.saga.replay),
+              onReset: () => dispatch(actions.saga.reset)
+              // onToggle: () => dispatch(actions.saga.toggle),
+              // onPrevious: () => dispatch(actions.saga.previous),
+              // onNext: () => dispatch(actions.saga.next)
+            }),
+            HistoryList(state.saga.history)
+          ])
         ]),
-
-        div({ class: 'counter-widget' }, [
-          a({
-            class: '-remove',
-            onclick: () => dispatch(update, count - 1)
+        div({ class: 'top' }, [
+          Counter({
+            title: 'Generic Counter',
+            count: count,
+            onPlus: () => dispatch(update, count + 1),
+            onMinus: () => dispatch(update, count - 1)
           }),
-          div([
-            text(count)
-          ]),
-          a({
-            class: '-add',
-            onclick: () => dispatch(update, count + 1)
+          Counter({
+            title: 'Async Counter',
+            count: count,
+            onPlus: () => dispatch(update, count + 1),
+            onMinus: () => dispatch(update, count - 1)
           })
         ]),
-        ConsoleWidget()
+        div({ class: 'bottom' }, [
+          ConsoleWidget()
+        ])
       ])
-
     ])
   }
 }
 
 export default {
-  view: (actions, register) => main(Counter(actions, register)),
+  view: (actions, register) => main(Workbench(actions, register)),
   onroute: () => () => {}
 }
