@@ -5,7 +5,6 @@ This project is hosted here https://dustindowell.com/
 
 ## Todo
 [] Finish the blog.
-[] Make the apps page.
 [] Make a plugin for Facebook SDK.
 [] Add success and error ui to the contact form.
 [] Replace the Facebook SDK used for `/insights` with vanilla fetch.
