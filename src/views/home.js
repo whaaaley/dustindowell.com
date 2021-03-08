@@ -72,5 +72,7 @@ const Home = register => {
 
 export default {
   view: register => main(Home(register)),
-  init: () => {}
+  onroute: () => () => {
+    console.log('hello from home')
+  }
 }

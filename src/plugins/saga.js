@@ -7,7 +7,6 @@ import * as sagaActions from './sagaActions'
  */
 
 export default init => {
-  const { state, actions, view, mount } = init
 
   const json = localStorage.getItem('saga')
   const history = json === null ? [] : JSON.parse(json).data
@@ -90,7 +89,6 @@ export default init => {
    * Mutate init
    */
 
-  init.view = view(wired, define)
   init.mount = mount(wired, define)
 
   /**

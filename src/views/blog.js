@@ -66,5 +66,5 @@ const Blog = register => (state, dispatch) => {
 
 export default {
   view: register => main(Blog(register)),
-  init: () => {}
+  onroute: () => () => {}
 }

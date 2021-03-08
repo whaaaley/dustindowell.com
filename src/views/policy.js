@@ -12,5 +12,5 @@ const Missing = register => (state, dispatch) => {
 
 export default {
   view: register => main(Missing(register)),
-  init: () => {}
+  onroute: () => () => {}
 }

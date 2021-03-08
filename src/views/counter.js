@@ -105,5 +105,5 @@ const Counter = (actions, register) => {
 
 export default {
   view: (actions, register) => main(Counter(actions, register)),
-  init: () => {}
+  onroute: () => () => {}
 }

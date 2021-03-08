@@ -232,5 +232,5 @@ const Insights = register => {
 
 export default {
   view: register => main(Insights(register)),
-  init: () => {}
+  onroute: () => () => {}
 }
