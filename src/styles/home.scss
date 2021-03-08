@@ -2,36 +2,37 @@
 .home {
   display: flex;
   flex-flow: column;
-}
 
-.card {
-  max-width: 480px;
-  margin: 0 auto;
+  .card {
+    max-width: 480px;
+    margin: 0 auto;
+    background: $dark-550;
 
-  div {
-    flex: 1;
-    display: flex;
-    flex-flow: column;
-    padding: 36px;
-  }
+    div {
+      flex: 1;
+      display: flex;
+      flex-flow: column;
+      padding: 36px;
+    }
 
-  p {
-    margin: 0 0 12px;
-    font: 300 18px/36px sans-serif;
-    text-indent: 24px;
-  }
+    p {
+      margin: 0 0 12px;
+      font: 300 18px/36px sans-serif;
+      text-indent: 24px;
+    }
 
-  a {
-    margin: 12px auto 0;
-    padding: 0 24px;
-    border: 2px solid $light;
-    border-radius: 4px;
-    font: 300 18px/48px sans-serif;
-    cursor: pointer;
+    a {
+      margin: 12px auto 0;
+      padding: 0 24px;
+      border: 2px solid $light;
+      border-radius: 4px;
+      font: 300 18px/48px sans-serif;
+      cursor: pointer;
 
-    &:hover {
-      color: $background;
-      background: $light;
+      &:hover {
+        color: $background;
+        background: $light;
+      }
     }
   }
 }
@@ -49,15 +50,19 @@
 }
 
 @media (min-width: 768px + 1px) {
-  .card {
-    margin: 128px auto 0;
+  .home {
+    .card {
+      margin: 128px auto 0;
+    }
   }
 }
 
 @media (min-width: 480px + 1px) {
-  .card {
-    border-radius: 4px;
-    overflow: hidden;
+  .home {
+    .card {
+      border-radius: 4px;
+      overflow: hidden;
+    }
   }
 
   .banner {

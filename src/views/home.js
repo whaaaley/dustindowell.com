@@ -53,7 +53,7 @@ const Home = register => {
 
     return div({ class: 'home' }, [
       // HistoryPanel(state.history),
-      div({ class: 'card _topography' }, [
+      div({ class: 'card' }, [
         Banner(),
         div([
           Text(p, First),
