@@ -3,7 +3,7 @@ $icon-aspect-ratio: ic-aspect-ratio-24px($white);
 $icon-feedback: ic-feedback-24px($white);
 $icon-rss: ic-rss-feed-24px($white);
 
-.appstore {
+.apps {
   display: grid;
   grid: auto-flow / 1fr 1fr;
   max-width: 960px;
