@@ -1,13 +1,22 @@
 
-import { div, text } from '../lib/vnodes/html'
+import { div } from '../lib/vnodes/html'
+
 import main from './_main'
+import link from './_link'
 
-const Text = (h, data) => h([text(data)])
+const Missing = () => {
+  return (state, dispatch) => {
+    const Link = link(state, dispatch)
 
-const Missing = register => (state, dispatch) => {
-  return div({ class: 'missing' }, [
-    Text(div, 'APPS PAGE SOON')
-  ])
+    return div({ class: 'missing' }, [
+      div([
+        Link({ to: '/contact' }, 'Contact'),
+        Link({ to: '/resize' }, 'Resize'),
+        Link({ to: '/insights' }, 'Insights'),
+        Link({ to: '/insights/interface' }, 'Interface')
+      ])
+    ])
+  }
 }
 
 export default {
