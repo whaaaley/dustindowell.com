@@ -29,7 +29,7 @@ const Blog = () => (state, dispatch) => {
       title: 'You don\'t need a JWT library 2020',
       href: 'https://gist.github.com/whaaaley/2c1153e55a76c7c020cabf1f0cf6778f',
       date: getDate('2020-06-06T11:51:39Z'),
-      body: 'It\'s 2020. You have an idea for new webapp. The scope is small, but requires auth. You look at services like Auth0 and libraries like node-jsonwebtoken. You\'ve probably read about the countless security bugs they\'ve had.'
+      body: 'It\'s 2020. You have an idea for new webapp. The scope is small, but requires auth. You look at services like Auth0 and libraries like node-jsonwebtoken. You\'ve probably read about the countless security bugs they\'ve had. It\'s 2020 they should have it figured out...'
     }),
     Post({
       title: 'Writing A Browser Reload Server 2019',
