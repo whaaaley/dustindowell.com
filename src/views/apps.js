@@ -72,7 +72,6 @@ const Apps = (actions, register) => {
         iconClass: '-calculate',
         body: 'Demo page showcasing the framework all of my apps are built with.'
       }),
-
       div({ class: '_footer -span' }, [
         p([
           text('© ' + state.footer.year + ' Dustin Dowell')
