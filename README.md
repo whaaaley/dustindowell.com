@@ -11,6 +11,7 @@ This project is hosted here https://dustindowell.com/
 [] Find a solution for live console that retains line references in the real console.
 [] Add some notes to the readme about the plugin system, the router, and saga.
 [] e2e testing plugin - spinner bottom corner to show the current action running
+[] Store and retreive resume.json to/from session storage
 
 # Build and Develop
 
