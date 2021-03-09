@@ -24,30 +24,28 @@ export const send = ({ formData }, x) => dispatch => {
     })
   }
 
-  console.log(options)
-
   fetch('/', options)
     .then(() => {
       dispatch(replace, {
         data: 'You did it! Thanks!',
-        error: undefined,
-        loading: undefined,
+        error: null,
+        loading: false,
         success: true
       })
     })
     .catch(error => {
       dispatch(replace, {
-        data: undefined,
+        data: null,
         error: error.message,
-        loading: undefined,
+        loading: false,
         success: false
       })
     })
 
   dispatch(replace, {
-    data: undefined,
-    error: undefined,
+    data: null,
+    error: null,
     loading: true,
-    success: undefined
+    success: null
   })
 }
