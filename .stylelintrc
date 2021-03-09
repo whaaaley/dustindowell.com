@@ -18,6 +18,10 @@
       "flex-direction",
       "flex-wrap",
 
+      "grid-column-gap",
+      "grid-gap",
+      "grid-row-gap",
+
       "font-smoothing"
     ],
     "order/order": [
@@ -33,6 +37,8 @@
       "align-self",
       "order",
 
+      "grid-area",
+
       "display",
       "visibility",
 
@@ -45,8 +51,12 @@
       "justify-content",
 
       "grid",
+
+      "gap",
+      "column-gap",
+      "row-gap",
+
       "grid-after",
-      "grid-area",
       "grid-auto-columns",
       "grid-auto-flow",
       "grid-auto-rows",
