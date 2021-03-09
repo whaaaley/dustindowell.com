@@ -64,7 +64,7 @@ const Apps = (actions, register) => {
         to: '/feedback',
         title: 'Feedback',
         iconClass: '-feedback',
-        body: 'Send me feedback on how to improve my apps or maybe some cute messages.'
+        body: 'Send me feedback on how to improve my apps or maybe something cute.'
       }),
       Item({
         to: '/counter',
