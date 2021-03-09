@@ -33,7 +33,7 @@ data = typescript.transpileModule(data, {
 data = uglify.minify(data.outputText, {
   toplevel: true,
   compress: {
-    // drop_console: true,
+    drop_console: true,
     passes: 3
   },
   mangle: {
