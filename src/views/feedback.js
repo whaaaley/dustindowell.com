@@ -34,14 +34,14 @@ const ErrorComponent = props => {
   return div({ key, hidden: true }) // placeholder
 }
 
-const Contact = register => (x, dispatch) => {
+const Feedback = () => dispatch => {
   const Submit = SubmitHandler(dispatch)
   const Field = FieldComponent(dispatch)
 
-  return div({ class: 'contact' }, [
-    div({ class: '_topography' }, [
-      Text(h1, 'Contact'),
-      Text(p, 'Send me something nice.'),
+  return div({ class: 'contact feedback' }, [
+    div({ class: 'card' }, [
+      Text(h1, 'Feedback'),
+      Text(p, 'Send me feedback on how to improve my apps or maybe some cute messages.'),
       ErrorComponent({
         show: form.success === false,
         message: form.error
@@ -57,6 +57,6 @@ const Contact = register => (x, dispatch) => {
 }
 
 export default {
-  view: register => main(Contact(register)),
+  view: register => main(Feedback(register)),
   onroute: () => () => {}
 }

@@ -61,7 +61,12 @@ const Apps = (actions, register) => {
         title: 'Dustin\'s Resume',
         iconClass: '-resume', // Until I can make SVG icons for everything
         body: 'I\'m a self taught developer, designer, and artist. See all of my skills and work experience here.'
-      })
+      }),
+      div({ class: '_footer -span' }, [
+        p([
+          text('© ' + state.footer.year + ' Dustin Dowell')
+        ])
+      ])
     ])
   }
 }

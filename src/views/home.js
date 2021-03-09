@@ -62,7 +62,7 @@ const Home = register => {
       div({ class: 'footer' }, [
         text('performance benchmarks\n'),
         text(`index.html ${kb} kB - load time ${ms} ms\n`),
-        text('©' + year + ' Dustin Dowell')
+        text('© ' + year + ' Dustin Dowell')
       ])
     ])
   }

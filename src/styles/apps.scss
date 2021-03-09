@@ -10,7 +10,7 @@ $icon-rss: ic-rss-feed-24px($white);
   grid: auto-flow / 1fr 1fr;
   max-width: 960px;
   margin: auto;
-  padding: 24px;
+  padding: 96px 24px 24px;
   gap: 24px;
 
   .item {
@@ -35,7 +35,7 @@ $icon-rss: ic-rss-feed-24px($white);
     }
 
     &.-calculate {
-      background: $lavender url($icon-calculate) center/48px no-repeat;
+      background: $black url($icon-calculate) center/48px no-repeat;
     }
 
     &.-feedback {
@@ -47,11 +47,11 @@ $icon-rss: ic-rss-feed-24px($white);
     }
 
     &.-resize {
-      background: $lavender url($icon-aspect-ratio) center/48px no-repeat;
+      background: $pastel-purple url($icon-aspect-ratio) center/48px no-repeat;
     }
 
     &.-resume {
-      background: $lavender url($icon-description) center/48px no-repeat;
+      background: $pastel-green url($icon-description) center/48px no-repeat;
     }
   }
 
