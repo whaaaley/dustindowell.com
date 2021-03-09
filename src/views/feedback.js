@@ -39,8 +39,6 @@ const Notify = props => {
 const Feedback = () => (state, dispatch) => {
   const Field = FieldComponent(dispatch)
 
-  console.log(state.form)
-
   return div({ class: 'contact feedback' }, [
     div({ class: 'card' }, [
       h(h1, 'Feedback'),
