@@ -30,29 +30,35 @@ const Apps = (actions, register) => {
         h(h1, 'Apps'),
         h(h2, 'Welcome to my little web app store.')
       ]),
-      Item({
-        to: '/insights',
-        title: 'Onclick Insights',
-        iconClass: '-insights',
-        body: 'Connect your Facebook account to view Instagram analytics for business accounts.'
-      }),
-      Item({
-        to: '/resize',
-        title: 'Resize.gg',
-        iconClass: '-resize',
-        body: 'Small utility to cacluate aspect ratio dimensions.'
-      }),
+      // Item({
+      //   to: '/insights',
+      //   title: 'Onclick Insights',
+      //   iconClass: '-insights',
+      //   body: 'Connect your Facebook account to view Instagram analytics for business accounts.'
+      // }),
+      // Item({
+      //   to: '/resize',
+      //   title: 'Resize.gg',
+      //   iconClass: '-resize',
+      //   body: 'Small utility to cacluate aspect ratio dimensions.'
+      // }),
       // Item({
       //   to: '/wiki',
       //   title: 'Wiki Editor (wip)',
       //   iconClass: '-resize',
       //   body: 'A simple dashboard and editor to create wiki-like articles using markdown.'
       // }),
+      // Item({
+      //   to: '/blog',
+      //   title: 'Dustin\'s Blog',
+      //   iconClass: '-blog',
+      //   body: 'You can find all my software rants here. I think I\'m smart sometimes. '
+      // }),
       Item({
-        to: '/blog',
-        title: 'Dustin\'s Blog',
-        iconClass: '-blog',
-        body: 'You can find all my software rants here. I think I\'m smart sometimes. '
+        to: '/resume',
+        title: 'Dustin\'s Resume',
+        iconClass: '-resume',
+        body: 'I\'m a self taught developer and designer. See all of my skills and experience here.'
       }),
       Item({
         to: '/feedback',
@@ -66,12 +72,7 @@ const Apps = (actions, register) => {
         iconClass: '-calculate',
         body: 'Demo page showcasing the framework all of my apps are built with.'
       }),
-      Item({
-        to: '/resume',
-        title: 'Dustin\'s Resume',
-        iconClass: '-resume',
-        body: 'I\'m a self taught developer and designer. See all of my skills and experience here.'
-      }),
+
       div({ class: '_footer -span' }, [
         p([
           text('© ' + state.footer.year + ' Dustin Dowell')
