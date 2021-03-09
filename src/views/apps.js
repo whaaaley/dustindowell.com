@@ -1,5 +1,5 @@
 
-import { a, div, h1, p, text } from '../lib/vnodes/html'
+import { a, div, h1, h2, p, text } from '../lib/vnodes/html'
 
 import main from './_main'
 import link from '../plugins/routerLink'
@@ -26,41 +26,51 @@ const Item = data => {
 const Apps = (actions, register) => {
   return (state, dispatch) => {
     return div({ class: 'apps' }, [
+      div({ class: 'head' }, [
+        h(h1, 'Apps'),
+        h(h2, 'Welcome to my little web app store.')
+      ]),
       Item({
         to: '/insights',
         title: 'Onclick Insights',
-        iconClass: '-insights', // Until I can make SVG icons for everything
-        body: 'Instagram Analytics for Business. Connect your Facebook account to view Instagram analytics.'
+        iconClass: '-insights',
+        body: 'Connect your Facebook account to view Instagram analytics for business accounts.'
       }),
       Item({
         to: '/resize',
         title: 'Resize.gg',
-        iconClass: '-resize', // Until I can make SVG icons for everything
+        iconClass: '-resize',
         body: 'Small utility to cacluate aspect ratio dimensions.'
       }),
+      // Item({
+      //   to: '/wiki',
+      //   title: 'Wiki Editor (wip)',
+      //   iconClass: '-resize',
+      //   body: 'A simple dashboard and editor to create wiki-like articles using markdown.'
+      // }),
       Item({
         to: '/blog',
         title: 'Dustin\'s Blog',
-        iconClass: '-blog', // Until I can make SVG icons for everything
-        body: 'You can find all my software rants here. I think I\'m smart sometimes. There might be some useful info.'
+        iconClass: '-blog',
+        body: 'You can find all my software rants here. I think I\'m smart sometimes. '
       }),
       Item({
         to: '/feedback',
         title: 'Feedback',
-        iconClass: '-feedback', // Until I can make SVG icons for everything
+        iconClass: '-feedback',
         body: 'Send me feedback on how to improve my apps or maybe some cute messages.'
       }),
       Item({
         to: '/counter',
         title: 'Counter Demo',
-        iconClass: '-calculate', // Until I can make SVG icons for everything
+        iconClass: '-calculate',
         body: 'Demo page showcasing the framework all of my apps are built with.'
       }),
       Item({
         to: '/resume',
         title: 'Dustin\'s Resume',
-        iconClass: '-resume', // Until I can make SVG icons for everything
-        body: 'I\'m a self taught developer, designer, and artist. See all of my skills and work experience here.'
+        iconClass: '-resume',
+        body: 'I\'m a self taught developer and designer. See all of my skills and experience here.'
       }),
       div({ class: '_footer -span' }, [
         p([
