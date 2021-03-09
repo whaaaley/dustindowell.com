@@ -3,7 +3,7 @@ import { a, div, form, h1, input, p, text, textarea } from '../lib/vnodes/html'
 import * as formActions from '../actions/form'
 import main from './_main'
 
-const Text = (h, data) => h([text(data)])
+const h = (tag, data) => tag([text(data)])
 
 const FieldComponent = dispatch => (h, props) => {
   props.placeholder = props.name
@@ -39,10 +39,12 @@ const Notify = props => {
 const Feedback = () => (state, dispatch) => {
   const Field = FieldComponent(dispatch)
 
+  console.log(state.form)
+
   return div({ class: 'contact feedback' }, [
     div({ class: 'card' }, [
-      Text(h1, 'Feedback'),
-      Text(p, 'Send me feedback on how to improve my apps or maybe some cute messages.'),
+      h(h1, 'Feedback'),
+      h(p, 'Send me feedback on how to improve my apps or maybe some cute messages.'),
       Notify({
         data: state.form.data,
         error: state.form.error,

@@ -3,9 +3,9 @@ import * as router from '../plugins/routerLib'
 
 const encode = data => router.encode(data).slice(1)
 
-export const update = ({ form }, [key, value]) => {
-  form[key] = value
-  return { form }
+export const update = ({ formData }, [key, value]) => {
+  formData[key] = value
+  return { formData }
 }
 
 const replace = (x, data) => ({ form: data })
@@ -23,6 +23,8 @@ export const send = ({ formData }, x) => dispatch => {
       'message': formData.message
     })
   }
+
+  console.log(options)
 
   fetch('/', options)
     .then(res => res.json())
