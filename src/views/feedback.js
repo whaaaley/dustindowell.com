@@ -42,7 +42,7 @@ const Feedback = () => (state, dispatch) => {
   return div({ class: 'contact feedback' }, [
     div({ class: 'card' }, [
       h(h1, 'Feedback'),
-      h(p, 'Send me feedback on how to improve my apps or maybe some cute messages.'),
+      h(p, 'Send me feedback on how to improve my apps or maybe something cute.'),
       Notify({
         data: state.form.data,
         error: state.form.error,
