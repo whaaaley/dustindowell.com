@@ -1,7 +1,6 @@
 
 import { div, h1, h2, p, text } from '../lib/vnodes/html'
 
-import link from './_link'
 import main from './_main'
 
 // import * as actions from './actions'
@@ -25,9 +24,7 @@ import main from './_main'
 
 const Text = (tag, data) => tag([text(data)])
 
-const Blog = register => (state, dispatch) => {
-  const Link = link(state, dispatch)
-
+const Blog = () => (state, dispatch) => {
   return div({ class: 'blog' }, [
     div({ class: 'blog-post _topography' }, [
       Text(h1, 'You don\'t need a JWT library 2020'),
@@ -65,6 +62,6 @@ const Blog = register => (state, dispatch) => {
 }
 
 export default {
-  view: register => main(Blog(register)),
+  view: (actions, register) => main(Blog(actions, register)),
   onroute: () => () => {}
 }
