@@ -7,14 +7,16 @@ import link from '../plugins/routerLink'
 const h = (tag, data) => tag([text(data)])
 
 const Item = data => {
-  return a({
-    class: 'item',
-    href: data.to, // for web crawlers
-    onclick: event => {
-      event.preventDefault() // prevent href
-      link({ to: data.to })
-    }
-  }, [
+  const onclick = event => {
+    event.preventDefault() // prevent href
+    link({ to: data.to })
+  }
+
+  const props = typeof data.href === 'string'
+    ? { href: data.href, target: '_blank' }
+    : { href: data.to, onclick }
+
+  return a({ class: 'item', ...props }, [
     div({ class: 'icon ' + data.iconClass }),
     div({ class: 'body' }, [
       h(h1, data.title),
@@ -28,20 +30,31 @@ const Apps = (actions, register) => {
     return div({ class: 'apps' }, [
       div({ class: 'head' }, [
         h(h1, 'Apps')
-        // h(h2, 'Welcome to my little web app store.')
       ]),
       // Item({
       //   to: '/insights',
       //   title: 'Onclick Insights',
       //   iconClass: '-insights',
       //   body: 'Connect your Facebook account to view Instagram analytics for business accounts.'
-      // }),
-      // Item({
-      //   to: '/resize',
-      //   title: 'Resize.gg',
-      //   iconClass: '-resize',
-      //   body: 'Small utility to cacluate aspect ratio dimensions.'
-      // }),
+      }),
+      Item({
+        href: 'https://resize-gg.netlify.app/',
+        title: 'Resize.gg',
+        iconClass: '-resize',
+        body: 'Small utility to cacluate aspect ratio dimensions.'
+      }),
+      Item({
+        href: 'https://discord-message-queue.netlify.app/',
+        title: 'Discord Message Queue',
+        iconClass: '-discord',
+        body: 'Small app to queue messages before sending them to discord.'
+      }),
+      Item({
+        href: 'https://state-sync-demo.netlify.app/',
+        title: 'State Sync Demo',
+        iconClass: '-sync',
+        body: 'Syncs app state between iframes on a page. Useful for designing responsible mobile layouts.'
+      }),
       // Item({
       //   to: '/wiki',
       //   title: 'Wiki Editor (wip)',
