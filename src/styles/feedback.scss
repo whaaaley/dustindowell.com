@@ -19,10 +19,40 @@ $placeholder-2: mix($light, $dark, 25%);
   }
 }
 
+//
+//
+//
+
+.feedback {
+  .card {
+    background: $dark-450;
+  }
+
+  .notify {
+    padding: 12px 18px;
+    border-radius: 6px;
+    color: $white;
+    font: 400 16px/1 sans-serif;
+
+    &.-success {
+      background: $pastel-green;
+    }
+
+    &.-error {
+      background: $pastel-red;
+    }
+  }
+}
+
+//
+//
+//
+
 .contact {
   display: flex;
+  // white-space: pre;
 
-  div {
+  > div {
     width: 480px;
     margin: auto;
     padding: 24px 36px 36px;
@@ -31,7 +61,7 @@ $placeholder-2: mix($light, $dark, 25%);
 
   h1 {
     margin: 0 0 0 -2px;
-    font: 800 64px/1 $font-goldbill;
+    font: 800 64px/72px $font-goldbill;
     text-transform: uppercase;
   }
 
@@ -40,7 +70,9 @@ $placeholder-2: mix($light, $dark, 25%);
   }
 
   p {
-    font: 300 18px/2 sans-serif;
+    padding: 0 0 12px;
+    font: 300 16px/24px sans-serif;
+    opacity: 0.625;
   }
 
   form {
@@ -66,7 +98,7 @@ $placeholder-2: mix($light, $dark, 25%);
 
 @media (min-width: 768px + 1px) {
   .contact {
-    div {
+    > div {
       margin: 128px auto 0;
     }
   }
@@ -74,7 +106,7 @@ $placeholder-2: mix($light, $dark, 25%);
 
 @media (min-width: 480px + 1px) {
   .contact {
-    div {
+    > div {
       border-radius: 4px;
     }
   }

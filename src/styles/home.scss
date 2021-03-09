@@ -2,75 +2,62 @@
 .home {
   display: flex;
   flex-flow: column;
-}
 
-.card {
-  max-width: 480px;
-  margin: 0 auto;
-  // background: url('/cache/tile.png');
-  // background-size: 256px;
+  .card {
+    max-width: 480px;
+    margin: 0 auto;
+    background: $dark-450;
 
-  div {
-    flex: 1;
-    display: flex;
-    flex-flow: column;
-    padding: 36px;
-
-    &:first-child {
-      color: $background;
-      background: $gradient;
+    div {
+      flex: 1;
+      display: flex;
+      flex-flow: column;
+      padding: 36px;
     }
-  }
 
-  // h1 {
-  //   font: 800 72px/64px $font-goldbill;
-  //   text-transform: uppercase;
-  //   white-space: pre;
-  // }
+    p {
+      margin: 0 0 12px;
+      font: 300 18px/36px sans-serif;
+      text-indent: 24px;
+    }
 
-  p {
-    margin: 0 0 12px;
-    font: 300 18px/36px sans-serif;
-    text-indent: 24px;
-  }
+    a {
+      margin: 12px auto 0;
+      padding: 0 24px;
+      border: 2px solid $light;
+      border-radius: 4px;
+      font: 300 18px/48px sans-serif;
+      cursor: pointer;
 
-  a {
-    margin: 12px auto 0;
-    padding: 0 24px;
-    border: 2px solid $light;
-    border-radius: 4px;
-    font: 300 18px/48px sans-serif;
-    cursor: pointer;
-
-    &:hover {
-      color: $background;
-      background: $light;
+      &:hover {
+        color: $background;
+        background: $light;
+      }
     }
   }
 }
 
-.footer {
-  margin: 24px auto;
-  font: 14px/24px sans-serif;
-  text-align: center;
-  white-space: pre;
-  opacity: 0.3;
+.banner {
+  background: $gradient;
 }
 
 @media (min-width: 768px + 1px) {
-  .card {
-    margin: 128px auto 0;
+  .home {
+    .card {
+      margin: 96px auto 0;
+    }
   }
 }
 
 @media (min-width: 480px + 1px) {
-  .card {
-    border-radius: 4px;
-
-    div {
-      &:first-child {
-        border-radius: 4px;
-      }
+  .home {
+    .card {
+      border-radius: 4px;
+      overflow: hidden;
     }
+  }
+
+  .banner {
+    border-radius: 0 0 4px 4px;
   }
 }

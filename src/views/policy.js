@@ -6,7 +6,7 @@ const Text = (h, data) => h([text(data)])
 
 const Missing = register => (state, dispatch) => {
   return div({ class: 'missing' }, [
-    Text(div, '404 NOT FOUND')
+    Text(div, 'PRIVACY POLICY')
   ])
 }
 

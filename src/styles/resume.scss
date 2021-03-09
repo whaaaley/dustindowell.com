@@ -2,61 +2,61 @@
 .resume {
   max-width: 960px;
   margin: 0 auto;
-}
 
-.header {
-  padding: 24px;
-  color: $background;
-  background: $gradient;
+  .header {
+    padding: 24px;
+    color: $background;
+    background: $gradient;
 
-  h1 {
-    margin: 0 0 12px -4px;
-    font: 800 48px/1 $font-goldbill;
-    text-transform: uppercase;
+    h1 {
+      margin: 0 0 12px -4px;
+      font: 800 48px/1 $font-goldbill;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font: 400 14px/24px sans-serif;
+    }
   }
 
-  h2 {
-    font: 400 14px/24px sans-serif;
-  }
-}
-
-.grid {
-  padding: 24px 0;
-}
-
-.grid-item {
-  padding: 0 24px 0;
-
-  h1,
-  h2 {
-    text-transform: uppercase;
+  .grid {
+    padding: 24px 0;
   }
 
-  h3,
-  ul {
-    font: 400 14px/24px sans-serif;
-  }
+  .grid-item {
+    padding: 0 24px 0;
 
-  h1 {
-    margin: 0 0 0 -2px;
-    font: 800 48px/60px $font-goldbill;
-  }
+    h1,
+    h2 {
+      text-transform: uppercase;
+    }
 
-  h2 {
-    margin: 0 0 0 -1px;
-    font: 800 24px/36px $font-goldbill;
-  }
+    h3,
+    ul {
+      font: 400 14px/24px sans-serif;
+    }
 
-  h3 {
-    opacity: 0.5;
-  }
+    h1 {
+      margin: 0 0 0 -2px;
+      font: 800 48px/60px $font-goldbill;
+    }
 
-  ul {
-    padding: 0 0 24px 24px;
-  }
+    h2 {
+      margin: 0 0 0 -1px;
+      font: 800 24px/36px $font-goldbill;
+    }
 
-  li {
-    padding: 12px 0 0;
+    h3 {
+      opacity: 0.5;
+    }
+
+    ul {
+      padding: 0 0 24px 24px;
+    }
+
+    li {
+      padding: 12px 0 0;
+    }
   }
 }
 
@@ -64,31 +64,36 @@
 @media (min-width: 768px + 1px) {
   .resume {
     padding: 0 36px;
-  }
 
-  .header {
-    display: flex;
-    flex-flow: wrap;
-    align-items: center;
-    padding: 36px;
-    border-radius: 4px;
+    .header {
+      display: flex;
+      flex-flow: wrap;
+      align-items: center;
+      padding: 36px;
+      border-radius: 4px;
 
-    div {
-      margin: 0 0 0 auto;
-      padding: 0 0 0 24px;
+      div {
+        margin: 0 0 0 auto;
+        padding: 0 0 0 24px;
+      }
+
+      h1 {
+        font: 800 64px/1 $font-goldbill;
+      }
     }
 
-    h1 {
-      font: 800 64px/1 $font-goldbill;
+    .spinner-box {
+      display: flex;
+      height: 576px;
     }
-  }
 
-  .grid {
-    display: flex;
-  }
+    .grid {
+      display: flex;
+    }
 
-  .grid-item {
-    width: 50%;
-    padding: 12px 24px 24px;
+    .grid-item {
+      width: 50%;
+      padding: 12px 24px 24px;
+    }
   }
 }
