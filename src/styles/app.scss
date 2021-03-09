@@ -16,6 +16,19 @@ $spinner: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"><style>@k
   }
 }
 
+.footer,
+._footer {
+  margin: 24px auto;
+  font: 14px/24px sans-serif;
+  text-align: center;
+  white-space: pre;
+  opacity: 0.375;
+
+  &.-span {
+    grid-column: 1 / -1;
+  }
+}
+
 ._spinner {
   width: 48px + 12px;
   height: 48px + 12px;

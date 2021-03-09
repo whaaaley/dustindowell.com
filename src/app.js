@@ -12,7 +12,7 @@ import facebook from './stores/facebook'
 import Home from './views/home'
 import Apps from './views/apps'
 import Blog from './views/blog'
-import Contact from './views/contact'
+import Feedback from './views/feedback'
 import Counter from './views/counter'
 // import Insights from './views/insights'
 
@@ -91,7 +91,7 @@ app([stores, router, saga], {
     '/': Home,
     '/apps': Apps,
     '/blog': Blog,
-    '/contact': Contact,
+    '/feedback': Feedback,
     '/counter': Counter,
     '/insights': Insights, // insights/login ???
     '/insights/interface': Interface,

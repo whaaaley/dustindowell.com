@@ -41,18 +41,10 @@
   background: $gradient;
 }
 
-.footer {
-  margin: 24px auto;
-  font: 14px/24px sans-serif;
-  text-align: center;
-  white-space: pre;
-  opacity: 0.3;
-}
-
 @media (min-width: 768px + 1px) {
   .home {
     .card {
-      margin: 128px auto 0;
+      margin: 96px auto 0;
     }
   }
 }
