@@ -1,5 +1,7 @@
 
-import { div, h1, h2, h3, li, text, ul } from '../lib/vnodes/html'
+// import { div, h1, h2, h3, li, text, ul } from '../lib/vnodes/html'
+
+import { div, h1, h2, text } from '../lib/vnodes/html'
 import main from './_main'
 
 import * as resume from '../actions/resume'
@@ -109,7 +111,15 @@ console.log(JSON.stringify(Grid()))
 const Resume = (actions, register) => (state, dispatch) => {
   return div({ class: 'resume' }, [
     Header(),
-    state.resume.success && state.resume.data
+    (() => {
+      if (state.resume.success === null) {
+        return div({ class: 'spinner-box' }, [
+          div({ class: '_spinner' })
+        ])
+      }
+
+      return state.resume.data
+    })()
   ])
 }
 

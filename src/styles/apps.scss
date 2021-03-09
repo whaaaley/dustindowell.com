@@ -1,5 +1,7 @@
 
 $icon-aspect-ratio: ic-aspect-ratio-24px($white);
+$icon-calculate: ic-calculate-24px($white);
+$icon-description: ic-description-24px($white);
 $icon-feedback: ic-feedback-24px($white);
 $icon-rss: ic-rss-feed-24px($white);
 
@@ -32,6 +34,10 @@ $icon-rss: ic-rss-feed-24px($white);
       background: $orange url($icon-rss) center/48px no-repeat;
     }
 
+    &.-calculate {
+      background: $lavender url($icon-calculate) center/48px no-repeat;
+    }
+
     &.-feedback {
       background: $blue url($icon-feedback) center/48px no-repeat;
     }
@@ -42,6 +48,10 @@ $icon-rss: ic-rss-feed-24px($white);
 
     &.-resize {
       background: $lavender url($icon-aspect-ratio) center/48px no-repeat;
+    }
+
+    &.-resume {
+      background: $lavender url($icon-description) center/48px no-repeat;
     }
   }
 
@@ -54,6 +64,7 @@ $icon-rss: ic-rss-feed-24px($white);
 
     p {
       font: 400 13px/20px sans-serif;
+      opacity: 0.625;
     }
   }
 }
