@@ -5,10 +5,6 @@ import main from './_main'
 
 const Text = (h, data) => h([text(data)])
 
-const SubmitHandler = dispatch => () => {
-  dispatch(formActions.send)
-}
-
 const FieldComponent = dispatch => (h, props) => {
   props.placeholder = props.name
 
@@ -22,41 +18,52 @@ const FieldComponent = dispatch => (h, props) => {
   return h(props)
 }
 
-const ErrorComponent = props => {
-  const key = 'errorComponent'
+const Notify = props => {
+  const key = 'feedbackNotify'
 
-  if (props.show === true) {
-    return div({ key }, [
-      text(props.message)
+  if (props.success === true) {
+    return div({ key, class: 'notify -success' }, [
+      text(props.data)
+    ])
+  }
+
+  if (props.success === false) {
+    return div({ key, class: 'notify -error' }, [
+      text(props.error)
     ])
   }
 
   return div({ key, hidden: true }) // placeholder
 }
 
-const Feedback = () => dispatch => {
-  const Submit = SubmitHandler(dispatch)
+const Feedback = () => (state, dispatch) => {
   const Field = FieldComponent(dispatch)
 
   return div({ class: 'contact feedback' }, [
     div({ class: 'card' }, [
       Text(h1, 'Feedback'),
       Text(p, 'Send me feedback on how to improve my apps or maybe some cute messages.'),
-      ErrorComponent({
-        show: form.success === false,
-        message: form.error
+      Notify({
+        data: state.form.data,
+        error: state.form.error,
+        success: state.form.success
       }),
       form({ name: 'contact' }, [
         Field(input, { type: 'text', name: 'name' }),
         Field(input, { type: 'email', name: 'email' }),
         Field(textarea, { name: 'message' }),
-        a({ class: '_button', onclick: Submit }, [text('Send')])
+        a({
+          class: '_button',
+          onclick: () => dispatch(formActions.send)
+        }, [
+          text('Send')
+        ])
       ])
     ])
   ])
 }
 
 export default {
-  view: register => main(Feedback(register)),
+  view: (actions, register) => main(Feedback(actions, register)),
   onroute: () => () => {}
 }
