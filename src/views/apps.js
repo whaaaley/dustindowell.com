@@ -48,12 +48,12 @@ const Apps = (actions, register) => {
       //   iconClass: '-resize',
       //   body: 'A simple dashboard and editor to create wiki-like articles using markdown.'
       // }),
-      // Item({
-      //   to: '/blog',
-      //   title: 'Dustin\'s Blog',
-      //   iconClass: '-blog',
-      //   body: 'You can find all my software rants here. I think I\'m smart sometimes. '
-      // }),
+      Item({
+        to: '/blog',
+        title: 'Dustin\'s Blog',
+        iconClass: '-blog',
+        body: 'You can find all my software rants here. I think I\'m smart sometimes. '
+      }),
       Item({
         to: '/resume',
         title: 'Dustin\'s Resume',
