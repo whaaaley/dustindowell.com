@@ -116,7 +116,15 @@ const Workbench = (actions, register) => {
             count: count,
             onPlus: () => dispatch(update, count + 1),
             onMinus: () => dispatch(update, count - 1)
-          })
+          }),
+          div({ class: 'palette-widget' }, [
+            div({ class: '-red' }),
+            div({ class: '-orange' }),
+            div({ class: '-yellow' }),
+            div({ class: '-green' }),
+            div({ class: '-blue' }),
+            div({ class: '-purple' })
+          ])
         ]),
         div({ class: 'bottom' }, [
           ConsoleWidget()

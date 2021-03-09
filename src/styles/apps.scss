@@ -8,10 +8,10 @@ $icon-rss: ic-rss-feed-24px($white);
 .apps {
   display: grid;
   grid: auto-flow / 1fr 1fr;
+  gap: 24px;
   max-width: 960px;
   margin: auto;
   padding: 96px 24px 24px;
-  gap: 24px;
 
   .item {
     display: flex;
@@ -31,7 +31,7 @@ $icon-rss: ic-rss-feed-24px($white);
     background: mix($dark-400, $dark-500);
 
     &.-blog {
-      background: $orange url($icon-rss) center/48px no-repeat;
+      background: $pastel-orange url($icon-rss) center/48px no-repeat;
     }
 
     &.-calculate {
@@ -39,7 +39,7 @@ $icon-rss: ic-rss-feed-24px($white);
     }
 
     &.-feedback {
-      background: $blue url($icon-feedback) center/48px no-repeat;
+      background: $pastel-blue url($icon-feedback) center/48px no-repeat;
     }
 
     &.-insights {
