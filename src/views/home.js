@@ -42,7 +42,7 @@ const Banner = () => {
 //   return div({ class: 'history-panel -attach' }, target)
 // }
 
-const Home = register => {
+const Home = () => {
   // <- register actions here ->
 
   return (state, dispatch) => {
@@ -53,7 +53,7 @@ const Home = register => {
       // HistoryPanel(state.history),
       div({ class: 'card' }, [
         Banner(),
-        div([
+        div({ class: 'body' }, [
           Text(p, First),
           Text(p, Second),
           Link({ to: '/resume' }, 'Hire Me')
@@ -69,7 +69,7 @@ const Home = register => {
 }
 
 export default {
-  view: register => main(Home(register)),
+  view: (actions, register) => main(Home(actions, register)),
   onroute: () => () => {
     console.log('hello from home')
   }
