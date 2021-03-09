@@ -97,9 +97,6 @@ const Workbench = (actions, register) => {
               enable: state.saga.toggle,
               onReplay: () => dispatch(actions.saga.replay),
               onReset: () => dispatch(actions.saga.reset)
-              // onToggle: () => dispatch(actions.saga.toggle),
-              // onPrevious: () => dispatch(actions.saga.previous),
-              // onNext: () => dispatch(actions.saga.next)
             }),
             HistoryList(state.saga.history)
           ])
