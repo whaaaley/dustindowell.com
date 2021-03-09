@@ -4,10 +4,9 @@
 This project is hosted here https://dustindowell.com/
 
 ## Todo
-- [ ] Finish the blog.
-- [ ] Make a plugin for Facebook SDK.
+- [ ] Finish my blog.
 - [ ] Replace the Facebook SDK used for `/insights` with vanilla fetch.
-- [ ] Find a solution for live console that retains line references in the real console.
+- [ ] Find a solution for a live console that retains line references in the real console.
 - [ ] Add some notes to the readme about the plugin system, the router, and saga.
 - [ ] e2e testing plugin - spinner bottom corner to show the current action running
 - [ ] Store and retreive resume.json to/from session storage
