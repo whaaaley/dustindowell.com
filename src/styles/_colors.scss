@@ -6,14 +6,9 @@ $dark: rgb(23, 23, 27);
 $light: rgb(223, 223, 223);
 
 $blue: rgb(127, 191, 255);
-$darkblue: rgb(63, 127, 255);
 $purple: rgb(191, 127, 255);
-$darkpurple: rgb(127, 63, 255);
-
 $blurple: mix($blue, $purple);
-
 $gradient: linear-gradient(45deg, $white -30%, $blue, $purple);
-$background: rgb(31, 31, 35);
 
 // New Lavender
 $lavender: rgb(137, 154, 239);
