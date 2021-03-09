@@ -11,7 +11,7 @@ $font-goldbill: goldbill, sans-serif;
   font-style: normal;
   font-weight: 100;
   font-display: swap;
-  src: url('fonts/Goldbill-XLLight.woff2') format('woff2');
+  src: url('/fonts/Goldbill-XLLight.woff2') format('woff2');
 }
 
 @font-face {
@@ -20,4 +20,27 @@ $font-goldbill: goldbill, sans-serif;
   font-weight: 800;
   font-display: swap;
   src: url('/fonts/Goldbill-XSExtraBold.woff2') format('woff2');
+}
+
+//
+// Mont by Fontfabric
+// https://www.myfonts.com/fonts/font-fabric/mont/
+//
+
+$font-mont: mont, sans-serif;
+
+@font-face {
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url('/fonts/MontExtraLightDEMO.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/fonts/MontHeavyDEMO.woff2') format('woff2');
 }
