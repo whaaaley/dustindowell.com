@@ -1,0 +1,200 @@
+
+$icon-remove: ic-remove-24px($white);
+$icon-add: ic-add-24px($white);
+
+.counter-widget {
+  display: flex;
+  padding: (48px + 16px) 48px 48px;
+  border-radius: 6px;
+  background: $dark-300;
+
+  h1 {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+  }
+
+  a,
+  div {
+    margin: auto;
+  }
+
+  a {
+    width: 48px;
+    height: 48px;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+
+    &.-add {
+      background: $lavender url($icon-add) no-repeat center;
+    }
+
+    &.-remove {
+      background: $lavender url($icon-remove) no-repeat center;
+    }
+  }
+
+  div {
+    font: 400 48px/1 sans-serif;
+  }
+}
+
+.workbench {
+  display: flex;
+  user-select: none;
+
+  .area {
+    flex: 1;
+    display: grid;
+    gap: 12px;
+    grid-template-areas: 'side top' 'side bottom';
+    grid-template-columns: 5fr 7fr;
+    grid-template-rows: auto 2fr;
+    max-width: 960px;
+    height: calc(100vh - 120px - 24px);
+    margin: auto;
+    padding: 12px;
+    border-radius: 12px;
+    background: $dark-400;
+  }
+
+  .side {
+    grid-area: side;
+  }
+
+  .top {
+    grid-area: top;
+    display: grid;
+    gap: 12px;
+  }
+
+  .bottom {
+    grid-area: bottom;
+  }
+}
+
+.palette-widget {
+  display: flex;
+  padding: 24px;
+  border-radius: 6px;
+  background: $dark-300;
+
+  div {
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+
+    + div {
+      margin: 0 0 0 -12px;
+    }
+
+    &.-red {
+      background: $pastel-red;
+    }
+
+    &.-orange {
+      background: $pastel-orange;
+    }
+
+    &.-yellow {
+      background: $pastel-yellow;
+    }
+
+    &.-green {
+      background: $pastel-green;
+    }
+
+    &.-blue {
+      background: $pastel-blue;
+    }
+
+    &.-purple {
+      background: $pastel-purple;
+    }
+  }
+}
+
+.history-widget {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  padding: 12px 0 12px 12px;
+  border-radius: 6px;
+  background: $dark-300;
+
+  &.-attach {
+    position: fixed;
+    z-index: 1;
+    top: 12px;
+    left: 12px;
+    height: calc(100vh - 24px);
+  }
+
+  .buttons {
+    display: flex;
+    padding: 0 24px 12px 0;
+    border-radius: 6px;
+
+    a {
+      flex: 1;
+      border-radius: 6px;
+      font: 400 14px/36px sans-serif;
+      text-align: center;
+      background: $dark-400;
+      cursor: pointer;
+
+      + a {
+        margin: 0 0 0 6px;
+      }
+
+      &:hover {
+        background: mix($dark-400, $dark-500);
+      }
+
+      &.-active {
+        background: $lavender;
+      }
+    }
+  }
+
+  .list {
+    white-space: pre;
+    overflow-y: scroll;
+  }
+
+  .item {
+    margin: 0 0 12px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    animation: fade-in 1s;
+    background: $dark-400;
+
+    div {
+      padding: 3px 0;
+      font: 400 12px/16px monospace;
+    }
+  }
+}
+
+.console-widget {
+  display: flex;
+  flex-flow: column-reverse;
+  height: 100%;
+  padding: 24px;
+  border-radius: 6px;
+  font: 400 12px/24px monospace;
+  white-space: pre;
+  overflow-y: auto;
+  background: $dark-500;
+}
+
+@keyframes fade-in {
+  0% {
+    background: $lavender;
+  }
+
+  100% {
+    background: $dark-400;
+  }
+}

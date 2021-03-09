@@ -4,7 +4,7 @@
  * @function benchmark
  */
 
-export const benchmark = (state, dispatch) => data => {
+export const benchmark = dispatch => {
   const date = Date.now()
   const html = document.documentElement.outerHTML
 
@@ -21,15 +21,37 @@ export const benchmark = (state, dispatch) => data => {
  * @function gtm
  */
 
-export const gtmanager = (state, dispatch) => data => {
+export const gtm = data => {
   if (PROD) {
     window.addEventListener('load', () => {
       const script = document.createElement('script')
 
-      script.defer = true // probably unnecessary
+      script.async = true
+      script.defer = true
+
+      script.id = 'gtm'
       script.src = 'https://googletagmanager.com/gtm.js?id=' + data.id
 
       document.body.appendChild(script)
     })
   }
+}
+
+/**
+ * Ensure that Facebook SDK never affects load time performance.
+ * @function fbsdk
+ */
+
+export const fbsdk = () => {
+  window.addEventListener('load', () => {
+    const script = document.createElement('script')
+
+    script.async = true
+    script.defer = true
+
+    script.id = 'facebook-jssdk'
+    script.src = 'https://connect.facebook.net/en_US/sdk.js'
+
+    document.body.appendChild(script)
+  })
 }

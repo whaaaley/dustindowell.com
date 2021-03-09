@@ -2,17 +2,6 @@
 import { patch } from 'superfine'
 
 /**
- * Spread an array of source objects into the target object
- * @function spread
- */
-
-const spread = (target, batch) => {
-  batch.forEach(source => {
-    Object.assign(target, source)
-  })
-}
-
-/**
  * Debounce wrapper around window.requestAnimationFrame
  * @function enqueue
  */
@@ -38,13 +27,13 @@ const enqueue = render => {
  * @function collect
  */
 
-const collect = (state, render) => {
-  let batch = []
+const collect = (root, render) => {
+  let batch = [{}, root.state]
 
   const schedule = enqueue(() => {
-    spread(state, batch)
-    batch = []
-    render()
+    root.state = Object.assign.apply(Object, batch)
+    batch = [{}, root.state]
+    render(root.state)
   })
 
   return result => {
@@ -59,34 +48,50 @@ const collect = (state, render) => {
  */
 
 const pocket = (state, render) => {
-  const schedule = collect(state, render)
+  const root = { state }
+  const prompt = collect(root, render)
 
   const dispatch = (action, data) => {
-    let result = action(state, dispatch)
+    const result = action(root.state, data)
+
+    console.log(
+      'Dispatch >>',
+      action.name || '(anon)',
+      typeof result === 'function' ? '(effect)' : result
+    )
 
     if (typeof result === 'function') {
-      result = result(data)
-    }
+      const effect = result(dispatch)
 
-    schedule(result)
+      if (effect && effect.then) {
+        return effect.then(prompt)
+      }
+    } else {
+      prompt(result)
+    }
   }
 
   return dispatch
 }
 
 /**
- * Wire Pocket and Superfine together
- * @module app
+ * Initialize the app
+ * @module pocket
  */
 
 const node = document.getElementById('app')
 
-export default ({ state, view, mount }) => {
-  const dispatch = pocket(state, () => {
-    patch(node, view(state, dispatch))
+export default (plugins, init) => {
+  for (let i = 0; i < plugins.length; i++) {
+    init = plugins[i](init)
+  }
+
+  // console.log('Init >>', init)
+
+  const dispatch = pocket(init.state, state => {
+    console.log('--- Patch ---')
+    patch(node, init.view(state, dispatch))
   })
 
-  mount(state, dispatch)
-
-  // return dispatch
+  init.mount(init.state, dispatch)
 }

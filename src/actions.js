@@ -4,7 +4,7 @@
  * @function merge
  */
 
-const merge = (state, dispatch) => data => {
+export const merge = state => data => {
   const result = {}
 
   for (const key in data) {
@@ -13,25 +13,3 @@ const merge = (state, dispatch) => data => {
 
   return result
 }
-
-/**
- * Action for the most common fetch use-case.
- * @function fetch
- */
-
-const fetch = (state, dispatch) => (path, req) => {
-  window.fetch(path, req.options)
-    .then(res => res.json())
-    .then(data => {
-      merge(req.then(data))
-    })
-    .catch(error => {
-      merge(req.catch(error))
-    })
-}
-
-/**
- *
- */
-
-export default { merge, fetch }

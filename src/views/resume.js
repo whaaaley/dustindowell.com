@@ -1,6 +1,10 @@
 
-import { div, h1, h2, h3, li, text, ul } from '../lib/vnodes/html'
+// import { div, h1, h2, h3, li, text, ul } from '../lib/vnodes/html'
+
+import { div, h1, h2, text } from '../lib/vnodes/html'
 import main from './_main'
+
+import * as resume from '../actions/resume'
 
 const Text = (h, data) => h([text(data)])
 
@@ -104,16 +108,24 @@ const Grid = () => {
 console.log(JSON.stringify(Grid()))
 */
 
-const Resume = (state, dispatch) => {
+const Resume = (actions, register) => (state, dispatch) => {
   return div({ class: 'resume' }, [
     Header(),
-    state.resume.success && state.resume.data
+    (() => {
+      if (state.resume.success === null) {
+        return div({ class: 'spinner-box' }, [
+          div({ class: '_spinner' })
+        ])
+      }
+
+      return state.resume.data
+    })()
   ])
 }
 
 export default {
-  view: main(Resume),
-  init: () => {
-    console.log('resume')
+  view: (actions, register) => main(Resume(actions, register)),
+  onroute: (actions, register) => (state, dispatch) => {
+    dispatch(resume.fetchResume)
   }
 }

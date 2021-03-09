@@ -11,32 +11,16 @@
 @import 'styles/nav';
 
 // views
-// @import 'styles/contact';
 @import 'styles/home';
+@import 'styles/apps';
+@import 'styles/blog';
+@import 'styles/feedback';
+@import 'styles/counter';
+// @import 'styles/insights';
+@import 'styles/insights2';
+@import 'styles/interface';
 @import 'styles/missing';
 @import 'styles/resume';
 
-@media print {
-  * {
-    color: black;
-    opacity: 1;
-  }
-
-  body {
-    background: none;
-  }
-
-  nav {
-    display: none;
-  }
-
-  .tile {
-    h1 {
-      font-size: 36px !important;
-    }
-
-    h2 {
-      font-size: 24px !important;
-    }
-  }
-}
+// extra
+// @import 'styles/print';
