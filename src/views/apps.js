@@ -49,6 +49,18 @@ const Apps = (actions, register) => {
         title: 'Feedback',
         iconClass: '-feedback', // Until I can make SVG icons for everything
         body: 'Send me feedback on how to improve my apps or maybe some cute messages.'
+      }),
+      Item({
+        to: '/counter',
+        title: 'Counter Demo',
+        iconClass: '-calculate', // Until I can make SVG icons for everything
+        body: 'Demo page showcasing the framework all of my apps are built with.'
+      }),
+      Item({
+        to: '/resume',
+        title: 'Dustin\'s Resume',
+        iconClass: '-resume', // Until I can make SVG icons for everything
+        body: 'I\'m a self taught developer, designer, and artist. See all of my skills and work experience here.'
       })
     ])
   }
