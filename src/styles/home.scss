@@ -1,11 +1,9 @@
 
 .home {
-  display: flex;
-  flex-flow: column;
+  display: grid;
 
   .card {
     max-width: 480px;
-    margin: 0 auto;
     background: $dark-450;
 
     div {
@@ -25,7 +23,7 @@
       margin: 12px auto 0;
       padding: 0 24px;
       border: 2px solid $light;
-      border-radius: 4px;
+      border-radius: 8px;
       font: 300 18px/48px sans-serif;
       cursor: pointer;
 
@@ -35,10 +33,10 @@
       }
     }
   }
-}
 
-.banner {
-  background: $gradient;
+  .banner {
+    background: $gradient;
+  }
 }
 
 @media (min-width: 768px + 1px) {
@@ -52,12 +50,12 @@
 @media (min-width: 480px + 1px) {
   .home {
     .card {
-      border-radius: 4px;
+      border-radius: 12px;
       overflow: hidden;
     }
-  }
 
-  .banner {
-    border-radius: 0 0 4px 4px;
+    .banner {
+      border-radius: 0 0 6px 6px;
+    }
   }
 }
