@@ -20,13 +20,13 @@ $lavender: rgb(137, 154, 239);
 $blue: rgb(15, 119, 239);
 $orange: rgb(255, 119, 63);
 
-// WIP Pastel Colors
-$pastel-blue: rgb(121, 184, 255);
-$pastel-red: rgb(249, 117, 131);
-$pastel-purple: rgb(187, 157, 242);
-
-// Pastel Colors
-$pastel-green: rgb(79, 207, 111);
+// Pastel Colors (Lab to sRGB)
+$pastel-red: rgb(252, 121, 134);    // 65  55  15
+$pastel-orange: rgb(255, 161, 99);  // 75  31  47
+$pastel-yellow: rgb(255, 200, 123); // 85  15  47
+$pastel-green: rgb(145, 199, 126);  // 75 -31  31
+$pastel-blue: rgb(0, 189, 226);     // 70 -31 -31
+$pastel-purple: rgb(185, 159, 227); // 70  23 -31
 
 // Desaturated Dark (Lab to sRGB)
 $dark-600: rgb(16, 17, 18); //  5 0 -1
@@ -36,7 +36,7 @@ $dark-300: rgb(45, 49, 54); // 20 0 -4
 $dark-200: rgb(55, 60, 67); // 25 0 -5
 $dark-100: rgb(66, 71, 80); // 30 0 -6
 
-$dark-450: mix($dark-400, $dark-500); // temporary?
+$dark-450: mix($dark-400, $dark-500);
 
 // Third Party
 $facebook-blue: #1877f2;
