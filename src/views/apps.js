@@ -27,8 +27,8 @@ const Apps = (actions, register) => {
   return (state, dispatch) => {
     return div({ class: 'apps' }, [
       div({ class: 'head' }, [
-        h(h1, 'Apps'),
-        h(h2, 'Welcome to my little web app store.')
+        h(h1, 'Apps')
+        // h(h2, 'Welcome to my little web app store.')
       ]),
       // Item({
       //   to: '/insights',

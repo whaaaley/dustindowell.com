@@ -22,14 +22,13 @@ $icon-rss: ic-rss-feed-24px($white);
     padding: 0 6px 24px;
 
     h1 {
-      font: 600 72px/84px $font-goldbill;
-      text-transform: uppercase;
+      font: 600 48px/1 $font-mont;
     }
 
-    h2 {
-      font: 400 16px/1 sans-serif;
-      opacity: 0.625;
-    }
+    // h2 {
+    //   font: 400 16px/36px sans-serif;
+    //   opacity: 0.625;
+    // }
   }
 
   .item {
