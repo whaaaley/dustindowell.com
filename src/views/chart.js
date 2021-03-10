@@ -66,7 +66,7 @@ export const randomChart = () => {
  *
  */
 
-export const charat = data => {
+export const chart = data => {
   if (data.insights.data === null) {
     return div({ class: 'chart -overlay' }, [
       randomChart()

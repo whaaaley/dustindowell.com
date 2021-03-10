@@ -11,9 +11,9 @@ import Apps from './views/apps'
 import Blog from './views/blog'
 import Feedback from './views/feedback'
 import Counter from './views/counter'
-// import Insights from './views/insights'
 
-import Insights from './views/insights2'
+import InsightsOld from './views/insightsOld'
+import Insights from './views/insights'
 import Interface from './views/interface'
 
 import Missing from './views/missing'
@@ -115,8 +115,11 @@ app([stores, router, saga], {
     '/blog': Blog,
     '/feedback': Feedback,
     '/counter': Counter,
+
+    '/insights-old': InsightsOld,
     '/insights': Insights, // insights/login ???
     '/insights/interface': Interface,
+
     '/missing': Missing,
     '/policy': Policy,
     '/resume': Resume
