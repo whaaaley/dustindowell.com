@@ -32,6 +32,12 @@ const Apps = (actions, register) => {
         h(h1, 'Apps')
       ]),
       Item({
+        to: '/insights',
+        title: 'Onclick Insights',
+        iconClass: '-insights',
+        body: 'Connect your Facebook account to view Instagram analytics for business accounts.'
+      }),
+      Item({
         href: 'https://resize-gg.netlify.app/',
         title: 'Resize.gg',
         iconClass: '-resize',
