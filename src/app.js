@@ -1,11 +1,8 @@
-
 import app from './lib/pocket'
 
 import stores from './plugins/stores'
 import router from './plugins/router'
 import saga from './plugins/saga'
-
-import * as fb from './actions/facebook'
 
 import facebook from './stores/facebook'
 
@@ -25,21 +22,6 @@ import Resume from './views/resume'
 
 import * as subs from './subscriptions'
 
-window._logs = [
-  ['The inline console is currently unavailable.'],
-  ['Open dev tools until this feature becomes stable.']
-]
-
-// console._log_old = console.log
-
-// Avert your eyes from the unethtical monkey patching.
-// This is for demo purposes only.
-
-// console.log = (...args) => {
-//   window._logs.push(args)
-//   console._log_old(...args)
-// }
-
 app([stores, router, saga], {
   state: {
     benchmark: {
@@ -52,19 +34,35 @@ app([stores, router, saga], {
     footer: {
       year: new Date().getFullYear()
     },
-    form: { data: null, error: null, loading: null, success: null },
-    formData: { name: '', email: '', message: '' },
-    github: { data: null, error: null, loading: null, success: null },
-    resume: { data: null, error: null, loading: null, success: null },
-
+    form: {
+      data: null,
+      error: null,
+      loading: null,
+      success: null
+    },
+    formData: {
+      name: '',
+      email: '',
+      message: ''
+    },
+    github: {
+      data: null,
+      error: null,
+      loading: null,
+      success: null
+    },
+    resume: {
+      data: null,
+      error: null,
+      loading: null,
+      success: null
+    },
     interface: {
       activeTab: 'stats'
     },
-
     foo: {
       persist: true
     },
-
     prompt: {
       account: {
         id: '124',
@@ -74,12 +72,36 @@ app([stores, router, saga], {
       loading: null,
       success: null
     },
-
-    fbAccounts: { data: null, error: null, loading: null, success: null },
-    fbLogin: { data: null, error: null, loading: null, success: null },
-    fbMe: { data: null, error: null, loading: null, success: null },
-    insights: { data: null, error: null, loading: null, success: null },
-    igAccount: { data: null, error: null, loading: null, success: null }
+    fbAccounts: {
+      data: null,
+      error: null,
+      loading: null,
+      success: null
+    },
+    fbLogin: {
+      data: null,
+      error: null,
+      loading: null,
+      success: null
+    },
+    fbMe: {
+      data: null,
+      error: null,
+      loading: null,
+      success: null
+    },
+    insights: {
+      data: null,
+      error: null,
+      loading: null,
+      success: null
+    },
+    igAccount: {
+      data: null,
+      error: null,
+      loading: null,
+      success: null
+    }
   },
   actions: {
 
@@ -130,23 +152,6 @@ app([stores, router, saga], {
         return JSON.parse(sessionStorage.getItem('state'))
       })
     })
-
-    //
-    // Facebook SDK
-    // Maybe there's a better place for this? Perhaps a plugin.
-    //
-
-    window.fbAsyncInit = () => {
-      FB.init({
-        appId: '813793032539615',
-        cookie: true,
-        version: 'v10.0'
-      })
-
-      dispatch(fb.loginStatus)
-
-      FB.AppEvents.logPageView()
-    }
   }
 })
 

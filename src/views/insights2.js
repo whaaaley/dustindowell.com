@@ -1,5 +1,6 @@
 
 import { a, div, h1, h2, p, text } from '../lib/vnodes/html'
+import * as fb from '../actions/facebook'
 
 const Text = (h, data) => h([text(data)])
 
@@ -31,5 +32,16 @@ const Insights = () => () => {
 
 export default {
   view: Insights,
-  onroute: () => () => {}
+  onroute: (actions, register) => {
+    // <!-- register actions here --->
+
+    return (state, dispatch) => {
+      // Facebook SDK
+      window.fbAsyncInit = () => {
+        FB.init({ appId: '813793032539615', cookie: true, version: 'v10.0' })
+        FB.AppEvents.logPageView()
+        dispatch(fb.loginStatus)
+      }
+    }
+  }
 }
