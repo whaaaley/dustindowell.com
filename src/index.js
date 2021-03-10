@@ -1,8 +1,4 @@
 
-// TODO
-// + Inline favicon.svg and manifest.webmanifest as data URLs
-// + Optimize gtm.js
-
 import { readFileSync } from 'fs'
 import { body, html, link, meta, noscript, script, style, title, div } from './lib/vnodes/html'
 
