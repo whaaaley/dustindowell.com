@@ -2,7 +2,7 @@
 $white: #fff;
 $black: #000;
 
-$dark: rgb(23, 23, 27);
+// $dark: rgb(23, 23, 27);
 $light: rgb(223, 223, 223);
 
 $blue: rgb(127, 191, 255);
@@ -31,6 +31,7 @@ $dark-300: rgb(45, 49, 54); // 20 0 -4
 $dark-200: rgb(55, 60, 67); // 25 0 -5
 $dark-100: rgb(66, 71, 80); // 30 0 -6
 
+$dark-425: mix($dark-400, $dark-500, 75%);
 $dark-450: mix($dark-400, $dark-500);
 
 // Third Party

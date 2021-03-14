@@ -12,8 +12,6 @@ const Main = slot => (state, dispatch) => {
       Text(div, 'D'),
       Link({ to: '/' }, 'Home'),
       Link({ to: '/apps' }, 'Apps'),
-      // Link({ to: '/blog' }, 'Blog'),
-      // Link({ to: '/contact' }, 'Contact'),
       Link({ to: '/resume' }, 'Resume')
     ]),
     Slot

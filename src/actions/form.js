@@ -1,5 +1,5 @@
 
-import * as router from '../plugins/routerLib'
+import * as router from '../lib/routerLib'
 
 const encode = data => router.encode(data).slice(1)
 

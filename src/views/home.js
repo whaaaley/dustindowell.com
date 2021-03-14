@@ -42,35 +42,31 @@ const Banner = () => {
 //   return div({ class: 'history-panel -attach' }, target)
 // }
 
-const Home = () => {
-  // <- register actions here ->
+const Home = (state, dispatch) => {
+  const { kb, ms } = state.benchmark
+  const { year } = state.footer
 
-  return (state, dispatch) => {
-    const { kb, ms } = state.benchmark
-    const { year } = state.footer
-
-    return div({ class: 'home' }, [
-      // HistoryPanel(state.history),
-      div({ class: 'card' }, [
-        Banner(),
-        div({ class: 'body' }, [
-          Text(p, First),
-          Text(p, Second),
-          Link({ to: '/resume' }, 'Hire Me')
-        ])
-      ]),
-      div({ class: 'footer' }, [
-        text('performance benchmarks\n'),
-        text(`index.html ${kb} kB - load time ${ms} ms\n`),
-        text('© ' + year + ' Dustin Dowell')
+  return div({ class: 'home' }, [
+    // HistoryPanel(state.history),
+    div({ class: 'card' }, [
+      Banner(),
+      div({ class: 'body' }, [
+        Text(p, First),
+        Text(p, Second),
+        Link({ to: '/resume' }, 'Hire Me')
       ])
+    ]),
+    div({ class: 'footer' }, [
+      text('performance benchmarks\n'),
+      text(`index.html ${kb} kB - load time ${ms} ms\n`),
+      text('© ' + year + ' Dustin Dowell')
     ])
-  }
+  ])
 }
 
 export default {
-  view: (actions, register) => main(Home(actions, register)),
-  onroute: () => () => {
+  view: main(Home),
+  onroute: () => {
     console.log('hello from home')
   }
 }

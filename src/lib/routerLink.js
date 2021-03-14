@@ -25,5 +25,5 @@ export default data => {
   const href = data.query ? to + encode(data.query) : to
 
   history.pushState(path, null, href)
-  dispatchEvent(pushstateEvent)
+  window.dispatchEvent(pushstateEvent)
 }
