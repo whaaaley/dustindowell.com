@@ -4,10 +4,8 @@ import Home from './views/home'
 import Apps from './views/apps'
 import Blog from './views/blog'
 import Feedback from './views/feedback'
-// import Counter from './views/counter'
 
 import Missing from './views/missing'
-import Policy from './views/policy'
 import Resume from './views/resume'
 
 import * as subs from './subscriptions'
@@ -47,9 +45,7 @@ app({
     '/apps': Apps,
     '/blog': Blog,
     '/feedback': Feedback,
-    // '/counter': Counter,
     '/missing': Missing,
-    '/policy': Policy,
     '/resume': Resume
   },
   mount: (state, dispatch) => {
