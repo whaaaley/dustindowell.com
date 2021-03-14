@@ -30,12 +30,12 @@ const Apps = (state, dispatch) => {
     div({ class: 'head' }, [
       h(h1, 'Apps')
     ]),
-    Item({
-      to: '/insights',
-      title: 'Onclick Insights',
-      iconClass: '-insights',
-      body: 'Connect your Facebook account to view Instagram analytics for business accounts.'
-    }),
+    // Item({
+    //   to: '/insights',
+    //   title: 'Onclick Insights',
+    //   iconClass: '-insights',
+    //   body: 'Connect your Facebook account to view Instagram analytics for business accounts.'
+    // }),
     Item({
       href: 'https://resize-gg.netlify.app/',
       title: 'Resize.gg',
@@ -78,12 +78,12 @@ const Apps = (state, dispatch) => {
       iconClass: '-feedback',
       body: 'Send me feedback on how to improve my apps or maybe something cute.'
     }),
-    Item({
-      to: '/counter',
-      title: 'Counter Demo',
-      iconClass: '-calculate',
-      body: 'Demo page showcasing the framework all of my apps are built with.'
-    }),
+    // Item({
+    //   to: '/counter',
+    //   title: 'Counter Demo',
+    //   iconClass: '-calculate',
+    //   body: 'Demo page showcasing the framework all of my apps are built with.'
+    // }),
     div({ class: '_footer -span' }, [
       p([
         text('© ' + state.footer.year + ' Dustin Dowell')
