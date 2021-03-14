@@ -36,7 +36,7 @@ const Notify = props => {
   return div({ key, hidden: true }) // placeholder
 }
 
-const Feedback = () => (state, dispatch) => {
+const Feedback = (state, dispatch) => {
   const Field = FieldComponent(dispatch)
 
   return div({ class: 'contact feedback' }, [
@@ -64,6 +64,6 @@ const Feedback = () => (state, dispatch) => {
 }
 
 export default {
-  view: (actions, register) => main(Feedback(actions, register)),
-  onroute: () => () => {}
+  view: main(Feedback),
+  onroute: () => {}
 }

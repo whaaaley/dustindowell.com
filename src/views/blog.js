@@ -20,7 +20,7 @@ const Text = (tag, data) => tag([text(data)])
 
 const getDate = date => (new Date(date) + '').split('GMT')[0]
 
-const Blog = () => (state, dispatch) => {
+const Blog = (state, dispatch) => {
   return div({ class: 'blog' }, [
     div({ class: 'head' }, [
       h(h1, 'Blog')
@@ -53,6 +53,6 @@ const Blog = () => (state, dispatch) => {
 }
 
 export default {
-  view: (actions, register) => main(Blog(actions, register)),
-  onroute: () => () => {}
+  view: main(Blog),
+  onroute: () => {}
 }
