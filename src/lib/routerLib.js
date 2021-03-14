@@ -2,7 +2,6 @@
 /**
  * Decodes a query string to an object.
  * @function decode
- * @param {string} data - Query string to decode
  */
 
 const queryDelimeters = /[&=]/g
@@ -19,19 +18,16 @@ export const decode = data => {
 }
 
 /**
- * Encodes an object into a query string.
- * @function encode
- * @param {Object} data - Query object to encode
- */
-
-const uri = encodeURIComponent
+  * Encodes an object into a query string.
+  * @function encode
+  */
 
 export const encode = data => {
   let result = '?'
 
   for (const key in data) {
     if (data[key] != null) {
-      result += uri(key) + '=' + uri(data[key]) + '&'
+      result += key + '=' + data[key] + '&'
     }
   }
 

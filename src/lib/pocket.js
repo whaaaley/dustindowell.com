@@ -1,8 +1,9 @@
 
 import { patch } from 'superfine'
+import { decode } from './routerLib'
 
 /**
- * Debounce wrapper around window.requestAnimationFrame
+ * Debounce wrapper around `window.requestAnimationFrame`
  * @function enqueue
  */
 
@@ -27,13 +28,13 @@ const enqueue = render => {
  * @function collect
  */
 
-const collect = (root, render) => {
-  let batch = [{}, root.state]
+const collect = (state, render) => {
+  let batch = [{}, state]
 
   const schedule = enqueue(() => {
-    root.state = Object.assign.apply(Object, batch)
-    batch = [{}, root.state]
-    render(root.state)
+    state = Object.assign.apply(Object, batch)
+    batch = [{}, state]
+    render(state)
   })
 
   return result => {
@@ -48,11 +49,10 @@ const collect = (root, render) => {
  */
 
 const pocket = (state, render) => {
-  const root = { state }
-  const prompt = collect(root, render)
+  const push = collect(state, render)
 
   const dispatch = (action, data) => {
-    const result = action(root.state, data)
+    const result = action(state, data)
 
     console.log(
       'Dispatch >>',
@@ -64,10 +64,10 @@ const pocket = (state, render) => {
       const effect = result(dispatch)
 
       if (effect && effect.then) {
-        return effect.then(prompt)
+        return effect.then(push)
       }
     } else {
-      prompt(result)
+      push(result)
     }
   }
 
@@ -75,23 +75,54 @@ const pocket = (state, render) => {
 }
 
 /**
+ * An action that syncs router state with `window.location`
+ * @function sync
+ */
+
+const sync = state => {
+  const search = location.search
+
+  if (search.startsWith('?')) {
+    state.router.query = decode(search)
+  }
+
+  state.router.to = location.pathname
+
+  return { router: state.router }
+}
+
+/**
  * Initialize the app
  * @module pocket
  */
 
-const node = document.getElementById('app')
+export default init => {
+  const node = document.getElementById('app')
+  let route
 
-export default (plugins, init) => {
-  for (let i = 0; i < plugins.length; i++) {
-    init = plugins[i](init)
+  init.state.router = {
+    query: '',
+    to: '/'
   }
 
-  // console.log('Init >>', init)
-
   const dispatch = pocket(init.state, state => {
-    console.log('--- Patch ---')
-    patch(node, init.view(state, dispatch))
+    patch(node, route.view(state, dispatch))
   })
+
+  const listener = () => {
+    dispatch(sync)
+
+    route = init.pages[init.state.router.to] || init.pages['/missing']
+
+    if (typeof route.onroute === 'function') {
+      route.onroute(init.state, dispatch)
+    }
+  }
+
+  listener()
+
+  window.addEventListener('pushstate', listener)
+  window.addEventListener('popstate', listener)
 
   init.mount(init.state, dispatch)
 }

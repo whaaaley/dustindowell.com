@@ -108,7 +108,7 @@ const Grid = () => {
 console.log(JSON.stringify(Grid()))
 */
 
-const Resume = (actions, register) => (state, dispatch) => {
+const Resume = (state, dispatch) => {
   return div({ class: 'resume' }, [
     Header(),
     (() => {
@@ -124,8 +124,8 @@ const Resume = (actions, register) => (state, dispatch) => {
 }
 
 export default {
-  view: (actions, register) => main(Resume(actions, register)),
-  onroute: (actions, register) => (state, dispatch) => {
+  view: main(Resume),
+  onroute: (state, dispatch) => {
     dispatch(resume.fetchResume)
   }
 }

@@ -94,12 +94,14 @@ const getInsights = async data => {
 }
 
 /**
+ *
  * Actions
+ *
  */
 
 const scope = 'instagram_basic,instagram_manage_insights,pages_read_engagement'
 const loginParams = { scope }
-export const login = () => async dispatch => {
+const login = () => async dispatch => {
   dispatch(setLoading, 'login')
   return resHandler(await fb.login(loginParams), 'login')
 }
@@ -111,24 +113,24 @@ export const logout = () => async () => {
 }
 
 const mePath = 'me/?fields=first_name,picture'
-export const me = () => async dispatch => {
+const me = () => async dispatch => {
   dispatch(setLoading, 'me')
   return resHandler(await fb.api(mePath), 'me')
 }
 
 const accountsPath = 'me/accounts/?fields=category_list,name'
-export const accounts = () => async dispatch => {
+const accounts = () => async dispatch => {
   dispatch(setLoading, 'accounts')
   return resHandler(await fb.api(accountsPath), 'accounts')
 }
 
-export const instagram = (x, data) => async dispatch => {
+const instagram = (x, data) => async dispatch => {
   const instagramPath = `${data.id}?fields=instagram_business_account`
   dispatch(setLoading, 'instagram')
   return resHandler(await fb.api(instagramPath), 'instagram')
 }
 
-export const insights = () => async dispatch => {
+const insights = () => async dispatch => {
   dispatch(setLoading, 'insights')
   return resHandler(await getInsights, 'instagram')
 }
