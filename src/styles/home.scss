@@ -4,7 +4,7 @@
 
   .card {
     max-width: 480px;
-    background: $dark-450;
+    background: $dark-425;
   }
 
   .banner,
@@ -34,7 +34,7 @@
       cursor: pointer;
 
       &:hover {
-        color: $dark-450;
+        color: $dark-425;
         background: $light;
       }
     }
