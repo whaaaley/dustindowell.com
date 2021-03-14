@@ -1,45 +1,20 @@
 
-$placeholder-1: mix($light, $dark, 12.5%);
-$placeholder-2: mix($light, $dark, 25%);
-
-._button {
-  margin: auto;
-  padding: 0 24px;
-  border: 2px solid $light;
-  border-radius: 8px;
-  font: 300 18px/48px sans-serif;
-  cursor: pointer;
-
-  &:hover {
-    color: $dark-450;
-    background: $light;
-  }
-}
-
-%text-input {
-  margin: 18px 0 0;
-  padding: 12px 24px;
-  border: 1px solid $placeholder-1;
-  border-radius: 4px;
-  outline: none;
-  background: $dark;
-
-  &::placeholder {
-    color: $placeholder-2;
-  }
-
-  &:focus {
-    border-color: $blurple;
-  }
-}
-
-//
-//
-//
+$placeholder-1: mix($light, $dark-500, 12.5%);
+$placeholder-2: mix($light, $dark-500, 25%);
 
 .feedback {
-  .card {
-    background: $dark-450;
+  display: grid;
+  gap: 24px;
+  max-width: 960px;
+  margin: auto;
+  padding: 24px;
+
+  .head {
+    padding: 0 6px 24px;
+
+    h1 {
+      font: 600 48px/1 $font-mont;
+    }
   }
 
   .notify {
@@ -58,70 +33,62 @@ $placeholder-2: mix($light, $dark, 25%);
   }
 }
 
-//
-//
-//
-
-.contact {
-  display: flex;
-  // white-space: pre;
-
-  > div {
-    width: 480px;
-    margin: auto;
-    padding: 24px 36px 36px;
-    border-top: 4px solid $blurple;
-  }
-
-  h1 {
-    margin: 0 0 0 -2px;
-    font: 800 64px/72px $font-goldbill;
-    text-transform: uppercase;
-  }
-
-  svg {
-    width: 100%;
-  }
-
-  p {
-    padding: 0 0 12px;
-    font: 300 16px/24px sans-serif;
-    opacity: 0.625;
-  }
+.feedback-card {
+  width: 100%;
+  max-width: 480px;
+  padding: 24px;
+  border-radius: 12px;
+  background: $dark-425;
 
   form {
-    display: flex;
-    flex-flow: column;
+    display: grid;
+    gap: 24px;
   }
 
-  input {
-    @extend %text-input;
+  input,
+  textarea {
+    padding: 10px 22px;
+    border: 2px solid $dark-500;
+    border-radius: 6px;
+    outline: none;
+    background: $dark-500;
+
+    &::placeholder {
+      color: $dark-100;
+    }
+
+    &:focus {
+      border-color: $pastel-purple;
+    }
   }
 
   textarea {
-    @extend %text-input;
-
     max-width: 100%;
     height: 128px;
   }
-
-  a {
-    margin: 36px auto 0;
-  }
 }
 
-@media (min-width: 768px + 1px) {
-  .contact {
-    > div {
-      margin: 128px auto 0;
+.feedback-button {
+  display: flex;
+
+  a {
+    margin: auto;
+    padding: 0 24px;
+    border: 2px solid $light;
+    border-radius: 8px;
+    font: 300 18px/48px sans-serif;
+    cursor: pointer;
+
+    &:hover {
+      color: $dark-400;
+      background: $light;
     }
   }
 }
 
 @media (min-width: 480px + 1px) {
-  .contact {
-    > div {
-      border-radius: 4px;
-    }
+  .feedback-card {
+    // border-radius: 12px;
+    // overflow: hidden;
   }
 }
