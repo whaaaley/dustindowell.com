@@ -46,12 +46,12 @@ const Feedback = (state, dispatch) => {
     div({ class: 'feedback-card' }, [
       // h(h1, 'Feedback'),
       // h(p, 'Send me feedback on how to improve my apps or maybe something cute.'),
-      Notify({
-        data: state.form.data,
-        error: state.form.error,
-        success: state.form.success
-      }),
       form({ name: 'contact' }, [
+        Notify({
+          data: state.form.data,
+          error: state.form.error,
+          success: state.form.success
+        }),
         Field(input, { type: 'text', name: 'name' }),
         Field(input, { type: 'email', name: 'email' }),
         Field(textarea, { name: 'message' }),
