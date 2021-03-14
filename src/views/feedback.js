@@ -1,5 +1,5 @@
 
-import { a, div, form, h1, input, p, text, textarea } from '../lib/vnodes/html'
+import { a, div, form, h1, input, text, textarea } from '../lib/vnodes/html'
 import * as formActions from '../actions/form'
 import main from './_main'
 
