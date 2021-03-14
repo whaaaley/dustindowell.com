@@ -36,27 +36,29 @@ const Notify = props => {
   return div({ key, hidden: true }) // placeholder
 }
 
-const Feedback = () => (state, dispatch) => {
+const Feedback = (state, dispatch) => {
   const Field = FieldComponent(dispatch)
 
-  return div({ class: 'contact feedback' }, [
-    div({ class: 'card' }, [
-      h(h1, 'Feedback'),
-      h(p, 'Send me feedback on how to improve my apps or maybe something cute.'),
-      Notify({
-        data: state.form.data,
-        error: state.form.error,
-        success: state.form.success
-      }),
+  return div({ class: 'feedback' }, [
+    div({ class: 'head' }, [
+      h(h1, 'Feedback')
+    ]),
+    div({ class: 'feedback-card' }, [
+      // h(h1, 'Feedback'),
+      // h(p, 'Send me feedback on how to improve my apps or maybe something cute.'),
       form({ name: 'contact' }, [
+        Notify({
+          data: state.form.data,
+          error: state.form.error,
+          success: state.form.success
+        }),
         Field(input, { type: 'text', name: 'name' }),
         Field(input, { type: 'email', name: 'email' }),
         Field(textarea, { name: 'message' }),
-        a({
-          class: '_button',
-          onclick: () => dispatch(formActions.send)
-        }, [
-          text('Send')
+        div({ class: 'feedback-button' }, [
+          a({ onclick: () => dispatch(formActions.send) }, [
+            text('Send')
+          ])
         ])
       ])
     ])
@@ -64,6 +66,6 @@ const Feedback = () => (state, dispatch) => {
 }
 
 export default {
-  view: (actions, register) => main(Feedback(actions, register)),
-  onroute: () => () => {}
+  view: main(Feedback),
+  onroute: () => {}
 }
