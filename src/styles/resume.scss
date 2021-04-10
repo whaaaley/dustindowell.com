@@ -2,20 +2,22 @@
 .resume {
   max-width: 960px;
   margin: 0 auto;
+  color: $white;
+  font: 400 14px/1 $font-inter;
 
   .header {
     padding: 24px;
-    color: $dark-600;
+    color: $dark-500;
     background: $gradient;
 
     h1 {
-      margin: 0 0 12px -4px;
-      font: 800 48px/1 $font-goldbill;
+      margin: 0 0 0 -4px;
+      font: 900 48px/1 $font-inter;
       text-transform: uppercase;
     }
 
     h2 {
-      font: 400 14px/24px sans-serif;
+      font: 400 14px/24px $font-inter;
     }
   }
 
@@ -38,12 +40,12 @@
 
     h1 {
       margin: 0 0 0 -2px;
-      font: 800 48px/60px $font-goldbill;
+      font: italic 900 36px/48px $font-inter;
     }
 
     h2 {
       margin: 0 0 0 -1px;
-      font: 800 24px/36px $font-goldbill;
+      font: italic 900 20px/36px $font-inter;
     }
 
     h3 {
@@ -69,7 +71,7 @@
       display: flex;
       flex-flow: wrap;
       align-items: center;
-      padding: 36px;
+      padding: 36px 36px 36px 48px;
       border-radius: 12px;
 
       div {
@@ -78,7 +80,7 @@
       }
 
       h1 {
-        font: 800 64px/1 $font-goldbill;
+        font: italic 900 56px/1 $font-inter;
       }
     }
 

@@ -48,7 +48,7 @@ app({
     '/missing': Missing,
     '/resume': Resume
   },
-  mount: (state, dispatch) => {
+  start: dispatch => {
     subs.benchmark(dispatch)
     subs.gtm({ id: 'GTM-TC9VHP2' })
   }
