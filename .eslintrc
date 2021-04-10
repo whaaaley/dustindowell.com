@@ -24,7 +24,6 @@
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly",
     "PROD": "readonly",
-    "STATIC": "readonly",
-    "FB": "readonly"
+    "STATIC": "readonly"
   }
 }

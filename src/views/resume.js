@@ -1,7 +1,7 @@
 
 // import { div, h1, h2, h3, li, text, ul } from '../lib/vnodes/html'
 
-import { div, h1, h2, text } from '../lib/vnodes/html'
+import { div, h1, h2, h3, li, text, ul } from '../lib/vnodes/html'
 import main from './_main'
 
 import * as resume from '../actions/resume'
@@ -86,7 +86,7 @@ const Grid = () => {
         Text(li, 'Hello world\'s completed in Ruby, Python, Elm, and Rust.'),
         Text(li, 'Tons of experience with CSS preprocessors like Sass, Less, Stylus, and PostCSS.')
       ]),
-      Text(h2, 'Content Management Systems'),
+      Text(h2, 'Content Management'),
       ul([
         Text(li, 'Extensive experience with WordPress, Drupal, Sitefinity, and Joomla.'),
         Text(li, 'Some experience with Netlify CMS, Grav CMS, Pico, Kirby, and Craft.')
@@ -111,13 +111,13 @@ console.log(JSON.stringify(Grid()))
 const Resume = (state, dispatch) => {
   return div({ class: 'resume' }, [
     Header(),
+    // Grid()
     (() => {
       if (state.resume.success === null) {
         return div({ class: 'spinner-box' }, [
           div({ class: '_spinner' })
         ])
       }
-
       return state.resume.data
     })()
   ])
