@@ -1,5 +1,5 @@
 
-import { a, div, h1, h2, p, text } from '../lib/vnodes/html'
+import { a, div, h1, p, text } from '../lib/vnodes/html'
 
 import main from './_main'
 import link from '../lib/routerLink'
