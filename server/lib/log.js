@@ -37,6 +37,7 @@ module.exports = {
       command
     )
     console.log(output.trim())
+    console.log()
   },
   request: function (data) {
     const status = data.status < 400
