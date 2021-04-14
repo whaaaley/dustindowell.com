@@ -1,0 +1,72 @@
+
+.palette {
+  display: flex;
+  height: 100vh;
+}
+
+.palette-main {
+  margin: auto;
+  padding: 16px 0 0 16px;
+}
+
+.palette-card {
+  display: flex;
+
+  &.-light {
+    --color-600: #{$light-600};
+    --color-500: #{$light-500};
+    --color-400: #{$light-400};
+    --color-300: #{$light-300};
+    --color-200: #{$light-200};
+    --color-100: #{$light-100};
+  }
+
+  &.-dark {
+    --color-600: #{$dark-600};
+    --color-500: #{$dark-500};
+    --color-400: #{$dark-400};
+    --color-300: #{$dark-300};
+    --color-200: #{$dark-200};
+    --color-100: #{$dark-100};
+  }
+
+  &.-purple {
+    --color-600: #{$purple-600};
+    --color-500: #{$purple-500};
+    --color-400: #{$purple-400};
+    --color-300: #{$purple-300};
+    --color-200: #{$purple-200};
+    --color-100: #{$purple-100};
+  }
+
+  div {
+    width: 64px;
+    height: 64px;
+    margin: -16px 0 0 -16px;
+    border-radius: 24px;
+
+    &:nth-child(1) {
+      background: var(--color-600);
+    }
+
+    &:nth-child(2) {
+      background: var(--color-500);
+    }
+
+    &:nth-child(3) {
+      background: var(--color-400);
+    }
+
+    &:nth-child(4) {
+      background: var(--color-300);
+    }
+
+    &:nth-child(5) {
+      background: var(--color-200);
+    }
+
+    &:nth-child(6) {
+      background: var(--color-100);
+    }
+  }
+}

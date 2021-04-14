@@ -4,14 +4,15 @@ import Home from './views/home'
 import Apps from './views/apps'
 import Blog from './views/blog'
 import Feedback from './views/feedback'
-
 import Missing from './views/missing'
+import Palette from './views/palette'
 import Resume from './views/resume'
 
 import * as subs from './subscriptions'
 
 app({
   state: {
+    theme: false, // false means dark
     benchmark: {
       ms: 0,
       kb: 0
@@ -43,6 +44,7 @@ app({
     '/blog': Blog,
     '/feedback': Feedback,
     '/missing': Missing,
+    '/palette': Palette,
     '/resume': Resume
   },
   start: dispatch => {
