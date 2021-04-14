@@ -25,11 +25,15 @@ prepare:
 	cp -r src/assets/* public
 
 css:
-	echo if [$$NODE_ENV == "development"] stylelint "src/**/*.scss" --color --fix
+ifeq ($(NODE_ENV),development)
+	stylelint src/**/*.scss --color --fix
+endif
 	node build css src/main.scss > public/main.css
 
 js:
-	echo if [$$NODE_ENV == "development"] eslint src/**/*.js --color --fix
+ifeq ($(NODE_ENV),development)
+	eslint src/**/*.js --color --fix
+endif
 	node build js src/app.js > public/app.js
 
 html:
