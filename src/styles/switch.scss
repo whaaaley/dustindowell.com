@@ -1,0 +1,29 @@
+
+.switch {
+  width: 36px * 2;
+  height: 36px;
+  margin: 24px auto 0;
+  padding: 6px 0 0 6px;
+  border-radius: 18px;
+  transition: background-color 0.12s ease-in-out;
+
+  div {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    transition: transform 0.12s ease-in-out;
+    background: $white;
+  }
+
+  &.-light {
+    background: $blurple;
+
+    div {
+      transform: translate(36px);
+    }
+  }
+
+  &.-dark {
+    background: $dark-300;
+  }
+}

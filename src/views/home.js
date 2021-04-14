@@ -29,18 +29,15 @@ const Banner = () => {
   ])
 }
 
-// const HistoryPanel = history => {
-//   const target = []
-//
-//   for (let i = 0; i < history.length; i++) {
-//     const [name, data] = history[i]
-//     const json = JSON.stringify(data, null, 2)
-//
-//     target.push(div([text(name + '\n'), text(json)]))
-//   }
-//
-//   return div({ class: 'history-panel -attach' }, target)
-// }
+const LightSwitch = data => {
+  const classList = data.theme
+    ? 'switch -light'
+    : 'switch -dark'
+
+  return div({ class: classList, onclick: data.onclick }, [
+    div()
+  ])
+}
 
 const Home = (state, dispatch) => {
   const { kb, ms } = state.benchmark
@@ -56,6 +53,16 @@ const Home = (state, dispatch) => {
         Link({ to: '/resume' }, 'Hire Me')
       ])
     ]),
+    LightSwitch({
+      theme: state.theme,
+      onclick: () => {
+        console.log('hi')
+        dispatch(state => {
+          state.theme = !state.theme
+          return { state }
+        })
+      }
+    }),
     div({ class: 'footer' }, [
       text('performance benchmarks\n'),
       text(`index.html ${kb} kB - load time ${ms} ms\n`),
