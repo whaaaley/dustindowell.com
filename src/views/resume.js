@@ -1,7 +1,7 @@
 
 // import { div, h1, h2, h3, li, text, ul } from '../lib/vnodes/html'
 
-import { div, h1, h2, h3, li, text, ul } from '../lib/vnodes/html'
+import { div, h1, h2, text } from '../lib/vnodes/html'
 import main from './_main'
 
 import * as resume from '../actions/resume'
