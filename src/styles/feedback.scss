@@ -38,7 +38,8 @@ $placeholder-2: mix($light, $dark-500, 25%);
   max-width: 480px;
   padding: 24px;
   border-radius: 12px;
-  background: $dark-425;
+  // background: $dark-425;
+  background: var(--bg-400);
 
   form {
     display: grid;
@@ -53,13 +54,13 @@ $placeholder-2: mix($light, $dark-500, 25%);
   input,
   textarea {
     padding: 10px 22px;
-    border: 2px solid $dark-500;
+    border: 2px solid var(--bg-500);
     border-radius: 6px;
     outline: none;
-    background: $dark-500;
+    background: var(--bg-500);
 
     &::placeholder {
-      color: $dark-100;
+      color: var(--bg-100);
     }
 
     &:focus {
@@ -74,14 +75,14 @@ $placeholder-2: mix($light, $dark-500, 25%);
   a {
     margin: auto;
     padding: 0 24px;
-    border: 2px solid $light;
+    border: 2px solid var(--fg-400);
     border-radius: 8px;
     font: 300 18px/48px sans-serif;
     cursor: pointer;
 
     &:hover {
-      color: $dark-400;
-      background: $light;
+      color: var(--bg-400);
+      background: var(--fg-400);
     }
   }
 }
