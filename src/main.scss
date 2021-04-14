@@ -1,4 +1,6 @@
 
+// TODO: stylelint is not getting run on this file
+
 @import '@whaaaley/material-icons-scss/style/filled';
 @import 'styles/colors';
 
@@ -9,6 +11,7 @@
 //
 @import 'styles/app';
 @import 'styles/nav';
+@import 'styles/switch';
 
 // views
 @import 'styles/home';
@@ -16,5 +19,43 @@
 @import 'styles/blog';
 @import 'styles/feedback';
 @import 'styles/missing';
+@import 'styles/palette';
 @import 'styles/resume';
 
+body > div {
+  min-height: 100vh;
+  color: var(--fg-100);
+  background: var(--bg-500);
+
+  &.-dark {
+    --bg-600: #{$dark-600};
+    --bg-500: #{$dark-500};
+    --bg-400: #{$dark-400};
+    --bg-300: #{$dark-300};
+    --bg-200: #{$dark-200};
+    --bg-100: #{$dark-100};
+
+    --fg-600: #{$light-600};
+    --fg-500: #{$light-500};
+    --fg-400: #{$light-400};
+    --fg-300: #{$light-300};
+    --fg-200: #{$light-200};
+    --fg-100: #{$light-100};
+  }
+
+  &.-light {
+    --bg-600: #{$light-600};
+    --bg-500: #{$light-500};
+    --bg-400: #{$light-400};
+    --bg-300: #{$light-300};
+    --bg-200: #{$light-200};
+    --bg-100: #{$light-100};
+
+    --fg-600: #{$dark-600};
+    --fg-500: #{$dark-500};
+    --fg-400: #{$dark-400};
+    --fg-300: #{$dark-300};
+    --fg-200: #{$dark-200};
+    --fg-100: #{$dark-100};
+  }
+}

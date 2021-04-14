@@ -6,8 +6,9 @@ const Text = (h, data) => h([text(data)])
 
 const Main = slot => (state, dispatch) => {
   const Slot = slot(state, dispatch)
+  const classList = state.theme ? '-light' : '-dark'
 
-  return div([
+  return div({ class: classList }, [
     nav([
       Text(div, 'D'),
       Link({ to: '/' }, 'Home'),
