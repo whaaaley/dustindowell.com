@@ -11,18 +11,16 @@
   "devDependencies": {
     "clean-css-cli": "^5.2.2",
     "esbuild": "^0.11.10",
-    "sass": "^1.32.8",
-    "typescript": "^4.2.4",
-    "uglify-js": "^3.13.4"
-  },
-  "optionalDependencies": {
     "eslint": "^7.24.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.3.1",
+    "sass": "^1.32.8",
     "stylelint": "^13.12.0",
     "stylelint-config-standard": "^21.0.0",
-    "stylelint-order": "^4.1.0"
+    "stylelint-order": "^4.1.0",
+    "typescript": "^4.2.4",
+    "uglify-js": "^3.13.4"
   }
 }

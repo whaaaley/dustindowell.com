@@ -18,16 +18,18 @@ clean:
 	rm -f package-lock.json
 
 start: prepare css js html
-	node server --scss "$(MAKE) css" --js "$(MAKE) js" --watch "src"
+	node server --watch "src" --scss "$(MAKE) css" --js "$(MAKE) js"
 
 prepare:
 	rm -rf public && mkdir public
 	cp -r src/assets/* public
 
 css:
+	stylelint "src/**/*.scss" --color --fix
 	node build css src/main.scss > public/main.css
 
 js:
+	eslint src/**/*.js --color --fix
 	node build js src/app.js > public/app.js
 
 html:
