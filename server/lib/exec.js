@@ -4,7 +4,9 @@ const log = require('./log')
 const reload = require('./reload-handler')
 
 function execCallback (error) {
-  if (error) {
+  if (error.code === 2) {
+    // do nothing
+  } else {
     console.log(error)
   }
 }
