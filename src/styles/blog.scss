@@ -17,12 +17,12 @@
   .post {
     border-radius: 12px;
     overflow: hidden;
-    background: $dark-400;
+    background: var(--bg-400);
     cursor: pointer;
     user-select: none;
 
     &:hover {
-      background: $dark-300;
+      background: var(--bg-300);
     }
 
     h1 {
@@ -45,7 +45,8 @@
   }
 
   .thumb {
-    background: $dark-450;
+    // background: $dark-450;
+    background: var(--bg-400);
   }
 }
 
