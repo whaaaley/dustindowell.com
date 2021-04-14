@@ -39,10 +39,12 @@ $icon-sync: ic-sync-24px($white);
     display: flex;
     padding: 24px;
     border-radius: 12px;
-    background: $dark-400;
+    // background: $dark-400;
+    background: var(--bg-400);
 
     &:hover {
-      background: $dark-300;
+      // background: $dark-300;
+      background: var(--bg-300);
     }
   }
 
