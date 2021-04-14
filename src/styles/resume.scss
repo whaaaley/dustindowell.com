@@ -2,7 +2,7 @@
 .resume {
   max-width: 960px;
   margin: 0 auto;
-  color: $white;
+  color: var(--fg-600);
   font: 400 14px/1 $font-inter;
 
   .header {
