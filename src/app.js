@@ -16,9 +16,6 @@ app({
       ms: 0,
       kb: 0
     },
-    counter: {
-      data: 0
-    },
     footer: {
       year: new Date().getFullYear()
     },
