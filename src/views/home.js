@@ -56,7 +56,6 @@ const Home = (state, dispatch) => {
     LightSwitch({
       theme: state.theme,
       onclick: () => {
-        console.log('hi')
         dispatch(state => {
           state.theme = !state.theme
           return { state }
@@ -73,7 +72,5 @@ const Home = (state, dispatch) => {
 
 export default {
   view: main(Home),
-  onroute: () => {
-    console.log('hello from home')
-  }
+  onroute: () => {}
 }
