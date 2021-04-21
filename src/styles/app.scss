@@ -8,7 +8,8 @@ $spinner: '%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"%3E%3Cst
   font: 14px/24px sans-serif;
   text-align: center;
   white-space: pre;
-  opacity: 0.375;
+  // opacity: 0.375;
+  opacity: 0.4;
 
   &.-span {
     grid-column: 1 / -1;
