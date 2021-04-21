@@ -12,13 +12,20 @@ const inject = '<script>' + script + '</script></body></html>'
 const mime = {
   '.css': 'text/css',
   '.html': 'text/html',
+
+  '.gif': 'image/gif',
   '.jpg': 'image/jpeg',
-  '.js': 'application/javascript',
-  '.json': 'application/json',
   '.png': 'image/png',
   '.svg': 'image/svg+xml',
+
+  '.js': 'application/javascript',
+  '.json': 'application/json',
+
   '.woff': 'font/woff',
-  '.woff2': 'font/woff2'
+  '.woff2': 'font/woff2',
+
+  '.mp4': 'video/mp4',
+  '.webm': 'video/webm'
 }
 
 function writeHandler (req, res) {
