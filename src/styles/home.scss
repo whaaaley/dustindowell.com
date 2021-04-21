@@ -4,22 +4,28 @@
 
   .card {
     max-width: 480px;
-    // background: $dark-425;
     background: var(--bg-400);
   }
 
-  .banner,
-  .body {
+  .banner {
     padding: 36px;
+    background: $gradient;
   }
 
-  .banner {
-    background: $gradient;
+  .gif {
+    $ratio: 100 / 360;
+
+    height: 100px;
+    padding: 0 0 ($ratio * 100%);
+    background: $dark-400 url('/cache/lighthouse.gif');
+    background-blend-mode: lighten;
+    background-size: cover;
   }
 
   .body {
     display: grid;
     gap: 12px;
+    padding: 0 36px 36px;
 
     p {
       font: 300 18px/36px sans-serif;
