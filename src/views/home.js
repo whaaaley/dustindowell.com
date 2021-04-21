@@ -1,5 +1,5 @@
 
-import { div, h, p, svg, text } from '../lib/vnodes/html'
+import { div, h, p, source, svg, text, video } from '../lib/vnodes/html'
 
 import Link from './_link'
 import main from './_main'
@@ -47,7 +47,10 @@ const Home = (state, dispatch) => {
     // HistoryPanel(state.history),
     div({ class: 'card' }, [
       Banner(),
-      div({ class: 'gif' }),
+      video({ autoplay: true, loop: true }, [
+        source({ src: '/cache/lighthouse.webm', type: 'video/webm' }),
+        source({ src: '/cache/lighthouse.mp4', type: 'video/mp4' })
+      ]),
       div({ class: 'body' }, [
         Text(p, First),
         Text(p, Second),
