@@ -1,13 +1,16 @@
 
-// $icon-aspect-ratio: ic-aspect-ratio-24px($white);
-// $icon-calculate: ic-calculate-24px($white);
-$icon-description: ic-description-24px($white);
-$icon-feedback: ic-feedback-24px($white);
-// $icon-insights: ic-insights-24px($white);
 $icon-link: ic-link-24px($white);
 $icon-queue: ic-queue-24px($white);
-$icon-rss: ic-rss-feed-24px($white);
+
 $icon-sync: ic-sync-24px($white);
+$icon-rss: ic-rss-feed-24px($white);
+
+$icon-description: ic-description-24px($white);
+$icon-feedback: ic-feedback-24px($white);
+
+// $icon-aspect-ratio: ic-aspect-ratio-24px($white);
+// $icon-calculate: ic-calculate-24px($white);
+// $icon-insights: ic-insights-24px($white);
 
 .apps {
   display: grid;
@@ -52,40 +55,40 @@ $icon-sync: ic-sync-24px($white);
     min-width: 72px;
     height: 72px;
     border-radius: 12px;
-    background: mix($dark-400, $dark-500);
+    background-repeat: no-repeat !important; // override shorthand
+    background-position: center !important; // override shorthand
+
+    &.-insights {
+      background: $dark-100 url('/cache/graphic.svg') 0/60px;
+    }
+
+    &.-resize {
+      background: $pastel-purple url($icon-link) 0/48px;
+    }
+
+    &.-discord {
+      background: $pastel-blue url($icon-queue) 0/48px;
+    }
+
+    &.-sync {
+      background: $pastel-yellow url($icon-sync) 0/48px;
+    }
 
     &.-blog {
-      background: $pastel-orange url($icon-rss) center/48px no-repeat;
+      background: $pastel-orange url($icon-rss) 0/48px;
+    }
+
+    &.-resume {
+      background: $pastel-green url($icon-description) 0/48px;
+    }
+
+    &.-feedback {
+      background: $pastel-blue url($icon-feedback) 0/48px;
     }
 
     // &.-calculate {
     //   background: $black url($icon-calculate) center/48px no-repeat;
     // }
-
-    &.-discord {
-      background: $pastel-blue url($icon-queue) center/48px no-repeat;
-    }
-
-    &.-feedback {
-      background: $pastel-blue url($icon-feedback) center/48px no-repeat;
-    }
-
-    // &.-insights {
-    //   // background: $dark-100 url('/cache/graphic-svgo.svg') center/60px no-repeat;
-    //   background: $pastel-red url($icon-insights) center/48px no-repeat;
-    // }
-
-    &.-resize {
-      background: $pastel-purple url($icon-link) center/48px no-repeat;
-    }
-
-    &.-resume {
-      background: $pastel-green url($icon-description) center/48px no-repeat;
-    }
-
-    &.-sync {
-      background: $pastel-yellow url($icon-sync) center/48px no-repeat;
-    }
   }
 
   .body {
