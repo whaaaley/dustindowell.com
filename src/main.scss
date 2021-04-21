@@ -44,9 +44,9 @@ body > div {
   }
 
   &.-light {
-    --bg-600: #{$light-600};
-    --bg-500: #{$light-500};
-    --bg-400: #{$light-400};
+    --bg-600: #{$light-400};
+    --bg-500: #{$light-500}; // body background
+    --bg-400: #{$light-600}; // card background
     --bg-300: #{$light-300};
     --bg-200: #{$light-200};
     --bg-100: #{$light-100};
