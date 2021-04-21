@@ -13,6 +13,7 @@ const scripts = PROD === true
 const render = data => {
   return html({ lang: 'en' }, [
     meta({ charset: 'utf-8' }),
+    script('window._ms = Date.now()'),
     title(data.title),
     meta({ name: 'author', content: data.author }),
     meta({ name: 'description', content: data.description }),
