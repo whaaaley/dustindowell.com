@@ -47,6 +47,7 @@ const Home = (state, dispatch) => {
     // HistoryPanel(state.history),
     div({ class: 'card' }, [
       Banner(),
+      div({ class: 'gif' }),
       div({ class: 'body' }, [
         Text(p, First),
         Text(p, Second),
