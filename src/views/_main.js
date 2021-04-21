@@ -1,5 +1,5 @@
 
-import { div, nav, text } from '../lib/vnodes/html'
+import { div, main, nav, text } from '../lib/vnodes/html'
 import Link from './_link'
 
 const Text = (h, data) => h([text(data)])
@@ -15,7 +15,9 @@ const Main = slot => (state, dispatch) => {
       Link({ to: '/apps' }, 'Apps'),
       Link({ to: '/resume' }, 'Resume')
     ]),
-    Slot
+    main([
+      Slot
+    ])
   ])
 }
 
