@@ -1,6 +1,6 @@
 
 import { readFileSync } from 'fs'
-import { body, html, link, meta, noscript, script, style, title, div } from './lib/vnodes/html'
+import { body, html, link, meta, noscript, script, style, title, main } from './lib/vnodes/html'
 
 const styles = PROD === true
   ? style(readFileSync('./public/main.css', 'utf8'))
@@ -22,7 +22,7 @@ const render = data => {
     styles,
     body([
       noscript('Please enable JavaScript and try again.'),
-      div({ id: 'app' }),
+      main({ id: 'app' }),
       scripts
     ])
   ])
