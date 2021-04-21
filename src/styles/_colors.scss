@@ -5,17 +5,12 @@ $white: #fff;
 $black: #000;
 
 // $dark: rgb(23, 23, 27);
-$light: rgb(223, 223, 223);
+$light: rgb(223, 223, 223); // deprecated
 
 $blue: rgb(127, 191, 255);
 $purple: rgb(191, 127, 255);
 $blurple: mix($blue, $purple);
 $gradient: linear-gradient(45deg, $white -30%, $blue, $purple);
-
-// New Lavender
-// $lavender: rgb(137, 154, 239);
-// $blue: rgb(15, 119, 239);
-// $orange: rgb(255, 119, 63);
 
 // Pastel Colors (Lab to sRGB)
 $pastel-red: rgb(252, 121, 134);    // 65  55  15
@@ -54,3 +49,6 @@ $purple-100: lab(100, $purple-a, $purple-b);
 // Color Mix
 $dark-425: mix($dark-400, $dark-500, 75%);
 $dark-450: mix($dark-400, $dark-500);
+
+// Third Party
+$insights-primary: lab(40, 0, -128);

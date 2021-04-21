@@ -24,7 +24,7 @@
 
 body > div {
   min-height: 100vh;
-  color: var(--fg-400);
+  color: var(--fg-500);
   background: var(--bg-500);
 
   &.-dark {
@@ -34,7 +34,7 @@ body > div {
     --bg-300: #{$dark-300};
     --bg-200: #{$dark-200};
     --bg-100: #{$dark-100};
-
+    //
     --fg-600: #{$light-600};
     --fg-500: #{$light-500};
     --fg-400: #{$light-400};
@@ -50,7 +50,7 @@ body > div {
     --bg-300: #{$light-300};
     --bg-200: #{$light-200};
     --bg-100: #{$light-100};
-
+    //
     --fg-600: #{$dark-600};
     --fg-500: #{$dark-500};
     --fg-400: #{$dark-400};

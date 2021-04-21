@@ -29,14 +29,15 @@
     a {
       margin: auto;
       padding: 0 24px;
-      border: 2px solid $light;
+      border: 2px solid var(--fg-500);
       border-radius: 8px;
+      color: var(--fg-500);
       font: 300 18px/48px sans-serif;
       cursor: pointer;
 
       &:hover {
-        color: $dark-425;
-        background: $light;
+        color: var(--bg-500);
+        background: var(--fg-500);
       }
     }
   }
