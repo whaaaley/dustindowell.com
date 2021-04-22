@@ -28,7 +28,7 @@ const Item = data => {
 const Apps = (state, dispatch) => {
   return div({ class: 'apps' }, [
     div({ class: 'head' }, [
-      h(h1, 'Apps')
+      h(h1, 'Apps and Demos')
     ]),
     Item({
       href: 'https://onclick-insights.netlify.app/',
@@ -54,12 +54,64 @@ const Apps = (state, dispatch) => {
       iconClass: '-sync',
       body: 'Syncs app state between iframes on a page. Useful for designing responsible mobile layouts.'
     }),
+    div({ class: 'head' }, [
+      h(h1, 'Open Source')
+    ]),
+    Item({
+      href: 'https://github.com/whaaaley/material-icons-scss',
+      title: 'material-icons-scss',
+      iconClass: '-code-purple',
+      body: 'A project that compiles all material design icons into SVG data URLs to be used from SCSS functions.'
+    }),
+    Item({
+      href: 'https://github.com/whaaaley/npm-update-force',
+      title: 'npm-update-force',
+      iconClass: '-code-blue',
+      body: 'A small cli utilitiy that will force update all packages in your package.json to the latest version.'
+    }),
+    Item({
+      href: 'https://github.com/whaaaley/parcel-source-map-cli',
+      title: 'parcel-source-map-cli',
+      iconClass: '-code-orange',
+      body: 'A small cli wrapper around parcel-source-map that combines sourcemaps.'
+    }),
+    Item({
+      href: 'https://www.npmjs.com/package/balanced-match',
+      title: 'balanced-match',
+      iconClass: '-code-red',
+      body: 'I wrote the implimentation for regex matches for the popular balanced-match package on npm.'
+    }),
+    div({ class: 'head' }, [
+      h(h1, 'Old Work')
+    ]),
+    Item({
+      href: 'https://accesstrucks.com/',
+      title: 'AccessTrucks',
+      iconClass: '-trucks-red',
+      body: 'A box truck aggregation site. Potential buyers can browse trucks from dealerships around the country.'
+    }),
+    Item({
+      href: 'https://sleepertrader.com/',
+      title: 'SleeperTrader',
+      iconClass: '-trucks-blue',
+      body: 'A semi truck aggregation site similar to AccessTrucks specifically for semis with sleepers.'
+    }),
+
+    Item({
+      href: 'https://machineryaccess.com/',
+      title: 'MachineryAccess',
+      iconClass: '-machines-yellow',
+      body: 'A heavy machinery aggregation site that also a aggregates machinery auction events.'
+    }),
     // Item({
     //   to: '/wiki',
     //   title: 'Wiki Editor (wip)',
     //   iconClass: '-resize',
     //   body: 'A simple dashboard and editor to create wiki-like articles using markdown.'
     // }),
+    div({ class: 'head' }, [
+      h(h1, 'Other')
+    ]),
     Item({
       to: '/blog',
       title: 'Dustin\'s Blog (WIP)',
