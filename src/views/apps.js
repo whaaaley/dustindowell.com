@@ -77,18 +77,18 @@ const Apps = (state, dispatch) => {
       title: 'Feedback',
       iconClass: '-feedback',
       body: 'Send me feedback on how to improve my apps or maybe something cute.'
-    }),
+    })
     // Item({
     //   to: '/counter',
     //   title: 'Counter Demo',
     //   iconClass: '-calculate',
     //   body: 'Demo page showcasing the framework all of my apps are built with.'
     // }),
-    div({ class: '_footer -span' }, [
-      p([
-        text('© ' + state.footer.year + ' Dustin Dowell')
-      ])
-    ])
+    // div({ class: '_footer -span' }, [
+    //   p([
+    //     text('© ' + state.footer.year + ' Dustin Dowell')
+    //   ])
+    // ])
   ])
 }
 
