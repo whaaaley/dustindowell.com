@@ -22,7 +22,7 @@ const First = 'Hello, I\'m Dustin. I\'m a self taught developer, designer, ' +
   'accessible.'
 
 const Second = 'I\'m looking for interesting projects where I\'m allowed to ' +
-  'write mordern, accessible, high quality code that\'s tailored to the needs ' +
+  'write modern, accessible, high quality code that\'s tailored to the needs ' +
   'of a specific app. I love to write unique and effective software.'
 
 const svgStyle = data => h('style')([text(data)])
