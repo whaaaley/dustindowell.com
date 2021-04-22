@@ -47,7 +47,7 @@ const Home = (state, dispatch) => {
     // HistoryPanel(state.history),
     div({ class: 'card' }, [
       Banner(),
-      video({ autoplay: true, loop: true }, [
+      video({ autoplay: true, loop: true, muted: true }, [
         source({ src: '/cache/lighthouse.webm', type: 'video/webm' }),
         source({ src: '/cache/lighthouse.mp4', type: 'video/mp4' })
       ]),
