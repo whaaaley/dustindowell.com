@@ -101,7 +101,7 @@ const Home = (state, dispatch) => {
       ]),
       Tooltip({
         class: '-left',
-        content: `This app's HTML, CSS, and JS is only ${kb} kB after being unzipped! With gzip compression it's around 8kB! That's impressive considering this app uses flux architecture and virtual DOM for the view layer. For comparison React alone is 40 kB gzipped and Vue is 21 kB gzipped.`
+        content: `This app's HTML, CSS, and JS is only ${kb} kB after being unzipped! With gzip compression it's around ${Math.round(kb / 3)} kB! That's impressive considering this app uses flux architecture and virtual DOM for the view layer. For comparison React alone is 40 kB gzipped and Vue is 21 kB gzipped.`
       })
     ])
   ])
