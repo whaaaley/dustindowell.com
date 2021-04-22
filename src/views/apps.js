@@ -16,9 +16,9 @@ const Item = data => {
     ? { href: data.href, target: '_blank' }
     : { href: data.to, onclick }
 
-  return a({ class: 'item', ...props }, [
+  return a({ class: 'portfolio-item', ...props }, [
     div({ class: 'icon ' + data.iconClass }),
-    div({ class: 'body' }, [
+    div({ class: 'portfolio-item-body' }, [
       h(h1, data.title),
       h(p, data.body)
     ])
@@ -32,7 +32,7 @@ const Apps = (state, dispatch) => {
     ]),
     Item({
       href: 'https://onclick-insights.netlify.app/',
-      title: 'Onclick Insights (Demo)',
+      title: 'Insights (Demo)',
       iconClass: '-insights',
       body: 'Connect your Facebook account to view Instagram analytics for business accounts.'
     }),
@@ -44,7 +44,7 @@ const Apps = (state, dispatch) => {
     }),
     Item({
       href: 'https://discord-message-queue.netlify.app/',
-      title: 'Discord Message Queue',
+      title: 'Discord Queue',
       iconClass: '-discord',
       body: 'Small app to queue messages before sending them to discord.'
     }),
