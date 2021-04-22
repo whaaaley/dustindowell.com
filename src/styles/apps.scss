@@ -1,10 +1,14 @@
 
 $icon-link: ic-link-24px($white);
 $icon-queue: ic-queue-24px($white);
-
 $icon-sync: ic-sync-24px($white);
-$icon-rss: ic-rss-feed-24px($white);
 
+$icon-code: ic-code-24px($white);
+
+$icon-trucks: ic-local-shipping-24px($white);
+$icon-machines: ic-agriculture-24px($white);
+
+$icon-rss: ic-rss-feed-24px($white);
 $icon-description: ic-description-24px($white);
 $icon-feedback: ic-feedback-24px($white);
 
@@ -26,10 +30,10 @@ $icon-feedback: ic-feedback-24px($white);
 
   .head {
     grid-column: 1 / -1;
-    padding: 0 6px 24px;
+    padding: 36px 6px 0;
 
     h1 {
-      font: 600 48px/1 $font-mont;
+      font: 600 36px/1 $font-mont;
     }
 
     // h2 {
@@ -58,6 +62,10 @@ $icon-feedback: ic-feedback-24px($white);
     background-repeat: no-repeat !important; // override shorthand
     background-position: center !important; // override shorthand
 
+    //
+    // Apps
+    //
+
     &.-insights {
       background: $dark-100 url('/cache/graphic.svg') 0/60px;
     }
@@ -73,6 +81,46 @@ $icon-feedback: ic-feedback-24px($white);
     &.-sync {
       background: $pastel-yellow url($icon-sync) 0/48px;
     }
+
+    //
+    // Open Source
+    //
+
+    &.-code-purple {
+      background: $pastel-purple url($icon-code) 0/48px;
+    }
+
+    &.-code-blue {
+      background: $pastel-blue url($icon-code) 0/48px;
+    }
+
+    &.-code-orange {
+      background: $pastel-orange url($icon-code) 0/48px;
+    }
+
+    &.-code-red {
+      background: $pastel-red url($icon-code) 0/48px;
+    }
+
+    //
+    // Old Work
+    //
+
+    &.-trucks-red {
+      background: $pastel-red url($icon-trucks) 0/48px;
+    }
+
+    &.-trucks-blue {
+      background: $pastel-blue url($icon-trucks) 0/48px;
+    }
+
+    &.-machines-yellow {
+      background: $pastel-yellow url($icon-machines) 0/48px;
+    }
+
+    //
+    // Other
+    //
 
     &.-blog {
       background: $pastel-orange url($icon-rss) 0/48px;
