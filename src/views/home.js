@@ -37,7 +37,7 @@ const Banner = () => {
       svgText({ y: '2.5em' }, 'ARTIST')
     ]),
     Tooltip({
-      content: 'This SVG heading was written by hand to ensure responsiveness. A11y and SEO performance is maintained by using alt attribute on the SVG.'
+      content: 'This SVG heading was written by hand to ensure responsiveness. A11y and SEO performance is maintained by using an alt attribute on the SVG.'
     })
   ])
 }
