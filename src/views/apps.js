@@ -32,7 +32,7 @@ const Apps = (state, dispatch) => {
     ]),
     Item({
       href: 'https://onclick-insights.netlify.app/',
-      title: 'Onclick Insights',
+      title: 'Onclick Insights (Demo)',
       iconClass: '-insights',
       body: 'Connect your Facebook account to view Instagram analytics for business accounts.'
     }),
@@ -62,7 +62,7 @@ const Apps = (state, dispatch) => {
     // }),
     Item({
       to: '/blog',
-      title: 'Dustin\'s Blog',
+      title: 'Dustin\'s Blog (WIP)',
       iconClass: '-blog',
       body: 'You can find all my software rants here. I think I\'m smart sometimes. '
     }),
