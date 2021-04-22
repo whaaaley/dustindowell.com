@@ -10,8 +10,15 @@ const scripts = PROD === true
   ? script(readFileSync('./public/app.js', 'utf8'))
   : script({ defer: true, src: '/app.js' })
 
-const PreloadFont = props =>
-  link({ rel: 'preload', href: props.href, as: 'font', type: 'font/woff2' })
+const PreloadFont = props => {
+  return link({
+    rel: 'preload',
+    href: props.href,
+    as: 'font',
+    type: 'font/woff2',
+    crossorigin: true // Netlify hosts assets on their CDN
+  })
+}
 
 const render = data => {
   return html({ lang: 'en' }, [
