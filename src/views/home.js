@@ -71,7 +71,11 @@ const Home = (state, dispatch) => {
         ]),
         Tooltip({
           class: '-left',
-          content: 'This video uses the webm video format. It\'s file size clocks in at tiny 216kB while the backup mp4 is gigantic 2097kB. You can convert gifs and mp4s to webm from the command line using ffmpeg.'
+          content: 'This video uses the webm video format. It\'s file size clocks in at tiny 216kB. By contrast the backup mp4 is gigantic 2097kB.'
+        }),
+        Tooltip({
+          class: '-right',
+          content: 'Performance optimization is one of my favorite things to do. I\'ve spent thousands of hours researching and testing the best ways to optimize web applications.'
         })
       ]),
       div({ class: 'body' }, [
