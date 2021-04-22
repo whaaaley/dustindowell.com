@@ -1,4 +1,5 @@
 
+$icon-notes: ic-description-24px($dark-500);
 $icon-link: ic-link-24px($white);
 $icon-queue: ic-queue-24px($white);
 $icon-sync: ic-sync-24px($white);
@@ -36,6 +37,11 @@ $icon-feedback: ic-feedback-24px($white);
       font: 600 36px/1 $font-mont;
     }
 
+    h2 {
+      font: 14px/24px $font-inter;
+      opacity: 0.75;
+    }
+
     // h2 {
     //   font: 400 16px/36px sans-serif;
     //   opacity: 0.625;
@@ -55,6 +61,10 @@ $icon-feedback: ic-feedback-24px($white);
 
     &.-insights {
       background: $dark-100 url('/cache/graphic.svg') 0/60px;
+    }
+
+    &.-notes {
+      background: $pastel-yellow url($icon-notes) 0/48px;
     }
 
     &.-resize {
