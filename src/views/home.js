@@ -4,6 +4,16 @@ import { div, h, p, source, svg, text, video } from '../lib/vnodes/html'
 import Link from './_link'
 import main from './_main'
 
+const Tooltip = props => {
+  const classList = props.class
+    ? 'home-tooltip ' + props.class
+    : 'home-tooltip'
+
+  return div({ class: classList }, [
+    text(props.content)
+  ])
+}
+
 const Text = (h, data) => h([text(data)])
 
 const First = 'Hello, I\'m Dustin. I\'m a self taught developer, designer, ' +
@@ -19,13 +29,16 @@ const svgStyle = data => h('style')([text(data)])
 const svgText = (props, data) => h('text')(props, [text(data)])
 
 const Banner = () => {
-  return div({ class: 'banner' }, [
+  return div({ class: 'banner', alt: 'Developer + Designer + Artist' }, [
     svg({ viewBox: '0 0 52 26' }, [
       svgStyle('text { font: 800 10px/1 Goldbill, sans-serif; fill: #1f1f23; }'),
       svgText({ y: '0.75em' }, 'DEVELOPER +'),
       svgText({ y: '1.625em' }, 'DESIGNER +'),
       svgText({ y: '2.5em' }, 'ARTIST')
-    ])
+    ]),
+    Tooltip({
+      content: 'This SVG heading was written by hand to ensure responsiveness. A11y and SEO performance is maintained by using alt attribute on the SVG.'
+    })
   ])
 }
 
@@ -34,8 +47,13 @@ const LightSwitch = data => {
     ? 'switch -light'
     : 'switch -dark'
 
-  return div({ class: classList, onclick: data.onclick }, [
-    div()
+  return div({ class: 'switch-container' }, [
+    div({ class: classList, onclick: data.onclick }, [
+      div()
+    ]),
+    Tooltip({
+      content: 'This project uses CSS custom properties! One of the things custom properties allows you to do is theme web apps. Check it out!'
+    })
   ])
 }
 
@@ -44,12 +62,17 @@ const Home = (state, dispatch) => {
   const { year } = state.footer
 
   return div({ class: 'home' }, [
-    // HistoryPanel(state.history),
     div({ class: 'card' }, [
       Banner(),
-      video({ autoplay: true, loop: true, muted: true }, [
-        source({ src: '/cache/lighthouse.webm', type: 'video/webm' }),
-        source({ src: '/cache/lighthouse.mp4', type: 'video/mp4' })
+      div([
+        video({ autoplay: true, loop: true, muted: true }, [
+          source({ src: '/cache/lighthouse.webm', type: 'video/webm' }),
+          source({ src: '/cache/lighthouse.mp4', type: 'video/mp4' })
+        ]),
+        Tooltip({
+          class: '-left',
+          content: 'This video uses the webm video format. It\'s file size clocks in at tiny 216 kB while the backup mp4 is gigantic 2097 kB. You can convert gifs and mp4s to webm from the command line using ffmpeg.'
+        })
       ]),
       div({ class: 'body' }, [
         Text(p, First),
@@ -67,9 +90,15 @@ const Home = (state, dispatch) => {
       }
     }),
     div({ class: 'footer' }, [
-      text('performance benchmarks\n'),
-      text(`index.html ${kb} kB - load time ${ms} ms\n`),
-      text('© ' + year + ' Dustin Dowell')
+      div({ class: 'footer-text' }, [
+        text('performance benchmarks\n'),
+        text(`index.html ${kb} kB - load time ${ms} ms\n`),
+        text('© Dustin Dowell, ' + year)
+      ]),
+      Tooltip({
+        class: '-left',
+        content: 'Holy cow! This app\'s HTML, CSS, and JS is only 24 kB minified! And that\'s before gzip. After gzip it\'s around 8 kB. (I\'ve yet to find a way to measure gzip size client side.)'
+      })
     ])
   ])
 }
