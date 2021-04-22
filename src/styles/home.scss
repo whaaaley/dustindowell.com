@@ -4,6 +4,9 @@
 
   video {
     width: 100%;
+    // Video elements start out WAY too big and cause flickering.
+    // Not sure what the best solution is.
+    max-height: 155px;
   }
 
   .card {
