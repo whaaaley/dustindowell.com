@@ -8,12 +8,12 @@ const Text = (h, data) => h([text(data)])
 
 const First = 'Hello, I\'m Dustin. I\'m a self taught developer, designer, ' +
   'and artist. I have a crazy huge passion for micro frameworks ' +
-  'and minimal tooling.'
+  'and minimal tooling. I love to write apps that are small, fast, and ' +
+  'accessible.'
 
 const Second = 'I\'m looking for interesting projects where I\'m allowed to ' +
-  'write code that follows my ideologies. I\'m at my best when I have ' +
-  'freedom to be creative and experimental. I love to write unique and ' +
-  'effective software.'
+  'write mordern, acessible, high quality code that\'s tailored to the needs ' +
+  'of a specific app. I love to write unique and effective software.'
 
 const svgStyle = data => h('style')([text(data)])
 const svgText = (props, data) => h('text')(props, [text(data)])
