@@ -75,7 +75,7 @@ const Home = (state, dispatch) => {
         }),
         Tooltip({
           class: '-right',
-          content: 'Performance optimization is one of my favorite things to do. I\'ve spent thousands of hours researching and testing the best ways to optimize web applications.'
+          content: 'Performance optimization is one of my favorite things to do. I\'ve spent thousands of hours researching and testing the best ways to optimize my web applications.'
         })
       ]),
       div({ class: 'body' }, [
@@ -101,7 +101,7 @@ const Home = (state, dispatch) => {
       ]),
       Tooltip({
         class: '-left',
-        content: 'This app\'s HTML, CSS, and JS is only 24kB after being unzipped! With gzip compression it\'s around 8kB! That\'s impressive considering this app uses flux architecture and virtual DOM for the view layer! For comparison React alone is 40kB gzipped and Vue is 21kB gzipped.'
+        content: 'This app\'s HTML, CSS, and JS is only 24kB after being unzipped! With gzip compression it\'s around 8kB! That\'s impressive considering this app uses flux architecture and virtual DOM for the view layer. For comparison React alone is 40kB gzipped and Vue is 21kB gzipped.'
       })
     ])
   ])
