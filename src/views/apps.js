@@ -1,5 +1,5 @@
 
-import { a, div, h1, p, text } from '../lib/vnodes/html'
+import { a, div, h1, h2, p, text } from '../lib/vnodes/html'
 
 import main from './_main'
 import link from '../lib/routerLink'
@@ -35,6 +35,12 @@ const Apps = (state, dispatch) => {
       title: 'Insights (Demo)',
       iconClass: '-insights',
       body: 'Connect your Facebook account to view Instagram analytics for business accounts.'
+    }),
+    Item({
+      href: 'https://onclick-notes.netlify.app/',
+      title: 'Notes (Demo)',
+      iconClass: '-notes',
+      body: 'A notes app that compiles markdown live!'
     }),
     Item({
       href: 'https://resize-gg.netlify.app/',
@@ -82,7 +88,8 @@ const Apps = (state, dispatch) => {
       body: 'I wrote the implimentation for regex matches for the popular balanced-match package on npm.'
     }),
     div({ class: 'head' }, [
-      h(h1, 'Old Work')
+      h(h1, 'Old Work'),
+      h(h2, 'After leaving the quality of these apps, unfortuantely, degraded significantly.')
     ]),
     Item({
       href: 'https://accesstrucks.com/',
