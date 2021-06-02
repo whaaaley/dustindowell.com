@@ -1,5 +1,6 @@
 
 $icon-notes: ic-description-24px($dark-500);
+$icon-message: ic-question-answer-24px($white);
 $icon-link: ic-link-24px($white);
 $icon-queue: ic-queue-24px($white);
 $icon-sync: ic-sync-24px($white);
@@ -65,6 +66,10 @@ $icon-feedback: ic-feedback-24px($white);
 
     &.-notes {
       background: $pastel-yellow url($icon-notes) 0/48px;
+    }
+
+    &.-message {
+      background: $pastel-green url($icon-message) 0/48px;
     }
 
     &.-resize {

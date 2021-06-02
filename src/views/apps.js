@@ -43,6 +43,12 @@ const Apps = (state, dispatch) => {
       body: 'A notes app that compiles markdown live!'
     }),
     Item({
+      href: 'https://almost-realtime.netlify.com/',
+      title: 'Almost Realtime',
+      iconClass: '-message',
+      body: 'A chat app using HTTP to send messanges and SSE to sync messages from server to client.'
+    }),
+    Item({
       href: 'https://resize-gg.netlify.app/',
       title: 'Resize.gg',
       iconClass: '-resize',
