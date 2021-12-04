@@ -1,4 +1,6 @@
-import app from './lib/pocket'
+
+import { pocket, router } from '@onclick/pocket'
+import { patch } from 'superfine'
 
 import Home from './views/home'
 import Apps from './views/apps'
@@ -10,7 +12,10 @@ import Resume from './views/resume'
 
 import * as subs from './subscriptions'
 
-app({
+const node = document.getElementById('app')
+const app = foo => router(foo, bar => pocket(bar, view => patch(node, view)))
+
+const { dispatch } = app({
   state: {
     theme: false, // false means dark
     benchmark: {
@@ -38,6 +43,7 @@ app({
       success: null
     }
   },
+  rewrites: {},
   pages: {
     '/': Home,
     '/apps': Apps,
@@ -46,12 +52,15 @@ app({
     '/missing': Missing,
     '/palette': Palette,
     '/resume': Resume
-  },
-  start: dispatch => {
-    subs.benchmark(dispatch)
-    subs.gtm({ id: 'GTM-TC9VHP2' })
   }
+  // start: dispatch => {
+  //   subs.benchmark(dispatch)
+  //   subs.gtm({ id: 'GTM-TC9VHP2' })
+  // }
 })
+
+subs.benchmark(dispatch)
+subs.gtm({ id: 'GTM-TC9VHP2' })
 
 // Google Tag Manager
 window.dataLayer = window.dataLayer || []

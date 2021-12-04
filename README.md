@@ -3,9 +3,6 @@
 
 This project is hosted here https://dustindowell.com/
 
-## Todo
-- [ ] Store and retreive resume.json to/from session storage
-
 # Build and Develop
 
 Notable make targets. See the Makefile for a full list.
@@ -26,15 +23,15 @@ Make was chosen as the "task runner" for this project. Make has been around for 
 $ sudo apt install build-essential
 ```
 
-## State Management
+## Application framework
 
-The state manager in this project is an extremely simple take on flux architecture, similar to Redux, Vuex, Hyperapp, and others.
+The framework in this project is an extremely simple take on flux architecture, similar to Redux, Vuex, Hyperapp, and others.
 
-In this project you dispatch `actions` to update state.
+In this project you dispatch `actions` to schedule a state render.
 
 ```js
 // declare an action
-const increment = (state, dispatch) => data => {
+const increment = function (state, data) {
   state.counter += data
   return state
 }
@@ -44,6 +41,8 @@ dispatch(increment, 12)
 ```
 
 ## View Layer Syntax
+
+TODO: Describe how and why I setup JSX to work.
 
 This project uses Superfine for the view layer. [Superfine](https://github.com/jorgebucaran/superfine) is a minimal view layer that uses a virtual dom to patch the real dom.
 

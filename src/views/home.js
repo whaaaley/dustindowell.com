@@ -1,8 +1,9 @@
 
-import { div, h, p, source, svg, text, video } from '../lib/vnodes/html'
-
 import Link from './_link'
 import main from './_main'
+
+import { h, html, text } from '@onclick/superstatic'
+const { div, p, source, svg, video } = html
 
 const Tooltip = props => {
   const classList = props.class
@@ -57,57 +58,58 @@ const LightSwitch = data => {
   ])
 }
 
-const Home = (state, dispatch) => {
-  const { kb, ms } = state.benchmark
-  const { year } = state.footer
+const Home = function (state, dispatch) {
+  return function () {
+    const { kb, ms } = state.benchmark
+    const { year } = state.footer
 
-  return div({ class: 'home' }, [
-    div({ class: 'card' }, [
-      Banner(),
-      div([
-        video({ autoplay: true, loop: true, muted: true }, [
-          source({ src: '/cache/lighthouse.webm', type: 'video/webm' }),
-          source({ src: '/cache/lighthouse.mp4', type: 'video/mp4' })
+    return div({ class: 'home' }, [
+      div({ class: 'card' }, [
+        Banner(),
+        div([
+          video({ autoplay: true, loop: true, muted: true }, [
+            source({ src: '/cache/lighthouse.webm', type: 'video/webm' }),
+            source({ src: '/cache/lighthouse.mp4', type: 'video/mp4' })
+          ]),
+          Tooltip({
+            class: '-left',
+            content: 'This video uses the webm video format. It\'s file size clocks in at tiny 216 kB. By contrast the backup mp4 is gigantic 2097 kB.'
+          }),
+          Tooltip({
+            class: '-right',
+            content: 'Performance optimization is one of my favorite things to do. I\'ve spent thousands of hours researching and testing the best ways to optimize my web applications.'
+          })
+        ]),
+        div({ class: 'body' }, [
+          Text(p, First),
+          Text(p, Second),
+          Link({ to: '/resume' }, 'Hire Me')
+        ])
+      ]),
+      LightSwitch({
+        theme: state.theme,
+        onclick: () => {
+          dispatch(state => {
+            state.theme = !state.theme
+            return { state }
+          })
+        }
+      }),
+      div({ class: 'footer' }, [
+        div({ class: 'footer-text' }, [
+          text('performance benchmarks\n'),
+          text(`index.html ${kb} kB - load time ${ms} ms\n`),
+          text('© Dustin Dowell, ' + year)
         ]),
         Tooltip({
           class: '-left',
-          content: 'This video uses the webm video format. It\'s file size clocks in at tiny 216 kB. By contrast the backup mp4 is gigantic 2097 kB.'
-        }),
-        Tooltip({
-          class: '-right',
-          content: 'Performance optimization is one of my favorite things to do. I\'ve spent thousands of hours researching and testing the best ways to optimize my web applications.'
+          content: `This app's HTML, CSS, and JS is only ${kb} kB after being unzipped! With gzip compression it's around ${Math.round(kb / 3)} kB! That's impressive considering this app uses flux architecture and virtual DOM for the view layer. For comparison React alone is 40 kB gzipped and Vue is 21 kB gzipped.`
         })
-      ]),
-      div({ class: 'body' }, [
-        Text(p, First),
-        Text(p, Second),
-        Link({ to: '/resume' }, 'Hire Me')
       ])
-    ]),
-    LightSwitch({
-      theme: state.theme,
-      onclick: () => {
-        dispatch(state => {
-          state.theme = !state.theme
-          return { state }
-        })
-      }
-    }),
-    div({ class: 'footer' }, [
-      div({ class: 'footer-text' }, [
-        text('performance benchmarks\n'),
-        text(`index.html ${kb} kB - load time ${ms} ms\n`),
-        text('© Dustin Dowell, ' + year)
-      ]),
-      Tooltip({
-        class: '-left',
-        content: `This app's HTML, CSS, and JS is only ${kb} kB after being unzipped! With gzip compression it's around ${Math.round(kb / 3)} kB! That's impressive considering this app uses flux architecture and virtual DOM for the view layer. For comparison React alone is 40 kB gzipped and Vue is 21 kB gzipped.`
-      })
     ])
-  ])
+  }
 }
 
 export default {
-  view: main(Home),
-  onroute: () => {}
+  setup: main(Home)
 }
