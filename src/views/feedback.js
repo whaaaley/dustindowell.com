@@ -1,11 +1,11 @@
 
-import { a, div, form, h1, input, text, textarea } from '../lib/vnodes/html'
 import * as formActions from '../actions/form'
 import main from './_main'
 
-const h = (tag, data) => tag([text(data)])
+import { html, text } from '@onclick/superstatic'
+const { a, div, form, h1, input, textarea } = html
 
-const FieldComponent = dispatch => (h, props) => {
+const FieldComponent = dispatch => (xxx, props) => {
   props.placeholder = props.name
 
   props.oninput = event => {
@@ -15,7 +15,7 @@ const FieldComponent = dispatch => (h, props) => {
     ])
   }
 
-  return h(props)
+  return xxx(props)
 }
 
 const Notify = props => {
@@ -36,36 +36,37 @@ const Notify = props => {
   return div({ key, hidden: true }) // placeholder
 }
 
-const Feedback = (state, dispatch) => {
+const Feedback = function (state, dispatch) {
   const Field = FieldComponent(dispatch)
 
-  return div({ class: 'feedback' }, [
-    div({ class: 'head' }, [
-      h(h1, 'Feedback')
-    ]),
-    div({ class: 'feedback-card' }, [
-      // h(h1, 'Feedback'),
-      // h(p, 'Send me feedback on how to improve my apps or maybe something cute.'),
-      form({ name: 'contact' }, [
-        Notify({
-          data: state.form.data,
-          error: state.form.error,
-          success: state.form.success
-        }),
-        Field(input, { type: 'text', name: 'name' }),
-        Field(input, { type: 'email', name: 'email' }),
-        Field(textarea, { name: 'message' }),
-        div({ class: 'feedback-button' }, [
-          a({ onclick: () => dispatch(formActions.send) }, [
-            text('Send')
+  return function () {
+    return div({ class: 'feedback' }, [
+      div({ class: 'head' }, [
+        h1({}, [
+          text(['Feedback'])
+        ])
+      ]),
+      div({ class: 'feedback-card' }, [
+        form({ name: 'contact' }, [
+          Notify({
+            data: state.form.data,
+            error: state.form.error,
+            success: state.form.success
+          }),
+          Field(input, { type: 'text', name: 'name' }),
+          Field(input, { type: 'email', name: 'email' }),
+          Field(textarea, { name: 'message' }),
+          div({ class: 'feedback-button' }, [
+            a({ onclick: () => dispatch(formActions.send) }, [
+              text('Send')
+            ])
           ])
         ])
       ])
     ])
-  ])
+  }
 }
 
 export default {
-  view: main(Feedback),
-  onroute: () => {}
+  setup: main(Feedback)
 }

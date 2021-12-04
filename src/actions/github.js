@@ -1,35 +1,29 @@
 
-const success = (x, data) => {
-  const resume = {
+const success = (state, data) => {
+  state.resume = {
     data,
     error: null,
     loading: null,
     success: true
   }
-
-  return { resume }
 }
 
-const failure = (x, data) => {
-  const resume = {
+const failure = (state, data) => {
+  state.resume = {
     data: null,
     error: data.message,
     loading: null,
     success: false
   }
-
-  return { resume }
 }
 
-const loading = (x, data) => {
-  const resume = {
+const loading = (state, data) => {
+  state.resume = {
     data: null,
     error: data.message,
     loading: null,
     success: false
   }
-
-  return { resume }
 }
 
 export const getIssues = x => dispatch => {

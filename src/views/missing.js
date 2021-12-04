@@ -1,16 +1,19 @@
 
-import { div, text } from '../lib/vnodes/html'
 import main from './_main'
+
+import { html, text } from '@onclick/superstatic'
+const { div } = html
 
 const Text = (h, data) => h([text(data)])
 
 const Missing = (state, dispatch) => {
-  return div({ class: 'missing' }, [
-    Text(div, '404 NOT FOUND')
-  ])
+  return function () {
+    return div({ class: 'missing' }, [
+      Text(div, '404 NOT FOUND')
+    ])
+  }
 }
 
 export default {
-  view: main(Missing),
-  onroute: () => {}
+  setup: main(Missing)
 }

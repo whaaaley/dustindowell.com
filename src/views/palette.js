@@ -1,7 +1,8 @@
 
-import { div } from '../lib/vnodes/html'
-
 import main from './_main'
+
+import { html } from '@onclick/superstatic'
+const { div } = html
 
 const Card = data => {
   return div({ class: 'palette-card ' + data.theme }, [
@@ -15,16 +16,17 @@ const Card = data => {
 }
 
 const Palette = (state, dispatch) => {
-  return div({ class: 'palette' }, [
-    div({ class: 'palette-main' }, [
-      Card({ theme: '-light' }),
-      Card({ theme: '-dark' }),
-      Card({ theme: '-purple' })
+  return function () {
+    return div({ class: 'palette' }, [
+      div({ class: 'palette-main' }, [
+        Card({ theme: '-light' }),
+        Card({ theme: '-dark' }),
+        Card({ theme: '-purple' })
+      ])
     ])
-  ])
+  }
 }
 
 export default {
-  view: main(Palette),
-  onroute: () => {}
+  setup: main(Palette)
 }
