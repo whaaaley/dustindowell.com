@@ -1,10 +1,9 @@
 
-// import { div, h1, h2, h3, li, text, ul } from '../lib/vnodes/html'
-
-import { div, h1, h2, text } from '../lib/vnodes/html'
 import main from './_main'
-
 import * as resume from '../actions/resume'
+
+import { html, text } from '@onclick/superstatic'
+const { div, h1, h2 } = html
 
 const Text = (h, data) => h([text(data)])
 
@@ -109,23 +108,26 @@ console.log(JSON.stringify(Grid()))
 */
 
 const Resume = (state, dispatch) => {
-  return div({ class: 'resume' }, [
-    Header(),
-    // Grid()
-    (() => {
-      if (state.resume.success === null) {
-        return div({ class: 'spinner-box' }, [
-          div({ class: '_spinner' })
-        ])
-      }
-      return state.resume.data
-    })()
-  ])
+  dispatch(resume.fetchResume)
+
+  return function () {
+    console.log(state.resume)
+
+    return div({ class: 'resume' }, [
+      Header(),
+      // Grid()
+      (() => {
+        if (state.resume.success === null) {
+          return div({ class: 'spinner-box' }, [
+            div({ class: '_spinner' })
+          ])
+        }
+        return state.resume.data
+      })()
+    ])
+  }
 }
 
 export default {
-  view: main(Resume),
-  onroute: (state, dispatch) => {
-    dispatch(resume.fetchResume)
-  }
+  setup: main(Resume)
 }

@@ -11,20 +11,22 @@ const scripts = process.env.PROD === true
   : <script src='/app.js' defer></script>
 
 const PreloadFont = function (props) {
-  return html.link({
-    rel: 'preload',
-    href: props.href,
-    as: 'font',
-    type: 'font/woff2',
-    crossorigin: true // Netlify hosts assets on their CDN
-  })
+  return [
+    html.link({
+      rel: 'preload',
+      href: props.href,
+      as: 'font',
+      type: 'font/woff2',
+      crossorigin: true // Netlify hosts assets on their CDN
+    })
+  ]
 }
 
 const render = function (props) {
   return (
     <html lang='en'>
       <meta charset='utf-8'/>
-      {html.script('window._ms = Date.now()')}
+      {[html.script('window._ms = Date.now()')]}
       <title>{props.title}</title>
       <meta name='author' content={props.author}/>
       <meta name='description' content={props.description}/>
