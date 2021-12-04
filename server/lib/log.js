@@ -50,8 +50,8 @@ module.exports = {
 
     console.log(
       color('blue', elapsed()),
-      (data.ms + 'ms').padEnd(4, ' '),
-      size.padStart(5, ' '),
+      (data.ms + 'ms').padEnd(6, ' '),
+      size.padStart(6, ' '),
       (data.method).padEnd(6, ' '),
       status,
       color('white', data.path)

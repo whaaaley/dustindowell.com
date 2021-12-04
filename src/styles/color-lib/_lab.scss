@@ -9,7 +9,9 @@
 
   @if $power > 0.008856 {
     @return $power;
-  } @else {
+  }
+
+  @else {
     @return ($value - 16 / 116) / 7.787;
   }
 }
@@ -29,7 +31,9 @@
 @function xyz_rgb_util($value) {
   @if ($value > 0.0031308) {
     @return 1.055 * (math.pow($value, 1 / 2.4)) - 0.055;
-  } @else {
+  }
+
+  @else {
     @return 12.92 * $value;
   }
 }
@@ -41,7 +45,7 @@
 
   $r: $x * 3.2406 + $y * -1.5372 + $z * -0.4986;
   $g: $x * -0.9689 + $y * 1.8758 + $z * 0.0415;
-  $b: $x * 0.0557 + $y * -0.2040 + $z * 1.0570;
+  $b: $x * 0.0557 + $y * -0.204 + $z * 1.057;
 
   @return (
     xyz_rgb_util($r) * 255,

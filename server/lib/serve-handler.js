@@ -1,31 +1,26 @@
 
 const fs = require('fs')
 const path = require('path')
+
+const incremental = require('./incremental')
 const log = require('./log')
 
 const directory = path.join(process.cwd(), 'public')
-const reload = path.join(__dirname, '../reload.js')
 
+const reload = path.join(__dirname, '../reload.js')
 const script = fs.readFileSync(reload)
-const inject = '<script>' + script + '</script></body></html>'
+const inject = '\n\n<!-- reload script -->\n<script>' + script + '</script>'
 
 const mime = {
   '.css': 'text/css',
   '.html': 'text/html',
-
-  '.gif': 'image/gif',
   '.jpg': 'image/jpeg',
-  '.png': 'image/png',
-  '.svg': 'image/svg+xml',
-
   '.js': 'application/javascript',
   '.json': 'application/json',
-
+  '.png': 'image/png',
+  '.svg': 'image/svg+xml',
   '.woff': 'font/woff',
-  '.woff2': 'font/woff2',
-
-  '.mp4': 'video/mp4',
-  '.webm': 'video/webm'
+  '.woff2': 'font/woff2'
 }
 
 function writeHandler (req, res) {
@@ -43,16 +38,25 @@ function writeHandler (req, res) {
   })
 
   return function (url) {
-    fs.readFile(url.file, (err, data) => {
+    if (url.path === '/app.js') {
+      incremental(function (body) {
+        res.writeHead(200)
+        res.end(body)
+      })
+
+      return // stop execution
+    }
+
+    fs.readFile(url.file, function (err, data) {
       if (err) {
         res.writeHead(404)
         res.end()
 
-        return // exit
+        return // stop execution
       }
 
       const body = url.ext === '.html'
-        ? data.toString().slice(0, -14) + inject
+        ? data.toString() + inject
         : data
 
       res.writeHead(200)
@@ -66,14 +70,16 @@ function urlHandler (url) {
 
   if (ext === '') {
     return {
+      ext: '.html',
       file: path.join(directory, 'index.html'),
-      ext: '.html'
+      path: '/index.html'
     }
   }
 
   return {
+    ext: ext,
     file: path.join(directory, url),
-    ext: ext
+    path: url
   }
 }
 
@@ -87,4 +93,6 @@ function handler (req, res) {
   write(url)
 }
 
-module.exports = { handler }
+module.exports = {
+  handler: handler
+}

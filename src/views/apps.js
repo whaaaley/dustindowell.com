@@ -1,8 +1,9 @@
 
-import { a, div, h1, h2, p, text } from '../lib/vnodes/html'
-
 import main from './_main'
 import link from '../lib/routerLink'
+
+import { html } from '@onclick/superstatic'
+const { a, div, h1, h2, p, text } = html
 
 const h = (tag, data) => tag([text(data)])
 
