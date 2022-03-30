@@ -115,7 +115,7 @@ const Grid = () => {
       ]),
 
       Text(h1, 'Education'),
-      Text(h2, 'Associate of Arts and Sciences'),
+      Text(h2, 'Associate of Arts & Sciences'),
       Text(h3, '2012 - 2014'),
       Text(h3, 'DMACC Ankeny Campus'),
       ul([
