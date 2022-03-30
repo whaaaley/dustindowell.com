@@ -38,7 +38,7 @@ const Grid = () => {
         Text(li, 'Took a leadership role and helped the team with strategizing and organizing our application at all levels.')
       ]),
 
-      Text(h2, 'Frontend Developer and Designer'),
+      Text(h2, 'Frontend Developer & Designer'),
       Text(h3, 'Self-employed - Des Moines, Iowa'),
       Text(h3, 'November 2019 - June 2021'),
       ul([
@@ -61,7 +61,7 @@ const Grid = () => {
         Text(li, 'Implemented an email notification system using Sparkpost.')
       ]),
 
-      Text(h2, 'Frontend Developer and Designer'),
+      Text(h2, 'Frontend Developer & Designer'),
       Text(h3, 'Self-employed - Indianola, Iowa'),
       Text(h3, 'August 2014 - February 2016'),
       ul([
