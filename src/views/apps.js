@@ -95,7 +95,8 @@ const Apps = (state, dispatch) => {
     }),
     div({ class: 'head' }, [
       h(h1, 'Old Work'),
-      h(h2, 'After leaving the quality of these apps, unfortuantely, degraded significantly.')
+      // h(h2, 'After leaving the quality of these apps, unfortuantely, degraded significantly.')
+      h(h2, 'Keep note that these applications are now developed by others and I cannot guarantee their quality.')
     ]),
     Item({
       href: 'https://accesstrucks.com/',
