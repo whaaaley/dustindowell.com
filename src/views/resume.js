@@ -85,6 +85,7 @@ const Grid = () => {
         Text(li, 'Extensive knowledge of JavaScript and JS frameworks like Vue, React, Hyperapp, and Mithril as well as their ecosystems.'),
         Text(li, 'Experience with Node.js and some of it\'s popular frameworks like Express, Koa, Micro.'),
         Text(li, 'Experience using platforms like Netlify, Vercel, Heroku, Serverless, Hasura, Supabase, and many more.'),
+        Text(li, 'Experience writing GraphQL APIs on Hasura.'),
         Text(li, 'Lots of recent experience writing file servers and SSE servers using Deno!'),
         Text(li, 'Some experience using TypeScript.'),
         Text(li, 'Hello world\'s completed in Ruby, Python, Elm, and Rust.'),
