@@ -30,10 +30,10 @@ const Grid = () => {
       Text(h3, 'June 2021 - Present'),
       ul([
         Text(li, 'Maintained an existing Vue 2 application fixing bugs and adding features.'),
-        Text(li, 'Designed and implimented a completely new Vue 3 application that wraps the pieces of the legacy dashboard as part of an incremental adoption strategy.'),
+        Text(li, 'Designed and implemented a completely new Vue 3 application that wraps the pieces of the legacy dashboard as part of an incremental adoption strategy.'),
         Text(li, 'Ported legacy Vue 2 code to the new Vue 3 application.'),
-        Text(li, 'Implimented onboarding and payment flows for new users and subscriptions.'),
-        Text(li, 'Wrote a SSE (Server Sent Events) server in Node that receives miscellaneous events from our API service and forwared them to the frontend.'),
+        Text(li, 'Implemented onboarding and payment flows for new users and subscriptions.'),
+        Text(li, 'Wrote a SSE (Server Sent Events) server in Node that receives miscellaneous events from our API service and forwarded them to the frontend.'),
         Text(li, 'Created a user impersonation system using JWTs for administrators.'),
         Text(li, 'Took a leadership role and helped the team with strategizing and organizing our application at all levels.')
       ]),
