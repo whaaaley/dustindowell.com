@@ -161,7 +161,7 @@ const Apps = (state, dispatch) => {
       h(h1, 'Misc + Demos')
     ]),
     Item({
-      href: 'https://valorant-editor.netlify.app/',
+      href: 'https://valorant-editor.netlify.app/editor',
       title: 'Valorant Editor',
       published: 'Mar 26, 2021',
       iconClass: '-code-red',
