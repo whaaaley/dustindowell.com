@@ -104,6 +104,14 @@ $icon-feedback: ic-feedback-24px($white);
       background: $pastel-red url($icon-code) 0/48px;
     }
 
+    &.-code-green {
+      background: $pastel-green url($icon-code) 0/48px;
+    }
+
+    &.-code-yellow {
+      background: $pastel-yellow url($icon-code) 0/48px;
+    }
+
     //
     // Old Work
     //
