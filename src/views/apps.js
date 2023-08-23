@@ -19,7 +19,10 @@ const Item = data => {
   return a({ class: 'portfolio-item', ...props }, [
     div({ class: 'icon ' + data.iconClass }),
     div({ class: 'portfolio-item-body' }, [
-      h(h1, data.title),
+      div({ style: 'display: flex; align-items: center; justify-content: space-between; flex: 1 0 auto; gap: 16px;' }, [
+        h(h1, data.title),
+        data.published && h(p, data.published)
+      ]),
       h(p, data.body)
     ])
   ])
@@ -28,44 +31,171 @@ const Item = data => {
 const Apps = (state, dispatch) => {
   return div({ class: 'apps' }, [
     div({ class: 'head' }, [
-      h(h1, 'Apps and Demos')
+      h(h1, 'Professional Work')
     ]),
     Item({
-      href: 'https://onclick-insights.netlify.app/',
-      title: 'Insights (Demo)',
-      iconClass: '-insights',
-      body: 'Connect your Facebook account to view Instagram analytics for business accounts.'
+      href: 'https://app.compose.co/',
+      title: 'Compose App',
+      published: 'Aug 23, 2023',
+      iconClass: '-code-purple',
+      body: 'The newest solution for conversion rate optimization and A/B testing.'
     }),
     Item({
+      href: 'https://compose.co/',
+      title: 'Compose Website',
+      published: 'Aug 23, 2023',
+      iconClass: '-code-purple',
+      body: 'The newest solution for conversion rate optimization and A/B testing.'
+    }),
+    Item({
+      href: 'https://udundi.com/',
+      title: 'Udundi',
+      published: 'Aug 23, 2023',
+      iconClass: '-code-blue',
+      body: 'Custom Web Design & Development Agency specializing in Shopify.'
+    }),
+    Item({
+      // href: 'https://alqen.io/',
+      href: 'https://marketplace.walmart.com/alqen/',
+      title: 'Alqen',
+      published: 'June 1, 2022',
+      iconClass: '-code-red',
+      body: 'Alqen provides a suite of tools for Walmart Marketplace sellers.'
+    }),
+    Item({
+      href: 'https://accesstrucks.com/',
+      title: 'AccessTrucks',
+      published: 'Nov, 1 2019',
+      iconClass: '-trucks-red',
+      body: 'A box truck aggregation site. Potential buyers can browse trucks from dealerships around the country.'
+    }),
+    Item({
+      href: 'https://sleepertrader.com/',
+      title: 'SleeperTrader',
+      published: 'Nov, 1 2019',
+      iconClass: '-trucks-blue',
+      body: 'A semi truck aggregation site similar to AccessTrucks specifically for semis with sleepers.'
+    }),
+    Item({
+      href: 'https://machineryaccess.com/',
+      title: 'MachineryAccess',
+      published: 'Nov, 1 2019',
+      iconClass: '-machines-yellow',
+      body: 'A heavy machinery aggregation site that also a aggregates machinery auction events.'
+    }),
+
+    // div({ class: 'head' }, [
+    //   h(h1, 'Old Work'),
+    //   // h(h2, 'After leaving the quality of these apps, unfortuantely, degraded significantly.')
+    //   h(h2, 'These are sites I started but are now managed by other developers.')
+    // ]),
+
+    // Item({
+    //   to: '/wiki',
+    //   title: 'Wiki Editor (wip)',
+    //   iconClass: '-resize',
+    //   body: 'A simple dashboard and editor to create wiki-like articles using markdown.'
+    // }),
+
+    div({ class: 'head' }, [
+      h(h1, 'Apps for Fun')
+    ]),
+    Item({
       href: 'https://onclick-notes.netlify.app/',
-      title: 'Notes (Demo)',
+      title: 'Markdown Notes',
+      published: 'Jul 18, 2021',
       iconClass: '-notes',
       body: 'A notes app that compiles markdown live!'
     }),
     Item({
-      href: 'https://almost-realtime.netlify.com/',
-      title: 'Almost Realtime',
-      iconClass: '-message',
-      body: 'A chat app using HTTP to send messanges and SSE to sync messages from server to client.'
+      href: 'https://onclick-insights.netlify.app/',
+      title: 'Insights for Insta',
+      published: 'Jun 7, 2021',
+      iconClass: '-insights',
+      body: 'Connect your Facebook account to view Instagram analytics for business accounts.'
+    }),
+    Item({
+      href: 'https://thedarktimes.news',
+      title: 'The Dark Times',
+      published: 'Aug 23, 2023',
+      iconClass: '-code-blue',
+      body: 'A news aggregator that researches current events and uses generative ai to write articles.'
+    }),
+    Item({
+      href: 'https://pocket.deno.dev',
+      title: 'Pocket Website',
+      published: 'Jan 22, 2023',
+      iconClass: '-code-red',
+      body: 'A web component, shadow dom focused, JavaScript framework inspired by Hyperapp.'
+    }),
+    Item({
+      href: 'https://amazon-price-check.netlify.app/',
+      title: 'Amazon Price',
+      published: 'Aug 25, 2021',
+      iconClass: '-code-orange',
+      body: 'Check the price of an item on Amazon using the product\'s ASIN.'
     }),
     Item({
       href: 'https://resize-gg.netlify.app/',
       title: 'Resize.gg',
+      published: 'Jun 2, 2021',
       iconClass: '-resize',
       body: 'Small utility to cacluate aspect ratio dimensions.'
     }),
     Item({
+      href: 'https://currency-challenge.netlify.app/',
+      title: 'Currency Challenge',
+      published: 'May 4, 2021',
+      iconClass: '-code-green',
+      body: 'A currency conversion app that uses a public api to get the latest exchange rates.'
+    }),
+    Item({
       href: 'https://discord-message-queue.netlify.app/',
       title: 'Discord Queue',
+      published: 'Dec 28, 2020',
       iconClass: '-discord',
       body: 'Small app to queue messages before sending them to discord.'
+    }),
+
+    div({ class: 'head' }, [
+      h(h1, 'Misc + Demos')
+    ]),
+    Item({
+      href: 'https://valorant-editor.netlify.app/',
+      title: 'Valorant Editor',
+      published: 'Mar 26, 2021',
+      iconClass: '-code-red',
+      body: 'A drag and drop editor interface. Made for an old friend for fun.'
+    }),
+    Item({
+      href: 'https://almost-realtime.netlify.com/',
+      title: 'Almost Realtime',
+      published: 'Jun 1, 2021',
+      iconClass: '-message',
+      body: 'A chat app using HTTP to send messanges and SSE to sync messages from server to client.'
+    }),
+    Item({
+      href: 'https://creativedevelopers.netlify.app',
+      title: 'Creative Developers',
+      published: 'Aug 4, 2019',
+      iconClass: '-code-blue',
+      body: 'A simple landing page for a Discord community.'
     }),
     Item({
       href: 'https://state-sync-demo.netlify.app/',
       title: 'State Sync Demo',
+      published: 'Feb 10, 2021',
       iconClass: '-sync',
       body: 'Syncs app state between iframes on a page. Useful for designing responsible mobile layouts.'
     }),
+    Item({
+      href: 'https://dvd-video.netlify.app/',
+      title: 'DVD Video',
+      published: 'Feb 1, 2019',
+      iconClass: '-code-purple',
+      body: 'Nostalgia'
+    }),
+
     div({ class: 'head' }, [
       h(h1, 'Open Source')
     ]),
@@ -93,36 +223,7 @@ const Apps = (state, dispatch) => {
       iconClass: '-code-red',
       body: 'I wrote the implimentation for regex matches for the popular balanced-match package on npm.'
     }),
-    div({ class: 'head' }, [
-      h(h1, 'Old Work'),
-      // h(h2, 'After leaving the quality of these apps, unfortuantely, degraded significantly.')
-      h(h2, 'Keep note that these applications are now developed by others and I cannot guarantee their quality.')
-    ]),
-    Item({
-      href: 'https://accesstrucks.com/',
-      title: 'AccessTrucks',
-      iconClass: '-trucks-red',
-      body: 'A box truck aggregation site. Potential buyers can browse trucks from dealerships around the country.'
-    }),
-    Item({
-      href: 'https://sleepertrader.com/',
-      title: 'SleeperTrader',
-      iconClass: '-trucks-blue',
-      body: 'A semi truck aggregation site similar to AccessTrucks specifically for semis with sleepers.'
-    }),
 
-    Item({
-      href: 'https://machineryaccess.com/',
-      title: 'MachineryAccess',
-      iconClass: '-machines-yellow',
-      body: 'A heavy machinery aggregation site that also a aggregates machinery auction events.'
-    }),
-    // Item({
-    //   to: '/wiki',
-    //   title: 'Wiki Editor (wip)',
-    //   iconClass: '-resize',
-    //   body: 'A simple dashboard and editor to create wiki-like articles using markdown.'
-    // }),
     div({ class: 'head' }, [
       h(h1, 'Other')
     ]),

@@ -1,57 +1,43 @@
 {
-
-
-
-
-
-
-
-
   "note-to-future-self": "!!! this is not up to date. see resume.js instead !!!",
-
-
-
-
-
-
-
   "data": [
     {
       "title": "Experience",
       "column": [
         {
-          "heading": "Lead Frontend Engineer",
-          "subheading": [
-            "Alqen - Des Moines, Iowa",
-            "June 2021 - Present"
-          ],
+          "heading": "Lead Engineer (Remote)",
+          "subheading": ["Udundi - Austin, Texas", "May 2022 - Current"],
           "list": [
-            "Maintained an existing Vue 2 application fixing bugs and adding features.",
-            "Designed and implimented a completely new Vue 3 application that wraps the pieces of the legacy dashboard as part of an incremental adoption strategy.",
-            "Ported legacy Vue 2 code to the new Vue 3 application.",
-            "Implimented onboarding and payment flows for new users and subscriptions.",
-            "Wrote a SSE (Server Sent Events) server in Node that receives miscellaneous events from our API service and forwared them to the frontend.",
-            "Created a user impersonation system using JWTs for administrators.",
-            "Took a leadership role and helped the team with strategizing and organizing our application at all levels."
+            "Developed the frontend for an A/B testing and analytics dashboard for Shopify store owners using Vue3, Pinia, Apollo, Tailwind, and Vite.",
+            "Setup automatic deployment processes for all of our projects using Github Actions and AWS.",
+            "Worked extensively on our backend services using Node, Mongo, Apollo, and GraphQL to add functionality.",
+            "Worked on bringing previously unfinished projects using Vue2, Node, and MongoDB across the finish line.",
+            "Developed previously unfinished Shopify extensions across the finish line.",
+            "Developed multiple landing pages for previously unfinished projects and products in Vue3.",
+            "Developed the frontend for a shipping protection dashboard targeted at Shopify store owners.",
+            "Configured a large portion of AWS to run our applications. Including Elastic beanstalk, Serverless Functions with Lambda, S3, Cognito, API Gateway, etc"
           ]
         },
         {
-          "heading": "Frontend Developer and Designer",
-          "subheading": [
-            "Self-employed - Des Moines, Iowa",
-            "November 2019 - June 2021"
-          ],
+          "heading": "Lead Frontend Engineer (Remote)",
+          "subheading": ["Alqen - Las Vegas, Nevada", "June 2021 - June 2022"],
           "list": [
-            "Learning and creating new apps, libraries, and frameworks.",
-            "Various freelance developemnt and design."
+            "Developed multiple internal dashboards in both Vue2 and Vue3 for a variety of automated dropshipping products.",
+            "Developed realtime events services (backend) that integrated into our existing backend and wrote frontend features to display those realtime events.",
+            "Modernized and ported old Vue2 dashboards to Vue3.",
+            "Designed strategies to incrementally adopt Vue3 while maintaining the existing Vue2 project.",
+            "Developed custom integrations for payment methods using Walmart and Stripe APIs.",
+            "Created robust impersonation features for product admins to act on behalf of individual users to offer technical support."
           ]
+        },
+        {
+          "heading": "Frontend Developer & Designer",
+          "subheading": ["Self-employed - Des Moines, Iowa", "November 2019 - June 2021"],
+          "list": ["Learning and creating new apps, libraries, and frameworks.", "Various freelance development and design."]
         },
         {
           "heading": "Senior Software Developer",
-          "subheading": [
-            "Access Publishing Inc. - Johnston, Iowa",
-            "February 2016 - November 2019"
-          ],
+          "subheading": ["Access Publishing Inc. - Johnston, Iowa", "February 2016 - November 2019"],
           "list": [
             "Designed unique aesthetic mobile-first web apps.",
             "Implemented a variety of responsive web apps from the ground up for aggregating and leasing/financing semi-trucks, semi-trailers, and heavy machinery.",
@@ -65,21 +51,13 @@
           ]
         },
         {
-          "heading": "Frontend Developer and Designer",
-          "subheading": [
-            "Self-employed - Indianola, Iowa",
-            "August 2014 - February 2016"
-          ],
-          "list": [
-            "Various freelance design."
-          ]
+          "heading": "Frontend Developer & Designer",
+          "subheading": ["Self-employed - Indianola, Iowa", "August 2014 - February 2016"],
+          "list": ["Various freelance design."]
         },
         {
           "heading": "Frontend Developer",
-          "subheading": [
-            "SevenVerbs - Urbandale, Iowa",
-            "April - August 2014"
-          ],
+          "subheading": ["SevenVerbs - Urbandale, Iowa", "April - August 2014"],
           "list": [
             "Converted existing static web designs into WordPress, Drupal, Sitefinity, and Joomla.",
             "Designed and developed original websites, business cards, logos, infographics, and other printed and digital documents.",
@@ -92,25 +70,18 @@
       "title": "Technical",
       "column": [
         {
-          "heading": "Languages / Frameworks",
-          "list": [
-            "Extensive knowledge of JavaScript and JS frameworks like Vue, React, Hyperapp, and Mithril.",
-            "Some experience using TypeScript.",
-            "Hello world's completed in Ruby, Python, Elm, and Rust.",
-            "Tons of experience with CSS and CSS preprocessors."
-          ]
-        },
-        {
           "heading": "Software",
           "list": [
             "Experienced with all kinds of creative software like Blender, Autodesk 3ds Max, Photoshop, Illustrator, After Effects, Procreate, ArtStudio Pro, Medibang, and more."
           ]
         },
         {
-          "heading": "Content Management Systems",
+          "heading": "Languages",
           "list": [
-            "Extensive experience with WordPress, Drupal, Sitefinity, and Joomla.",
-            "Some experience with Netlify CMS, Grav CMS, Pico, Kirby, and Craft."
+            "Extensive knowledge of JavaScript and JS frameworks.",
+            "Some experience using TypeScript.",
+            "Hello world's completed in SBCL Lisp, Go, Ruby, Python, Elm, and Rust.",
+            "Tons of experience with CSS preprocessors like Sass, Less, Stylus, and PostCSS."
           ]
         }
       ]
@@ -139,21 +110,13 @@
       "title": "Education",
       "column": [
         {
-          "heading": "Associate of Arts and Sciences",
-          "subheading": [
-            "2012 - 2014",
-            "DMACC Ankeny Campus"
-          ],
-          "list": [
-            "Graphic Design with Web Emphasis"
-          ]
+          "heading": "Associate of Arts & Sciences",
+          "subheading": ["2012 - 2014", "DMACC Ankeny Campus"],
+          "list": ["Graphic Design with Web Emphasis"]
         },
         {
           "heading": "High School Diploma",
-          "subheading": [
-            "2008 - 2012",
-            "Southeast Warren Jr. / Sr. High School"
-          ]
+          "subheading": ["2008 - 2012", "Southeast Warren Jr. / Sr. High School"]
         }
       ]
     }
