@@ -3,7 +3,7 @@ const fs = require('fs')
 const path = require('path')
 const log = require('./log')
 
-const directory = path.join(process.cwd(), 'public')
+const directory = path.join(process.cwd(), 'dist')
 const reload = path.join(__dirname, '../reload.js')
 
 const script = fs.readFileSync(reload)
