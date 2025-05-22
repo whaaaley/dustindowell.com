@@ -5,7 +5,7 @@ MAKEFLAGS += --no-print-directory
 .PHONY: all clean start prepare css js html
 
 PATH := $(PWD)/node_modules/.bin:$(PATH)
-SHELL := /bin/bash
+SHELL := $(shell which bash)
 
 all: NODE_ENV=production
 start: NODE_ENV=development
@@ -18,7 +18,7 @@ clean:
 	rm -f package-lock.json
 
 start: prepare css js html
-	node server --watch "src" --scss "$(MAKE) css" --js "$(MAKE) js"
+	node serverOld --watch "src" --scss "$(MAKE) css" --js "$(MAKE) js"
 
 prepare:
 	rm -rf public && mkdir public

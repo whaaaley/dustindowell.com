@@ -65,28 +65,28 @@ const Apps = (state, dispatch) => {
     Item({
       href: 'https://accesstrucks.com/',
       title: 'AccessTrucks',
-      published: 'Nov, 1 2019',
+      published: 'Nov 1, 2019',
       iconClass: '-trucks-red',
       body: 'A box truck aggregation site. Potential buyers can browse trucks from dealerships around the country.'
     }),
     Item({
       href: 'https://sleepertrader.com/',
       title: 'SleeperTrader',
-      published: 'Nov, 1 2019',
+      published: 'Nov 1, 2019',
       iconClass: '-trucks-blue',
       body: 'A semi truck aggregation site similar to AccessTrucks specifically for semis with sleepers.'
     }),
     Item({
       href: 'https://machineryaccess.com/',
       title: 'MachineryAccess',
-      published: 'Nov, 1 2019',
+      published: 'Nov 1, 2019',
       iconClass: '-machines-yellow',
       body: 'A heavy machinery aggregation site that also a aggregates machinery auction events.'
     }),
 
     // div({ class: 'head' }, [
     //   h(h1, 'Old Work'),
-    //   // h(h2, 'After leaving the quality of these apps, unfortuantely, degraded significantly.')
+    //   // h(h2, 'After leaving the quality of these apps, unfortunately, degraded significantly.')
     //   h(h2, 'These are sites I started but are now managed by other developers.')
     // ]),
 
@@ -140,7 +140,7 @@ const Apps = (state, dispatch) => {
       title: 'Resize.gg',
       published: 'Jun 2, 2021',
       iconClass: '-resize',
-      body: 'Small utility to cacluate aspect ratio dimensions.'
+      body: 'Small utility to calculate aspect ratio dimensions.'
     }),
     Item({
       href: 'https://currency-challenge.netlify.app/',
@@ -172,7 +172,7 @@ const Apps = (state, dispatch) => {
       title: 'Almost Realtime',
       published: 'Jun 1, 2021',
       iconClass: '-message',
-      body: 'A chat app using HTTP to send messanges and SSE to sync messages from server to client.'
+      body: 'A chat app using HTTP to send messages and SSE to sync messages from server to client.'
     }),
     Item({
       href: 'https://creativedevelopers.netlify.app',
@@ -209,7 +209,7 @@ const Apps = (state, dispatch) => {
       href: 'https://github.com/whaaaley/npm-update-force',
       title: 'npm-update-force',
       iconClass: '-code-blue',
-      body: 'A small cli utilitiy that will force update all packages in your package.json to the latest version.'
+      body: 'A small cli utility that will force update all packages in your package.json to the latest version.'
     }),
     Item({
       href: 'https://github.com/whaaaley/parcel-source-map-cli',
@@ -221,7 +221,7 @@ const Apps = (state, dispatch) => {
       href: 'https://www.npmjs.com/package/balanced-match',
       title: 'balanced-match',
       iconClass: '-code-red',
-      body: 'I wrote the implimentation for regex matches for the popular balanced-match package on npm.'
+      body: 'I wrote the implementation for regex matches for the popular balanced-match package on npm.'
     }),
 
     div({ class: 'head' }, [

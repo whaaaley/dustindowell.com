@@ -1,0 +1,26 @@
+{
+  "tasks": {
+    "dev": "env $(cat .env) deno run -A --watch index.ts",
+    "preview": "deno task client:preview && deno task client:move && deno task dev",
+
+    "client:build": "cd ../client && deno task build",
+    "client:preview": "cd ../client && deno task preview",
+    "client:move": "rm -rf ./dist && mkdir -p ./dist && cp -r ../client/dist/* ./dist",
+
+    "website:prepare": "cd ../client/src/modules/website && make prepare",
+    "website:css": "cd ../client/src/modules/website && make css",
+    "website:js": "cd ../client/src/modules/website && make js",
+    "website:html": "cd ../client/src/modules/website && make html",
+    "website:build": "cd ../client/src/modules/website && make all"
+  },
+  "fmt": {
+    "lineWidth": 240,
+    "semiColons": false,
+    "singleQuote": true
+  },
+  "imports": {
+    "@logtape/logtape": "jsr:@logtape/logtape@^0.10.0",
+    "@oak/oak": "jsr:@oak/oak@^17.1.4",
+    "@std/path": "jsr:@std/path@^1.0.9"
+  }
+}
