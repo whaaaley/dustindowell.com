@@ -13,6 +13,8 @@
   "settings": {
     "cSpell.words": [
       "Alqen",
+      "callees",
+      "cleancss",
       "Demi",
       "Demibold",
       "Dowell",
@@ -21,15 +23,21 @@
       "Hyperapp",
       "Indianola",
       "Insta",
+      "logtape",
       "Moines",
+      "nixpkgs",
       "onclick",
       "onroute",
+      "pkgs",
       "pushstate",
       "Sparkpost",
       "Udundi",
       "Urbandale",
+      "VITE",
       "vnode",
       "vnodes",
+      "vueuse",
+      "whaaaley",
       "WHATWG"
     ]
   },

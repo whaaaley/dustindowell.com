@@ -1,4 +1,6 @@
+archive
 node_modules
-package-lock.json
 public
 tmp
+
+package-lock.json

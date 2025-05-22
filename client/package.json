@@ -1,0 +1,37 @@
+{
+  "name": "dustindowell-client",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:make": "make start",
+    "build": "rm -rf dist && mkdir -p dist && npm run build:notFound && npm run build:website",
+    "build:make": "make all",
+    "preview": "env $(cat .env) npm run build",
+    "build:notFound": "vite build --config ./vite.build.notFound.ts",
+    "build:website": "vite build --config ./vite.build.website.ts",
+    "install:all": "npm install && cd src/modules/website && npm install"
+  },
+  "dependencies": {
+    "@vueuse/core": "^13.2.0",
+    "vue": "^3.5.14",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.27.0",
+    "@stylistic/eslint-plugin": "^4.2.0",
+    "@types/node": "^22.15.21",
+    "@vitejs/plugin-vue": "^5.2.4",
+    "@vitejs/plugin-vue-jsx": "^4.2.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-tailwindcss": "^3.13.0",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "eslint-plugin-vue": "^10.1.0",
+    "globals": "^16.1.0",
+    "neostandard": "^0.12.1",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.1",
+    "typescript-eslint": "^8.32.1",
+    "vite": "^6.3.5"
+  }
+}
