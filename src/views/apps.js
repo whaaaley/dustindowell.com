@@ -65,21 +65,21 @@ const Apps = (state, dispatch) => {
     Item({
       href: 'https://accesstrucks.com/',
       title: 'AccessTrucks',
-      published: 'Nov, 1 2019',
+      published: 'Nov 1, 2019',
       iconClass: '-trucks-red',
       body: 'A box truck aggregation site. Potential buyers can browse trucks from dealerships around the country.'
     }),
     Item({
       href: 'https://sleepertrader.com/',
       title: 'SleeperTrader',
-      published: 'Nov, 1 2019',
+      published: 'Nov 1, 2019',
       iconClass: '-trucks-blue',
       body: 'A semi truck aggregation site similar to AccessTrucks specifically for semis with sleepers.'
     }),
     Item({
       href: 'https://machineryaccess.com/',
       title: 'MachineryAccess',
-      published: 'Nov, 1 2019',
+      published: 'Nov 1, 2019',
       iconClass: '-machines-yellow',
       body: 'A heavy machinery aggregation site that also a aggregates machinery auction events.'
     }),
