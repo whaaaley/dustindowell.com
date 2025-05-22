@@ -11,7 +11,7 @@ const Header = () => {
   return div({ class: 'header' }, [
     Text(h1, 'Dustin Dowell'),
     div([
-      Text(h2, 'Frontend Engineer'),
+      Text(h2, 'Full-Stack Developer'),
       Text(h2, 'Des Moines, Iowa 50311'),
       Text(h2, 'dustindowell22@gmail.com'),
       Text(h2, '515-689-5648')
