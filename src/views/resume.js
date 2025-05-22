@@ -139,7 +139,7 @@ const Grid = () => {
       Text(h3, 'February 2016 - November 2019'),
       Text(p, 'Led development of three specialized vehicle and equipment marketplaces (AccessTrucks, SleeperTrader, MachineryAccess) serving commercial buyers and hundreds of dealerships nationwide. Managed a team of 3 developers.'),
       ul([
-        Text(li, 'Architected systems aggregating inventory from hundreds of dealerships using custom web scrapers and API integrations'),
+        Text(li, 'Developed systems to aggregate inventory from hundreds of dealerships using web scrapers and API integrations'),
         Text(li, 'Built data processing pipelines in Node.js and MongoDB handling inconsistent formats, duplicates, and constant updates'),
         Text(li, 'Developed image processing systems to optimize and standardize vehicle photos across platforms'),
         Text(li, 'Created Vue.js frontends with specialized filtering for truck specifications and heavy machinery details'),
@@ -147,7 +147,7 @@ const Grid = () => {
         Text(li, 'Built dealer management portal in Angular for listing management, inquiry responses, and performance tracking'),
         Text(li, 'Designed conversion tracking system with Google Analytics integration and fine-grained event monitoring'),
         Text(li, 'Managed targeted social media marketing campaigns and implemented email notification system using Sparkpost'),
-        Text(li, 'Optimized applications for SEO, mobile devices, and slow 3G connections using micro-frameworks and custom static rendering')
+        Text(li, 'Optimized applications for SEO, mobile devices, and slow 3G connections using micro-frameworks and static rendering')
       ])
     ])
   ])
