@@ -79,7 +79,7 @@ const Apps = (state, dispatch) => {
         FeaturedProject({
           to: '/access',
           title: 'Access Publishing - Vehicle Marketplaces',
-          published: 'Feb 2018 - Nov 2019',
+          published: 'Feb 2016 - Nov 2019',
           image: '/screenshots/access/01_accesspublishing_thumbnail.png',
           description: 'Suite of specialized vehicle and equipment marketplaces including AccessTrucks, SleeperTrader, and MachineryAccess. These platforms aggregate inventory from truck and machinery dealers nationwide for potential buyers.'
         })
@@ -153,6 +153,42 @@ const Apps = (state, dispatch) => {
     // }),
 
     div({ class: 'head' }, [
+      h(h1, 'In Progress')
+    ]),
+    Item({
+      title: 'Governance',
+      iconClass: '-code-blue',
+      body: 'A platform for small businesses to manage their agendas, events, voting processes, and documents.'
+    }),
+    Item({
+      title: 'Schema Harbor',
+      iconClass: '-code-purple',
+      body: 'A tool for converting web pages into structured API endpoints using AI.'
+    }),
+    Item({
+      title: 'Perdition',
+      iconClass: '-code-red',
+      body: 'A text-based RPG with a dark atmosphere and narrative-driven gameplay.'
+    }),
+    Item({
+      title: 'Reasonable',
+      iconClass: '-code-green',
+      body: 'A visual interface for building logical reasoning processes using AI.'
+    }),
+    Item({
+      title: 'Paper Prism',
+      iconClass: '-code-orange',
+      body: 'A writing tool that suggests and validates sources for claims in documents.'
+    }),
+    Item({
+      href: 'https://thedarktimes.news',
+      title: 'The Dark Times',
+      published: 'Aug 23, 2023',
+      iconClass: '-code-blue',
+      body: 'A news aggregator that collects current events and presents them in article format.'
+    }),
+
+    div({ class: 'head' }, [
       h(h1, 'Apps for Fun')
     ]),
     Item({
@@ -168,13 +204,6 @@ const Apps = (state, dispatch) => {
       published: 'Jun 7, 2021',
       iconClass: '-insights',
       body: 'Connect your Facebook account to view Instagram analytics for business accounts.'
-    }),
-    Item({
-      href: 'https://thedarktimes.news',
-      title: 'The Dark Times',
-      published: 'Aug 23, 2023',
-      iconClass: '-code-blue',
-      body: 'A news aggregator that researches current events and uses generative ai to write articles.'
     }),
     Item({
       href: 'https://pocket.deno.dev',
@@ -255,28 +284,40 @@ const Apps = (state, dispatch) => {
       h(h1, 'Open Source')
     ]),
     Item({
-      href: 'https://github.com/whaaaley/material-icons-scss',
-      title: 'material-icons-scss',
-      iconClass: '-code-purple',
-      body: 'A project that compiles all material design icons into SVG data URLs to be used from SCSS functions.'
-    }),
-    Item({
-      href: 'https://github.com/whaaaley/npm-update-force',
-      title: 'npm-update-force',
-      iconClass: '-code-blue',
-      body: 'A small cli utility that will force update all packages in your package.json to the latest version.'
-    }),
-    Item({
-      href: 'https://github.com/whaaaley/parcel-source-map-cli',
-      title: 'parcel-source-map-cli',
-      iconClass: '-code-orange',
-      body: 'A small cli wrapper around parcel-source-map that combines sourcemaps.'
+      href: 'https://github.com/whaaaley/cynthia',
+      title: 'Cynthia',
+      iconClass: '-code-green',
+      body: 'A proof of concept code synthesis command line tool that explores automated pattern-based generation.'
     }),
     Item({
       href: 'https://www.npmjs.com/package/balanced-match',
       title: 'balanced-match',
       iconClass: '-code-red',
       body: 'I wrote the implementation for regex matches for the popular balanced-match package on npm.'
+    }),
+    Item({
+      href: 'https://github.com/whaaaley/material-icons-scss',
+      title: 'material-icons-scss',
+      iconClass: '-code-purple',
+      body: 'Material design icon functions for SCSS that output SVG Data URLs optimized with SVGO.'
+    }),
+    Item({
+      href: 'https://github.com/whaaaley/esbuild-plugin-glob-import',
+      title: 'esbuild-plugin-glob-import',
+      iconClass: '-code-blue',
+      body: 'An esbuild plugin that allows using globs to import multiple files.'
+    }),
+    Item({
+      href: 'https://github.com/whaaaley/parcel-source-map-cli',
+      title: 'parcel-source-map-cli',
+      iconClass: '-code-orange',
+      body: 'A CLI wrapper for @parcel/source-map that makes it easier to merge source maps together.'
+    }),
+    Item({
+      href: 'https://github.com/whaaaley/npm-update-force',
+      title: 'npm-update-force',
+      iconClass: '-code-red',
+      body: 'A small cli utility that will force update all packages in your package.json to the latest version.'
     }),
 
     div({ class: 'head' }, [

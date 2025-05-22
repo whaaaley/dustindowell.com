@@ -58,7 +58,7 @@ const AccessPdp = (state, dispatch) => {
   ]
 
   // Description and features content
-  const descriptionText = 'Access Publishing is a digital marketing company specializing in vehicle and equipment listing platforms. I led the development of three major platforms: AccessTrucks for box trucks, SleeperTrader for semi trucks with sleepers, and MachineryAccess for heavy machinery. These platforms aggregate inventory from dealers nationwide, providing potential buyers with a comprehensive marketplace for vehicles and equipment.'
+  const descriptionText = 'Access Publishing is a digital marketing company that transitioned from print magazines to specialized vehicle and equipment listing platforms. The company runs three major online marketplaces: AccessTrucks for box trucks, SleeperTrader for semi trucks with sleepers, and MachineryAccess for heavy machinery, aggregating inventory from hundreds of dealerships to provide a platform for commercial vehicle and equipment buyers.'
   const additionalTextContent = 'Each platform was designed with specialized features for its specific market segment, including advanced filtering options, dealer portals, and auction event tracking. The sites collectively serve thousands of dealers and buyers, streamlining the process of finding and listing specialized vehicles and equipment.'
 
   // Main key features (most impressive and complex)

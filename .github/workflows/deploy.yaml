@@ -22,23 +22,11 @@ jobs:
         with:
           deno-version: v2.x
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-          cache-dependency-path: 'package.json'
-
-      - name: Install dependencies
-        run: npm install
-
       - name: Build project
-        run: make all
+        run: cd client && deno install --allow-scripts && make all
 
-      - name: Copy files to server directory
-        run: |
-          mkdir -p server/dist
-          cp -r dist/* server/dist/
+      - name: Move client to server
+        run: cd server && deno task client:move
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
