@@ -137,7 +137,7 @@ const Grid = () => {
       Text(h2, 'Lead Developer'),
       Text(h3, 'Access Publishing Inc. - Johnston, Iowa'),
       Text(h3, 'February 2016 - November 2019'),
-      Text(p, 'Led development of three specialized vehicle and equipment marketplaces (AccessTrucks, SleeperTrader, MachineryAccess) serving commercial buyers and hundreds of dealerships nationwide. Managed and orchestrated a team of 3 developers.'),
+      Text(p, 'Led development of three specialized vehicle and equipment marketplaces (AccessTrucks, SleeperTrader, MachineryAccess) serving commercial buyers and hundreds of dealerships nationwide. Managed a team of 3 developers.'),
       ul([
         Text(li, 'Architected systems aggregating inventory from hundreds of dealerships using custom web scrapers and API integrations'),
         Text(li, 'Built data processing pipelines in Node.js and MongoDB handling inconsistent formats, duplicates, and constant updates'),
