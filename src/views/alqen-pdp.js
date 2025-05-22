@@ -58,7 +58,7 @@ const AlqenPdp = (state, dispatch) => {
   ]
 
   // Description and features content
-  const descriptionText = 'Alqen.io is an e-commerce automation platform for Amazon and Walmart sellers that handles inventory management, bulk product uploads, order fulfillment, payment processing, and real-time marketplace synchronization. The platform helps sellers find profitable products and efficiently process orders across multiple channels while reducing manual intervention to optimize their operations.'
+  const descriptionText = 'Alqen is an e-commerce automation platform for Amazon and Walmart sellers that handles inventory management, bulk product uploads, order fulfillment, payment processing, and real-time marketplace synchronization. The platform helps sellers find profitable products and efficiently process orders across multiple channels while reducing manual intervention to optimize their operations.'
   const additionalTextContent = 'The platform bridges the gap between marketplaces and suppliers, enabling seamless product listing, order fulfillment, and inventory management. Alqen provides sellers with real-time analytics, automated repricing capabilities, and impersonation features for customer service, positioning it as an essential tool for scaling e-commerce businesses.'
 
   // Main key features (most impressive and complex)
@@ -111,7 +111,7 @@ const AlqenPdp = (state, dispatch) => {
 
   // Role narrative in more natural paragraph form
   const myRoleNarratives = [
-    'I led the frontend development of Alqen.io, an e-commerce automation platform for Walmart Marketplace sellers. I built the dashboard with Vue2/Vue3 that interfaced with a serverless AWS/Node.js/MongoDB backend to display thousands of daily orders and real-time inventory updates.',
+    'I led the frontend development of Alqen, an e-commerce automation platform for Walmart Marketplace sellers. I built the dashboard with Vue2/Vue3 that interfaced with a serverless AWS/Node.js/MongoDB backend to display thousands of daily orders and real-time inventory updates.',
 
     'The platform needed reliable integration with Walmart\'s API for order syncing and payment processing. I built the frontend interfaces for Walmart and Stripe API integrations and implemented real-time order tracking so sellers could monitor orders and inventory without refreshing.',
 

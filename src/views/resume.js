@@ -55,7 +55,7 @@ const Grid = () => {
       Text(h2, 'Lead Frontend Engineer'),
       Text(h3, 'Alqen - Las Vegas, Nevada (Remote)'),
       Text(h3, 'June 2021 - June 2022'),
-      Text(p, 'Led frontend development of Alqen.io, an e-commerce automation platform for Amazon and Walmart sellers, handling inventory management, bulk uploads, and order fulfillment across multiple channels.'),
+      Text(p, 'Led frontend development of Alqen, an e-commerce automation platform for Amazon and Walmart sellers, handling inventory management, bulk uploads, and order fulfillment across multiple channels.'),
       ul([
         Text(li, 'Built comprehensive dashboards in Vue2/Vue3 interfacing with serverless AWS/Node.js/MongoDB backend for real-time order and inventory management'),
         Text(li, 'Developed real-time analytics interfaces displaying performance metrics, profit margins, and inventory levels from backend systems'),
