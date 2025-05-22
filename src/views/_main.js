@@ -16,7 +16,6 @@ const Main = slot => (state, dispatch) => {
       a({ href: 'https://github.com/whaaaley?tab=repositories', target: '_blank' }, [
         text('GitHub')
       ]),
-      Link({ to: '/pdp' }, 'PDP'),
       Link({ to: '/resume' }, 'Resume')
     ]),
     main([
