@@ -1,4 +1,3 @@
-
 $icon-notes: ic-description-24px($dark-500);
 $icon-message: ic-question-answer-24px($white);
 $icon-link: ic-link-24px($white);
@@ -35,7 +34,8 @@ $icon-feedback: ic-feedback-24px($white);
     padding: 36px 6px 0;
 
     h1 {
-      font: 600 36px/1 $font-mont;
+      // font: 600 36px/1 $font-mont;
+      font: 800 36px/1 $font-inter;
     }
 
     h2 {

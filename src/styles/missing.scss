@@ -1,18 +1,19 @@
-
 .missing {
   display: flex;
   height: 62.5vh;
 
   div {
     margin: auto;
-    font: 800 48px/1 $font-goldbill;
+    // font: 800 48px/1 $font-goldbill;
+    font: 800 48px/1 $font-inter;
   }
 }
 
 @media (min-width: 768px + 1px) {
   .missing {
     div {
-      font: 800 96px/1 $font-goldbill;
+      // font: 800 96px/1 $font-goldbill;
+      font: 800 96px/1 $font-inter;
     }
   }
 }
