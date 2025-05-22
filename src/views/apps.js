@@ -73,7 +73,7 @@ const Apps = (state, dispatch) => {
           to: '/alqen',
           title: 'Alqen - E-Comm Automation Platform',
           published: 'June 2021 - June 2022',
-          image: '/screenshots/alqen/01_listings.png',
+          image: '/screenshots/alqen/02_statistics_overview.png',
           description: 'E-commerce automation platform for Amazon and Walmart sellers handling inventory management, order fulfillment, and payment processing. Helps sellers find profitable products while reducing manual intervention across multiple channels.'
         }),
         FeaturedProject({
