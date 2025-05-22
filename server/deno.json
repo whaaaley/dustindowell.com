@@ -5,13 +5,7 @@
 
     "client:build": "cd ../client && deno task build",
     "client:preview": "cd ../client && deno task preview",
-    "client:move": "rm -rf ./dist && mkdir -p ./dist && cp -r ../client/dist/* ./dist",
-
-    "website:prepare": "cd ../client/src/modules/website && make prepare",
-    "website:css": "cd ../client/src/modules/website && make css",
-    "website:js": "cd ../client/src/modules/website && make js",
-    "website:html": "cd ../client/src/modules/website && make html",
-    "website:build": "cd ../client/src/modules/website && make all"
+    "client:move": "rm -rf ./dist && mkdir -p ./dist && cp -r ../dist/* ./dist"
   },
   "fmt": {
     "lineWidth": 240,
