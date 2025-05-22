@@ -1,0 +1,40 @@
+{
+  "folders": [
+    {
+      "path": "client"
+    },
+    {
+      "path": "server"
+    },
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "cSpell.words": [
+      "Alqen",
+      "Dowell",
+      "Goldbill",
+      "Hyperapp",
+      "Indianola",
+      "Insta",
+      "Moines",
+      "onclick",
+      "onroute",
+      "pushstate",
+      "Sparkpost",
+      "Udundi",
+      "Urbandale",
+      "vnode",
+      "vnodes",
+      "WHATWG"
+    ]
+  },
+  "extensions": {
+    "recommendations": [
+      "bradlc.vscode-tailwindcss",
+      "dbaeumer.vscode-eslint",
+      "Vue.volar"
+    ]
+  }
+}
