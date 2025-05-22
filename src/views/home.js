@@ -1,4 +1,3 @@
-
 import { div, h, p, source, svg, text, video } from '../lib/vnodes/html'
 
 import Link from './_link'
@@ -16,14 +15,9 @@ const Tooltip = props => {
 
 const Text = (h, data) => h([text(data)])
 
-const First = 'Hello, I\'m Dustin. I\'m a self taught developer, designer, ' +
-  'and artist. I have a crazy huge passion for micro frameworks ' +
-  'and minimal tooling. I love to write apps that are small, fast, and ' +
-  'accessible.'
+const First = 'I build web apps that automate workflows and boost productivity. I prioritize maintainability and reducing friction over everything else.'
 
-const Second = 'I\'m looking for interesting projects where I\'m allowed to ' +
-  'write modern, accessible, high quality code that\'s tailored to the needs ' +
-  'of a specific app. I love to write unique and effective software.'
+const Second = 'I\'m looking for projects where I can apply this and create platforms that make work and services easier for everyone.'
 
 const svgStyle = data => h('style')([text(data)])
 const svgText = (props, data) => h('text')(props, [text(data)])
