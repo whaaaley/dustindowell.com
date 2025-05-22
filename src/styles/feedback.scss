@@ -12,7 +12,6 @@ $placeholder-2: mix($light, $dark-500, 25%);
     padding: 0 6px 24px;
 
     h1 {
-      // font: 600 48px/1 $font-mont;
       font: 800 48px/1 $font-inter;
     }
   }
@@ -21,7 +20,7 @@ $placeholder-2: mix($light, $dark-500, 25%);
     padding: 12px 18px;
     border-radius: 6px;
     color: $white;
-    font: 400 16px/18px sans-serif;
+    font: 400 16px/1.125 sans-serif;
 
     &.-success {
       background: $pastel-green;
@@ -77,7 +76,7 @@ $placeholder-2: mix($light, $dark-500, 25%);
     padding: 0 24px;
     border: 2px solid var(--fg-400);
     border-radius: 8px;
-    font: 300 18px/48px sans-serif;
+    font: 300 18px/2.6666666667 sans-serif;
     cursor: pointer;
 
     &:hover {
