@@ -1,10 +1,36 @@
 
-import { a, div, h1, h2, p, text } from '../lib/vnodes/html'
+import { a, div, h1, h2, p, text, img } from '../lib/vnodes/html'
 
 import main from './_main'
 import link from '../lib/routerLink'
 
 const h = (tag, data) => tag([text(data)])
+
+// New Featured Project card component
+const FeaturedProject = data => {
+  const onclick = event => {
+    event.preventDefault() // prevent href
+    link({ to: data.to })
+  }
+
+  return a({ class: 'featured-project', href: data.to, onclick }, [
+    div({ class: 'featured-project-image-container' }, [
+      img({
+        src: data.image,
+        alt: data.title,
+        class: 'featured-project-image',
+        loading: 'lazy'
+      })
+    ]),
+    div({ class: 'featured-project-content' }, [
+      h(h2, data.title),
+      data.published && div({ class: 'featured-project-date' }, [
+        text(data.published)
+      ]),
+      h(p, data.description)
+    ])
+  ])
+}
 
 const Item = data => {
   const onclick = event => {
@@ -31,21 +57,34 @@ const Item = data => {
 const Apps = (state, dispatch) => {
   return div({ class: 'apps' }, [
     div({ class: 'head' }, [
+      h(h1, 'Featured Projects')
+    ]),
+    div({ class: 'featured-projects-grid' }, [
+      FeaturedProject({
+        to: '/compose',
+        title: 'Compose - A/B Testing Platform',
+        published: 'May 22, 2023',
+        image: '/screenshots/compose/33_experiment_report_calendar.png',
+        description: 'A powerful A/B testing platform for Shopify stores with pay-as-you-go pricing, real-time analytics, and no-code testing capabilities.'
+      })
+    ]),
+
+    div({ class: 'head' }, [
       h(h1, 'Professional Work')
     ]),
     Item({
-      href: 'https://app.compose.co/',
-      title: 'Compose App',
+      to: '/compose',
+      title: 'Compose Platform',
       published: 'Aug 23, 2023',
       iconClass: '-code-purple',
-      body: 'The newest solution for conversion rate optimization and A/B testing.'
+      body: 'The newest solution for conversion rate optimization and A/B testing for Shopify stores.'
     }),
     Item({
-      href: 'https://compose.co/',
+      to: '/compose',
       title: 'Compose Website',
       published: 'Aug 23, 2023',
       iconClass: '-code-purple',
-      body: 'The newest solution for conversion rate optimization and A/B testing.'
+      body: 'Marketing site for the Compose A/B testing platform with product information and pricing.'
     }),
     Item({
       href: 'https://udundi.com/',

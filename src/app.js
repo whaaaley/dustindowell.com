@@ -6,6 +6,8 @@ import Blog from './views/blog'
 import Feedback from './views/feedback'
 import Missing from './views/missing'
 import Palette from './views/palette'
+import Pdp from './views/pdp'
+import ComposePdp from './views/compose-pdp'
 import Resume from './views/resume'
 
 import * as subs from './subscriptions'
@@ -45,6 +47,8 @@ app({
     '/feedback': Feedback,
     '/missing': Missing,
     '/palette': Palette,
+    '/pdp': Pdp,
+    '/compose': ComposePdp,
     '/resume': Resume
   },
   start: dispatch => {
