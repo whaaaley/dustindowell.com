@@ -23,7 +23,7 @@ jobs:
           deno-version: v2.x
 
       - name: Build project
-        run: cd client && deno install --allow-scripts && make all
+        run: deno install --allow-scripts && make all
 
       - name: Move client to server
         run: cd server && deno task client:move
