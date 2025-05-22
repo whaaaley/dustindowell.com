@@ -7,6 +7,13 @@
     padding: 24px;
     color: $dark-500;
     background: $gradient;
+    justify-content: space-between;
+
+    .name-title-container {
+      h2 {
+        font: italic 900 20px/1.5 $font-inter;
+      }
+    }
 
     h1 {
       margin: 0 0 0 -4px;
@@ -15,7 +22,7 @@
     }
 
     h2 {
-      font: 800 14px/24px $font-inter;
+      font: 800 14px/1.7142857143 $font-inter;
     }
   }
 
@@ -27,7 +34,7 @@
   }
 
   .grid-item {
-    padding: 0 24px 0;
+    padding: 12px 24px 24px;
 
     h1,
     h2 {
@@ -37,17 +44,17 @@
     h3,
     ul,
     p {
-      font: 400 14px/24px sans-serif;
+      font: 400 14px/1.7142857143 sans-serif;
     }
 
     h1 {
       margin: 0 0 0 -2px;
-      font: italic 900 36px/48px $font-inter;
+      font: italic 900 36px/1.3333333333 $font-inter;
     }
 
     h2 {
       margin: 0 0 0 -1px;
-      font: italic 900 20px/36px $font-inter;
+      font: italic 900 20px/1.8 $font-inter;
     }
 
     h3 {
@@ -80,15 +87,6 @@
       align-items: center;
       padding: 36px 36px 36px 48px;
       border-radius: 12px;
-
-      div {
-        margin: 0 0 0 auto;
-        padding: 0 0 0 24px;
-      }
-
-      h1 {
-        font: italic 900 56px/1 $font-inter;
-      }
     }
 
     .spinner-box {
@@ -102,7 +100,6 @@
 
     .grid-item {
       width: 50%;
-      padding: 12px 24px 24px;
     }
   }
 }

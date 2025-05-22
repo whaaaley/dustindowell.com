@@ -25,7 +25,7 @@
     padding: 0 36px 36px;
 
     p {
-      font: 300 18px/36px sans-serif;
+      font: 300 18px/2 sans-serif;
       text-indent: 24px;
     }
 
@@ -35,7 +35,7 @@
       border: 2px solid var(--fg-500);
       border-radius: 8px;
       color: var(--fg-500);
-      font: 300 18px/48px sans-serif;
+      font: 300 18px/2.6666666667 sans-serif;
       cursor: pointer;
 
       &:hover {
@@ -59,7 +59,7 @@
   width: 360px;
   padding: 12px 24px;
   border-radius: 12px;
-  font: 14px/24px $font-inter;
+  font: 14px/1.7142857143 $font-inter;
   transform: translate(0, -50%);
   animation: 1s ease-in-out 3s forwards fadein;
   opacity: 0;

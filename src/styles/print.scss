@@ -5,21 +5,98 @@
     opacity: 1;
   }
 
+  html {
+    zoom: 0.75;
+  }
+
   body {
+    margin: 0; // Remove all margins
+    padding: 0; // Remove all padding
     background: none;
+    color: #000 !important; // Force black text
   }
 
   nav {
     display: none;
   }
 
-  .tile {
-    h1 {
-      font-size: 36px !important;
-    }
+  .resume {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+  }
 
-    h2 {
-      font-size: 24px !important;
-    }
+  .header {
+    background: none !important;
+    color: #000 !important;
+    display: flex !important;
+    flex-flow: wrap !important;
+    align-items: center !important;
+
+    height: auto !important;
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+    margin: 0 !important;
+  }
+
+  .header h1 {
+    color: #000 !important;
+    opacity: 1 !important;
+  }
+
+  .header h2 {
+    color: #000 !important;
+    opacity: 1 !important;
+  }
+
+  .grid {
+    display: grid; // Ensure grid display is maintained
+    grid-template-columns: repeat(2, 1fr); // Keep two columns
+    padding-top: 0% !important; // Remove top padding
+  }
+
+  .grid-item {
+    padding: 0 24px 24px;
+  }
+
+  // Make "The Gist" section full width in print mode
+  .grid-item[style*="width: 100%"] {
+    grid-column: 1 / -1;
+    width: 100% !important;
+  }
+
+  // Reduce heading sizes
+  .grid-item h1 {
+    color: #000 !important;
+    opacity: 1 !important;
+    padding-top: 0% !important;
+  }
+
+  .grid-item h2 {
+    color: #000 !important;
+    opacity: 1 !important;
+  }
+
+  .grid-item h3 {
+    color: #000 !important;
+    opacity: 1 !important;
+  }
+
+  .grid-item p {
+    color: #000 !important;
+    opacity: 1 !important;
+    padding: 0 !important;
+  }
+
+  .grid-item ul {
+    color: #000 !important;
+    opacity: 1 !important;
+    padding: 0 0 0 24px;
+  }
+
+  .grid-item li {
+    color: #000 !important;
+    opacity: 1 !important;
+    padding: 6px 0 0 !important;
   }
 }

@@ -8,9 +8,11 @@ const Text = (h, data) => h([text(data)])
 
 const Header = () => {
   return div({ class: 'header' }, [
-    Text(h1, 'Dustin Dowell'),
+    div({ class: 'name-title-container' }, [
+      Text(h1, 'Dustin Dowell'),
+      Text(h2, 'Full-Stack Engineer')
+    ]),
     div([
-      Text(h2, 'Platform Engineer'),
       Text(h2, 'Des Moines, Iowa 50311'),
       Text(h2, 'dustindowell22@gmail.com'),
       Text(h2, '515-689-5648')
@@ -86,13 +88,13 @@ const Grid = () => {
 
       Text(h2, 'Languages & Technologies'),
       ul([
-        Text(li, 'JavaScript/TypeScript: Extensive knowledge of JavaScript ecosystems and frameworks (Vue.js, Node.js)'),
-        Text(li, 'Backend: Node.js, Express, Koa, Apollo GraphQL, MongoDB, PostgreSQL, Deno, Drizzle'),
-        Text(li, 'Cloud & DevOps: AWS (Lambda, S3, API Gateway, Kinesis), GitHub Actions, CI/CD'),
-        Text(li, 'Frontend: Vue2/Vue3, Pinia, responsive design'),
-        Text(li, 'CSS: Sass, Less, Stylus, PostCSS, Tailwind CSS'),
-        Text(li, 'Go: Some experience with Go for backend services and data processing'),
-        Text(li, 'Other Languages: Python, Ruby, Rust, Elm, Elixir, SBCL Lisp (exposure and experimentation)')
+        Text(li, 'Extensive knowledge of JavaScript/TypeScript ecosystems and frameworks (Vue.js, Node.js)'),
+        Text(li, 'Node.js, Express, Koa, Apollo GraphQL, MongoDB, PostgreSQL, Deno, Drizzle'),
+        Text(li, 'AWS (Lambda, S3, API Gateway, Kinesis), GitHub Actions, CI/CD'),
+        Text(li, 'Vue2/Vue3, Pinia, responsive design'),
+        Text(li, 'Sass, Less, Stylus, PostCSS, Tailwind CSS'),
+        Text(li, 'Some experience with Go for backend services and data processing'),
+        Text(li, 'Python, Ruby, Rust, Elm, Elixir, SBCL Lisp (exposure and experimentation)')
       ]),
 
       Text(h2, 'Favorite Stack'),
@@ -159,7 +161,7 @@ const Resume = (state, dispatch) => {
     div({ class: 'grid' }, [
       div({ class: 'grid-item', style: 'width: 100%' }, [
         Text(h1, 'The Gist'),
-        Text(p, 'Platform engineer with 10+ years building web applications and dashboards. Led development of A/B testing platform processing 5M+ daily requests, e-commerce automation platform for Walmart/Amazon sellers, and vehicle marketplace systems serving hundreds of dealerships. Expertise in full-stack development with Vue.js, Node.js, PostgreSQL, MongoDB, and AWS infrastructure. Passionate about simple, usable design.')
+        Text(p, 'Full-Stack engineer with 10+ years building web applications and dashboards. Led development of A/B testing platform processing 5M+ daily requests, e-commerce automation platform for Walmart/Amazon sellers, and vehicle marketplace systems serving hundreds of dealerships. Expertise in full-stack development with Vue.js, Node.js, PostgreSQL, MongoDB, and AWS infrastructure. Passionate about simple, usable design.')
       ])
     ]),
     Grid()

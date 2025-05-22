@@ -34,19 +34,13 @@ $icon-feedback: ic-feedback-24px($white);
     padding: 36px 6px 0;
 
     h1 {
-      // font: 600 36px/1 $font-mont;
       font: 800 36px/1 $font-inter;
     }
 
     h2 {
-      font: 14px/24px $font-inter;
+      font: 14px/1.7142857143 $font-inter;
       opacity: 0.75;
     }
-
-    // h2 {
-    //   font: 400 16px/36px sans-serif;
-    //   opacity: 0.625;
-    // }
   }
 
   .icon {
@@ -168,11 +162,11 @@ $icon-feedback: ic-feedback-24px($white);
   padding: 0 0 0 18px;
 
   h1 {
-    font: 400 24px/32px sans-serif;
+    font: 400 24px/1.3333333333 sans-serif;
   }
 
   p {
-    font: 400 13px/20px sans-serif;
+    font: 400 13px/1.5384615385 sans-serif;
     opacity: 0.625;
   }
 }
@@ -209,7 +203,7 @@ $icon-feedback: ic-feedback-24px($white);
 
   .work-item-body {
     h1 {
-      font: 400 18px/27px sans-serif;
+      font: 400 18px/1.5 sans-serif;
     }
   }
 }

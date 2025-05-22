@@ -1,4 +1,3 @@
-
 // TODO: stylelint is not getting run on this file
 
 @import '@whaaaley/material-icons-scss/extended/filled';
@@ -22,6 +21,7 @@
 @import 'styles/palette';
 @import 'styles/pdp';
 @import 'styles/resume';
+@import 'styles/print';
 
 body > div {
   min-height: 100vh;

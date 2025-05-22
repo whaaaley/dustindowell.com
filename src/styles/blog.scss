@@ -9,7 +9,6 @@
     padding: 0 6px 24px;
 
     h1 {
-      // font: 600 48px/1 $font-mont;
       font: 800 48px/1 $font-inter;
     }
   }
@@ -26,18 +25,17 @@
     }
 
     h1 {
-      // font: 600 24px/30px sans-serif;
-      font: 800 24px/30px $font-inter;
+      font: 800 24px/1.25 $font-inter;
     }
 
     h2 {
       margin: 0 0 6px;
-      font: 100 14px/24px sans-serif;
+      font: 100 14px/1.7142857143 sans-serif;
       opacity: 0.625;
     }
 
     p {
-      font: 400 14px/24px sans-serif;
+      font: 400 14px/1.7142857143 sans-serif;
     }
   }
 
