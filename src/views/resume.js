@@ -102,7 +102,7 @@ const Grid = () => {
 
       Text(h2, 'Development Philosophy'),
       ul([
-        Text(li, 'Building minimal, user-focused web applications for over 10 years with an emphasis on platforms and dashboards that solve real business problems'),
+        Text(li, 'Building minimal, user-focused web applications for over 10 years with an emphasis on platforms and dashboards'),
         Text(li, 'Expertise in functional programming patterns and designing optimal user experiences through iterative improvement and data-driven decisions'),
         Text(li, 'Focus on tiny app bundles, minimal UI design, and efficient architectures for maximum performance and usability'),
         Text(li, 'Preference for incremental adoption strategies and maintainable code that can evolve with changing requirements')
