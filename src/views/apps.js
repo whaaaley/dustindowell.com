@@ -75,6 +75,13 @@ const Apps = (state, dispatch) => {
           published: 'June 2021 - June 2022',
           image: '/screenshots/alqen/01_listings.png',
           description: 'E-commerce automation platform for Amazon and Walmart sellers handling inventory management, order fulfillment, and payment processing. Helps sellers find profitable products while reducing manual intervention across multiple channels.'
+        }),
+        FeaturedProject({
+          to: '/access',
+          title: 'Access Publishing - Vehicle Marketplaces',
+          published: 'Feb 2018 - Nov 2019',
+          image: '/screenshots/access/01_accesspublishing_thumbnail.png',
+          description: 'Suite of specialized vehicle and equipment marketplaces including AccessTrucks, SleeperTrader, and MachineryAccess. These platforms aggregate inventory from truck and machinery dealers nationwide for potential buyers.'
         })
       ])
     ]),
@@ -110,27 +117,27 @@ const Apps = (state, dispatch) => {
     //   iconClass: '-code-red',
     //   body: 'Alqen provides a suite of tools for Walmart Marketplace sellers.'
     // }),
-    Item({
-      href: 'https://accesstrucks.com/',
-      title: 'AccessTrucks',
-      published: 'Nov 1, 2019',
-      iconClass: '-trucks-red',
-      body: 'A box truck aggregation site. Potential buyers can browse trucks from dealerships around the country.'
-    }),
-    Item({
-      href: 'https://sleepertrader.com/',
-      title: 'SleeperTrader',
-      published: 'Nov 1, 2019',
-      iconClass: '-trucks-blue',
-      body: 'A semi truck aggregation site similar to AccessTrucks specifically for semis with sleepers.'
-    }),
-    Item({
-      href: 'https://machineryaccess.com/',
-      title: 'MachineryAccess',
-      published: 'Nov 1, 2019',
-      iconClass: '-machines-yellow',
-      body: 'A heavy machinery aggregation site that also a aggregates machinery auction events.'
-    }),
+    // Item({
+    //   href: 'https://accesstrucks.com/',
+    //   title: 'AccessTrucks',
+    //   published: 'Nov 1, 2019',
+    //   iconClass: '-trucks-red',
+    //   body: 'A box truck aggregation site. Potential buyers can browse trucks from dealerships around the country.'
+    // }),
+    // Item({
+    //   href: 'https://sleepertrader.com/',
+    //   title: 'SleeperTrader',
+    //   published: 'Nov 1, 2019',
+    //   iconClass: '-trucks-blue',
+    //   body: 'A semi truck aggregation site similar to AccessTrucks specifically for semis with sleepers.'
+    // }),
+    // Item({
+    //   href: 'https://machineryaccess.com/',
+    //   title: 'MachineryAccess',
+    //   published: 'Nov 1, 2019',
+    //   iconClass: '-machines-yellow',
+    //   body: 'A heavy machinery aggregation site that also a aggregates machinery auction events.'
+    // }),
 
     // div({ class: 'head' }, [
     //   h(h1, 'Old Work'),

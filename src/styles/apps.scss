@@ -180,14 +180,12 @@ $icon-feedback: ic-feedback-24px($white);
 .featured-projects-container {
   grid-column: 1 / -1;
   width: 100%;
-  margin-bottom: 24px;
 }
 
 .featured-projects-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px;
-  margin-top: 16px;
 }
 
 @media (max-width: 768px) {
