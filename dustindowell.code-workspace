@@ -1,0 +1,52 @@
+{
+  "folders": [
+    {
+      "path": "client"
+    },
+    {
+      "path": "server"
+    },
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "cSpell.words": [
+      "Alqen",
+      "callees",
+      "cleancss",
+      "dbaeumer",
+      "Demi",
+      "Demibold",
+      "Dowell",
+      "dustindowell",
+      "Goldbill",
+      "Hyperapp",
+      "Indianola",
+      "Insta",
+      "logtape",
+      "Moines",
+      "nixpkgs",
+      "onclick",
+      "onroute",
+      "pkgs",
+      "pushstate",
+      "Sparkpost",
+      "Udundi",
+      "Urbandale",
+      "VITE",
+      "vnode",
+      "vnodes",
+      "vueuse",
+      "whaaaley",
+      "WHATWG"
+    ]
+  },
+  "extensions": {
+    "recommendations": [
+      "bradlc.vscode-tailwindcss",
+      "dbaeumer.vscode-eslint",
+      "Vue.volar"
+    ]
+  }
+}
