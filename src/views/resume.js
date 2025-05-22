@@ -26,7 +26,7 @@ const Grid = () => {
       Text(h1, 'Experience'),
 
       Text(h2, 'Founding Lead Engineer'),
-      Text(h3, 'Compose - Austin, Texas (Remote)'),
+      Text(h3, 'Udundi / Compose - Austin, Texas (Remote)'),
       Text(h3, 'September 2022 - Current'),
       Text(p, 'Led development of Compose.co, an A/B testing platform with no-code tools and deep Shopify integration. Built a scalable system processing over 5 million daily requests.'),
       ul([
