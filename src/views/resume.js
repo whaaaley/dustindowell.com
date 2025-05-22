@@ -30,7 +30,7 @@ const Grid = () => {
       ul([
         Text(li, 'Developed the frontend for an A/B testing and analytics dashboard for Shopify store owners using Vue3, Pinia, Apollo, Tailwind, and Vite.'),
         Text(li, 'Setup automatic deployment processes for all of our projects using Github Actions and AWS.'),
-        Text(li, 'Worked extensively on our backend services using Node, Mongo, Apollo, and GrapQL to add functionality.'),
+        Text(li, 'Worked extensively on our backend services using Node, Mongo, Apollo, and GraphQL to add functionality.'),
         Text(li, 'Worked on bringing previously unfinished projects using Vue2, Node, and MongoDB across the finish line.'),
         Text(li, 'Developed previously unfinished Shopify extensions across the finish line.'),
         Text(li, 'Developed multiple landing pages for previously unfinished projects and products in Vue3.'),

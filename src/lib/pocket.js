@@ -44,7 +44,7 @@ const collect = (state, render) => {
 }
 
 /**
- * Minimalist state manager with agressive optimization
+ * Minimalist state manager with aggressive optimization
  * @function pocket
  */
 
