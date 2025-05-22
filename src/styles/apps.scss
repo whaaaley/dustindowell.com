@@ -150,7 +150,7 @@ $icon-feedback: ic-feedback-24px($white);
   }
 }
 
-.portfolio-item {
+.work-item {
   display: flex;
   padding: 24px;
   border-radius: 12px;
@@ -164,7 +164,7 @@ $icon-feedback: ic-feedback-24px($white);
   }
 }
 
-.portfolio-item-body {
+.work-item-body {
   padding: 0 0 0 18px;
 
   h1 {
@@ -203,11 +203,11 @@ $icon-feedback: ic-feedback-24px($white);
 }
 
 @media (max-width: 960px - 1px) {
-  .portfolio-item {
+  .work-item {
     padding: 12px;
   }
 
-  .portfolio-item-body {
+  .work-item-body {
     h1 {
       font: 400 18px/27px sans-serif;
     }

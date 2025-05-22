@@ -12,7 +12,7 @@ const Main = slot => (state, dispatch) => {
     nav([
       Text(div, 'D'),
       Link({ to: '/' }, 'Home'),
-      Link({ to: '/apps' }, 'Portfolio'),
+      Link({ to: '/apps' }, 'Work'),
       a({ href: 'https://github.com/whaaaley?tab=repositories', target: '_blank' }, [
         text('GitHub')
       ]),

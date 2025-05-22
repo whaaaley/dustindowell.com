@@ -40,9 +40,9 @@ const Item = data => {
     ? { href: data.href, target: '_blank' }
     : { href: data.to, onclick }
 
-  return a({ class: 'portfolio-item', ...props }, [
+  return a({ class: 'work-item', ...props }, [
     div({ class: 'icon ' + data.iconClass }),
-    div({ class: 'portfolio-item-body' }, [
+    div({ class: 'work-item-body' }, [
       div({ style: 'display: flex; align-items: center; justify-content: space-between; flex: 1 0 auto; gap: 16px;' }, [
         h(h1, data.title),
         data.published && h(p, data.published)
