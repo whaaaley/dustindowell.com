@@ -222,7 +222,7 @@ const Apps = (state, dispatch) => {
       title: 'balanced-match',
       iconClass: '-code-red',
       body: 'I wrote the implementation for regex matches for the popular balanced-match package on npm.'
-    }),
+   }),
 
     div({ class: 'head' }, [
       h(h1, 'Other')
