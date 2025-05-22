@@ -16,5 +16,5 @@ export const spaRoutingMiddleware = async (ctx: Context, next: Next) => {
     ctx.response.status = 404
   }
 
-  await send(ctx, entrypoint, { root: join(Deno.cwd(), '/dist') })
+  await send(ctx, entrypoint, { root: join(Deno.cwd(), './dist') })
 }

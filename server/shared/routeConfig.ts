@@ -4,7 +4,7 @@ export type IgnoredPath = typeof ignoredPaths[number]
 export const routes = [{
   name: 'index',
   path: '^/($|/.*)',
-  entrypoint: '/dist/index.html',
+  entrypoint: '/index.html',
 }] as const
 
 export const ignoredPaths = ['.well-known', '.json', 'favicon']
