@@ -10,11 +10,11 @@ export const spaRoutingMiddleware = async (ctx: Context, next: Next) => {
   }
 
   const route = routes.find((route) => new RegExp(route.path).test(path))
-  const entrypoint = route ? route.entrypoint : '/notFound.html'
+  const entrypoint = route ? route.entrypoint : '/index.html'
 
-  if (!route) {
-    ctx.response.status = 404
-  }
+  // if (!route) {
+  //   ctx.response.status = 404
+  // }
 
-  await send(ctx, entrypoint, { root: join(Deno.cwd(), './dist') })
+  await send(ctx, entrypoint, { root: join(Deno.cwd(), '/dist') })
 }
