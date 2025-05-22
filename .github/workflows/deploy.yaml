@@ -38,7 +38,7 @@ jobs:
       - name: Copy files to server directory
         run: |
           mkdir -p server/dist
-          cp -r public/* server/dist/
+          cp -r dist/* server/dist/
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1

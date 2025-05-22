@@ -11,24 +11,24 @@ all: NODE_ENV=production
 start: NODE_ENV=development
 
 all: prepare css js html
-	gzip --best --keep --no-name public/index.html
+	gzip --best --keep --no-name dist/index.html
 
 clean:
-	rm -rf node_modules public && mkdir public
+	rm -rf node_modules dist && mkdir dist
 	rm -f package-lock.json
 
 start: prepare css js html
 	node serverOld --watch "src" --scss "$(MAKE) css" --js "$(MAKE) js"
 
 prepare:
-	rm -rf public && mkdir public
-	cp -r src/assets/* public
+	rm -rf dist && mkdir dist
+	cp -r src/assets/* dist
 
 css:
-	node build css src/main.scss > public/main.css
+	node build css src/main.scss > dist/main.css
 
 js:
-	node build js src/app.js > public/app.js
+	node build js src/app.js > dist/app.js
 
 html:
-	node build html src/index.js | node > public/index.html
+	node build html src/index.js | node > dist/index.html
