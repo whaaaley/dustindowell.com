@@ -30,15 +30,13 @@ const Grid = () => {
       Text(h3, 'September 2022 - Current'),
       Text(p, 'Led development of Compose.co, an A/B testing platform with no-code tools and deep Shopify integration. Built a scalable system processing over 5 million daily requests.'),
       ul([
-        Text(li, 'Architected and developed full-stack platform using Vue3, Pinia, Tailwind, Node.js, AWS Lambda, Apollo, PostgreSQL, and MongoDB'),
-        Text(li, 'Designed AWS serverless infrastructure using Lambda, S3, and API Gateway'),
-        Text(li, 'Contributed to GDPR-compliant data collection system in Go, developed Node.js batch processing and AWS Kinesis integration for scalable data ingestion'),
+        Text(li, 'Architected and developed full-stack platform using Vue3, Pinia, Tailwind, Node, PostgreSQL, and MongoDB with AWS serverless infrastructure (Lambda, S3, API Gateway)'),
+        Text(li, 'Contributed to GDPR-compliant data collection system in Go, developed Node batch processing and AWS Kinesis integration for scalable data ingestion'),
         Text(li, 'Implemented real-time analytics with statistical significance calculations and revenue tracking for conversion optimization'),
-        Text(li, 'Established CI/CD pipelines using GitHub Actions for rapid deployment without service interruption'),
-        Text(li, 'Worked extensively on backend services using Node.js, MongoDB, Apollo, and GraphQL to add core functionality'),
-        Text(li, 'Configured substantial portions of AWS infrastructure including Lambda functions, S3, and API Gateway'),
-        Text(li, 'Led technical decision-making while mentoring team members and incorporating collaborative input'),
-        Text(li, 'Experimented with AI-powered content generation using OpenAI models in early proof-of-concept work')
+        Text(li, 'Established CI/CD pipelines using GitHub Actions for rapid deployment without interruption'),
+        Text(li, 'Worked extensively on backend services using Node, MongoDB, Apollo, and GraphQL for core functionality'),
+        Text(li, 'Led technical decision-making while mentoring team members and incorporating their input'),
+        Text(li, 'Experimented with AI-powered content generation using OpenAI in early proof-of-concept work')
       ]),
 
       Text(h2, 'Lead Engineer'),
@@ -46,12 +44,12 @@ const Grid = () => {
       Text(h3, 'May 2022 - September 2022'),
       Text(p, 'Contributed to multiple Udundi projects and initiatives, focusing on completing unfinished products and establishing development infrastructure.'),
       ul([
-        Text(li, 'Completed stalled Vue2/Node.js projects by reducing scope and maintaining original design'),
+        Text(li, 'Completed stalled Vue2/Node projects by reducing scope and maintaining original design'),
         Text(li, 'Developed and launched previously stalled Shopify extensions to production'),
         Text(li, 'Created multiple landing pages for unfinished projects and products using Vue3'),
         Text(li, 'Built frontend for shipping protection dashboard targeted at Shopify store owners'),
         Text(li, 'Developed frontend for Compose.co marketing website and Udundi agency website'),
-        Text(li, 'Established automatic deployment processes for company projects using GitHub Actions and AWS')
+        Text(li, 'Established CI/CD processes for company projects using GitHub Actions and AWS')
       ]),
 
       Text(h2, 'Lead Frontend Engineer'),
@@ -59,12 +57,12 @@ const Grid = () => {
       Text(h3, 'June 2021 - June 2022'),
       Text(p, 'Led frontend development of Alqen, an e-commerce automation platform for Amazon and Walmart sellers, handling inventory management, bulk uploads, and order fulfillment across multiple channels.'),
       ul([
-        Text(li, 'Built comprehensive dashboards in Vue2/Vue3 interfacing with serverless AWS/Node.js/MongoDB backend for real-time order and inventory management'),
+        Text(li, 'Built robust dashboards in Vue2/Vue3 using serverless AWS/Node/MongoDB backend for real-time order and inventory management'),
         Text(li, 'Developed real-time analytics interfaces displaying performance metrics, profit margins, and inventory levels from backend systems'),
         Text(li, 'Built frontend interfaces for Walmart and Stripe API integrations for automated order synchronization and payment processing'),
-        Text(li, 'Created impersonation system using signed tokens with specific permissions and short-lived expirations for customer support troubleshooting'),
-        Text(li, 'Designed incremental Vue2 to Vue3 adoption strategy, enabling gradual migration without breaking existing functionality'),
-        Text(li, 'Built product listing management tools and automated repricing systems based on market conditions')
+        Text(li, 'Created a user impersonation system using signed JWTs with specific permissions and short-lived expirations for customer support troubleshooting'),
+        Text(li, 'Designed an incremental Vue2 to Vue3 adoption strategy, for gradual migration without breaking existing functionality'),
+        Text(li, 'Helped build product listing management tools and automated repricing systems based on market conditions')
       ]),
 
       Text(h2, 'Frontend Developer & Designer'),
@@ -88,10 +86,10 @@ const Grid = () => {
 
       Text(h2, 'Languages & Technologies'),
       ul([
-        Text(li, 'Extensive knowledge of JavaScript/TypeScript ecosystems and frameworks (Vue.js, Node.js)'),
-        Text(li, 'Node.js, Express, Koa, Apollo GraphQL, MongoDB, PostgreSQL, Deno, Drizzle'),
-        Text(li, 'AWS (Lambda, S3, API Gateway, Kinesis), GitHub Actions, CI/CD'),
-        Text(li, 'Vue2/Vue3, Pinia, responsive design'),
+        Text(li, 'Extensive knowledge of JavaScript/TypeScript ecosystems and frameworks'),
+        Text(li, 'Node, Deno, Express, Koa, Oak, Apollo GraphQL, MongoDB, PostgreSQL, Drizzle'),
+        Text(li, 'AWS (Lambda, S3, API Gateway, Kinesis), GitHub Actions, CI/CD, Docker, Fly, Supabase'),
+        Text(li, 'Vue2/Vue3, Pinia, Vue Router, TanStack/Query, tRPC/Zod, RxJS'),
         Text(li, 'Sass, Less, Stylus, PostCSS, Tailwind CSS'),
         Text(li, 'Some experience with Go for backend services and data processing'),
         Text(li, 'Python, Ruby, Rust, Elm, Elixir, SBCL Lisp (exposure and experimentation)')
@@ -142,11 +140,11 @@ const Grid = () => {
       Text(p, 'Led development of three specialized vehicle and equipment marketplaces (AccessTrucks, SleeperTrader, MachineryAccess) serving buyers and hundreds of dealerships nationwide.'),
       ul([
         Text(li, 'Developed systems to aggregate inventory from hundreds of dealerships using web scrapers and API integrations'),
-        Text(li, 'Built data processing pipelines in Node.js and MongoDB handling inconsistent formats, duplicates, and constant updates'),
+        Text(li, 'Built data processing pipelines in Node and MongoDB handling inconsistent formats, duplicates, and constant updates'),
         Text(li, 'Developed image processing systems to optimize and standardize vehicle photos across platforms'),
-        Text(li, 'Created Vue.js frontends with specialized filtering for truck specifications and heavy machinery details'),
-        Text(li, 'Implemented integrated financing prequalification system for SleeperTrader buyers, managing complex API integrations across PHP, MySQL, MongoDB, and Node.js systems'),
-        Text(li, 'Built dealer management portal in Angular for listing management, inquiry responses, and performance tracking'),
+        Text(li, 'Created Vue frontends with specialized filtering for truck specifications and heavy machinery details'),
+        Text(li, 'Implemented integrated financing prequalification system for SleeperTrader buyers, managing complex API integrations across PHP, MySQL, MongoDB, and Node systems'),
+        Text(li, 'Helped build dealer management portal in Angular for listing management, inquiry responses, and performance tracking'),
         Text(li, 'Designed conversion tracking system with Google Analytics integration and fine-grained event monitoring'),
         Text(li, 'Managed targeted social media marketing campaigns and implemented email notification system using Sparkpost'),
         Text(li, 'Optimized applications for SEO, mobile devices, and slow 3G connections using micro-frameworks and static rendering')
@@ -161,7 +159,7 @@ const Resume = (state, dispatch) => {
     div({ class: 'grid' }, [
       div({ class: 'grid-item', style: 'width: 100%' }, [
         Text(h1, 'The Gist'),
-        Text(p, 'Full-Stack engineer with 10+ years building web applications and dashboards. Led development of A/B testing platform processing 5M+ daily requests, e-commerce automation platform for Walmart/Amazon sellers, and vehicle marketplace systems serving hundreds of dealerships. Expertise in full-stack development with Vue.js, Node.js, PostgreSQL, MongoDB, and AWS infrastructure. Passionate about simple, usable design.')
+        Text(p, 'Full-Stack engineer with 10+ years building web applications and dashboards. Led development of A/B testing platform processing 5M+ daily requests, e-commerce automation platform for Walmart/Amazon sellers, and vehicle marketplace systems serving hundreds of dealerships. Expertise in full-stack development with Vue, Node, PostgreSQL, MongoDB, and AWS infrastructure. Passionate about simple, usable design.')
       ])
     ]),
     Grid()
