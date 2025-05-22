@@ -4,7 +4,7 @@
 This project is hosted here https://dustindowell.com/
 
 ## Todo
-- [ ] Store and retreive resume.json to/from session storage
+- [ ] Store and retrieve resume.json to/from session storage
 
 # Build and Develop
 
