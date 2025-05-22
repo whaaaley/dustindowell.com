@@ -1,6 +1,4 @@
-
 import { a, div, h1, h2, p, text, img } from '../lib/vnodes/html'
-
 import main from './_main'
 import link from '../lib/routerLink'
 
@@ -57,28 +55,40 @@ const Item = data => {
 const Apps = (state, dispatch) => {
   return div({ class: 'apps' }, [
     div({ class: 'head' }, [
-      h(h1, 'Featured Projects')
+      h(h1, 'Featured Projects'),
+      div({ class: 'featured-projects-heading' }, [
+        text('Full-stack applications I\'ve built from concept to production')
+      ])
     ]),
-    div({ class: 'featured-projects-grid' }, [
-      FeaturedProject({
-        to: '/compose',
-        title: 'Compose - A/B Testing Platform',
-        published: 'May 22, 2023',
-        image: '/screenshots/compose/33_experiment_report_calendar.png',
-        description: 'A powerful A/B testing platform for Shopify stores with pay-as-you-go pricing, real-time analytics, and no-code testing capabilities.'
-      })
+    div({ class: 'featured-projects-container' }, [
+      div({ class: 'featured-projects-grid' }, [
+        FeaturedProject({
+          to: '/compose',
+          title: 'Compose - A/B Testing Platform',
+          published: 'May 2022 - Current',
+          image: '/screenshots/compose/33_experiment_report_calendar.png',
+          description: 'A/B testing platform with industry-first pay-as-you-go pricing and no contracts. Enables no-code split testing while automatically tracking revenue, engagement, and conversion rates with statistical significance calculations.'
+        }),
+        FeaturedProject({
+          to: '/alqen',
+          title: 'Alqen.io - E-Comm Automation Platform',
+          published: 'June 2021 - June 2022',
+          image: '/screenshots/alqen/01_listings.png',
+          description: 'E-commerce automation platform for Amazon and Walmart sellers handling inventory management, order fulfillment, and payment processing. Helps sellers find profitable products while reducing manual intervention across multiple channels.'
+        })
+      ])
     ]),
 
     div({ class: 'head' }, [
-      h(h1, 'Professional Work')
+      h(h1, 'Other Professional Work')
     ]),
-    Item({
-      to: '/compose',
-      title: 'Compose Platform',
-      published: 'Aug 23, 2023',
-      iconClass: '-code-purple',
-      body: 'The newest solution for conversion rate optimization and A/B testing for Shopify stores.'
-    }),
+    // Item({
+    //   to: '/compose',
+    //   title: 'Compose Platform',
+    //   published: 'Aug 23, 2023',
+    //   iconClass: '-code-purple',
+    //   body: 'The newest solution for conversion rate optimization and A/B testing for Shopify stores.'
+    // }),
     Item({
       to: '/compose',
       title: 'Compose Website',
@@ -93,14 +103,13 @@ const Apps = (state, dispatch) => {
       iconClass: '-code-blue',
       body: 'Custom Web Design & Development Agency specializing in Shopify.'
     }),
-    Item({
-      // href: 'https://alqen.io/',
-      href: 'https://marketplace.walmart.com/alqen/',
-      title: 'Alqen',
-      published: 'June 1, 2022',
-      iconClass: '-code-red',
-      body: 'Alqen provides a suite of tools for Walmart Marketplace sellers.'
-    }),
+    // Item({
+    //   to: '/alqen',
+    //   title: 'Alqen',
+    //   published: 'June 1, 2022',
+    //   iconClass: '-code-red',
+    //   body: 'Alqen provides a suite of tools for Walmart Marketplace sellers.'
+    // }),
     Item({
       href: 'https://accesstrucks.com/',
       title: 'AccessTrucks',
@@ -261,7 +270,7 @@ const Apps = (state, dispatch) => {
       title: 'balanced-match',
       iconClass: '-code-red',
       body: 'I wrote the implementation for regex matches for the popular balanced-match package on npm.'
-   }),
+    }),
 
     div({ class: 'head' }, [
       h(h1, 'Other')

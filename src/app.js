@@ -8,6 +8,7 @@ import Missing from './views/missing'
 import Palette from './views/palette'
 import Pdp from './views/pdp'
 import ComposePdp from './views/compose-pdp'
+import AlqenPdp from './views/alqen-pdp'
 import Resume from './views/resume'
 
 import * as subs from './subscriptions'
@@ -49,6 +50,7 @@ app({
     '/palette': Palette,
     '/pdp': Pdp,
     '/compose': ComposePdp,
+    '/alqen': AlqenPdp,
     '/resume': Resume
   },
   start: dispatch => {
