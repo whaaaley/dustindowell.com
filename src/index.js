@@ -15,8 +15,7 @@ const PreloadFont = props => {
     rel: 'preload',
     href: props.href,
     as: 'font',
-    type: 'font/woff2',
-    crossorigin: true // Netlify hosts assets on their CDN
+    type: 'font/woff2'
   })
 }
 
