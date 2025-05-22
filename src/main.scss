@@ -24,7 +24,7 @@
 
 body > div {
   min-height: 100vh;
-  color: white;
+  color: var(--fg-500);
   background: var(--bg-500);
 
   &.-dark {
