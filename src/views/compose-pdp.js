@@ -172,7 +172,7 @@ const ComposePdp = (state, dispatch) => {
     div({ class: 'head' }, [
       Text(h1, 'Compose: A/B Testing Platform'),
       div({ class: 'pdp-current-status' }, [
-        text('Lead Engineer (Remote) • Udundi • May 2022 - Current')
+        text('Founding Lead Engineer (Remote) • Udundi • May 2022 - Current')
       ])
     ]),
 
