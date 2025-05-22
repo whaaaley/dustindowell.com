@@ -4,10 +4,10 @@
  * @function decode
  */
 
-const queryDelimeters = /[&=]/g
+const queryDelimiters = /[&=]/g
 
 export const decode = data => {
-  const query = data.slice(1).split(queryDelimeters)
+  const query = data.slice(1).split(queryDelimiters)
   const result = {}
 
   for (let i = 0; i < query.length; i += 2) {
