@@ -1,4 +1,4 @@
-import { div, h1, h2, h3, li, p, text, ul } from '../lib/vnodes/html'
+import { div, h1, h2, h3, li, p, span, text, ul } from '../lib/vnodes/html'
 // import { div, h1, h2, text } from '../lib/vnodes/html'
 import main from './_main'
 
@@ -30,9 +30,8 @@ const Grid = () => {
       Text(h3, 'July 2025 - Current'),
       Text(p, 'Contributed to fraud detection product integrations on the Integration Services team at a leading life insurance and financial services company.'),
       ul([
-        Text(li, 'Developed fraud detection integrations using Python, AWS Lambda, CloudFormation, JFrog, DataDog, and Lucid for system design'),
-        Text(li, 'Worked with Azure DevOps for development workflows and CI/CD pipelines'),
-        Text(li, 'Built serverless solutions on AWS for fraud prevention in insurance operations')
+        Text(li, 'Developed fraud detection integrations using Python, AWS Lambda, and CloudFormation with DataDog monitoring'),
+        Text(li, 'Worked with Azure DevOps workflows and built serverless AWS solutions for fraud prevention')
       ]),
 
       Text(h2, 'Founding Lead Engineer'),
@@ -43,10 +42,10 @@ const Grid = () => {
         Text(li, 'Architected and developed full-stack platform using Vue3, Pinia, Tailwind, Node, PostgreSQL, and MongoDB with AWS serverless infrastructure (Lambda, S3, API Gateway)'),
         Text(li, 'Contributed to GDPR-compliant data collection system in Go, developed Node batch processing and AWS Kinesis integration for scalable data ingestion'),
         Text(li, 'Implemented real-time analytics with statistical significance calculations and revenue tracking for conversion optimization'),
-        Text(li, 'Established CI/CD pipelines using GitHub Actions for rapid deployment without interruption'),
-        Text(li, 'Worked extensively on backend services using Node, MongoDB, Apollo, and GraphQL for core functionality'),
-        Text(li, 'Led technical decision-making while mentoring team members and incorporating their input'),
-        Text(li, 'Experimented with AI-powered content generation using OpenAI in early proof-of-concept work')
+        // Text(li, 'Led technical decision-making while mentoring team members and incorporating their input'),
+        Text(li, 'Established CI/CD pipelines using GitHub Actions for rapid deployment without interruption')
+        // Text(li, 'Worked extensively on backend services using Node, MongoDB, Apollo, and GraphQL for core functionality'),
+        // Text(li, 'Experimented with AI-powered content generation using OpenAI in early proof-of-concept work')
       ]),
 
       Text(h2, 'Lead Engineer'),
@@ -54,11 +53,8 @@ const Grid = () => {
       Text(h3, 'May 2022 - September 2022'),
       Text(p, 'Contributed to multiple Udundi projects and initiatives, focusing on completing unfinished products and establishing development infrastructure.'),
       ul([
-        Text(li, 'Completed stalled Vue2/Node projects by reducing scope and maintaining original design'),
-        Text(li, 'Developed and launched previously stalled Shopify extensions to production'),
-        Text(li, 'Created multiple landing pages for unfinished projects and products using Vue3'),
-        Text(li, 'Built frontend for shipping protection dashboard targeted at Shopify store owners'),
-        Text(li, 'Developed frontend for Compose.co marketing website and Udundi agency website'),
+        Text(li, 'Inherited and brought Vue2/Node projects to completion by reducing scope and maintaining original design, including Shopify extensions launched to production'),
+        Text(li, 'Created multiple landing pages for products using Vue3, including Compose.co marketing website and Udundi agency website'),
         Text(li, 'Established CI/CD processes for company projects using GitHub Actions and AWS')
       ]),
 
@@ -96,13 +92,11 @@ const Grid = () => {
 
       Text(h2, 'Languages & Technologies'),
       ul([
-        Text(li, 'Extensive knowledge of JavaScript/TypeScript ecosystems and frameworks'),
+        Text(li, 'Extensive knowledge and professional experience using JavaScript/TypeScript ecosystems and frameworks'),
+        Text(li, 'Professional experience with Python and Go'),
+        Text(li, 'Vue2/Vue3, Pinia, Vue Router, TanStack/Query, tRPC/Zod, RxJS, Sass, Less, Stylus, PostCSS, Tailwind CSS'),
         Text(li, 'Node, Deno, Express, Koa, Oak, Apollo GraphQL, MongoDB, PostgreSQL, Drizzle'),
-        Text(li, 'AWS (Lambda, S3, API Gateway, Kinesis), GitHub Actions, CI/CD, Docker, Fly, Supabase'),
-        Text(li, 'Vue2/Vue3, Pinia, Vue Router, TanStack/Query, tRPC/Zod, RxJS'),
-        Text(li, 'Sass, Less, Stylus, PostCSS, Tailwind CSS'),
-        Text(li, 'Some experience with Go for backend services and data processing'),
-        Text(li, 'Python, Ruby, Rust, Elm, Elixir, SBCL Lisp (exposure and experimentation)')
+        Text(li, 'AWS (Lambda, S3, API Gateway, Kinesis), GitHub Actions, CI/CD, Docker, Fly, Supabase')
       ]),
 
       Text(h2, 'Favorite Stack'),
@@ -110,13 +104,13 @@ const Grid = () => {
         Text(li, 'Vue + TSX, TypeScript + tRPC/Zod, TanStack/Query, Supabase, Deno + Oak, RxJS, Drizzle')
       ]),
 
-      Text(h2, 'Development Philosophy'),
-      ul([
-        Text(li, 'Building minimal, user-focused web applications for over 10 years with an emphasis on platforms and dashboards'),
-        Text(li, 'Expertise in functional programming patterns and designing optimal user experiences through iterative improvement and data-driven decisions'),
-        Text(li, 'Focus on tiny app bundles, minimal UI design, and efficient architectures for maximum performance and usability'),
-        Text(li, 'Preference for incremental adoption strategies and maintainable code that can evolve with changing requirements')
-      ]),
+      // Text(h2, 'Development Philosophy'),
+      // ul([
+      //   Text(li, 'Building minimal, user-focused web applications for over 10 years with an emphasis on platforms and dashboards'),
+      //   Text(li, 'Expertise in functional programming patterns and designing optimal user experiences through iterative improvement and data-driven decisions'),
+      //   Text(li, 'Focus on tiny app bundles, minimal UI design, and efficient architectures for maximum performance and usability'),
+      //   Text(li, 'Preference for incremental adoption strategies and maintainable code that can evolve with changing requirements')
+      // ]),
 
       Text(h1, 'Design'),
       Text(h2, 'Web Design'),
@@ -126,8 +120,7 @@ const Grid = () => {
       ]),
       Text(h2, 'Graphic Design'),
       ul([
-        Text(li, 'Strong design sense with acute attention to detail'),
-        Text(li, 'Extensive experience designing for both print and digital media'),
+        Text(li, 'Strong design sense with acute attention to detail and extensive experience designing for both print and digital'),
         Text(li, 'Proficient in design tools including Figma, Adobe Illustrator, Photoshop, and other creative design software')
       ]),
 
