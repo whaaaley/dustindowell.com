@@ -75,12 +75,12 @@ const Grid = () => {
         Text(li, 'Helped build product listing management tools and automated repricing systems based on market conditions')
       ]),
 
-      Text(h2, 'Frontend Developer & Designer'),
-      Text(h3, 'Self-employed - Indianola, Iowa'),
-      Text(h3, 'August 2014 - February 2016'),
-      ul([
-        Text(li, 'Various freelance design projects')
-      ]),
+      // Text(h2, 'Frontend Developer & Designer'),
+      // Text(h3, 'Self-employed - Indianola, Iowa'),
+      // Text(h3, 'August 2014 - February 2016'),
+      // ul([
+      //   Text(li, 'Various freelance design projects')
+      // ]),
 
       Text(h2, 'Frontend Developer'),
       Text(h3, 'SevenVerbs - Urbandale, Iowa (Full-time)'),
