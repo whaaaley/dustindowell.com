@@ -25,9 +25,19 @@ const Grid = () => {
     div({ class: 'grid-item' }, [
       Text(h1, 'Experience'),
 
+      Text(h2, 'Senior Software Engineer II'),
+      Text(h3, 'Symetra - Bellevue, Washington (Remote Contract)'),
+      Text(h3, 'July 2025 - Current'),
+      Text(p, 'Contributed to fraud detection product integrations on the Integration Services team at a leading life insurance and financial services company.'),
+      ul([
+        Text(li, 'Developing fraud detection integrations using Python, AWS Lambda, CloudFormation, JFrog, DataDog, and Lucid for system design'),
+        Text(li, 'Working with Azure DevOps for development workflows and CI/CD pipelines'),
+        Text(li, 'Building serverless solutions on AWS for fraud prevention in insurance operations')
+      ]),
+
       Text(h2, 'Founding Lead Engineer'),
-      Text(h3, 'Udundi / Compose - Austin, Texas (Remote)'),
-      Text(h3, 'September 2022 - Current'),
+      Text(h3, 'Udundi / Compose - Austin, Texas (Remote Full-time)'),
+      Text(h3, 'September 2022 - June 2025'),
       Text(p, 'Led development of Compose.co, an A/B testing platform with no-code tools and deep Shopify integration. Built a scalable system processing over 5 million daily requests.'),
       ul([
         Text(li, 'Architected and developed full-stack platform using Vue3, Pinia, Tailwind, Node, PostgreSQL, and MongoDB with AWS serverless infrastructure (Lambda, S3, API Gateway)'),
@@ -40,7 +50,7 @@ const Grid = () => {
       ]),
 
       Text(h2, 'Lead Engineer'),
-      Text(h3, 'Udundi - Austin, Texas (Remote)'),
+      Text(h3, 'Udundi - Austin, Texas (Remote Full-time)'),
       Text(h3, 'May 2022 - September 2022'),
       Text(p, 'Contributed to multiple Udundi projects and initiatives, focusing on completing unfinished products and establishing development infrastructure.'),
       ul([
@@ -53,7 +63,7 @@ const Grid = () => {
       ]),
 
       Text(h2, 'Lead Frontend Engineer'),
-      Text(h3, 'Alqen - Las Vegas, Nevada (Remote)'),
+      Text(h3, 'Alqen - Las Vegas, Nevada (Remote Contract)'),
       Text(h3, 'June 2021 - June 2022'),
       Text(p, 'Led frontend development of Alqen, an e-commerce automation platform for Amazon and Walmart sellers, handling inventory management, bulk uploads, and order fulfillment across multiple channels.'),
       ul([
@@ -73,7 +83,7 @@ const Grid = () => {
       ]),
 
       Text(h2, 'Frontend Developer'),
-      Text(h3, 'SevenVerbs - Urbandale, Iowa'),
+      Text(h3, 'SevenVerbs - Urbandale, Iowa (Full-time)'),
       Text(h3, 'April - August 2014'),
       ul([
         Text(li, 'Converted static designs into WordPress, Drupal, Sitefinity, and Joomla'),
@@ -135,7 +145,7 @@ const Grid = () => {
 
       Text(h1, 'Experience'),
       Text(h2, 'Lead Developer'),
-      Text(h3, 'Access Publishing Inc. - Johnston, Iowa'),
+      Text(h3, 'Access Publishing Inc. - Johnston, Iowa (Full-time)'),
       Text(h3, 'February 2016 - November 2019'),
       Text(p, 'Led development of three specialized vehicle and equipment marketplaces (AccessTrucks, SleeperTrader, MachineryAccess) serving buyers and hundreds of dealerships nationwide.'),
       ul([
@@ -159,7 +169,7 @@ const Resume = (state, dispatch) => {
     div({ class: 'grid' }, [
       div({ class: 'grid-item', style: 'width: 100%' }, [
         Text(h1, 'The Gist'),
-        Text(p, 'Full-Stack engineer with 10+ years building web applications and dashboards. Led development of A/B testing platform processing 5M+ daily requests, e-commerce automation platform for Walmart/Amazon sellers, and vehicle marketplace systems serving hundreds of dealerships. Expertise in full-stack development with Vue, Node, PostgreSQL, MongoDB, and AWS infrastructure. Passionate about simple, usable design.')
+        Text(p, 'Full-Stack engineer with 10+ years building web applications and dashboards. Currently working on fraud detection integrations at Symetra, a leading insurance company. Previously led development of A/B testing platform processing 5M+ daily requests, e-commerce automation platform for Walmart/Amazon sellers, and vehicle marketplace systems serving hundreds of dealerships. Expertise in full-stack development with Vue, Node, Deno, PostgreSQL, MongoDB, and AWS infrastructure.')
       ])
     ]),
     Grid()
