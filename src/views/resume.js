@@ -30,9 +30,9 @@ const Grid = () => {
       Text(h3, 'July 2025 - Current'),
       Text(p, 'Contributed to fraud detection product integrations on the Integration Services team at a leading life insurance and financial services company.'),
       ul([
-        Text(li, 'Developing fraud detection integrations using Python, AWS Lambda, CloudFormation, JFrog, DataDog, and Lucid for system design'),
-        Text(li, 'Working with Azure DevOps for development workflows and CI/CD pipelines'),
-        Text(li, 'Building serverless solutions on AWS for fraud prevention in insurance operations')
+        Text(li, 'Developed fraud detection integrations using Python, AWS Lambda, CloudFormation, JFrog, DataDog, and Lucid for system design'),
+        Text(li, 'Worked with Azure DevOps for development workflows and CI/CD pipelines'),
+        Text(li, 'Built serverless solutions on AWS for fraud prevention in insurance operations')
       ]),
 
       Text(h2, 'Founding Lead Engineer'),
