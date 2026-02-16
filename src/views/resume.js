@@ -162,7 +162,7 @@ const Grid = () => {
 
       Text(h2, 'Development Philosophy'),
       ul([
-        Text(li, 'Building minimal, user-focused web applications for over 10 years with an emphasis on platforms and dashboards'),
+        Text(li, 'Building minimal, user-focused web applications for over 12 years with an emphasis on platforms and dashboards'),
         Text(li, 'Expertise in functional programming patterns and designing optimal user experiences through iterative improvement and data-driven decisions'),
         Text(li, 'Focus on tiny app bundles, minimal UI design, and efficient architectures for maximum performance and usability'),
         Text(li, 'Preference for incremental adoption strategies and maintainable code that can evolve with changing requirements')
@@ -177,7 +177,7 @@ const Resume = (state, dispatch) => {
     div({ class: 'grid' }, [
       div({ class: 'grid-item', style: 'width: 100%' }, [
         Text(h1, 'The Gist'),
-        Text(p, 'Full-Stack engineer with 10+ years building web applications and dashboards. Currently working on fraud detection integrations at Symetra, a leading insurance company. Previously led development of A/B testing platform processing 5M+ daily requests, e-commerce automation platform for Walmart/Amazon sellers, and vehicle marketplace systems serving hundreds of dealerships. Expertise in full-stack development with Vue, Node, Deno, PostgreSQL, MongoDB, and AWS infrastructure.')
+        Text(p, 'Full-Stack engineer with 12+ years building web applications and dashboards. Currently working on fraud detection integrations at Symetra, a leading insurance company. Previously led development of A/B testing platform processing 5M+ daily requests, e-commerce automation platform for Walmart/Amazon sellers, and vehicle marketplace systems serving hundreds of dealerships. Expertise in full-stack development with Vue, Node, Deno, PostgreSQL, MongoDB, and AWS infrastructure.')
       ])
     ]),
     Grid()
