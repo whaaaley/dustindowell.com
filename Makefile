@@ -31,4 +31,4 @@ js:
 	node build/index.js js src/app.js > dist/app.js
 
 html:
-	node build/index.js html src/index.js | node > dist/index.html
+	node build/index.js html src/index.js | node - > dist/index.html
