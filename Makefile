@@ -25,10 +25,10 @@ prepare:
 	cp -r src/assets/* dist
 
 css:
-	node build css src/main.scss > dist/main.css
+	node build/index.js css src/main.scss > dist/main.css
 
 js:
-	node build js src/app.js > dist/app.js
+	node build/index.js js src/app.js > dist/app.js
 
 html:
-	node build html src/index.js | node > dist/index.html
+	node build/index.js html src/index.js | node > dist/index.html
