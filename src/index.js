@@ -1,8 +1,14 @@
 
-import { body, html, link, meta, noscript, script, title, div } from './lib/vnodes/html'
+import { readFileSync } from 'fs'
+import { body, html, link, meta, noscript, script, style, title, div } from './lib/vnodes/html'
 
-const styles = link({ rel: 'stylesheet', href: '/main.css' })
-const scripts = script({ defer: true, src: '/app.js' })
+const styles = PROD === true
+  ? style(readFileSync('./dist/main.css', 'utf8'))
+  : link({ rel: 'stylesheet', href: '/main.css' })
+
+const scripts = PROD === true
+  ? script(readFileSync('./dist/app.js', 'utf8'))
+  : script({ defer: true, src: '/app.js' })
 
 const PreloadFont = props => {
   return link({
