@@ -1,6 +1,31 @@
-node_modules
-package-lock.json
+# Dependencies
+node_modules/
 
-backup
-dist
-tmp
+# Build output
+/dist/
+.vite/
+
+# Env / secrets
+.env
+.env.*
+!.env.template
+
+# Playwright / test artifacts
+.auth/
+/test-results/
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Deno (not used by this project)
+deno.lock
+
+# Scratch copy of the pre-rebuild site, kept on disk for reference only.
+_scratch-old/
+
+# Backup bundles
+*.bundle
+
+# OS / editor
+.DS_Store
+*.log

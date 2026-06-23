@@ -1,0 +1,34 @@
+{
+  "languages": {
+    "JavaScript": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true,
+      },
+      "formatter": [],
+    },
+    "TypeScript": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true,
+      },
+      "formatter": [],
+    },
+    "TSX": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true,
+      },
+      "formatter": [],
+    },
+    "HTML": {
+      "format_on_save": "off",
+    },
+  },
+  "lsp": {
+    "tailwindcss-language-server": {
+      "settings": {
+        "classAttributes": ["class", "className", "ngClass", "class:list", "classOverride"],
+        "classFunctions": ["cva", "cx"],
+      },
+    },
+  },
+  "format_on_save": "on",
+}
