@@ -32,9 +32,16 @@ export const surfaceVariants = cva([
       true: 'shadow-2xl',
     },
     tone: {
-      dark: 'border-zinc-800 bg-zinc-950',
-      light: 'border-zinc-800 bg-zinc-900',
-      lighter: 'border-zinc-700 bg-zinc-800',
+      // zinc-950 anchors the absolute darkest end (rgb 12 17 24)
+      'dark-950': 'border-dark-600 bg-zinc-950',
+      // original dark-* ramp from _scratch-old/src/styles/_colors.scss
+      'dark-600': 'border-dark-500 bg-dark-600',
+      'dark-500': 'border-dark-400 bg-dark-500',
+      'dark-450': 'border-dark-400 bg-dark-450',
+      'dark-400': 'border-dark-300 bg-dark-400',
+      'dark-300': 'border-dark-200 bg-dark-300',
+      'dark-200': 'border-dark-100 bg-dark-200',
+      'dark-100': 'border-dark-200 bg-dark-100',
     },
     // Rounded by default at rounded-md; tones override below. Pass `square` to opt out.
     square: {
@@ -43,13 +50,18 @@ export const surfaceVariants = cva([
     },
   },
   compoundVariants: [
-    { square: false, tone: 'dark', class: 'rounded-xl' },
-    { square: false, tone: 'light', class: 'rounded-lg' },
-    { square: false, tone: 'lighter', class: 'rounded-md' },
+    { square: false, tone: 'dark-950', class: 'rounded-xl' },
+    { square: false, tone: 'dark-600', class: 'rounded-xl' },
+    { square: false, tone: 'dark-500', class: 'rounded-lg' },
+    { square: false, tone: 'dark-450', class: 'rounded-lg' },
+    { square: false, tone: 'dark-400', class: 'rounded-md' },
+    { square: false, tone: 'dark-300', class: 'rounded-md' },
+    { square: false, tone: 'dark-200', class: 'rounded-sm' },
+    { square: false, tone: 'dark-100', class: 'rounded-sm' },
   ],
   defaultVariants: {
     shadow: false,
-    tone: 'dark',
+    tone: 'dark-600',
     square: false,
   },
 })
@@ -75,7 +87,7 @@ export const surfaceProps = {
   },
   tone: {
     type: String as PropType<SurfaceTone>,
-    default: 'dark',
+    default: 'dark-600',
   },
   square: {
     type: Boolean,

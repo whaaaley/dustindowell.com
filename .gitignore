@@ -3,22 +3,28 @@ node_modules/
 
 # Build output
 /dist/
+/client/dist/
 .vite/
 
 # Env / secrets
 .env
 .env.*
 !.env.template
+!client/.env.template
+!server/.env.template
 
 # Playwright / test artifacts
 .auth/
 /test-results/
+/client/test-results/
 
 # TypeScript build info
 *.tsbuildinfo
 
-# Deno (not used by this project)
+# Deno
 deno.lock
+server/logs/
+server/data/
 
 # Scratch copy of the pre-rebuild site, kept on disk for reference only.
 _scratch-old/
@@ -29,3 +35,7 @@ _scratch-old/
 # OS / editor
 .DS_Store
 *.log
+scripts/**/.env
+
+# Local task list
+TODO.md

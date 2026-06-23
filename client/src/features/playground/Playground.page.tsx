@@ -4,6 +4,7 @@ import { defineComponent, ref } from 'vue'
 import BannerHeadline from '~/components/BannerHeadline'
 import ThemeToggle from '~/components/ThemeToggle'
 import ShowcaseSubsection from './ShowcaseSubsection'
+import SurfaceShowcase from './SurfaceShowcase'
 import Badge from '~/components/data/Badge'
 import Button from '~/components/form/Button'
 import Toggle from '~/components/form/Toggle'
@@ -44,6 +45,7 @@ export default defineComponent({
             Every reusable component in one place, with its variants and states laid out for quick visual checks.
           </p>
         </header>
+        <SurfaceShowcase/>
         <ShowcaseSubsection title='Toggle sizes'>
           <Toggle size='sm' v-model:active={toggleSm.value}/>
           <Toggle size='sm' v-model:active={toggleSmOn.value}/>

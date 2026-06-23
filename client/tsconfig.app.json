@@ -47,11 +47,6 @@
     "src/router.d.ts",
     "src/async-git.d.ts",
     "src/jsx.d.ts",
-    "../server/index.ts",
-    "../server/src/apps/**/*.schema.ts",
-    "../server/src/apps/schemas.ts",
-    "../server/generated/supabase.types.ts",
-    "../server/shared/*",
   ],
   "exclude": ["**/_trash/**/*"],
 }

@@ -141,11 +141,6 @@ const importConfig = [
   // Flat config merges last-wins, so this enables the defaults we then disable or tune.
   importPlugin.flatConfigs.recommended,
   {
-    settings: {
-      // Stop eslint-plugin-import from crawling and parsing @phosphor-icons/vue's vendored dist bundle.
-      // Its generated index.mjs blows the parser stack ("Maximum call stack size exceeded") under import/namespace.
-      'import/ignore': ['@phosphor-icons/vue'],
-    },
     rules: {
       // Disable ESLint's import resolution in favor of TypeScript's more accurate module resolution.
       // TypeScript handles aliases, types, and dynamic imports correctly.

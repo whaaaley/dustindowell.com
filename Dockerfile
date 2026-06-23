@@ -1,32 +1,30 @@
-# syntax=docker/dockerfile:1
-
 # Stage 1: build the static site with vite-ssg.
-# devDependencies are required (vite, vite-ssg, plugins live there), so do not
-# pass --omit=dev. The basic-ssl plugin only runs on the dev server, so the
-# production build needs no certs.
+# devDependencies hold vite/vite-ssg/plugins, so do not omit them.
 FROM node:22-alpine AS builder
 
-WORKDIR /app
+WORKDIR /app/client
 
 # Copy manifests first so the install layer caches when only source changes.
-COPY package.json package-lock.json ./
+COPY client/package.json client/package-lock.json ./
 RUN npm ci
 
-# Copy the rest of the source and build to dist/.
-COPY . .
+# Copy the rest of the client source and build to dist/.
+COPY client/ .
 RUN npm run build
 
-# Stage 2: serve dist/ with nginx.
-FROM nginx:alpine AS runtime
+# Stage 2: serve dist/ with a small Deno static server.
+FROM denoland/deno:alpine-2.7.14
 
-# Replace the default site config with the SPA/nested-route config.
-RUN rm /etc/nginx/conf.d/default.conf
-COPY nginx.conf /etc/nginx/conf.d/dustindowell.conf
+WORKDIR /app/server
 
-# Copy the built static files into the nginx web root.
-COPY --from=builder /app/dist /usr/share/nginx/html
+COPY server/deno.json ./
+RUN deno install
 
-# Matches listen 8080 in nginx.conf and internal_port in fly.toml.
+COPY server/index.ts ./
+COPY --from=builder /app/client/dist ./dist
+RUN deno cache index.ts
+
+ENV PORT=8080
 EXPOSE 8080
 
-# nginx:alpine already runs `nginx -g 'daemon off;'` as its default CMD.
+CMD ["task", "start"]

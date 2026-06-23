@@ -1,5 +1,6 @@
 import { defineComponent } from 'vue'
 import { useRouter } from 'vue-router'
+import FeaturedProjects from './FeaturedProjects'
 import BannerHeadline from '~/components/BannerHeadline'
 import Button from '~/components/form/Button'
 
@@ -12,7 +13,7 @@ export default defineComponent({
     const router = useRouter()
 
     return () => (
-      <div class='grid py-t12'>
+      <div class='grid gap-t12 py-t12'>
         <div class='home-card mx-auto w-full max-w-[480px] rounded-xl bg-dark-400 transition-colors'>
           <div class='rounded-[12px_12px_6px_6px] bg-gradient-to-tr from-white from-[-30%] via-brand-blue to-brand-purple p-t12'>
             <BannerHeadline variant='developer-designer-artist'/>
@@ -29,6 +30,7 @@ export default defineComponent({
             <Button classOverride='mx-auto' color='brand-outline' size='xl' text='Hire Me' weight='light' onClick={() => router.push({ name: 'resume' })}/>
           </div>
         </div>
+        <FeaturedProjects/>
       </div>
     )
   },
