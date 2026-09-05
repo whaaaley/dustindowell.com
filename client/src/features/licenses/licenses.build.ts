@@ -31,9 +31,17 @@ const findLicenseText = (dir: string): string => {
   return data?.trim() ?? ''
 }
 
+// Deno places the workspace node_modules at the repo root, while a client-local install puts it beside package.json.
+const packageRoots = [join(clientDir, 'node_modules'), join(clientDir, '..', 'node_modules')]
+
+const findPackageDir = (name: string): string | null => {
+  const dir = packageRoots.map(root => join(root, name)).find(candidate => existsSync(join(candidate, 'package.json')))
+  return dir ?? null
+}
+
 const renderPackage = (name: string): string[] | null => {
-  const dir = join(clientDir, 'node_modules', name)
-  if (!existsSync(join(dir, 'package.json'))) {
+  const dir = findPackageDir(name)
+  if (!dir) {
     return null
   }
   const pkg = readPackageJson(dir)
