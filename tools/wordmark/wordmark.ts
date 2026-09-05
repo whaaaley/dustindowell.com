@@ -28,7 +28,7 @@ const trace = async (): Promise<string> => {
   const data = path.toPathData(1)
   // The glyph box is taller than the em, so the image is sized to the em and pulled back into a one-em line box like the text was.
   const emHeight = (height / unitsPerEm).toFixed(3)
-  const overhang = ((height - unitsPerEm) / unitsPerEm / 2).toFixed(3)
+  const overhang = Number(((height - unitsPerEm) / unitsPerEm / 2).toFixed(3))
   return [
     "import { defineComponent } from 'vue'",
     '',
@@ -40,7 +40,7 @@ const trace = async (): Promise<string> => {
     "  name: 'Wordmark',",
     '  setup () {',
     '    return () => (',
-    `      <svg aria-label='${config.text}' class='-my-[${overhang}em] block h-[${emHeight}em] w-auto fill-current' role='img' viewBox={viewBox}>`,
+    `      <svg aria-label='${config.text}' class='my-[-${overhang}em] block h-[${emHeight}em] w-auto fill-current' role='img' viewBox={viewBox}>`,
     '        <path d={pathData}/>',
     '      </svg>',
     '    )',

@@ -8,7 +8,7 @@ export default defineComponent({
   name: 'Wordmark',
   setup () {
     return () => (
-      <svg aria-label='Dustin Dowell' class='-my-[0.190em] block h-[1.379em] w-auto fill-current' role='img' viewBox={viewBox}>
+      <svg aria-label='Dustin Dowell' class='my-[-0.19em] block h-[1.379em] w-auto fill-current' role='img' viewBox={viewBox}>
         <path d={pathData}/>
       </svg>
     )
