@@ -12,6 +12,8 @@ node_modules/
 .env.*
 !scripts/github/.env.template
 !scripts/fly/.env.template
+!client/.env.production
+!client/.env.development
 
 # Playwright / test artifacts
 .auth/
