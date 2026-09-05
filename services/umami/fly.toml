@@ -1,12 +1,16 @@
 app = 'dustindowell-umami'
 primary_region = 'ord'
 
+# Umami peaks around 410MB in steady use and its boot migrations spike past 512MB; the swap file absorbs the spike so a 512mb machine does not OOM.
+swap_size_mb = 512
+
 # Runs the upstream umami image directly; there is no Dockerfile to build.
 [build]
 image = 'ghcr.io/umami-software/umami:postgresql-latest'
 
 [env]
-HOSTNAME = 'fly-local-6pn'
+# Fly Proxy fronts the public hostname, so the app binds to every interface rather than the 6pn address.
+HOSTNAME = '0.0.0.0'
 
 # DATABASE_URL and APP_SECRET carry the Postgres DSN and session secret; set them via `fly secrets`, never here.
 
@@ -17,9 +21,6 @@ force_https = true
 auto_stop_machines = 'suspend'
 auto_start_machines = true
 min_machines_running = 0
-
-# Umami peaks around 410MB in steady use and its boot migrations spike past 512MB; the swap file absorbs the spike so a 512mb machine does not OOM.
-swap_size_mb = 512
 
 [[vm]]
 memory = '512mb'
