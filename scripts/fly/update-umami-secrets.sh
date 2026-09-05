@@ -3,7 +3,7 @@
 # Source the .env sitting next to this script, regardless of the caller's cwd.
 source "$(dirname "$0")/.env"
 
-gh secret set CLOUDFLARE_API_TOKEN <<< "$CLOUDFLARE_API_TOKEN"
-gh secret set FLY_API_TOKEN <<< "$FLY_API_TOKEN"
+flyctl secrets set -a dustindowell-umami \
+  APP_SECRET="$UMAMI_APP_SECRET"
 
 echo "Done!"

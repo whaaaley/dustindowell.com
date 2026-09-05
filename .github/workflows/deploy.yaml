@@ -138,9 +138,31 @@ jobs:
       - name: Deploy worker
         run: deno task deploy
 
+  deploy-umami:
+    name: Deploy Umami Analytics to Fly.io
+    needs: test
+    runs-on: ubuntu-latest
+    env:
+      FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v6
+
+      - name: Setup Fly CLI
+        uses: superfly/flyctl-actions/setup-flyctl@master
+        with:
+          version: 0.4.66
+
+      # Idempotent: succeeds if the app already exists, creates it on first run.
+      - name: Ensure dustindowell-umami app exists
+        run: flyctl apps create dustindowell-umami --org personal || true
+
+      - name: Deploy umami service
+        run: flyctl deploy --config services/umami/fly.toml --remote-only --ha=false
+
   release:
     name: Create Release
-    needs: deploy
+    needs: [deploy, deploy-umami]
     runs-on: ubuntu-latest
     permissions:
       contents: write
