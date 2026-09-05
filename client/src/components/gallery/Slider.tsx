@@ -1,4 +1,4 @@
-import { cva } from 'class-variance-authority'
+import { cva, type VariantProps } from 'class-variance-authority'
 import { computed, defineComponent, type PropType } from 'vue'
 
 export type SliderImage = {
@@ -6,9 +6,9 @@ export type SliderImage = {
   alt: string
 }
 
-export type SliderSize = 'sm' | 'md' | 'lg' | 'full'
-
-const sliderClass = cva('grid w-full gap-page-half p-image-margin', {
+export const sliderVariants = cva([
+  'grid w-full gap-page-half p-image-margin',
+], {
   variants: {
     size: {
       sm: 'max-w-sm',
@@ -17,18 +17,31 @@ const sliderClass = cva('grid w-full gap-page-half p-image-margin', {
       full: 'max-w-none',
     },
   },
+  defaultVariants: {
+    size: 'md',
+  },
 })
 
-const thumbnailClass = cva('block aspect-4/3 min-h-0 w-full flex-1 overflow-hidden border transition-opacity', {
+export const thumbnailVariants = cva([
+  'block aspect-4/3 min-h-0 w-full flex-1 overflow-hidden border transition-opacity',
+], {
   variants: {
     active: {
       true: 'border-white opacity-100',
       false: 'border-transparent opacity-50 hover:opacity-80',
     },
   },
+  defaultVariants: {
+    active: false,
+  },
 })
 
-const arrowClass = 'px-page-half font-inter text-page-h1 leading-none text-zinc-400 hover:text-white'
+export const arrowVariants = cva([
+  'px-page-half font-inter text-page-h1 leading-none text-zinc-400 hover:text-white',
+])
+
+export type SliderVariants = VariantProps<typeof sliderVariants>
+export type ThumbnailVariants = VariantProps<typeof thumbnailVariants>
 
 const SliderThumbnail = defineComponent({
   name: 'SliderThumbnail',
@@ -42,8 +55,8 @@ const SliderThumbnail = defineComponent({
       required: true,
     },
     active: {
-      type: Boolean,
-      required: true,
+      type: Boolean as PropType<ThumbnailVariants['active']>,
+      default: false,
     },
   },
   emits: {
@@ -51,7 +64,9 @@ const SliderThumbnail = defineComponent({
     keydown: (event: KeyboardEvent) => event instanceof KeyboardEvent,
   },
   setup (props, { emit }) {
-    const classes = computed(() => thumbnailClass({ active: props.active }))
+    const thumbnailClass = computed(() => (
+      thumbnailVariants({ active: props.active })
+    ))
 
     const handleClick = () => {
       emit('select', props.index)
@@ -62,14 +77,7 @@ const SliderThumbnail = defineComponent({
     }
 
     return () => (
-      <button
-        aria-label={`Show image ${props.index + 1}`}
-        aria-pressed={props.active}
-        class={classes.value}
-        type='button'
-        onClick={handleClick}
-        onKeydown={handleKeydown}
-      >
+      <button aria-label={`Show image ${props.index + 1}`} aria-pressed={props.active ?? false} class={thumbnailClass.value} type='button' onClick={handleClick} onKeydown={handleKeydown}>
         <img alt='' class='block size-full object-cover object-top' src={props.image.src}/>
       </button>
     )
@@ -88,7 +96,7 @@ export default defineComponent({
       default: 0,
     },
     size: {
-      type: String as PropType<SliderSize>,
+      type: String as PropType<SliderVariants['size']>,
       default: 'md',
     },
     thumbnails: {
@@ -102,7 +110,14 @@ export default defineComponent({
   setup (props, { emit }) {
     const count = computed(() => props.images.length)
     const active = computed(() => props.images[props.activeIndex] ?? props.images[0])
-    const classes = computed(() => sliderClass({ size: props.size }))
+
+    const sliderClass = computed(() => (
+      sliderVariants({ size: props.size })
+    ))
+
+    const arrowClass = computed(() => (
+      arrowVariants()
+    ))
 
     const handleSelect = (index: number) => {
       emit('select', (index + count.value) % count.value)
@@ -138,7 +153,7 @@ export default defineComponent({
     )
 
     return () => (
-      <div aria-roledescription='carousel' class={classes.value} role='region'>
+      <div aria-roledescription='carousel' class={sliderClass.value} role='region'>
         <div class='flex gap-image-gutter'>
           {props.thumbnails && renderThumbnails()}
           <div class='aspect-4/3 min-w-0 flex-1 overflow-hidden border border-zinc-800 bg-zinc-900'>
@@ -146,9 +161,9 @@ export default defineComponent({
           </div>
         </div>
         <div class='flex items-center justify-between font-inter text-page-body text-zinc-300'>
-          <button aria-label='Previous image' class={arrowClass} type='button' onClick={handlePrevious} onKeydown={handleKeydown}>←</button>
+          <button aria-label='Previous image' class={arrowClass.value} type='button' onClick={handlePrevious} onKeydown={handleKeydown}>←</button>
           <span aria-live='polite'>{props.activeIndex + 1} / {count.value} ✦ {active.value.alt}</span>
-          <button aria-label='Next image' class={arrowClass} type='button' onClick={handleNext} onKeydown={handleKeydown}>→</button>
+          <button aria-label='Next image' class={arrowClass.value} type='button' onClick={handleNext} onKeydown={handleKeydown}>→</button>
         </div>
       </div>
     )
