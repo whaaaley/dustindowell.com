@@ -101,6 +101,28 @@ The Worker proxies `/umami/*` to it, so the tracker loads from the site's own do
 The tracker tag in `client/index.html` takes its URL and website id from `client/.env.production`.
 `scripts/fly/create-umami-pg.sh` provisions the database once and `scripts/fly/update-umami-secrets.sh` pushes the app secret.
 
+## Machine Sizing
+
+Every Fly machine runs the smallest size its measured memory allows, and the one that can sleep does.
+
+| App | Memory | Swap | Sleeps | Peak used | Why |
+|-----|--------|------|--------|-----------|-----|
+| dustindowell-umami | 512mb | 512MB | yes | 251MB | Next.js and Prisma; boot migrations spike past 512MB and the swap file absorbs it |
+| dustindowell-umami-pg | 256mb | none | no | 156MB | Postgres; a database cannot wake on demand |
+
+Peak used is `mem_total - mem_available`, the kernel's own estimate of what the process set needs after reclaimable cache is subtracted, measured over the app's first day.
+
+- Start from peak used, add headroom for a wake-up burst, and round to the next Fly size. 256mb is the floor, then 512mb, then 1gb.
+- Swap keeps Umami on 512mb, but Fly cannot snapshot a machine with swap, so it stops rather than suspends and cold-boots on wake in a few seconds. Visitors never feel it since the tracker is a background beacon; the dashboard does. 1gb with no swap resumes in about a second if that ever matters more than the few cents.
+- `fly deploy` does not resize an existing machine. `[[vm]]` shapes new machines only, so a size change is `fly scale memory <mb> -a <app>` plus the same value in `services/umami/fly.toml`.
+
+Re-check the peaks with the `fly-metrics` tool from `tools/`, using a short-lived read-only token (`flyctl tokens create readonly --org personal --expiry 1h`) exported as `FLY_METRICS_TOKEN`:
+
+```bash
+deno task fly-metrics memory-peak
+deno task fly-metrics memory-total
+```
+
 ## Conventions
 
 The repo follows the onclick rules, symlinked into `.claude/rules`: TSX components with cva variants, no comments unless they explain a non-obvious choice, arrow functions, no casts or non-null assertions, gap over margin, and `*.page.tsx` for routes.

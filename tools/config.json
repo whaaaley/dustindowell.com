@@ -16,5 +16,8 @@
       "/work/compose"
     ],
     "passingScore": 0.9
+  },
+  "fly-metrics": {
+    "org": "personal"
   }
 }
