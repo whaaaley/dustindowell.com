@@ -10,6 +10,7 @@
   "preview_urls": true,
   "assets": {
     "directory": "../client/dist",
+    "binding": "ASSETS",
     "not_found_handling": "404-page",
     "html_handling": "drop-trailing-slash"
   },
@@ -24,6 +25,7 @@
       ],
       "assets": {
         "directory": "../client/dist",
+        "binding": "ASSETS",
         "not_found_handling": "404-page",
         "html_handling": "drop-trailing-slash"
       }

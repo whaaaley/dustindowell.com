@@ -1,5 +1,9 @@
+type Env = {
+  ASSETS: Fetcher
+}
+
 export default {
-  fetch: async (): Promise<Response> => {
-    return new Response('Not Found', { status: 404 })
+  fetch: (request, env): Promise<Response> => {
+    return env.ASSETS.fetch(request)
   },
-} satisfies ExportedHandler
+} satisfies ExportedHandler<Env>
