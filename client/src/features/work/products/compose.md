@@ -59,7 +59,7 @@ The whole system had to work inside Shopify's ecosystem while being simple enoug
 
 ## STACK
 
-- Vue 3, Pinia, Node, PostgreSQL, MongoDB, Go, AWS Lambda, Kinesis
+- Vue 3, Pinia, Node, Postgres, MongoDB, Go, AWS Lambda, Kinesis
 
 ## LINKS
 

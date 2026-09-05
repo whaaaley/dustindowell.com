@@ -37,7 +37,7 @@ I led the frontend development of Alqen, a dropshipping dashboard for Amazon and
 
 I built the frontend interfaces for Walmart order synchronization and Stripe payment processing, a management table for receipts printed automatically from orders, and an SSE server in Node that relays order events from the API service to connected clients so sellers see orders and inventory update without refreshing.
 
-I created analytics views that displayed performance metrics, profit margins, and inventory levels from the backend systems, plus product listing management tools for editing and updating listings. The dashboard helped sellers spot trends and optimize their operations across multiple channels.
+I created analytics views that displayed performance metrics, profit margins, and inventory levels from the backend systems, plus product listing management tools for editing and updating listings. The dashboard helped sellers spot trends and optimize their operations across both marketplaces.
 
 I also built an impersonation system for support staff to act as a user, issuing signed JWTs with specific permissions and short-lived expirations for troubleshooting an account.
 
@@ -52,10 +52,10 @@ I migrated the product from Vue 2 to Vue 3 with a new application wrapping the l
 
 ## ADDITIONAL FEATURES
 
-- **Bulk Product Listing:** Upload and manage multiple products simultaneously
+- **Bulk Product Listing:** Upload and manage products in batches
 - **Automated Repricing:** Price adjustments based on market conditions
 - **Performance Metrics:** Track seller rating, feedback, and account health
-- **Multi-Account Management:** Control multiple Walmart seller accounts from one interface
+- **Multi-Account Management:** Control several Walmart seller accounts from one interface
 - **Order Filtering:** Customizable filters to organize and prioritize orders
 - **Error Handling:** Automated detection and resolution of common issues
 
