@@ -1,6 +1,5 @@
 import { ViteSSG } from 'vite-ssg'
 import { RouterView } from 'vue-router'
-import './gtag.ts'
 import { productPath, products } from './features/work/products.ts'
 import websiteRoutes from './website.routes.ts'
 
