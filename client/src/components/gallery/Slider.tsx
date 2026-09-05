@@ -3,6 +3,7 @@ import { computed, defineComponent, type PropType } from 'vue'
 
 export type SliderImage = {
   src: string
+  thumb: string
   alt: string
 }
 
@@ -37,7 +38,7 @@ export const thumbnailVariants = cva([
 })
 
 export const arrowVariants = cva([
-  'px-page-half font-inter text-page-h1 leading-none text-zinc-400 hover:text-white',
+  'px-page-half text-page-h1 leading-none text-zinc-400 hover:text-white',
 ])
 
 export type SliderVariants = VariantProps<typeof sliderVariants>
@@ -78,7 +79,7 @@ const SliderThumbnail = defineComponent({
 
     return () => (
       <button aria-label={`Show image ${props.index + 1}`} aria-pressed={props.active ?? false} class={thumbnailClass.value} type='button' onClick={handleClick} onKeydown={handleKeydown}>
-        <img alt='' class='block size-full object-cover object-top' src={props.image.src}/>
+        <img alt='' class='block size-full object-cover object-top' height={204} loading='lazy' src={props.image.thumb} width={272}/>
       </button>
     )
   },
@@ -143,7 +144,7 @@ export default defineComponent({
     }
 
     const renderThumbnails = () => (
-      <div class='relative w-[10%] shrink-0'>
+      <div class='relative w-[14%] shrink-0 md:w-[10%]'>
         <div aria-label='Thumbnails' class='absolute inset-0 flex flex-col gap-image-gap overflow-hidden' role='group'>
           {props.images.map((image, index) => (
             <SliderThumbnail key={image.src} active={index === props.activeIndex} image={image} index={index} onKeydown={handleKeydown} onSelect={handleSelect}/>
@@ -157,10 +158,10 @@ export default defineComponent({
         <div class='flex gap-image-gutter'>
           {props.thumbnails && renderThumbnails()}
           <div class='aspect-4/3 min-w-0 flex-1 overflow-hidden border border-zinc-800 bg-zinc-900'>
-            <img alt={active.value.alt} class='size-full object-contain' src={active.value.src}/>
+            <img alt={active.value.alt} class='size-full object-contain' fetchpriority='high' height={1024} src={active.value.src} width={1366}/>
           </div>
         </div>
-        <div class='flex items-center justify-between font-inter text-page-body text-zinc-300'>
+        <div class='flex items-center justify-between text-page-body text-zinc-300'>
           <button aria-label='Previous image' class={arrowClass.value} type='button' onClick={handlePrevious} onKeydown={handleKeydown}>←</button>
           <span aria-live='polite'>{props.activeIndex + 1} / {count.value} ✦ {active.value.alt}</span>
           <button aria-label='Next image' class={arrowClass.value} type='button' onClick={handleNext} onKeydown={handleKeydown}>→</button>

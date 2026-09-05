@@ -14,7 +14,7 @@ export default {
       fontFamily: {
         blacker: ['Blacker Pro Text', 'serif'],
         'wild-star': ['Wild Star', 'cursive'],
-        inter: ['Inter var', 'sans-serif'],
+        star: ['Star', 'DejaVu Sans', 'sans-serif'],
       },
       fontSize: {
         'page-name': [pageUnit(40), '1'],

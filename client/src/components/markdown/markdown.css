@@ -49,7 +49,7 @@
   }
 
   li::before {
-    @apply inline-block w-page-dot indent-0 text-left align-middle font-inter text-page-glyph;
+    @apply inline-block w-page-dot indent-0 text-left align-middle font-star text-page-glyph;
     content: '✦';
   }
 
@@ -70,6 +70,6 @@
   }
 
   .star {
-    @apply inline-block px-page-quarter align-middle font-inter text-page-glyph;
+    @apply inline-block px-page-quarter align-middle font-star text-page-glyph;
   }
 }

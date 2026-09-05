@@ -5,23 +5,23 @@ dates: "Feb 2016 - Nov 2019"
 tagline: "Specialized vehicle and equipment marketplaces."
 order: 6
 images:
-  - src: /screenshots/access/01_accesspublishing_thumbnail.png
+  - src: /screenshots/access/01_accesspublishing_thumbnail.webp
     alt: "Access Publishing Vehicle Marketplaces"
-  - src: /screenshots/access/02_accesstrucks_products.png
+  - src: /screenshots/access/02_accesstrucks_products.webp
     alt: "AccessTrucks products page"
-  - src: /screenshots/access/03_accesstrucks_filters.png
+  - src: /screenshots/access/03_accesstrucks_filters.webp
     alt: "AccessTrucks filters"
-  - src: /screenshots/access/04_accesstrucks_pdp.png
+  - src: /screenshots/access/04_accesstrucks_pdp.webp
     alt: "AccessTrucks product listing"
-  - src: /screenshots/access/05_machineryaccess_products.png
+  - src: /screenshots/access/05_machineryaccess_products.webp
     alt: "MachineryAccess products page"
-  - src: /screenshots/access/06_machineryaccess_pdp.png
+  - src: /screenshots/access/06_machineryaccess_pdp.webp
     alt: "MachineryAccess equipment listing"
-  - src: /screenshots/access/07_sleepertrader_products.png
+  - src: /screenshots/access/07_sleepertrader_products.webp
     alt: "SleeperTrader products page"
-  - src: /screenshots/access/08_sleepertrader_filters.png
+  - src: /screenshots/access/08_sleepertrader_filters.webp
     alt: "SleeperTrader filters"
-  - src: /screenshots/access/09_sleepertrader_pdp.png
+  - src: /screenshots/access/09_sleepertrader_pdp.webp
     alt: "SleeperTrader product listing"
 ---
 

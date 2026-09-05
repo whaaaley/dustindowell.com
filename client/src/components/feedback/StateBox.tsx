@@ -10,7 +10,7 @@ export default defineComponent({
   },
   setup (props) {
     return () => (
-      <pre class='border border-zinc-800 bg-zinc-950 p-page-half font-inter text-page-body text-zinc-300' data-testid='state-box'>
+      <pre class='border border-zinc-800 bg-zinc-950 p-page-half text-page-body text-zinc-300' data-testid='state-box'>
         {JSON.stringify(props.state, null, 2)}
       </pre>
     )

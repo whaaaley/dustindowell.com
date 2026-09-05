@@ -4,6 +4,9 @@ export const frontmatterPattern = /^---\n[\s\S]*?\n---\n/
 // Matches everything up to and including the last slash of a path.
 export const directoryPattern = /^.*\//
 
+// Matches the file name at the end of a path, keeping the directory and the name apart.
+export const fileNamePattern = /^(.*\/)([^/]+)$/
+
 // Matches a trailing markdown extension.
 export const markdownExtensionPattern = /\.md$/
 
@@ -17,6 +20,8 @@ export const splitOnMarker = (content: string, name: string): string[] => (
 )
 
 export const hasMarker = (content: string, name: string): boolean => markerPattern(name).test(content)
+
+export const thumbnailPath = (src: string): string => src.replace(fileNamePattern, '$1thumbs/$2')
 
 export const slugFromPath = (path: string): string => path.replace(directoryPattern, '').replace(markdownExtensionPattern, '')
 

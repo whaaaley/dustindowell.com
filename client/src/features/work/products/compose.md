@@ -5,23 +5,23 @@ dates: "Sep 2022 - Jun 2025"
 tagline: "A/B testing platform with no-code tools and deep Shopify integration."
 order: 2
 images:
-  - src: /screenshots/compose/33_experiment_report_calendar.png
+  - src: /screenshots/compose/33_experiment_report_calendar.webp
     alt: "Experiment report calendar"
-  - src: /screenshots/compose/16_project_experiment_list.png
+  - src: /screenshots/compose/16_project_experiment_list.webp
     alt: "Project experiment list"
-  - src: /screenshots/compose/20_experiment_variants.png
+  - src: /screenshots/compose/20_experiment_variants.webp
     alt: "Experiment variants"
-  - src: /screenshots/compose/22_experiment_targeting.png
+  - src: /screenshots/compose/22_experiment_targeting.webp
     alt: "Experiment targeting"
-  - src: /screenshots/compose/24_experiment_traffic.png
+  - src: /screenshots/compose/24_experiment_traffic.webp
     alt: "Experiment traffic"
-  - src: /screenshots/compose/32_experiment_report_chart.png
+  - src: /screenshots/compose/32_experiment_report_chart.webp
     alt: "Experiment report chart"
-  - src: /screenshots/compose/35_experiment_report_winner.png
+  - src: /screenshots/compose/35_experiment_report_winner.webp
     alt: "Experiment report winner"
-  - src: /screenshots/compose/06_org_billing.png
+  - src: /screenshots/compose/06_org_billing.webp
     alt: "Organization billing"
-  - src: /screenshots/compose/12_project_snippets.png
+  - src: /screenshots/compose/12_project_snippets.webp
     alt: "Project snippets"
 ---
 

@@ -5,23 +5,23 @@ dates: "Jun 2021 - Jun 2022"
 tagline: "E-commerce automation for Amazon and Walmart sellers."
 order: 3
 images:
-  - src: /screenshots/alqen/02_statistics_overview.png
+  - src: /screenshots/alqen/02_statistics_overview.webp
     alt: "Statistics overview"
-  - src: /screenshots/alqen/12_manual_fulfillment_with_impersonation.png
+  - src: /screenshots/alqen/12_manual_fulfillment_with_impersonation.webp
     alt: "Manual fulfillment with impersonation"
-  - src: /screenshots/alqen/06_frequency_chart.png
+  - src: /screenshots/alqen/06_frequency_chart.webp
     alt: "Frequency chart"
-  - src: /screenshots/alqen/09_realtime_orders.png
+  - src: /screenshots/alqen/09_realtime_orders.webp
     alt: "Realtime orders"
-  - src: /screenshots/alqen/01_listings.png
+  - src: /screenshots/alqen/01_listings.webp
     alt: "Product listings"
-  - src: /screenshots/alqen/13_billing.png
+  - src: /screenshots/alqen/13_billing.webp
     alt: "Billing"
-  - src: /screenshots/alqen/11_bulk_upload.png
+  - src: /screenshots/alqen/11_bulk_upload.webp
     alt: "Bulk product uploader"
-  - src: /screenshots/alqen/10_sales_tracker.png
+  - src: /screenshots/alqen/10_sales_tracker.webp
     alt: "Sales tracker"
-  - src: /screenshots/alqen/08_integrations.png
+  - src: /screenshots/alqen/08_integrations.webp
     alt: "Integrations"
 ---
 
