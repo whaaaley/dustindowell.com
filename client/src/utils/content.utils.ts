@@ -7,6 +7,12 @@ export const directoryPattern = /^.*\//
 // Matches the file name at the end of a path, keeping the directory and the name apart.
 export const fileNamePattern = /^(.*\/)([^/]+)$/
 
+// Matches every run of characters that cannot appear in a URL slug.
+export const slugSeparatorPattern = /[^a-z0-9]+/g
+
+// Matches dashes at either end of a slug.
+export const slugEdgePattern = /^-+|-+$/g
+
 // Matches a trailing markdown extension.
 export const markdownExtensionPattern = /\.md$/
 
@@ -26,6 +32,8 @@ export const variantPath = (src: string, variant: string): string => src.replace
 export const thumbnailPath = (src: string): string => variantPath(src, 'thumbs')
 
 export const slugFromPath = (path: string): string => path.replace(directoryPattern, '').replace(markdownExtensionPattern, '')
+
+export const slugify = (value: string): string => value.toLowerCase().replace(slugSeparatorPattern, '-').replace(slugEdgePattern, '')
 
 export const isRecord = (value: unknown): value is Record<string, unknown> => (
   typeof value === 'object' && value !== null

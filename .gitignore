@@ -3,7 +3,7 @@ node_modules/
 
 # Build output
 /client/dist/
-/client/src/features/licenses/third-party.md
+/client/src/features/licenses/notices/
 .vite/
 .vite-ssg-temp/
 

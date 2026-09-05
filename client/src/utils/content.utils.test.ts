@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { directoryPattern, fileNamePattern, frontmatterPattern, hasMarker, isRecord, markdownExtensionPattern, markerPattern, readNumber, readString, slugFromPath, splitOnMarker, stripFrontmatter, thumbnailPath, variantPath } from './content.utils.ts'
+import { directoryPattern, fileNamePattern, frontmatterPattern, hasMarker, isRecord, markdownExtensionPattern, markerPattern, readNumber, readString, slugFromPath, slugify, splitOnMarker, stripFrontmatter, thumbnailPath, variantPath } from './content.utils.ts'
 
 describe('content.utils', () => {
   describe('patterns', () => {
@@ -175,6 +175,19 @@ describe('content.utils', () => {
       // Assert
       expect(directory).toBe('/a/b/')
       expect(name).toBe('c.webp')
+    })
+  })
+
+  describe('slugify', () => {
+    it('turns a scoped package name into a url slug', () => {
+      // Arrange
+      const names = ['@unhead/vue', 'class-variance-authority', 'hast-util-to-jsx-runtime', '@stylistic/eslint-plugin']
+
+      // Act
+      const slugs = names.map(slugify)
+
+      // Assert
+      expect(slugs).toEqual(['unhead-vue', 'class-variance-authority', 'hast-util-to-jsx-runtime', 'stylistic-eslint-plugin'])
     })
   })
 

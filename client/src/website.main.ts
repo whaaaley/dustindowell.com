@@ -1,5 +1,6 @@
 import { ViteSSG } from 'vite-ssg'
 import { RouterView } from 'vue-router'
+import { licensePath, licenses } from './features/licenses/licenses.ts'
 import { productPath, products } from './features/work/products.ts'
 import websiteRoutes from './website.routes.ts'
 
@@ -14,6 +15,7 @@ export const createApp = ViteSSG(RouterView, {
 export const includedRoutes = () => [
   '/',
   '/licenses',
+  ...licenses.map(licensePath),
   '/work',
   ...products.map(productPath),
   '/playground',

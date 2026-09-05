@@ -10,6 +10,10 @@ export default [{
     path: 'licenses',
     component: () => import('./features/licenses/Licenses.page.tsx'),
   }, {
+    name: 'license',
+    path: 'licenses/:slug',
+    component: () => import('./features/licenses/License.page.tsx'),
+  }, {
     name: 'work',
     path: 'work',
     component: () => import('./features/work/Work.page.tsx'),
