@@ -1,14 +1,13 @@
 import { defineComponent } from 'vue'
 import Markdown from '~/components/markdown/Markdown.tsx'
 import { useSeo } from '~/hooks/useSeo.ts'
-import { nav } from '~/layouts/Website.layout.tsx'
 
 const content = [
   '# Dustin Dowell',
   '',
   'SOFTWARE ENGINEER',
   '',
-  nav,
+  '[Resume](/) ✦ [Work](/work) ✦ [GitHub](https://github.com/whaaaley) ✦ [LinkedIn](https://www.linkedin.com/in/dustindowell)',
 ].join('\n')
 
 export default defineComponent({

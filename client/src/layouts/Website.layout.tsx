@@ -9,7 +9,7 @@ const header = [
   'SOFTWARE ENGINEER',
 ].join('\n')
 
-export const nav = '[Resume](/) ✦ [Work](/work) ✦ [Download Resume](/dustin-dowell-resume.pdf) ✦ [GitHub](https://github.com/whaaaley) ✦ [LinkedIn](https://www.linkedin.com/in/dustindowell)'
+const nav = '[Resume](/) ✦ [Work](/work) ✦ [Download Resume](/dustin-dowell-resume.pdf) ✦ [GitHub](https://github.com/whaaaley) ✦ [LinkedIn](https://www.linkedin.com/in/dustindowell)'
 
 const footer = `© ${new Date().getFullYear()} Dustin Dowell ✦ [Third-Party Licenses](/licenses)`
 
