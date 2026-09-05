@@ -15,14 +15,6 @@
 }
 
 @font-face {
-  font-family: "Wild Star";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/fonts/wild-star/WildStar-Regular.woff2") format("woff2");
-}
-
-@font-face {
   font-family: "Star";
   font-style: normal;
   font-weight: 400;

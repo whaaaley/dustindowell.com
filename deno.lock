@@ -3,8 +3,13 @@
   "specifiers": {
     "jsr:@std/assert@1": "1.0.19",
     "jsr:@std/assert@^1.0.19": "1.0.19",
+    "jsr:@std/async@^1.5.0": "1.5.0",
+    "jsr:@std/data-structures@^1.1.2": "1.1.2",
+    "jsr:@std/fs@^1.0.24": "1.0.24",
     "jsr:@std/internal@^1.0.12": "1.0.14",
     "jsr:@std/internal@^1.0.14": "1.0.14",
+    "jsr:@std/path@^1.1.5": "1.1.6",
+    "jsr:@std/path@^1.1.6": "1.1.6",
     "jsr:@std/testing@^1.0.20": "1.0.20",
     "npm:@cloudflare/workers-types@*": "5.20260904.1",
     "npm:@cloudflare/workers-types@^5.20260904.1": "5.20260904.1",
@@ -38,6 +43,7 @@
     "npm:mdast-util-to-hast@^13.2.1": "13.2.1",
     "npm:micromark-extension-frontmatter@2": "2.0.0",
     "npm:micromark-extension-gfm@3": "3.0.0",
+    "npm:opentype.js@2": "2.0.0",
     "npm:playwright@*": "1.62.1",
     "npm:tailwindcss@^4.3.3": "4.3.3",
     "npm:typescript-eslint@^8.21.0": "8.69.0_eslint@9.39.5_typescript@5.9.3",
@@ -60,14 +66,36 @@
         "jsr:@std/internal@^1.0.12"
       ]
     },
+    "@std/async@1.5.0": {
+      "integrity": "4c1f22d287a17ad7d8643b1952bc5a4d21e5d8b68dc8c20d8268eecc69096e82"
+    },
+    "@std/data-structures@1.1.2": {
+      "integrity": "2471377c9e0051f9ec34e57d0ebd0ad133a5a889677446ec6ba9938e4e102918"
+    },
+    "@std/fs@1.0.24": {
+      "integrity": "f3061b45b81673a2bece689da041df32d174be064c89eb6397fb5718d3fb7877",
+      "dependencies": [
+        "jsr:@std/path@^1.1.5"
+      ]
+    },
     "@std/internal@1.0.14": {
       "integrity": "291516b3d4c35024d6ffbc0a9df5bf4c64116e05b50012cf846710152d2ffdf7"
+    },
+    "@std/path@1.1.6": {
+      "integrity": "c68485c2a4dfbb5ae3cc74fae4e8c4e5d874cf8a8ed12927917235c758b46cbe",
+      "dependencies": [
+        "jsr:@std/internal@^1.0.14"
+      ]
     },
     "@std/testing@1.0.20": {
       "integrity": "21380ed438672762e4ec549cbf4fe41c5b68f5598773a30b64abe7375513e721",
       "dependencies": [
         "jsr:@std/assert@^1.0.19",
-        "jsr:@std/internal@^1.0.14"
+        "jsr:@std/async",
+        "jsr:@std/data-structures",
+        "jsr:@std/fs",
+        "jsr:@std/internal@^1.0.14",
+        "jsr:@std/path@^1.1.6"
       ]
     }
   },
@@ -4072,6 +4100,10 @@
         "is-wsl"
       ]
     },
+    "opentype.js@2.0.0": {
+      "integrity": "sha512-kCyjv6xdDY1W/jLWZ/L3QhhTlKUqDZMQ5+Jdlw12b3dXkKNpYBqqlMMj0YDQPShWFTMwgZI1hG14kN3XUDSg/A==",
+      "bin": true
+    },
     "optionator@0.9.4": {
       "integrity": "sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==",
       "dependencies": [
@@ -5365,6 +5397,7 @@
             "npm:mdast-util-to-hast@^13.2.1",
             "npm:micromark-extension-frontmatter@2",
             "npm:micromark-extension-gfm@3",
+            "npm:opentype.js@2",
             "npm:tailwindcss@^4.3.3",
             "npm:typescript-eslint@^8.21.0",
             "npm:typescript@^5.9.3",

@@ -4,7 +4,7 @@
   @apply grid font-blacker text-page-body;
 
   h1 {
-    @apply font-wild-star text-page-name font-normal;
+    @apply text-page-name font-normal;
   }
 
   h1 + p {

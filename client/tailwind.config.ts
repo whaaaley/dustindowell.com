@@ -13,7 +13,6 @@ export default {
       },
       fontFamily: {
         blacker: ['Blacker Pro Text', 'serif'],
-        'wild-star': ['Wild Star', 'cursive'],
         star: ['Star', 'DejaVu Sans', 'sans-serif'],
       },
       fontSize: {

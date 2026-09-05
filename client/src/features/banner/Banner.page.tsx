@@ -1,14 +1,8 @@
 import { defineComponent } from 'vue'
-import Markdown from '~/components/markdown/Markdown.tsx'
+import Wordmark from '~/components/brand/Wordmark.tsx'
 import { useSeo } from '~/hooks/useSeo.ts'
 
-const content = [
-  '# Dustin Dowell',
-  '',
-  'SOFTWARE ENGINEER',
-  '',
-  'Des Moines, Iowa ✦ dustindowell.com',
-].join('\n')
+const star = () => <>{' '}<span class='star'>✦</span>{String.fromCharCode(160)}</>
 
 export default defineComponent({
   name: 'BannerPage',
@@ -17,8 +11,14 @@ export default defineComponent({
 
     return () => (
       <div class='flex h-[630px] w-300 items-center justify-center overflow-hidden bg-black text-white' data-testid='page-banner'>
-        <div class='zoom-[2]'>
-          <Markdown content={content}/>
+        <div class='markdown zoom-[2]'>
+          <h1><Wordmark/></h1>
+          <p>SOFTWARE ENGINEER</p>
+          <p class='text-zinc-300'>
+            Des Moines, Iowa
+            {star()}
+            dustindowell.com
+          </p>
         </div>
       </div>
     )
