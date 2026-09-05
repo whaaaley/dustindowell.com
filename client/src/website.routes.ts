@@ -1,4 +1,8 @@
 export default [{
+  name: 'home',
+  path: '/home',
+  component: () => import('./features/home/Home.page.tsx'),
+}, {
   path: '/',
   component: () => import('./layouts/Website.layout.tsx'),
   children: [{

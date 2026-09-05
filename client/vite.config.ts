@@ -39,7 +39,7 @@ export default defineConfig(() => ({
       writeNotFoundPage()
       generateSitemap({
         hostname: 'https://dustindowell.com/',
-        exclude: ['/404', '/not-found', '/playground', '/banner', ...licensePaths()],
+        exclude: ['/404', '/not-found', '/playground', '/banner', '/home', ...licensePaths()],
       })
     },
   },
