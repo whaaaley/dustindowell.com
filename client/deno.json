@@ -19,6 +19,7 @@
     "test": "vitest run",
     "test:e2e": "playwright test",
     "og": "deno run -A scripts/og.ts",
+    "lighthouse": "deno run -A scripts/lighthouse.ts",
     "type-check": "deno check src/ tests/ scripts/",
     "check:config": "deno check vite.config.ts vitest.config.ts playwright.config.ts tailwind.config.ts tailwind/spacing.utils.ts tailwind/spacing.utils.test.ts"
   },
