@@ -1,6 +1,11 @@
 {
   "version": "5",
   "specifiers": {
+    "jsr:@std/assert@1": "1.0.19",
+    "jsr:@std/assert@^1.0.19": "1.0.19",
+    "jsr:@std/internal@^1.0.12": "1.0.14",
+    "jsr:@std/internal@^1.0.14": "1.0.14",
+    "jsr:@std/testing@^1.0.20": "1.0.20",
     "npm:@cloudflare/workers-types@*": "5.20260904.1",
     "npm:@cloudflare/workers-types@^5.20260904.1": "5.20260904.1",
     "npm:@eslint/js@^9.19.0": "9.39.5",
@@ -47,6 +52,24 @@
     "npm:wrangler@*": "4.129.0_@cloudflare+workers-types@5.20260904.1",
     "npm:wrangler@^4.129.0": "4.129.0_@cloudflare+workers-types@5.20260904.1",
     "npm:yaml@^2.9.0": "2.9.0"
+  },
+  "jsr": {
+    "@std/assert@1.0.19": {
+      "integrity": "eaada96ee120cb980bc47e040f82814d786fe8162ecc53c91d8df60b8755991e",
+      "dependencies": [
+        "jsr:@std/internal@^1.0.12"
+      ]
+    },
+    "@std/internal@1.0.14": {
+      "integrity": "291516b3d4c35024d6ffbc0a9df5bf4c64116e05b50012cf846710152d2ffdf7"
+    },
+    "@std/testing@1.0.20": {
+      "integrity": "21380ed438672762e4ec549cbf4fe41c5b68f5598773a30b64abe7375513e721",
+      "dependencies": [
+        "jsr:@std/assert@^1.0.19",
+        "jsr:@std/internal@^1.0.14"
+      ]
+    }
   },
   "npm": {
     "@acemir/cssom@0.9.31": {
@@ -5355,6 +5378,12 @@
             "npm:yaml@^2.9.0"
           ]
         }
+      },
+      "common": {
+        "dependencies": [
+          "jsr:@std/assert@1",
+          "jsr:@std/testing@^1.0.20"
+        ]
       },
       "worker": {
         "dependencies": [

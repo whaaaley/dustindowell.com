@@ -36,6 +36,7 @@
     "paths": {
       "~/*": ["src/*"],
       "$test/*": ["tests/*"],
+      "$common/*": ["../common/*"],
     },
   },
   "include": [

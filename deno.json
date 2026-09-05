@@ -1,5 +1,6 @@
 {
   "workspace": [
+    "./common",
     "./client",
     "./worker"
   ],
@@ -10,14 +11,17 @@
     "preview": "deno task --cwd worker dev",
     "deploy": "deno task --cwd worker deploy",
     "lint": "deno task --cwd client lint",
-    "test": "deno task --cwd client test",
+    "test": "deno task --cwd common test && deno task --cwd client test",
     "test:e2e": "deno task --cwd client test:e2e",
-    "type-check": "deno task --cwd client type-check && deno task --cwd worker type-check"
+    "type-check": "deno task --cwd common type-check && deno task --cwd client type-check && deno task --cwd worker type-check"
   },
   "fmt": {
     "lineWidth": 240,
     "semiColons": false,
     "singleQuote": true
   },
-  "allowScripts": ["npm:vue-demi", "npm:workerd"]
+  "allowScripts": [
+    "npm:vue-demi",
+    "npm:workerd"
+  ]
 }

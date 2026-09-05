@@ -25,6 +25,7 @@
   },
   "imports": {
     "~/": "./src/",
-    "$test/": "./tests/"
+    "$test/": "./tests/",
+    "$common/": "../common/"
   }
 }
