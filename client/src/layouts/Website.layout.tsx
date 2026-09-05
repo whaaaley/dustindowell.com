@@ -9,9 +9,9 @@ const header = [
   'SOFTWARE ENGINEER',
 ].join('\n')
 
-const nav = '[Resume](/) ✦ [Work](/work) ✦ [Download resume](/dustin-dowell-resume.pdf)'
+const nav = '[Resume](/) ✦ [Work](/work) ✦ [Download Resume](/dustin-dowell-resume.pdf) ✦ [GitHub](https://github.com/whaaaley) ✦ [LinkedIn](https://www.linkedin.com/in/dustindowell)'
 
-const footer = `© ${new Date().getFullYear()} Dustin Dowell ✦ [Third-party licenses](/licenses)`
+const footer = `© ${new Date().getFullYear()} Dustin Dowell ✦ [Third-Party Licenses](/licenses)`
 
 const star = () => <>{' '}<span class='star'>✦</span>{String.fromCharCode(160)}</>
 
@@ -27,9 +27,9 @@ export default defineComponent({
               <p>
                 Des Moines, Iowa
                 {star()}
-                <RevealContact encoded='ZHVzdGluZG93ZWxsMjJAZ21haWwuY29t' kind='email' label='Show email'/>
+                <RevealContact encoded='ZHVzdGluZG93ZWxsMjJAZ21haWwuY29t' kind='email' label='Show Email'/>
                 {star()}
-                <RevealContact encoded='NTE1LTY4OS01NjQ4' encodedHref='KzE1MTU2ODk1NjQ4' kind='phone' label='Show phone'/>
+                <RevealContact encoded='NTE1LTY4OS01NjQ4' encodedHref='KzE1MTU2ODk1NjQ4' kind='phone' label='Show Phone'/>
               </p>
             </div>
           </div>

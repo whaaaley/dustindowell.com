@@ -30,7 +30,7 @@ test.describe('All Licenses Page Tests', () => {
 
   test('the footer link reaches the index from the resume', async ({ page }) => {
     await page.goto('/')
-    await page.getByTestId('site-footer').getByRole('link', { name: 'Third-party licenses' }).click()
+    await page.getByTestId('site-footer').getByRole('link', { name: 'Third-Party Licenses' }).click()
     await expect(page).toHaveURL(/\/licenses\/?$/)
     await expect(page.getByTestId('page-licenses')).toBeVisible()
   })

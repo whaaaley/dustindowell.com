@@ -38,13 +38,15 @@ test.describe('All Resume Page Tests', () => {
 
   test('nav links to the resume, the work index, and the PDF', async ({ page }) => {
     const nav = page.getByTestId('site-nav')
-    await expect(nav.getByRole('link', { name: 'Resume' })).toHaveAttribute('href', '/')
+    await expect(nav.getByRole('link', { name: 'Resume', exact: true })).toHaveAttribute('href', '/')
     await expect(nav.getByRole('link', { name: 'Work' })).toHaveAttribute('href', '/work')
-    await expect(nav.getByRole('link', { name: 'Download resume' })).toHaveAttribute('href', '/dustin-dowell-resume.pdf')
+    await expect(nav.getByRole('link', { name: 'Download Resume' })).toHaveAttribute('href', '/dustin-dowell-resume.pdf')
+    await expect(nav.getByRole('link', { name: 'GitHub' })).toHaveAttribute('href', 'https://github.com/whaaaley')
+    await expect(nav.getByRole('link', { name: 'LinkedIn' })).toHaveAttribute('href', 'https://www.linkedin.com/in/dustindowell')
   })
 
   test('footer links to the licenses page', async ({ page }) => {
-    await expect(page.getByTestId('site-footer').getByRole('link', { name: 'Third-party licenses' })).toHaveAttribute('href', '/licenses')
+    await expect(page.getByTestId('site-footer').getByRole('link', { name: 'Third-Party Licenses' })).toHaveAttribute('href', '/licenses')
   })
 
   test('renders every resume section in order', async ({ page }) => {
