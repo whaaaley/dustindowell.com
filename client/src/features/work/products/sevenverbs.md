@@ -3,7 +3,7 @@ title: "SevenVerbs"
 category: "Agency / Web"
 dates: "Apr 2014 - Aug 2014"
 tagline: "CMS theming and design work at a web development agency."
-order: 5
+order: 6
 ---
 
 ## ABOUT

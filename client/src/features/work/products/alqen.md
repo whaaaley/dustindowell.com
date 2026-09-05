@@ -3,7 +3,7 @@ title: "Alqen"
 category: "Platforms"
 dates: "Jun 2021 - Jun 2022"
 tagline: "E-commerce automation for Amazon and Walmart sellers."
-order: 3
+order: 4
 images:
   - src: /screenshots/alqen/02_statistics_overview.webp
     alt: "Statistics overview"
