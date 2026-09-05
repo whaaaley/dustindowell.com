@@ -12,10 +12,10 @@ Building fraud detection product integrations on the Integration Services team a
 
 Developed serverless fraud prevention solutions in Python on AWS Lambda, provisioned with CloudFormation and instrumented with DataDog monitoring.
 
-Worked within Azure DevOps pipelines to ship and observe integrations safely across environments.
+Worked within ADO pipelines to ship and observe integrations across environments.
 
 ::slider
 
 ## STACK
 
-- Python, AWS Lambda, CloudFormation, DataDog, Azure DevOps
+- Python, AWS Lambda, CloudFormation, DataDog, ADO

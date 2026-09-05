@@ -35,7 +35,7 @@ Access Publishing is a digital marketing company that transitioned from print ma
 
 I led development at Access Publishing, building three vehicle and equipment marketplaces from scratch. I designed systems to pull inventory data from hundreds of dealerships nationwide, clean it up, and display hundreds of thousands of listings through search interfaces for buyers.
 
-One of the biggest challenges was getting consistent data from inconsistent sources. I built web scrapers and API integrations to collect listings from dealer websites, third-party services, and industry databases. The data processing pipelines used Node.js and MongoDB to handle messy formats, duplicate listings, and constant updates without breaking, plus image processing pipelines to optimize and standardize vehicle photos.
+One of the biggest challenges was getting consistent data from inconsistent sources. I built web scrapers and API integrations to collect listings from dealer websites, third-party services, and industry databases. The data processing pipelines used Node and MongoDB to handle messy formats, duplicate listings, and constant updates without breaking, plus image processing pipelines to optimize and standardize vehicle photos.
 
 I built the frontend with Vue 2, focusing on rotating relevant product listings so users didn't have to search, driving traffic from social network ads. Each marketplace had specialized filters - truck specs for AccessTrucks and SleeperTrader, equipment details for MachineryAccess.
 
@@ -45,16 +45,16 @@ I managed developers who built a dealer portal in Angular so sellers could manag
 
 - **Multi-Source Aggregation:** Custom-built scrapers and API integrations to collect and normalize inventory data from hundreds of dealerships across the country
 - **Financing Prequalification:** Integrated application system for SleeperTrader allowing potential buyers to get prequalified for financing directly through the platform
-- **Dealer Management Portal:** Comprehensive backend system for dealers to manage listings, track performance metrics, and optimize their online presence
-- **Conversion Tracking:** Advanced analytics system to track user interactions, lead generation, and conversion rates across all platforms
+- **Dealer Management Portal:** Backend for dealers to manage listings, track performance metrics, and optimize their online presence
+- **Conversion Tracking:** Analytics to track user interactions, lead generation, and conversion rates across all platforms
 
 ## ADDITIONAL FEATURES
 
-- **Advanced Filtering:** Detailed filtering by specifications unique to each vehicle type
+- **Filtering:** Detailed filtering by specifications unique to each vehicle type
 - **Lead Generation:** Integrated inquiry forms with dealer notification systems
 - **Responsive Design:** Mobile-first interfaces optimized for on-the-go shopping
 - **SEO Optimization:** Structured data and performance tuning for maximum visibility
-- **Analytics Dashboard:** Comprehensive metrics for site owners and participating dealers
+- **Analytics Dashboard:** Metrics for site owners and participating dealers
 - **Inventory Management:** Tools for dealers to manage and update their vehicle listings
 
 ## STACK

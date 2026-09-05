@@ -33,7 +33,7 @@ Alqen is an e-commerce automation platform for Amazon and Walmart sellers that h
 
 ## FRONTEND DEVELOPMENT
 
-I led the frontend development of Alqen, an e-commerce automation platform for Walmart Marketplace sellers. I built the dashboard with Vue2/Vue3 that interfaced with a serverless AWS/Node.js/MongoDB backend to display thousands of daily orders and real-time inventory updates.
+I led the frontend development of Alqen, an e-commerce automation platform for Walmart Marketplace sellers. I built the dashboard with Vue2/Vue3 that interfaced with a serverless AWS/Node/MongoDB backend to display thousands of daily orders and real-time inventory updates.
 
 The platform needed reliable integration with Walmart's API for order syncing and payment processing. I built the frontend interfaces for Walmart and Stripe API integrations and implemented real-time order tracking so sellers could monitor orders and inventory without refreshing.
 
@@ -46,14 +46,14 @@ I modernized the platform by porting Vue2 components to Vue3 and designed strate
 ## KEY FEATURES
 
 - **Automated Order Processing:** Instant order synchronization between Walmart Marketplace and supplier systems with automatic payment processing and fulfillment
-- **Real-Time Analytics:** Comprehensive dashboard with performance metrics, revenue tracking, and inventory insights for data-driven decision making
+- **Real-Time Analytics:** Dashboard with performance metrics, revenue tracking, and inventory levels
 - **Inventory Management:** Automated stock level synchronization across platforms to prevent overselling and maintain accurate listings
-- **Impersonation System:** Advanced customer service tools allowing support staff to impersonate sellers for troubleshooting and order management
+- **Impersonation System:** Customer service tools allowing support staff to impersonate sellers for troubleshooting and order management
 
 ## ADDITIONAL FEATURES
 
 - **Bulk Product Listing:** Upload and manage multiple products simultaneously
-- **Automated Repricing:** Dynamic price adjustments based on market conditions
+- **Automated Repricing:** Price adjustments based on market conditions
 - **Performance Metrics:** Track seller rating, feedback, and account health
 - **Multi-Account Management:** Control multiple Walmart seller accounts from one interface
 - **Order Filtering:** Customizable filters to organize and prioritize orders
