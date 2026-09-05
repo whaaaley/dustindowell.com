@@ -25,7 +25,7 @@ export default defineComponent({
     return () => (
       <section class='grid gap-page-half' data-testid={props.testId}>
         <h3 class='text-page-h2 font-black tracking-[0.5px]'>{props.title}</h3>
-        <p class='text-page-body text-zinc-300'>{props.description}</p>
+        <p class='text-page-body text-zinc-400'>{props.description}</p>
         {slots.default && slots.default()}
         <StateBox state={props.state}/>
       </section>

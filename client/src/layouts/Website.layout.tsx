@@ -29,14 +29,14 @@ export default defineComponent({
               <a href='/dustin-dowell-resume.pdf'>Download Resume</a>
             </p>
           </div>
-          <nav aria-label='Site' class='text-zinc-300 print:hidden' data-testid='site-nav'>
+          <nav aria-label='Site' class='text-zinc-400 print:hidden' data-testid='site-nav'>
             <Markdown content={nav}/>
           </nav>
         </header>
         <main data-testid='site-main'>
           <RouterView/>
         </main>
-        <footer class='text-right text-zinc-300 print:hidden' data-testid='site-footer'>
+        <footer class='text-right text-zinc-400 print:hidden' data-testid='site-footer'>
           <Markdown content={footer}/>
         </footer>
       </div>

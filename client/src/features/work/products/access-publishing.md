@@ -27,7 +27,7 @@ images:
 
 ## ABOUT
 
-Access Publishing is a digital marketing company that transitioned from print magazines to specialized vehicle and equipment listing platforms. The company runs three major online marketplaces: AccessTrucks for box trucks, SleeperTrader for semi trucks with sleepers, and MachineryAccess for heavy machinery, aggregating inventory from hundreds of dealerships to provide a platform for commercial vehicle and equipment buyers.
+Access Publishing is a Johnston, Iowa trade publisher that grew from weekly truck and machinery magazines into online vehicle and equipment marketplaces. While I was there, from 2016 to 2019, it ran three: AccessTrucks for box trucks, SleeperTrader for semi trucks with sleepers, and MachineryAccess for heavy machinery, aggregating inventory from hundreds of dealerships for commercial vehicle and equipment buyers. The sites have changed since.
 
 ::slider
 

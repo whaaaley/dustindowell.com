@@ -2,7 +2,7 @@
 title: "Alqen"
 category: "Platforms"
 dates: "Jun 2021 - Jun 2022"
-tagline: "E-commerce automation for Amazon and Walmart sellers."
+tagline: "Dropshipping dashboard for Amazon and Walmart sellers."
 order: 4
 images:
   - src: /screenshots/alqen/02_statistics_overview.webp
@@ -27,7 +27,7 @@ images:
 
 ## ABOUT
 
-Alqen is an e-commerce automation platform for Amazon and Walmart sellers that handles inventory management, bulk product uploads, order fulfillment, payment processing, and real-time marketplace synchronization. The platform helps sellers find profitable products and efficiently process orders across multiple channels while reducing manual intervention to optimize their operations.
+In 2021 and 2022 Alqen was an all-in-one dropshipping tool for Amazon and Walmart sellers: inventory management, bulk product uploads, order fulfillment, payment processing, and real-time marketplace synchronization from one dashboard. Alqen has since pivoted to product research and bulk UPC scanning for the same sellers; this page describes the product as it was when I worked on it.
 
 ::slider
 

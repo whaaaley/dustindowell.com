@@ -15,7 +15,7 @@ export default defineComponent({
         <div class='markdown md:zoom-[2]'>
           <h1><Wordmark/></h1>
           <p>SOFTWARE ENGINEER</p>
-          <nav aria-label='Links' class='text-zinc-300' data-testid='links-nav'>
+          <nav aria-label='Links' class='text-zinc-400' data-testid='links-nav'>
             <Markdown content={links}/>
           </nav>
         </div>

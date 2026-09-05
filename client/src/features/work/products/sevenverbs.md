@@ -2,7 +2,7 @@
 title: "SevenVerbs"
 category: "Agency / Web"
 dates: "Apr 2014 - Aug 2014"
-tagline: "Maintaining client CMS sites and design work at a web development agency."
+tagline: "Maintaining client CMS sites and design work at a custom software and web shop."
 order: 6
 ---
 

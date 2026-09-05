@@ -162,7 +162,7 @@ export default defineComponent({
             <img alt={active.value.alt} class='size-full object-contain' fetchpriority='high' height={1024} sizes='(min-width: 1440px) 1100px, 80vw' src={active.value.src} srcset={`${active.value.medium} 900w, ${active.value.src} 1366w`} width={1366}/>
           </div>
         </div>
-        <div class='flex items-center justify-between text-page-body text-zinc-300'>
+        <div class='flex items-center justify-between text-page-body text-zinc-400'>
           <button aria-label='Previous image' class={arrowClass.value} type='button' onClick={handlePrevious} onKeydown={handleKeydown}>←</button>
           <span aria-live='polite'>{props.activeIndex + 1} / {count.value} ✦ {active.value.alt}</span>
           <button aria-label='Next image' class={arrowClass.value} type='button' onClick={handleNext} onKeydown={handleKeydown}>→</button>
