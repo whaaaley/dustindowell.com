@@ -14,7 +14,7 @@ export default defineComponent({
         <div class='markdown zoom-[2]'>
           <h1><Wordmark/></h1>
           <p>SOFTWARE ENGINEER</p>
-          <p class='text-zinc-300'>
+          <p class='text-zinc-400'>
             Des Moines, Iowa
             {star()}
             dustindowell.com

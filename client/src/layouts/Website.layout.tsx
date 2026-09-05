@@ -19,7 +19,7 @@ export default defineComponent({
           <div class='markdown'>
             <h1><a href='/'><Wordmark/></a></h1>
             <p>SOFTWARE ENGINEER</p>
-            <p class='text-zinc-300 print:text-zinc-600' data-testid='site-contact'>
+            <p class='text-zinc-400 print:text-zinc-600' data-testid='site-contact'>
               Des Moines, Iowa
               {star()}
               <RevealContact encoded='ZHVzdGluZG93ZWxsMjJAZ21haWwuY29t' kind='email' label='Show Email'/>
