@@ -14,7 +14,7 @@ export const createApp = ViteSSG(RouterView, {
 
 export const includedRoutes = () => [
   '/',
-  '/home',
+  '/links',
   '/licenses',
   ...licenses.map(licensePath),
   '/work',
