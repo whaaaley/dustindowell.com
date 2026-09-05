@@ -16,7 +16,7 @@ export default defineComponent({
     useSeo({ title: 'Banner', description: 'Social preview image source.', noindex: true })
 
     return () => (
-      <div class='flex h-[630px] w-300 items-center overflow-hidden bg-black px-24 text-white' data-testid='page-banner'>
+      <div class='flex h-[630px] w-300 items-center justify-center overflow-hidden bg-black text-white' data-testid='page-banner'>
         <div class='zoom-[2]'>
           <Markdown content={content}/>
         </div>
