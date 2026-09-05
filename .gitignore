@@ -2,16 +2,14 @@
 node_modules/
 
 # Build output
-/dist/
 /client/dist/
+/client/src/features/licenses/third-party.md
 .vite/
+.vite-ssg-temp/
 
 # Env / secrets
 .env
 .env.*
-!.env.template
-!client/.env.template
-!server/.env.template
 
 # Playwright / test artifacts
 .auth/
@@ -21,14 +19,6 @@ node_modules/
 # TypeScript build info
 *.tsbuildinfo
 
-# Deno
-deno.lock
-server/logs/
-server/data/
-
-# Scratch copy of the pre-rebuild site, kept on disk for reference only.
-_scratch-old/
-
 # Backup bundles
 *.bundle
 
@@ -37,5 +27,15 @@ _scratch-old/
 *.log
 scripts/**/.env
 
-# Local task list
-TODO.md
+# Local-only files: Pencil design + fonts + notes, resume PDF exports, DNS notes, TODO, old site copy
+/_local/
+
+# Wrangler local state
+.wrangler/
+worker/worker-configuration.d.ts
+
+# Symlink to the onclick repo's Claude rules (local only)
+.claude/rules
+
+# Temporary maintenance-page Worker used during the move; deleted after the production deploy
+/_maintenance-worker/
