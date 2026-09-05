@@ -11,17 +11,155 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy-fly:
-    name: Deploy to Fly.io
-    runs-on: ubuntu-22.04
-    env:
-      FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
     steps:
       - name: Clone repository
         uses: actions/checkout@v6
 
-      - name: Setup Fly CLI
-        uses: superfly/flyctl-actions/setup-flyctl@master
+      - name: Set up Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.9.5
 
-      - name: Deploy to Fly
-        run: flyctl deploy --config fly.toml --remote-only
+      - name: Cache dependencies
+        uses: actions/cache@v5
+        id: deps-cache
+        with:
+          path: node_modules
+          key: deps-${{ hashFiles('client/package.json', 'worker/deno.json', 'deno.lock') }}
+
+      - name: Install dependencies
+        if: steps.deps-cache.outputs.cache-hit != 'true'
+        run: deno install
+
+      - name: Test client unit suite
+        run: deno task test
+
+  type-check:
+    name: Type Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v6
+
+      - name: Set up Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.9.5
+
+      - name: Cache dependencies
+        uses: actions/cache@v5
+        id: deps-cache
+        with:
+          path: node_modules
+          key: deps-${{ hashFiles('client/package.json', 'worker/deno.json', 'deno.lock') }}
+
+      - name: Install dependencies
+        if: steps.deps-cache.outputs.cache-hit != 'true'
+        run: deno install
+
+      - name: Type check
+        run: deno task type-check
+
+      - name: Type check config
+        run: deno task --cwd client check:config
+
+      - name: Lint client
+        run: deno task lint
+
+  build-client:
+    name: Build Client
+    needs: [test, type-check]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v6
+
+      - name: Set up Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.9.5
+
+      - name: Cache dependencies
+        uses: actions/cache@v5
+        id: deps-cache
+        with:
+          path: node_modules
+          key: deps-${{ hashFiles('client/package.json', 'worker/deno.json', 'deno.lock') }}
+
+      - name: Install dependencies
+        if: steps.deps-cache.outputs.cache-hit != 'true'
+        run: deno install
+
+      - name: Build client
+        run: deno task build
+
+      - name: Cache build output
+        uses: actions/cache@v5
+        with:
+          path: client/dist
+          key: dist-${{ github.sha }}
+
+  deploy:
+    name: Deploy Worker
+    needs: build-client
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v6
+
+      - name: Set up Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.9.5
+
+      - name: Cache dependencies
+        uses: actions/cache@v5
+        id: deps-cache
+        with:
+          path: node_modules
+          key: deps-${{ hashFiles('client/package.json', 'worker/deno.json', 'deno.lock') }}
+
+      - name: Install dependencies
+        if: steps.deps-cache.outputs.cache-hit != 'true'
+        run: deno install
+
+      - name: Restore build output
+        uses: actions/cache@v5
+        with:
+          path: client/dist
+          key: dist-${{ github.sha }}
+          fail-on-cache-miss: true
+
+      - name: Deploy worker
+        run: deno task deploy
+
+  release:
+    name: Create Release
+    needs: deploy
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          PREV_TAG=$(git describe --tags --match 'deploy-*' --abbrev=0 2>/dev/null || echo "")
+          RANGE="${PREV_TAG:+$PREV_TAG..HEAD}"
+          NOTES=$(git log ${RANGE:-HEAD} --oneline)
+          # An empty range (previous deploy tag already at HEAD on a back-to-back deploy) yields no commits;
+          # fall back to HEAD so the release body still renders the commit hash and message instead of empty.
+          NOTES=${NOTES:-$(git log -1 HEAD --oneline)}
+          gh release create "deploy-${{ github.run_number }}" \
+            --title "Deploy #${{ github.run_number }}" \
+            --notes "$NOTES"

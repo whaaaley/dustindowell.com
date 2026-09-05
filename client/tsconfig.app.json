@@ -35,18 +35,12 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"],
+      "$test/*": ["tests/*"],
     },
   },
   "include": [
-    "src/**/*.js",
-    "src/**/*.jsx",
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/**/*.vue",
     "src/vite-env.d.ts",
-    "src/router.d.ts",
-    "src/async-git.d.ts",
-    "src/jsx.d.ts",
   ],
-  "exclude": ["**/_trash/**/*"],
 }

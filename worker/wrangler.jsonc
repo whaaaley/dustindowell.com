@@ -1,0 +1,30 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Top-level config is the dev environment: `wrangler dev` needs no setup.
+  // Production is `wrangler deploy --env prod`, which restates name and routes below.
+  "name": "dustindowell-site-dev",
+  "main": "src/index.ts",
+  "account_id": "99d66965090883bd017e8e2b0a12a75b",
+  "compatibility_date": "2026-09-04",
+  "workers_dev": true,
+  "preview_urls": true,
+  "assets": {
+    "directory": "../client/dist",
+    "not_found_handling": "404-page"
+  },
+  "env": {
+    "prod": {
+      "name": "dustindowell-site",
+      "workers_dev": false,
+      "preview_urls": false,
+      "routes": [
+        { "pattern": "dustindowell.com/*", "zone_name": "dustindowell.com" },
+        { "pattern": "www.dustindowell.com/*", "zone_name": "dustindowell.com" }
+      ],
+      "assets": {
+        "directory": "../client/dist",
+        "not_found_handling": "404-page"
+      }
+    }
+  }
+}

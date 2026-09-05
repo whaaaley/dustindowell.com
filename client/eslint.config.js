@@ -22,13 +22,22 @@ const baseConfig = [
   pluginJs.configs.recommended,
 ]
 
+const tailwindSettings = {
+  // v4 resolves classes from the CSS entry, not a JS config.
+  cssConfigPath: 'src/styles/index.css',
+  // Check class strings inside 'cva' calls, plus class/classOverride attributes.
+  functions: ['cva'],
+  attributes: ['class', 'classOverride'],
+}
+
 const tailwindConfig = [
-  ...tailwind.configs['flat/recommended'],
+  tailwind.configs.recommended,
   {
+    settings: {
+      tailwindcss: tailwindSettings,
+    },
     rules: {
-      // Check class ordering inside 'cva' (class-variance-authority) calls so variant styles stay consistent.
-      // Also check 'at' (custom class prefix utility) calls for selector-prefixed classes.
-      'tailwindcss/classnames-order': ['error', { callees: ['cva', 'at'], classRegex: '^(class|classOverride)$' }],
+      'tailwindcss/classnames-order': 'error',
     },
   },
 ]
@@ -140,6 +149,12 @@ const importConfig = [
   // eslint-plugin-import's recommended base, which must precede the block below so our overrides land.
   // Flat config merges last-wins, so this enables the defaults we then disable or tune.
   importPlugin.flatConfigs.recommended,
+  {
+    rules: {
+      // import/named can't follow TypeScript type-only exports, so it false-positives on packages
+      'import/named': 0,
+    },
+  },
   {
     rules: {
       // Disable ESLint's import resolution in favor of TypeScript's more accurate module resolution.
@@ -254,7 +269,7 @@ const typeScriptConfig = [
   {
     // TypeScript requires interface for module and global augmentation merging.
     // Declaration files and global augmentations are exempt from consistent-type-definitions here.
-    files: ['**/*.d.ts', 'src/apps/website/gtag.ts'],
+    files: ['**/*.d.ts'],
     rules: {
       '@typescript-eslint/consistent-type-definitions': 'off',
     },

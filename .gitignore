@@ -10,6 +10,7 @@ node_modules/
 # Env / secrets
 .env
 .env.*
+!scripts/github/.env.template
 
 # Playwright / test artifacts
 .auth/

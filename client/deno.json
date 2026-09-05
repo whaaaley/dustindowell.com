@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "deno.window",
+      "dom",
+      "dom.iterable",
+      "dom.asynciterable",
+      "esnext"
+    ],
+    "jsx": "preserve",
+    "jsxImportSource": "vue"
+  },
+  "tasks": {
+    "dev": "deno task build:licenses && vite --host",
+    "build": "deno task build:licenses && vite-ssg build",
+    "build:licenses": "deno run --allow-read --allow-write src/features/licenses/licenses.build.ts",
+    "preview": "vite preview",
+    "lint": "eslint src",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "og": "deno run -A scripts/og.ts",
+    "type-check": "deno check src/ tests/ scripts/",
+    "check:config": "deno check vite.config.ts vitest.config.ts playwright.config.ts tailwind.config.ts tailwind/spacing.utils.ts tailwind/spacing.utils.test.ts"
+  },
+  "imports": {
+    "~/": "./src/",
+    "$test/": "./tests/"
+  }
+}
