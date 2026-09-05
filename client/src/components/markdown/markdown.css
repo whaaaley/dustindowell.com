@@ -1,28 +1,75 @@
+@reference '../../styles/index.css';
+
 .markdown {
-  @apply text-zinc-300;
-  @apply font-inter;
+  @apply grid font-blacker text-page-body;
 
   h1 {
-    @apply text-4xl font-bold mb-2;
+    @apply font-wild-star text-page-name font-normal;
+  }
+
+  h1 + p {
+    @apply pt-page-half text-page-h1 font-black tracking-[0.5px];
   }
 
   h2 {
-    @apply text-3xl;
+    @apply pt-page-line text-page-h1 font-black tracking-[0.5px];
+  }
+
+  > h2:first-child {
+    @apply pt-0;
   }
 
   h3 {
-    @apply text-2xl;
+    @apply text-page-h2 font-black;
   }
 
-  p {
-    @apply my-4 text-lg;
+  h3 + h3,
+  p + h3,
+  ul + h3 {
+    @apply mt-page-line;
+  }
+
+  h3 + p,
+  h1 + p + p,
+  h2 + p + p {
+    @apply text-zinc-300 print:text-zinc-600;
+  }
+
+  p + ul,
+  p + p:not(h1 + p + p) {
+    @apply pt-page-quarter;
   }
 
   ul {
-    @apply list-disc pl-6 mb-4;
+    @apply grid pl-page-indent;
   }
 
-  ol {
-    @apply list-decimal pl-6 mb-4;
+  li {
+    @apply pl-page-dot -indent-page-dot;
+  }
+
+  li::before {
+    @apply inline-block w-page-dot indent-0 text-left align-middle font-inter text-page-glyph;
+    content: '✦';
+  }
+
+  strong {
+    @apply font-black;
+  }
+
+  h1 a {
+    @apply no-underline;
+  }
+
+  a {
+    @apply underline decoration-zinc-500 underline-offset-2 hover:decoration-white;
+  }
+
+  pre {
+    @apply whitespace-pre-wrap pb-page-line;
+  }
+
+  .star {
+    @apply inline-block px-page-quarter align-middle font-inter text-page-glyph;
   }
 }

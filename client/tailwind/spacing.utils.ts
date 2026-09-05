@@ -28,6 +28,16 @@ export const linearScale = (min: number, max: number, unit = 'rem'): string => {
   return `clamp(${min}${unit}, ${intercept}${unit} + ${value}vw, ${max}${unit})`
 }
 
+// Scales a measurement from the 816px letter-size resume PDF up to a 1440px page on laptop.
+// Type keeps the default mobile scale so 9px body text reads at 14px; spacing passes a smaller scale so gaps stay tight on a phone.
+export const pageUnit = (px: number, mobileScale = 14 / 9): string => {
+  return linearClamp(px * mobileScale, px * 1440 / 816)
+}
+
+export const desktopUnit = (px: number, mobileScale = 14 / 9): string => {
+  return pageUnit(px * 816 / 1440, mobileScale)
+}
+
 // Generates an object of `<prefix><unit>: <unit*0.1875>rem` entries for the given units.
 // Used to produce the `t1`, `t2`, ... custom spacing scale.
 export const generateSpacing = (prefix: string, units: number[] = []): Record<string, string> => {

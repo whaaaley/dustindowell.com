@@ -1,56 +1,15 @@
-/* Zinc colors as CSS variables.
- * The zinc ramp is the original dustindowell.com blue-tinted desaturated neutral palette
- * (the lab(L, 0, ~-7) axis from _scratch-old/src/styles/_colors.scss), not Tailwind's warm gray.
- * Light end anchors to the original $light-* ramp, dark end to the $dark-* ramp:
- *   100 light-600  200 light-500  300 light-400  700 dark-100  800 dark-300  900 dark-500  950 dark-600
- * Shades 400/500/600 interpolate the gap between the light and dark halves. */
-:root {
-  --emerald-50: 236 253 245;
-  --emerald-100: 209 250 229;
-  --emerald-200: 167 243 208;
-  --emerald-300: 110 231 183;
-  --emerald-400: 52 211 153;
-  --emerald-500: 16 185 129;
-  --emerald-600: 5 150 105;
-  --emerald-700: 4 120 87;
-  --emerald-800: 6 95 70;
-  --emerald-900: 6 78 59;
-
-  --yellow-50: 254 252 232;
-  --yellow-100: 254 249 195;
-  --yellow-200: 254 240 138;
-  --yellow-300: 253 224 71;
-  --yellow-400: 250 204 21;
-  --yellow-500: 234 179 8;
-  --yellow-600: 202 138 4;
-  --yellow-700: 161 98 7;
-  --yellow-800: 133 77 14;
-  --yellow-900: 113 63 18;
-
-  --zinc-50: 242 245 252;
-  --zinc-100: 236 241 250;
-  --zinc-200: 221 227 238;
-  --zinc-300: 206 213 225;
-  --zinc-400: 170 178 195;
-  --zinc-500: 110 118 134;
-  --zinc-600: 82 89 104;
-  --zinc-700: 62 71 86;
-  --zinc-800: 42 49 60;
-  --zinc-900: 23 28 35;
-  --zinc-950: 12 17 24;
+html {
+  color-scheme: dark;
 }
 
-/* Prevent horizontal scroll on text selection */
 html,
 body {
-  @apply overflow-x-hidden xl:overflow-visible;
+  @apply overflow-x-hidden;
   overscroll-behavior-x: none;
 }
 
-/* Base body styles for all apps */
 body {
-  @apply font-inter text-base text-zinc-100;
-  @apply min-h-screen min-w-[425px];
+  @apply min-h-screen min-w-[425px] font-blacker;
 }
 
 #app {
@@ -59,4 +18,12 @@ body {
 
 button {
   @apply cursor-pointer;
+}
+
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-white;
+}
+
+::selection {
+  @apply bg-white text-black;
 }

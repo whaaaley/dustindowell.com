@@ -1,15 +1,15 @@
 @import './styles/index.css';
 
-:root {
-  /* Original dustindowell.com accent: the blue/purple "blurple". */
-  --primary: 159 159 255;
-  /* A slightly brighter blurple on hover, instead of shifting toward magenta. */
-  --primary-hover: 183 183 255;
-  --primary-text: 0 0 0;
+body {
+  @apply bg-black text-white;
 }
 
-body {
-  /* The original home/nav use plain system sans-serif; Inter is applied only where the original did (resume). */
-  /* The original's page background is the dark theme's --bg-500 ($dark-500 = lab(10,0,-6) = rgb 23 28 35). */
-  @apply bg-dark-500 font-sans text-zinc-100;
+@media print {
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    @apply min-w-0 bg-white text-black;
+  }
 }

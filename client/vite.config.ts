@@ -1,39 +1,42 @@
+import { copyFileSync } from 'node:fs'
 import { fileURLToPath, URL } from 'node:url'
-import basicSsl from '@vitejs/plugin-basic-ssl'
+import tailwindcss from '@tailwindcss/vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { defineConfig } from 'vite'
-import { viteSingleFile } from 'vite-plugin-singlefile'
 import generateSitemap from 'vite-ssg-sitemap'
 
 const resolve = (path: string) => fileURLToPath(new URL(path, import.meta.url))
 
-export const createAliasConfig = () => ({
-  '~': resolve('./src'),
-})
+// Workers Static Assets looks for /404.html, while vite-ssg writes the not-found route to a nested directory.
+const writeNotFoundPage = () => {
+  copyFileSync(resolve('./dist/not-found/index.html'), resolve('./dist/404.html'))
+}
 
-export default defineConfig(({ command }) => ({
-  server: {
-    host: 'localhost',
-  },
+export default defineConfig(() => ({
   plugins: [
-    basicSsl(),
     vue(),
     vueJsx(),
-    // Inline all JS and CSS into the HTML for the production build only.
-    // Gated to `build` so the dev server keeps serving separate module scripts.
-    ...(command === 'build' ? [viteSingleFile()] : []),
+    tailwindcss(),
   ],
   resolve: {
-    alias: createAliasConfig(),
+    alias: {
+      '~': resolve('./src'),
+    },
+  },
+  server: {
+    port: 5180,
+    strictPort: true,
   },
   ssgOptions: {
     script: 'async',
     dirStyle: 'nested',
     formatting: 'minify',
     onFinished () {
+      writeNotFoundPage()
       generateSitemap({
         hostname: 'https://dustindowell.com/',
+        exclude: ['/404', '/not-found', '/playground', '/banner'],
       })
     },
   },
