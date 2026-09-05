@@ -25,7 +25,7 @@ export const sliderVariants = cva([
 })
 
 export const thumbnailVariants = cva([
-  'block aspect-4/3 min-h-0 w-full flex-1 overflow-hidden border transition-opacity',
+  'block aspect-4/3 min-h-0 w-full shrink overflow-hidden border transition-opacity',
 ], {
   variants: {
     active: {
