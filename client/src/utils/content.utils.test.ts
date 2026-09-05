@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { directoryPattern, fileNamePattern, frontmatterPattern, hasMarker, isRecord, markdownExtensionPattern, markerPattern, readNumber, readString, slugFromPath, splitOnMarker, stripFrontmatter, thumbnailPath } from './content.utils.ts'
+import { directoryPattern, fileNamePattern, frontmatterPattern, hasMarker, isRecord, markdownExtensionPattern, markerPattern, readNumber, readString, slugFromPath, splitOnMarker, stripFrontmatter, thumbnailPath, variantPath } from './content.utils.ts'
 
 describe('content.utils', () => {
   describe('patterns', () => {
@@ -152,6 +152,17 @@ describe('content.utils', () => {
 
       // Assert
       expect(thumb).toBe('/screenshots/compose/thumbs/16_project_experiment_list.webp')
+    })
+
+    it('variantPath inserts any variant directory before the file name', () => {
+      // Arrange
+      const src = '/screenshots/alqen/01_listings.webp'
+
+      // Act
+      const medium = variantPath(src, 'medium')
+
+      // Assert
+      expect(medium).toBe('/screenshots/alqen/medium/01_listings.webp')
     })
 
     it('fileNamePattern splits the directory from the file name', () => {

@@ -3,6 +3,7 @@ import { computed, defineComponent, type PropType } from 'vue'
 
 export type SliderImage = {
   src: string
+  medium: string
   thumb: string
   alt: string
 }
@@ -158,7 +159,7 @@ export default defineComponent({
         <div class='flex gap-image-gutter'>
           {props.thumbnails && renderThumbnails()}
           <div class='aspect-4/3 min-w-0 flex-1 overflow-hidden border border-zinc-800 bg-zinc-900'>
-            <img alt={active.value.alt} class='size-full object-contain' fetchpriority='high' height={1024} src={active.value.src} width={1366}/>
+            <img alt={active.value.alt} class='size-full object-contain' fetchpriority='high' height={1024} sizes='(min-width: 1440px) 1100px, 80vw' src={active.value.src} srcset={`${active.value.medium} 900w, ${active.value.src} 1366w`} width={1366}/>
           </div>
         </div>
         <div class='flex items-center justify-between text-page-body text-zinc-300'>

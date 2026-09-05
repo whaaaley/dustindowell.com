@@ -5,11 +5,11 @@ import Slider, { type SliderImage, type SliderVariants } from '~/components/gall
 type State = { activeIndex: number }
 
 const images: SliderImage[] = [
-  { src: '/screenshots/compose/16_project_experiment_list.webp', thumb: '/screenshots/compose/thumbs/16_project_experiment_list.webp', alt: 'Experiment list' },
-  { src: '/screenshots/compose/20_experiment_variants.webp', thumb: '/screenshots/compose/thumbs/20_experiment_variants.webp', alt: 'Experiment variants' },
-  { src: '/screenshots/compose/22_experiment_targeting.webp', thumb: '/screenshots/compose/thumbs/22_experiment_targeting.webp', alt: 'Experiment targeting' },
-  { src: '/screenshots/compose/31_experiment_report.webp', thumb: '/screenshots/compose/thumbs/31_experiment_report.webp', alt: 'Experiment report' },
-  { src: '/screenshots/compose/35_experiment_report_winner.webp', thumb: '/screenshots/compose/thumbs/35_experiment_report_winner.webp', alt: 'Experiment winner' },
+  { src: '/screenshots/compose/16_project_experiment_list.webp', medium: '/screenshots/compose/medium/16_project_experiment_list.webp', thumb: '/screenshots/compose/thumbs/16_project_experiment_list.webp', alt: 'Experiment list' },
+  { src: '/screenshots/compose/20_experiment_variants.webp', medium: '/screenshots/compose/medium/20_experiment_variants.webp', thumb: '/screenshots/compose/thumbs/20_experiment_variants.webp', alt: 'Experiment variants' },
+  { src: '/screenshots/compose/22_experiment_targeting.webp', medium: '/screenshots/compose/medium/22_experiment_targeting.webp', thumb: '/screenshots/compose/thumbs/22_experiment_targeting.webp', alt: 'Experiment targeting' },
+  { src: '/screenshots/compose/31_experiment_report.webp', medium: '/screenshots/compose/medium/31_experiment_report.webp', thumb: '/screenshots/compose/thumbs/31_experiment_report.webp', alt: 'Experiment report' },
+  { src: '/screenshots/compose/35_experiment_report_winner.webp', medium: '/screenshots/compose/medium/35_experiment_report_winner.webp', thumb: '/screenshots/compose/thumbs/35_experiment_report_winner.webp', alt: 'Experiment winner' },
 ]
 
 const sizes: NonNullable<SliderVariants['size']>[] = ['sm', 'md', 'lg']

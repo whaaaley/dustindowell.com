@@ -1,6 +1,6 @@
 import { type SliderImage } from '~/components/gallery/Slider.tsx'
 import { extractFrontmatter, parseMarkdown } from '~/hooks/useMarkdown.ts'
-import { isRecord, readNumber, readString, slugFromPath, stripFrontmatter, thumbnailPath } from '~/utils/content.utils.ts'
+import { isRecord, readNumber, readString, slugFromPath, stripFrontmatter, thumbnailPath, variantPath } from '~/utils/content.utils.ts'
 
 export type Product = {
   slug: string
@@ -21,6 +21,7 @@ const readImages = (value: unknown): SliderImage[] => {
   }
   return value.filter(isRecord).map(image => ({
     src: readString(image, 'src'),
+    medium: variantPath(readString(image, 'src'), 'medium'),
     thumb: thumbnailPath(readString(image, 'src')),
     alt: readString(image, 'alt'),
   }))

@@ -21,7 +21,9 @@ export const splitOnMarker = (content: string, name: string): string[] => (
 
 export const hasMarker = (content: string, name: string): boolean => markerPattern(name).test(content)
 
-export const thumbnailPath = (src: string): string => src.replace(fileNamePattern, '$1thumbs/$2')
+export const variantPath = (src: string, variant: string): string => src.replace(fileNamePattern, `$1${variant}/$2`)
+
+export const thumbnailPath = (src: string): string => variantPath(src, 'thumbs')
 
 export const slugFromPath = (path: string): string => path.replace(directoryPattern, '').replace(markdownExtensionPattern, '')
 
