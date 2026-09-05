@@ -4,7 +4,9 @@
     "jsr:@std/assert@1": "1.0.19",
     "jsr:@std/assert@^1.0.19": "1.0.19",
     "jsr:@std/async@^1.5.0": "1.5.0",
+    "jsr:@std/cli@^1.0.32": "1.0.32",
     "jsr:@std/data-structures@^1.1.2": "1.1.2",
+    "jsr:@std/fmt@^1.0.10": "1.0.10",
     "jsr:@std/fs@^1.0.24": "1.0.24",
     "jsr:@std/internal@^1.0.12": "1.0.14",
     "jsr:@std/internal@^1.0.14": "1.0.14",
@@ -57,7 +59,8 @@
     "npm:vue@3.5.39": "3.5.39_typescript@5.9.3",
     "npm:wrangler@*": "4.129.0_@cloudflare+workers-types@5.20260904.1",
     "npm:wrangler@^4.129.0": "4.129.0_@cloudflare+workers-types@5.20260904.1",
-    "npm:yaml@^2.9.0": "2.9.0"
+    "npm:yaml@^2.9.0": "2.9.0",
+    "npm:zod@^4.5.4": "4.5.4"
   },
   "jsr": {
     "@std/assert@1.0.19": {
@@ -69,8 +72,18 @@
     "@std/async@1.5.0": {
       "integrity": "4c1f22d287a17ad7d8643b1952bc5a4d21e5d8b68dc8c20d8268eecc69096e82"
     },
+    "@std/cli@1.0.32": {
+      "integrity": "188b3a100d6202d64e3f5bd3d799c7fa4f6d77f92cc65eb7f641c1fa0aa92a66",
+      "dependencies": [
+        "jsr:@std/fmt",
+        "jsr:@std/internal@^1.0.14"
+      ]
+    },
     "@std/data-structures@1.1.2": {
       "integrity": "2471377c9e0051f9ec34e57d0ebd0ad133a5a889677446ec6ba9938e4e102918"
+    },
+    "@std/fmt@1.0.10": {
+      "integrity": "90dfba288802ac6de82fb31d0917eb9e4450b9925b954d5e51fc29ac07419db5"
     },
     "@std/fs@1.0.24": {
       "integrity": "f3061b45b81673a2bece689da041df32d174be064c89eb6397fb5718d3fb7877",
@@ -2047,7 +2060,7 @@
       "dependencies": [
         "devtools-protocol@0.0.1666840",
         "mitt",
-        "zod"
+        "zod@3.25.76"
       ]
     },
     "cjs-module-lexer@2.2.1": {
@@ -5359,6 +5372,9 @@
     "zod@3.25.76": {
       "integrity": "sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ=="
     },
+    "zod@4.5.4": {
+      "integrity": "sha512-sC95tT5iHHH9gtpj6A81kh+NEaRAUFN+qlUPDUbRfOMvNf5QCBqsb3WgvnpVtK5Y+4UfA6KqufotuTvMGiTlsA=="
+    },
     "zwitch@2.0.4": {
       "integrity": "sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A=="
     }
@@ -5378,7 +5394,6 @@
             "npm:@unhead/vue@^2.1.17",
             "npm:@vitejs/plugin-vue-jsx@5.1.6",
             "npm:@vitejs/plugin-vue@6.0.7",
-            "npm:chrome-launcher@^1.2.1",
             "npm:class-variance-authority@~0.7.1",
             "npm:eslint-plugin-import@^2.31.0",
             "npm:eslint-plugin-jsx-a11y@^6.10.2",
@@ -5390,14 +5405,12 @@
             "npm:globals@^15.14.0",
             "npm:hast-util-to-html@^9.0.5",
             "npm:hast-util-to-jsx-runtime@^2.3.6",
-            "npm:lighthouse@^13.4.1",
             "npm:mdast-util-from-markdown@^2.0.3",
             "npm:mdast-util-frontmatter@^2.0.1",
             "npm:mdast-util-gfm@^3.1.0",
             "npm:mdast-util-to-hast@^13.2.1",
             "npm:micromark-extension-frontmatter@2",
             "npm:micromark-extension-gfm@3",
-            "npm:opentype.js@2",
             "npm:tailwindcss@^4.3.3",
             "npm:typescript-eslint@^8.21.0",
             "npm:typescript@^5.9.3",
@@ -5416,6 +5429,19 @@
         "dependencies": [
           "jsr:@std/assert@1",
           "jsr:@std/testing@^1.0.20"
+        ]
+      },
+      "tools": {
+        "dependencies": [
+          "jsr:@std/assert@^1.0.19",
+          "jsr:@std/cli@^1.0.32",
+          "jsr:@std/path@^1.1.6",
+          "jsr:@std/testing@^1.0.20",
+          "npm:@playwright/test@^1.62.1",
+          "npm:chrome-launcher@^1.2.1",
+          "npm:lighthouse@^13.4.1",
+          "npm:opentype.js@2",
+          "npm:zod@^4.5.4"
         ]
       },
       "worker": {

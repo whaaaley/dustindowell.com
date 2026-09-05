@@ -1,0 +1,20 @@
+{
+  "wordmark": {
+    "font": "../_local/design/WildStar.otf",
+    "text": "Dustin Dowell",
+    "output": "../client/src/components/brand/Wordmark.tsx"
+  },
+  "og": {
+    "baseUrl": "http://localhost:8787",
+    "output": "../client/public/og-home.png"
+  },
+  "lighthouse": {
+    "baseUrl": "http://localhost:8787",
+    "paths": [
+      "/",
+      "/work",
+      "/work/compose"
+    ],
+    "passingScore": 0.9
+  }
+}

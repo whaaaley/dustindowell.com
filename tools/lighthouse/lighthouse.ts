@@ -1,13 +1,23 @@
 import { launch } from 'chrome-launcher'
 import lighthouse, { type Result } from 'lighthouse'
+import { z } from 'zod'
 import { safeAsync } from '$common/safe.ts'
+import { loadConfigSlice } from '../utils/config.utils.ts'
 
 type Category = 'performance' | 'accessibility' | 'best-practices' | 'seo'
 
-const baseUrl = Deno.env.get('LIGHTHOUSE_BASE_URL') ?? 'http://localhost:8787'
-const paths = Deno.args.length > 0 ? Deno.args : ['/', '/work', '/work/compose']
+// Scores the built site against the four Lighthouse categories and fails any page under the passing score.
+const configSchema = z.object({
+  baseUrl: z.string().default('http://localhost:8787'),
+  paths: z.array(z.string()).default(['/']),
+  passingScore: z.number().default(0.9),
+})
+
+const config = await loadConfigSlice({ key: 'lighthouse', schema: configSchema })
+const baseUrl = Deno.env.get('LIGHTHOUSE_BASE_URL') ?? config.baseUrl
+const paths = Deno.args.length > 0 ? Deno.args : config.paths
 const categories: Category[] = ['performance', 'accessibility', 'best-practices', 'seo']
-const passingScore = 0.9
+const passingScore = config.passingScore
 
 const scoreOf = (report: Result, category: Category): number | null => report.categories[category]?.score ?? null
 
