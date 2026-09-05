@@ -2,17 +2,17 @@
 title: "SevenVerbs"
 category: "Agency / Web"
 dates: "Apr 2014 - Aug 2014"
-tagline: "CMS theming and design work at a web development agency."
+tagline: "Maintaining client CMS sites and design work at a web development agency."
 order: 6
 ---
 
 ## ABOUT
 
-Converted static designs into working themes across WordPress, Drupal, Sitefinity, and Joomla.
+Updated and maintained client sites in WordPress, Drupal, Sitefinity, and Joomla.
 
-Designed and developed websites alongside business cards, logos, infographics, and digital documents.
+Added features, adjusted designs, and updated content on client sites, and rebuilt one static Bootstrap site into a CMS site.
 
-Enhanced existing client applications with new features and design improvements.
+Designed logos, business cards, infographics, and digital documents for clients.
 
 ::slider
 

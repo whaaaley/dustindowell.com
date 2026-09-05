@@ -18,7 +18,7 @@ test.describe('All Work Page Tests', () => {
     await expect(page).toHaveURL(/\/work\/compose\/?$/)
     const product = page.getByTestId('page-product')
     await expect(product.getByRole('heading', { level: 2, name: 'COMPOSE' })).toBeVisible()
-    await expect(product.getByText('A/B testing platform with no-code tools and deep Shopify integration.')).toBeVisible()
+    await expect(product.getByText('A/B testing platform with code and no-code tools and Shopify integration.')).toBeVisible()
     await expect(product.getByRole('heading', { level: 2, name: 'ABOUT' })).toBeVisible()
   })
 

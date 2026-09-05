@@ -8,14 +8,14 @@ order: 3
 
 ## ABOUT
 
-Led engineering across multiple Udundi initiatives, focused on bringing unfinished products to a launchable state and establishing development infrastructure.
+Contributed to multiple Udundi projects, focusing on completing unfinished products and creating new development infrastructure.
 
-Inherited Vue2/Node projects and drove them to completion by reducing scope while preserving the original design, including Shopify extensions launched to production.
+Completed an unfinished Shopify theme extension, Shop the Look, that places product hotspots on images: cut the planned larger version down to the existing build, rebuilt the product picker, finished the half-built Node backend, and launched it to the Shopify App Store.
 
-Built Vue3 marketing sites for the Compose.co product and the Udundi agency, and established CI/CD on GitHub Actions and AWS.
+Built the Udundi agency website and blog as a static Vue 3 site with content from Contentful, rebuilt in GitHub Actions on each content change and published to S3 with CloudFront caching, plus hand-built client case study pages with parallax scrolling, image galleries, and slides.
 
 ::slider
 
 ## STACK
 
-- Vue 2, Vue 3, Node, Shopify, GitHub Actions, AWS
+- Vue 2, Vue 3, Node, Shopify, Contentful, GitHub Actions, AWS

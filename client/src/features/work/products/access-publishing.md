@@ -39,13 +39,13 @@ One of the biggest challenges was getting consistent data from inconsistent sour
 
 I built the frontend with Vue 2, focusing on rotating relevant product listings so users didn't have to search, driving traffic from social network ads. Each marketplace had specialized filters - truck specs for AccessTrucks and SleeperTrader, equipment details for MachineryAccess.
 
-I managed developers who built a dealer portal in Angular so sellers could manage their listings, respond to inquiries, and track performance. I also managed the team that wrote the PHP financing application and handled the frontend integration to provide buyers financing options.
+I coordinated a team of three developers and helped direct an internal inventory management tool in Angular for staff and salespeople. I built the financing prequalification form for SleeperTrader, a lead funnel that returns a prequalified result to the buyer and forwards the lead to the listing dealership. I also set up the email system on Sparkpost for notifications and marketing campaigns, hand-coding the HTML emails as Pug templates, and drew the SleeperTrader and MachineryAccess logos in Illustrator.
 
 ## KEY FEATURES
 
 - **Multi-Source Aggregation:** Custom-built scrapers and API integrations to collect and normalize inventory data from hundreds of dealerships across the country
-- **Financing Prequalification:** Integrated application system for SleeperTrader allowing potential buyers to get prequalified for financing directly through the platform
-- **Dealer Management Portal:** Backend for dealers to manage listings, track performance metrics, and optimize their online presence
+- **Financing Prequalification:** Lead form for SleeperTrader that returns a prequalified result to the buyer and forwards the lead to the listing dealership
+- **Inventory Management Tool:** Internal Angular tool for staff and salespeople to manage listings and track performance
 - **Conversion Tracking:** Analytics to track user interactions, lead generation, and conversion rates across all platforms
 
 ## ADDITIONAL FEATURES
@@ -55,11 +55,10 @@ I managed developers who built a dealer portal in Angular so sellers could manag
 - **Responsive Design:** Mobile-first interfaces optimized for on-the-go shopping
 - **SEO Optimization:** Structured data and performance tuning for maximum visibility
 - **Analytics Dashboard:** Metrics for site owners and participating dealers
-- **Inventory Management:** Tools for dealers to manage and update their vehicle listings
 
 ## STACK
 
-- Vue, Node, MongoDB, MySQL, PHP, Angular
+- Vue, Node, MongoDB, Angular, Sparkpost
 
 ## LINKS
 

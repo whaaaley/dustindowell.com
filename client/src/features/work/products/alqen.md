@@ -33,15 +33,15 @@ Alqen is an e-commerce automation platform for Amazon and Walmart sellers that h
 
 ## FRONTEND DEVELOPMENT
 
-I led the frontend development of Alqen, an e-commerce automation platform for Walmart Marketplace sellers. I built the dashboard with Vue2/Vue3 that interfaced with a serverless AWS/Node/MongoDB backend to display thousands of daily orders and real-time inventory updates.
+I led the frontend development of Alqen, a dropshipping dashboard for Amazon and Walmart sellers. I built the dashboard with Vue 2 and Vue 3 that interfaced with a serverless AWS/Node/MongoDB backend to display thousands of daily orders and real-time inventory updates.
 
-The platform needed reliable integration with Walmart's API for order syncing and payment processing. I built the frontend interfaces for Walmart and Stripe API integrations and implemented real-time order tracking so sellers could monitor orders and inventory without refreshing.
+I built the frontend interfaces for Walmart order synchronization and Stripe payment processing, a management table for receipts printed automatically from orders, and an SSE server in Node that relays order events from the API service to connected clients so sellers see orders and inventory update without refreshing.
 
 I created analytics views that displayed performance metrics, profit margins, and inventory levels from the backend systems, plus product listing management tools for editing and updating listings. The dashboard helped sellers spot trends and optimize their operations across multiple channels.
 
-I also built the frontend for an impersonation system that let customer support troubleshoot issues by temporarily accessing seller accounts with proper permission controls.
+I also built an impersonation system for support staff to act as a user, issuing signed JWTs with specific permissions and short-lived expirations for troubleshooting an account.
 
-I modernized the platform by porting Vue2 components to Vue3 and designed strategies for incremental adoption without breaking the existing system.
+I migrated the product from Vue 2 to Vue 3 with a new application wrapping the legacy interface, porting screens one at a time without breaking the existing system.
 
 ## KEY FEATURES
 

@@ -2,7 +2,7 @@
 title: "Compose"
 category: "Platforms"
 dates: "Sep 2022 - Jun 2025"
-tagline: "A/B testing platform with no-code tools and deep Shopify integration."
+tagline: "A/B testing platform with code and no-code tools and Shopify integration."
 order: 2
 images:
   - src: /screenshots/compose/33_experiment_report_calendar.webp
@@ -27,19 +27,17 @@ images:
 
 ## ABOUT
 
-Compose.co is an A/B testing platform featuring the industry's only pay-as-you-go pricing model at $0.0012 per monthly tested user, with no contracts or base fees. The platform enables no-code split testing of websites, themes, and user experiences while automatically tracking key metrics like revenue, engagement, and conversion rates with built-in statistical significance calculations.
+Compose.co is an A/B testing platform featuring the industry's only pay-as-you-go pricing model at $0.0012 per monthly tested user, with no contracts or base fees. The platform enables code and no-code split testing of websites, themes, and user experiences while automatically tracking key metrics like revenue, engagement, and conversion rates with built-in statistical significance calculations.
 
 ::slider
 
 ## TECHNICAL LEADERSHIP & DEVELOPMENT
 
-I led the development of Compose, an A/B testing platform that Shopify stores use to optimize their conversions. I handled everything from the frontend dashboard (Vue3, Pinia, Tailwind) to the backend infrastructure (Node.js, AWS Lambda, Apollo, PostgreSQL, MongoDB) that processes over 5 million daily requests.
+I led the development of Compose, an A/B testing platform that Shopify stores use to optimize their conversions. I handled everything from the frontend dashboard (Vue3, Pinia, Tailwind) to the backend infrastructure (Node, AWS Lambda, Apollo GraphQL, Postgres, MongoDB) that ingests over 5 million events a day.
 
 The platform needed to be fast and reliable since businesses depend on accurate test results to make decisions. I set up the AWS infrastructure using serverless functions and databases that could scale automatically, plus built CI/CD pipelines so we could ship updates without breaking things.
 
 I helped build our GDPR-compliant data collection system in Go, with Node for batch processing. We used AWS Kinesis for data ingestion to track geolocation events and revenue data while maintaining user privacy.
-
-I also rescued some half-finished projects - some Shopify integrations and internal dashboards. Along the way, I experimented with AI features using OpenAI's APIs for content generation.
 
 The whole system had to work inside Shopify's ecosystem while being simple enough that non-technical store owners could run sophisticated A/B tests without needing a developer.
 
