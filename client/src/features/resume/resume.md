@@ -15,7 +15,7 @@ Initial member of a new Fraud Detection team that built Symetra's first fraud in
 - Built webhook receivers for third-party vendors publishing incoming events to EventBridge, starting a workflow for each event
 - Designed a data masking system to protect sensitive values, replacing PII with one-way HMAC tokens before records reach downstream systems; authorized callers exchange a token for the original value, stored in a protected database, through a secured endpoint
 - Migrated a service and its Postgres database with production data to a new AWS account through ADO pipelines without data leaving production accounts; wrote the export, transfer, and import stages as pipeline steps and restored service to production using the new account
-- Enhanced a shared HTTP request library with a token provider class that reads expiry from the token response, reuses the token for its lifetime, and refreshes it before expiry per the OAuth 2.0 spec, then adopted it platform-wide to prevent per-call token requests from overloading the proxy
+- Stopped per-call token requests from overloading the proxy by adding a token provider class to the shared HTTP request library that reads expiry from the token response, reuses the token for its lifetime, and refreshes it before expiry per the OAuth 2.0 spec, then adopted platform-wide
 - Added PII redaction to the shared logger with an off-the-shelf library, stripping away heavy models and datasets and filling the gaps with alternative packages until the package fit inside Lambda limits, keeping sensitive values out of logs
 
 ### [FOUNDING SOFTWARE ENGINEER](/work/compose)
@@ -61,7 +61,7 @@ Access Publishing Inc. - Johnston, Iowa (Full-time) ✦ February 2016 - November
 
 Led development of the AccessTrucks, SleeperTrader, and MachineryAccess dealer marketplaces, and coordinated a team of three developers.
 
-- Built the inventory ingestion system in Node with MongoDB, pulling 100k+ listings and images a day from hundreds of dealerships through scrapers and dealer APIs, normalizing each dealer's data format, deduplicating, and standardizing vehicle photos
+- Ingested 100k+ listings and images a day from hundreds of dealerships through scrapers and dealer APIs with an inventory system built in Node with MongoDB, normalizing each dealer's data format, deduplicating, and standardizing vehicle photos
 - Designed and built the marketplace frontends in Vue, with filters on truck specifications and heavy machinery details, static rendering for SEO, and optimization for mobile devices and slow 3G connections
 - Added the financing prequalification form for SleeperTrader, returning a result to the buyer and forwarding the lead to the listing dealership
 - Helped direct an internal inventory management tool in Angular for staff and the sales team
