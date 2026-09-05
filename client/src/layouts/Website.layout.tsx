@@ -40,7 +40,7 @@ export default defineComponent({
         <main data-testid='site-main'>
           <RouterView/>
         </main>
-        <footer class='text-zinc-300 print:hidden' data-testid='site-footer'>
+        <footer class='text-right text-zinc-300 print:hidden' data-testid='site-footer'>
           <Markdown content={footer}/>
         </footer>
       </div>

@@ -1,4 +1,4 @@
-import { copyFileSync } from 'node:fs'
+import { copyFileSync, readdirSync } from 'node:fs'
 import { fileURLToPath, URL } from 'node:url'
 import tailwindcss from '@tailwindcss/vite'
 import vue from '@vitejs/plugin-vue'
@@ -7,6 +7,9 @@ import { defineConfig } from 'vite'
 import generateSitemap from 'vite-ssg-sitemap'
 
 const resolve = (path: string) => fileURLToPath(new URL(path, import.meta.url))
+
+// License notices are reachable from the footer but have no reason to be crawled.
+const licensePaths = () => ['/licenses', ...readdirSync(resolve('./dist/licenses'), { withFileTypes: true }).filter(entry => entry.isDirectory()).map(entry => `/licenses/${entry.name}`)]
 
 // Workers Static Assets looks for /404.html, while vite-ssg writes the not-found route to a nested directory.
 const writeNotFoundPage = () => {
@@ -36,7 +39,7 @@ export default defineConfig(() => ({
       writeNotFoundPage()
       generateSitemap({
         hostname: 'https://dustindowell.com/',
-        exclude: ['/404', '/not-found', '/playground', '/banner'],
+        exclude: ['/404', '/not-found', '/playground', '/banner', ...licensePaths()],
       })
     },
   },
