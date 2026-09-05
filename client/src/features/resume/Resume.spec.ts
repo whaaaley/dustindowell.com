@@ -40,7 +40,7 @@ test.describe('All Resume Page Tests', () => {
     const nav = page.getByTestId('site-nav')
     await expect(nav.getByRole('link', { name: 'Resume' })).toHaveAttribute('href', '/')
     await expect(nav.getByRole('link', { name: 'Work' })).toHaveAttribute('href', '/work')
-    await expect(nav.getByRole('link', { name: 'Download PDF' })).toHaveAttribute('href', '/dustin-dowell-resume.pdf')
+    await expect(nav.getByRole('link', { name: 'Download resume' })).toHaveAttribute('href', '/dustin-dowell-resume.pdf')
   })
 
   test('footer links to the licenses page', async ({ page }) => {

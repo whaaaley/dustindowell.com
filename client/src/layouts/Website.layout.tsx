@@ -9,7 +9,7 @@ const header = [
   'SOFTWARE ENGINEER',
 ].join('\n')
 
-const nav = '[Resume](/) ✦ [Work](/work) ✦ [Download PDF](/dustin-dowell-resume.pdf)'
+const nav = '[Resume](/) ✦ [Work](/work) ✦ [Download resume](/dustin-dowell-resume.pdf)'
 
 const footer = `© ${new Date().getFullYear()} Dustin Dowell ✦ [Third-party licenses](/licenses)`
 
