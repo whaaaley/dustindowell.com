@@ -36,11 +36,11 @@ test.describe('All Resume Page Tests', () => {
     await expect(page.getByTestId('site-contact').getByTestId('contact-email')).toBeVisible()
   })
 
-  test('nav links to the resume, the work index, and the PDF', async ({ page }) => {
+  test('nav links to the resume and the work index, and the contact row to the PDF', async ({ page }) => {
     const nav = page.getByTestId('site-nav')
     await expect(nav.getByRole('link', { name: 'Resume', exact: true })).toHaveAttribute('href', '/')
     await expect(nav.getByRole('link', { name: 'Work' })).toHaveAttribute('href', '/work')
-    await expect(nav.getByRole('link', { name: 'Download Resume' })).toHaveAttribute('href', '/dustin-dowell-resume.pdf')
+    await expect(page.getByTestId('site-contact').getByRole('link', { name: 'Download Resume' })).toHaveAttribute('href', '/dustin-dowell-resume.pdf')
     await expect(nav.getByRole('link', { name: 'GitHub' })).toHaveAttribute('href', 'https://github.com/whaaaley')
     await expect(nav.getByRole('link', { name: 'LinkedIn' })).toHaveAttribute('href', 'https://www.linkedin.com/in/dustindowell')
   })

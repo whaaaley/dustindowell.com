@@ -1,15 +1,10 @@
 import { defineComponent } from 'vue'
 import { RouterView } from 'vue-router'
+import Wordmark from '~/components/brand/Wordmark.tsx'
 import RevealContact from '~/components/contact/RevealContact.tsx'
 import Markdown from '~/components/markdown/Markdown.tsx'
 
-const header = [
-  '# [Dustin Dowell](/)',
-  '',
-  'SOFTWARE ENGINEER',
-].join('\n')
-
-const nav = '[Resume](/) ✦ [Work](/work) ✦ [Download Resume](/dustin-dowell-resume.pdf) ✦ [GitHub](https://github.com/whaaaley) ✦ [LinkedIn](https://www.linkedin.com/in/dustindowell)'
+const nav = '[Resume](/) ✦ [Work](/work) ✦ [GitHub](https://github.com/whaaaley) ✦ [LinkedIn](https://www.linkedin.com/in/dustindowell)'
 
 const footer = `© ${new Date().getFullYear()} Dustin Dowell ✦ [Third-Party Licenses](/licenses)`
 
@@ -21,17 +16,18 @@ export default defineComponent({
     return () => (
       <div class='mx-auto grid min-h-screen w-full max-w-page grid-rows-[auto_1fr_auto] gap-page-line px-page-px pt-page-pt pb-page-pb'>
         <header class='flex flex-wrap items-end justify-between gap-x-page-line gap-y-page-half' data-testid='site-header'>
-          <div class='grid'>
-            <Markdown content={header}/>
-            <div class='markdown text-zinc-300 print:text-zinc-600' data-testid='site-contact'>
-              <p>
-                Des Moines, Iowa
-                {star()}
-                <RevealContact encoded='ZHVzdGluZG93ZWxsMjJAZ21haWwuY29t' kind='email' label='Show Email'/>
-                {star()}
-                <RevealContact encoded='NTE1LTY4OS01NjQ4' encodedHref='KzE1MTU2ODk1NjQ4' kind='phone' label='Show Phone'/>
-              </p>
-            </div>
+          <div class='markdown'>
+            <h1><a href='/'><Wordmark/></a></h1>
+            <p>SOFTWARE ENGINEER</p>
+            <p class='text-zinc-300 print:text-zinc-600' data-testid='site-contact'>
+              Des Moines, Iowa
+              {star()}
+              <RevealContact encoded='ZHVzdGluZG93ZWxsMjJAZ21haWwuY29t' kind='email' label='Show Email'/>
+              {star()}
+              <RevealContact encoded='NTE1LTY4OS01NjQ4' encodedHref='KzE1MTU2ODk1NjQ4' kind='phone' label='Show Phone'/>
+              {star()}
+              <a href='/dustin-dowell-resume.pdf'>Download Resume</a>
+            </p>
           </div>
           <nav aria-label='Site' class='text-zinc-300 print:hidden' data-testid='site-nav'>
             <Markdown content={nav}/>
