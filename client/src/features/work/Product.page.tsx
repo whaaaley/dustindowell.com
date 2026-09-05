@@ -3,15 +3,14 @@ import { useRoute } from 'vue-router'
 import { findProduct } from './products.ts'
 import Slider from '~/components/gallery/Slider.tsx'
 import Markdown from '~/components/markdown/Markdown.tsx'
-
-const marker = /^::slider$/m
+import { splitOnMarker } from '~/utils/content.utils.ts'
 
 export default defineComponent({
   name: 'ProductPage',
   setup () {
     const route = useRoute()
     const product = computed(() => findProduct(String(route.params.slug)))
-    const parts = computed(() => (product.value ? product.value.body.split(marker) : []))
+    const parts = computed(() => (product.value ? splitOnMarker(product.value.body, 'slider') : []))
     const activeIndex = ref(0)
 
     const renderSlider = () => {
@@ -28,7 +27,7 @@ export default defineComponent({
       <div class='grid content-start gap-page-line'>
         {parts.value.flatMap((part, index) => [
           index > 0 && renderSlider(),
-          <Markdown key={index} content={part.trim()}/>,
+          <Markdown key={index} content={part}/>,
         ])}
       </div>
     )
