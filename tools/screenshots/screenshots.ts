@@ -8,18 +8,20 @@ import { loadConfigSlice } from '../utils/config.utils.ts'
 // tRPC procedures on first run, seeded once, and signed in on later runs.
 // Usage: SCREENSHOTS_PASSWORD=... deno task screenshots <product> [page-name ...] [--reset]
 // --reset deletes the account first so the seed runs again.
-// `click` follows an element by its text after the page loads, for detail pages whose ids come from seeded rows.
-const pageSchema = z.object({
-  name: z.string(),
-  path: z.string(),
-  click: z.string().optional(),
-})
-
 // `as` names the created row so later calls can reference its id with an `@id:<name>` value.
 const callSchema = z.object({
   procedure: z.string(),
   input: z.record(z.string(), z.unknown()).default({}),
   as: z.string().optional(),
+})
+
+// `click` follows an element by its text after the page loads, for detail pages whose ids come from seeded rows.
+// `calls` run after the page has loaded, for live state the page only shows once it is subscribed.
+const pageSchema = z.object({
+  name: z.string(),
+  path: z.string(),
+  click: z.string().optional(),
+  calls: z.array(callSchema).default([]),
 })
 
 const accountSchema = z.object({
@@ -214,6 +216,12 @@ const capture = async (): Promise<void> => {
     if (entry.click) {
       await page.getByText(entry.click, { exact: true }).first().click()
       await page.waitForLoadState('networkidle')
+    }
+    for (const call of entry.calls) {
+      const ok = await callProcedure({ context, baseUrl: product.baseUrl, call, ids: new Map() })
+      if (!ok) {
+        throw new Error(`${entry.name} setup stopped at ${call.procedure}`)
+      }
     }
     await page.evaluate('document.fonts.ready')
     await page.waitForTimeout(1000)

@@ -346,7 +346,56 @@
         "pages": [
           {
             "name": "overview",
-            "path": "/governance/overview"
+            "path": "/governance/overview",
+            "calls": [
+              {
+                "procedure": "governance.dev.startFakeMeeting",
+                "input": {
+                  "lines": [
+                    {
+                      "speaker": "Dustin Dowell",
+                      "text": "Okay, we're live. Quick round on the bakery site before the treasurer report."
+                    },
+                    {
+                      "speaker": "Sam Okafor",
+                      "text": "Design is approved. I'm starting the build tomorrow and I'll have a staging link by Thursday."
+                    },
+                    {
+                      "speaker": "Priya Nair",
+                      "text": "Do they want the online ordering in the first release or later?"
+                    },
+                    {
+                      "speaker": "Sam Okafor",
+                      "text": "Later. First release is the menu, hours, and the catering form."
+                    },
+                    {
+                      "speaker": "Maria Alvarez",
+                      "text": "Good, that keeps the invoice inside what they approved."
+                    },
+                    {
+                      "speaker": "Dustin Dowell",
+                      "text": "Treasurer report next. Maria, how does September look?"
+                    },
+                    {
+                      "speaker": "Maria Alvarez",
+                      "text": "Two invoices paid, one outstanding. Hosting came in at fifteen dollars after the resizing."
+                    },
+                    {
+                      "speaker": "Priya Nair",
+                      "text": "That's the lowest it has been."
+                    },
+                    {
+                      "speaker": "Dustin Dowell",
+                      "text": "Nice. Last thing, the bylaws vote is at the members meeting on the fourteenth. Read the draft before then."
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "name": "get-started",
+            "path": "/governance/get-started"
           },
           {
             "name": "proposals",
