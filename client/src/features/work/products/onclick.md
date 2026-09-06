@@ -7,15 +7,17 @@ order: 2
 images:
   - src: /screenshots/onclick/01_overview.webp
     alt: "Collective overview"
-  - src: /screenshots/onclick/04_calendar.webp
+  - src: /screenshots/onclick/05_calendar.webp
     alt: "Meeting calendar"
   - src: /screenshots/onclick/02_proposals.webp
     alt: "Proposals"
   - src: /screenshots/onclick/03_ballot.webp
-    alt: "Proposal ballot"
-  - src: /screenshots/onclick/03_events.webp
-    alt: "Upcoming meetings and history"
-  - src: /screenshots/onclick/07_documents.webp
+    alt: "Proposal ballot with a recorded vote"
+  - src: /screenshots/onclick/04_events.webp
+    alt: "Upcoming meetings"
+  - src: /screenshots/onclick/12_minutes-view.webp
+    alt: "Meeting minutes with the transcript"
+  - src: /screenshots/onclick/08_documents.webp
     alt: "Documents"
 ---
 
