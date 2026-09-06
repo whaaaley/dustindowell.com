@@ -3,7 +3,7 @@ title: "Udundi"
 category: "Agency / Web"
 dates: "May 2022 - Sep 2022"
 tagline: "Shopify-focused web agency: shipping stalled products and marketing sites."
-order: 3
+order: 4
 ---
 
 ## ABOUT

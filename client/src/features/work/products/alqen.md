@@ -3,7 +3,7 @@ title: "Alqen"
 category: "Platforms"
 dates: "Jun 2021 - Jun 2022"
 tagline: "Dropshipping dashboard for Amazon and Walmart sellers."
-order: 4
+order: 5
 images:
   - src: /screenshots/alqen/02_statistics_overview.webp
     alt: "Statistics overview"

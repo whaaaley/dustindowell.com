@@ -3,7 +3,7 @@ title: "SevenVerbs"
 category: "Agency / Web"
 dates: "Apr 2014 - Aug 2014"
 tagline: "Maintaining client CMS sites and design work at a custom software and web shop."
-order: 6
+order: 7
 ---
 
 ## ABOUT

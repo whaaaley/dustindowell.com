@@ -3,7 +3,7 @@ title: "Compose"
 category: "Platforms"
 dates: "Sep 2022 - Jun 2025"
 tagline: "A/B testing platform with code and no-code tools and Shopify integration."
-order: 2
+order: 3
 images:
   - src: /screenshots/compose/33_experiment_report_calendar.webp
     alt: "Experiment report calendar"

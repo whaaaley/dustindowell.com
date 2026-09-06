@@ -8,7 +8,7 @@ test.describe('All Work Page Tests', () => {
     await page.goto('/work')
     const work = page.getByTestId('page-work')
     await expect(work.getByRole('heading', { level: 2, name: 'WORK' })).toBeVisible()
-    await expect(work.getByRole('heading', { level: 3 }).getByRole('link')).toHaveCount(6)
+    await expect(work.getByRole('heading', { level: 3 }).getByRole('link')).toHaveCount(7)
     await expect(work.getByText('Platforms ✦ Sep 2022 - Jun 2025')).toBeVisible()
   })
 
