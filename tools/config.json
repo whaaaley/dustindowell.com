@@ -19,5 +19,56 @@
   },
   "fly-metrics": {
     "org": "personal"
+  },
+  "screenshots": {
+    "products": {
+      "onclick": {
+        "baseUrl": "https://localhost:3001",
+        "storageState": "/home/dustin/work/onclick/services/platform/client/.auth/user.json",
+        "output": "../_local/screenshots/onclick",
+        "pages": [
+          {
+            "name": "overview",
+            "path": "/governance/overview"
+          },
+          {
+            "name": "proposals",
+            "path": "/governance/proposals"
+          },
+          {
+            "name": "events",
+            "path": "/governance/events"
+          },
+          {
+            "name": "calendar",
+            "path": "/governance/calendar"
+          },
+          {
+            "name": "agendas",
+            "path": "/governance/agendas"
+          },
+          {
+            "name": "tasks",
+            "path": "/governance/tasks"
+          },
+          {
+            "name": "documents",
+            "path": "/governance/documents"
+          },
+          {
+            "name": "minutes",
+            "path": "/governance/minutes"
+          },
+          {
+            "name": "activity",
+            "path": "/governance/activity"
+          },
+          {
+            "name": "members",
+            "path": "/governance/members"
+          }
+        ]
+      }
+    }
   }
 }

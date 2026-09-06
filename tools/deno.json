@@ -5,7 +5,8 @@
     "lighthouse": "deno run -A lighthouse/lighthouse.ts",
     "test": "deno test --allow-read",
     "type-check": "deno check .",
-    "fly-metrics": "deno run --allow-env --allow-net --allow-read --allow-run=flyctl fly-metrics/fly-metrics.ts"
+    "fly-metrics": "deno run --allow-env --allow-net --allow-read --allow-run=flyctl fly-metrics/fly-metrics.ts",
+    "screenshots": "deno run -A screenshots/screenshots.ts"
   },
   "imports": {
     "@playwright/test": "npm:@playwright/test@^1.62.1",
