@@ -29,11 +29,9 @@ Onclick is a worker-owned web development cooperative. Governance is its meeting
 
 ## TECHNICAL LEADERSHIP & DEVELOPMENT
 
-I built the platform as a monorepo of independent single-page apps sharing one component library, with the Governance app as the primary product. The client is Vue 3 in TSX with Tailwind and class-variance-authority, talking to a Deno server over tRPC so types flow end to end from the Postgres schema to the UI.
+I built the platform as a monorepo of independent single-page apps sharing one component library, with Governance as the product. The client is Vue 3 with TSX, Tailwind, and class-variance-authority, and it reaches a Deno server over tRPC so types flow end to end from the Postgres schema to the UI.
 
 The server runs on Fly.io behind a Deno reverse proxy on a Cloudflare Tunnel, with Supabase for Postgres and auth, Drizzle for migrations, Stripe for billing, and RustFS for file storage. Meeting audio runs through a Python service that decodes Opus and normalizes it for transcription, and a Discord bot joins voice channels through the same event-driven adapters.
-
-I also built the project tooling: a commit validator and hook, Fly metrics and sizing reports, Playwright suites that gate deploys, and the GitHub Actions workflows that run migrations and ship every service.
 
 ## KEY FEATURES
 
@@ -41,7 +39,7 @@ I also built the project tooling: a commit validator and hook, Fly metrics and s
 - **Agendas and Minutes:** Draft agendas ahead of a meeting, then record minutes and attendance against it
 - **Proposals:** Members open proposals and vote, with status tracking from draft to closed
 - **Tasks:** Assign follow-ups to members, link them to agendas, and track them to done
-- **Live Transcription:** Audio from the meeting is transcribed as it happens
+- **Live Transcription:** Transcribes meeting audio as it happens
 
 ## ADDITIONAL FEATURES
 
