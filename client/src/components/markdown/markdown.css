@@ -30,8 +30,7 @@
   }
 
   h3 + p,
-  h1 + p + p,
-  h2 + p + p {
+  h1 + p + p {
     @apply text-zinc-400 print:text-zinc-600;
   }
 
