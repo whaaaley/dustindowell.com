@@ -7,9 +7,11 @@ import { loadConfigSlice } from '../utils/config.utils.ts'
 // A product may declare an account and seed calls; the account is created through the app's own
 // tRPC procedures on first run, seeded once, and signed in on later runs.
 // Usage: SCREENSHOTS_PASSWORD=... deno task screenshots <product> [page-name ...]
+// `click` follows an element by its text after the page loads, for detail pages whose ids come from seeded rows.
 const pageSchema = z.object({
   name: z.string(),
   path: z.string(),
+  click: z.string().optional(),
 })
 
 const callSchema = z.object({
@@ -176,6 +178,10 @@ const capture = async (): Promise<void> => {
   for (const [index, entry] of pages.entries()) {
     const file = `${product.output}/${String(index + 1).padStart(2, '0')}_${entry.name}.png`
     await page.goto(`${product.baseUrl}${entry.path}`, { waitUntil: 'networkidle' })
+    if (entry.click) {
+      await page.getByText(entry.click, { exact: true }).first().click()
+      await page.waitForLoadState('networkidle')
+    }
     await page.evaluate('document.fonts.ready')
     await page.waitForTimeout(1000)
     await page.screenshot({ path: file })

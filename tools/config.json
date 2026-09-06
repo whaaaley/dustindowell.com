@@ -268,6 +268,11 @@
             "path": "/governance/proposals"
           },
           {
+            "name": "ballot",
+            "path": "/governance/proposals",
+            "click": "Adopt the 2027 operating budget"
+          },
+          {
             "name": "events",
             "path": "/governance/events"
           },
@@ -298,6 +303,10 @@
           {
             "name": "members",
             "path": "/governance/members"
+          },
+          {
+            "name": "transcript",
+            "path": "/governance/playground/data/transcript-feed"
           }
         ]
       }
