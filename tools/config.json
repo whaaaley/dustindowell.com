@@ -24,8 +24,240 @@
     "products": {
       "onclick": {
         "baseUrl": "https://localhost:3001",
-        "storageState": "/home/dustin/work/onclick/services/platform/client/.auth/user.json",
         "output": "../_local/screenshots/onclick",
+        "account": {
+          "email": "dustin@onclick.dev",
+          "displayName": "Dustin Dowell",
+          "collective": {
+            "name": "Onclick Cooperative",
+            "description": "Worker-owned web development cooperative",
+            "industry": "Technology"
+          },
+          "seed": [
+            {
+              "procedure": "governance.event.create",
+              "input": {
+                "title": "Weekly Standup",
+                "description": "Short sync on client work and blockers.",
+                "conferenceUrl": null,
+                "startTime": "@future:1T15:00",
+                "endTime": "@future:1T15:30"
+              }
+            },
+            {
+              "procedure": "governance.event.create",
+              "input": {
+                "title": "Board Meeting",
+                "description": "Monthly board meeting with the treasurer report.",
+                "conferenceUrl": null,
+                "startTime": "@future:3T17:00",
+                "endTime": "@future:3T18:00"
+              }
+            },
+            {
+              "procedure": "governance.event.create",
+              "input": {
+                "title": "Members Meeting",
+                "description": "Quarterly all-member meeting and votes.",
+                "conferenceUrl": null,
+                "startTime": "@future:8T17:00",
+                "endTime": "@future:8T18:30"
+              }
+            },
+            {
+              "procedure": "governance.event.create",
+              "input": {
+                "title": "Budget Workshop",
+                "description": "Working session on the 2027 operating budget.",
+                "conferenceUrl": null,
+                "startTime": "@future:12T16:00",
+                "endTime": "@future:12T17:00"
+              }
+            },
+            {
+              "procedure": "governance.proposal.create",
+              "input": {
+                "title": "Adopt the 2027 operating budget",
+                "description": "Approve the budget the treasurer circulated last week."
+              }
+            },
+            {
+              "procedure": "governance.proposal.create",
+              "input": {
+                "title": "Publish meeting minutes within 48 hours",
+                "description": "Minutes go to the documents page two days after each meeting."
+              }
+            },
+            {
+              "procedure": "governance.proposal.create",
+              "input": {
+                "title": "Move hosting to a cheaper region",
+                "description": "Cut the Fly bill by moving the platform to the Chicago region."
+              }
+            },
+            {
+              "procedure": "governance.proposal.create",
+              "input": {
+                "title": "Add a second maintainer to every service",
+                "description": "No service should depend on one person."
+              }
+            },
+            {
+              "procedure": "governance.proposal.create",
+              "input": {
+                "title": "Sponsor the local open source meetup",
+                "description": "A small monthly sponsorship for pizza and the venue."
+              }
+            },
+            {
+              "procedure": "governance.proposal.create",
+              "input": {
+                "title": "Rotate the treasurer role yearly",
+                "description": "Elect a new treasurer at the first meeting of each year."
+              }
+            },
+            {
+              "procedure": "governance.agenda.create",
+              "input": {
+                "title": "Treasurer report",
+                "description": "Cash on hand, receivables, and the hosting bill.",
+                "eventId": null
+              }
+            },
+            {
+              "procedure": "governance.agenda.create",
+              "input": {
+                "title": "Client pipeline",
+                "description": "Open proposals and expected start dates.",
+                "eventId": null
+              }
+            },
+            {
+              "procedure": "governance.agenda.create",
+              "input": {
+                "title": "Hosting costs",
+                "description": "Review the machine sizing changes and savings.",
+                "eventId": null
+              }
+            },
+            {
+              "procedure": "governance.agenda.create",
+              "input": {
+                "title": "Bylaws revision",
+                "description": "Walk through the proposed changes section by section.",
+                "eventId": null
+              }
+            },
+            {
+              "procedure": "governance.agenda.create",
+              "input": {
+                "title": "Hiring plan",
+                "description": "Decide whether to bring on a contractor for the fall.",
+                "eventId": null
+              }
+            },
+            {
+              "procedure": "governance.agenda.create",
+              "input": {
+                "title": "Open floor",
+                "description": "Anything members want to raise.",
+                "eventId": null
+              }
+            },
+            {
+              "procedure": "governance.task.create",
+              "input": {
+                "title": "Write the release notes",
+                "description": "Summarize the governance changes shipped this month.",
+                "agendaId": null
+              }
+            },
+            {
+              "procedure": "governance.task.create",
+              "input": {
+                "title": "Deploy the hotfix",
+                "description": "Ship the login redirect fix to production.",
+                "agendaId": null
+              }
+            },
+            {
+              "procedure": "governance.task.create",
+              "input": {
+                "title": "Renew the domain",
+                "description": "onclick.coop renews next month.",
+                "agendaId": null
+              }
+            },
+            {
+              "procedure": "governance.task.create",
+              "input": {
+                "title": "Audit third-party licenses",
+                "description": "Check every dependency license before the next release.",
+                "agendaId": null
+              }
+            },
+            {
+              "procedure": "governance.task.create",
+              "input": {
+                "title": "Prepare the board meeting agenda",
+                "description": "Collect items from members by Friday.",
+                "agendaId": null
+              }
+            },
+            {
+              "procedure": "governance.task.create",
+              "input": {
+                "title": "Onboard the new member",
+                "description": "Portal account, Discord roles, and the handbook.",
+                "agendaId": null
+              }
+            },
+            {
+              "procedure": "governance.task.create",
+              "input": {
+                "title": "Document the tunnel runbook",
+                "description": "Steps for rotating the Cloudflare tunnel token.",
+                "agendaId": null
+              }
+            },
+            {
+              "procedure": "governance.task.create",
+              "input": {
+                "title": "Size the Fly machines",
+                "description": "Pull the metrics and set memory per service.",
+                "agendaId": null
+              }
+            },
+            {
+              "procedure": "governance.document.create",
+              "input": {
+                "title": "Operating Agreement",
+                "description": "The agreement every member signs on joining."
+              }
+            },
+            {
+              "procedure": "governance.document.create",
+              "input": {
+                "title": "Bylaws",
+                "description": "Current bylaws with the revision history."
+              }
+            },
+            {
+              "procedure": "governance.document.create",
+              "input": {
+                "title": "Member Handbook",
+                "description": "How the cooperative runs day to day."
+              }
+            },
+            {
+              "procedure": "governance.document.create",
+              "input": {
+                "title": "Meeting Template",
+                "description": "Standard agenda and minutes layout."
+              }
+            }
+          ]
+        },
         "pages": [
           {
             "name": "overview",
