@@ -11,12 +11,10 @@ images:
     alt: "Meeting calendar"
   - src: /screenshots/onclick/02_proposals.webp
     alt: "Proposals"
+  - src: /screenshots/onclick/03_ballot.webp
+    alt: "Proposal ballot"
   - src: /screenshots/onclick/03_events.webp
     alt: "Upcoming meetings and history"
-  - src: /screenshots/onclick/05_agendas.webp
-    alt: "Agendas"
-  - src: /screenshots/onclick/06_tasks.webp
-    alt: "Tasks"
   - src: /screenshots/onclick/07_documents.webp
     alt: "Documents"
 ---
