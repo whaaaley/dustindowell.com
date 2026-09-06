@@ -6,7 +6,8 @@ import { loadConfigSlice } from '../utils/config.utils.ts'
 // Captures product screenshots from a running app into a PNG per configured page.
 // A product may declare an account and seed calls; the account is created through the app's own
 // tRPC procedures on first run, seeded once, and signed in on later runs.
-// Usage: SCREENSHOTS_PASSWORD=... deno task screenshots <product> [page-name ...]
+// Usage: SCREENSHOTS_PASSWORD=... deno task screenshots <product> [page-name ...] [--reset]
+// --reset deletes the account first so the seed runs again.
 // `click` follows an element by its text after the page loads, for detail pages whose ids come from seeded rows.
 const pageSchema = z.object({
   name: z.string(),
@@ -14,9 +15,11 @@ const pageSchema = z.object({
   click: z.string().optional(),
 })
 
+// `as` names the created row so later calls can reference its id with an `@id:<name>` value.
 const callSchema = z.object({
   procedure: z.string(),
   input: z.record(z.string(), z.unknown()).default({}),
+  as: z.string().optional(),
 })
 
 const accountSchema = z.object({
@@ -50,6 +53,8 @@ type Account = z.infer<typeof accountSchema>
 
 const INSTANT_PREFIX = '@instant:'
 const FUTURE_PREFIX = '@future:'
+const ID_PREFIX = '@id:'
+const createdSchema = z.tuple([z.object({ result: z.object({ data: z.object({ json: z.object({ id: z.number() }) }) }) })])
 const futurePattern = /^(\d+)T(\d{2}):(\d{2})$/
 
 // `@future:3T17:00` becomes an ISO instant three days from now at 17:00 UTC, so seeded events stay ahead of today on every run.
@@ -71,11 +76,19 @@ type Serialized = {
 }
 
 // Encodes the input the way superjson does for the project's Temporal.Instant codec, tagging every
-// `@instant:` or `@future:` string so the server rebuilds it as an Instant.
-const serializeInput = (input: Record<string, unknown>): Serialized => {
+// `@instant:` or `@future:` string so the server rebuilds it as an Instant, and swapping `@id:` refs for created ids.
+const serializeInput = (input: Record<string, unknown>, ids: Map<string, number>): Serialized => {
   const json: Record<string, unknown> = {}
   const values: Record<string, [['custom', 'Temporal.Instant']]> = {}
   for (const [key, value] of Object.entries(input)) {
+    if (typeof value === 'string' && value.startsWith(ID_PREFIX)) {
+      const id = ids.get(value.slice(ID_PREFIX.length))
+      if (id === undefined) {
+        throw new Error(`Unknown id reference ${value}`)
+      }
+      json[key] = id
+      continue
+    }
     if (typeof value === 'string' && value.startsWith(INSTANT_PREFIX)) {
       json[key] = value.slice(INSTANT_PREFIX.length)
       values[key] = [['custom', 'Temporal.Instant']]
@@ -95,17 +108,28 @@ type CallOptions = {
   context: BrowserContext
   baseUrl: string
   call: Call
+  ids: Map<string, number>
 }
 
+// Posts one batched tRPC call and records the created id under the call's `as` name when it has one.
 const callProcedure = async (options: CallOptions): Promise<boolean> => {
-  const { context, baseUrl, call } = options
+  const { context, baseUrl, call, ids } = options
   const response = await context.request.post(`${baseUrl}/proxy/trpc/${call.procedure}?batch=1`, {
-    data: { 0: serializeInput(call.input) },
+    data: { 0: serializeInput(call.input, ids) },
   })
   if (!response.ok()) {
     console.error(`${call.procedure} failed: ${response.status()} ${(await response.text()).slice(0, 200)}`)
+    return false
   }
-  return response.ok()
+  if (call.as) {
+    const created = createdSchema.safeParse(await response.json())
+    if (!created.success) {
+      console.error(`${call.procedure} returned no id to store as ${call.as}`)
+      return false
+    }
+    ids.set(call.as, created.data[0].result.data.json.id)
+  }
+  return true
 }
 
 type SignInOptions = {
@@ -125,12 +149,20 @@ const signIn = async (options: SignInOptions): Promise<void> => {
   const page = await context.newPage()
   await page.goto(`${baseUrl}/portal/login`, { waitUntil: 'networkidle' })
 
+  const ids = new Map<string, number>()
   const credentials = { email: account.email, password }
-  const loggedIn = await callProcedure({ context, baseUrl, call: { procedure: 'portal.account.login', input: credentials } })
-  if (loggedIn) {
+  const loggedIn = await callProcedure({ context, baseUrl, call: { procedure: 'portal.account.login', input: credentials }, ids })
+  if (loggedIn && !reset) {
     console.log(`signed in as ${account.email}`)
     await page.close()
     return
+  }
+  if (loggedIn) {
+    const deleted = await callProcedure({ context, baseUrl, call: { procedure: 'portal.account.delete', input: {} }, ids })
+    if (!deleted) {
+      throw new Error(`Could not delete ${account.email} for a reset`)
+    }
+    console.log(`deleted ${account.email}`)
   }
 
   const setup: Call[] = [
@@ -141,7 +173,7 @@ const signIn = async (options: SignInOptions): Promise<void> => {
     ...account.seed,
   ]
   for (const call of setup) {
-    const ok = await callProcedure({ context, baseUrl, call })
+    const ok = await callProcedure({ context, baseUrl, call, ids })
     if (!ok) {
       throw new Error(`Account setup stopped at ${call.procedure}`)
     }
@@ -151,7 +183,8 @@ const signIn = async (options: SignInOptions): Promise<void> => {
 }
 
 const config = await loadConfigSlice({ key: 'screenshots', schema: configSchema })
-const [productName, ...pageNames] = Deno.args
+const reset = Deno.args.includes('--reset')
+const [productName, ...pageNames] = Deno.args.filter(arg => arg !== '--reset')
 const product = productName ? config.products[productName] : undefined
 
 if (!product) {

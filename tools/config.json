@@ -26,7 +26,7 @@
         "baseUrl": "https://localhost:3001",
         "output": "../_local/screenshots/onclick",
         "account": {
-          "email": "dustin@onclick.dev",
+          "email": "dustin.dowell@onclick.dev",
           "displayName": "Dustin Dowell",
           "collective": {
             "name": "Onclick Cooperative",
@@ -52,7 +52,8 @@
                 "conferenceUrl": null,
                 "startTime": "@future:3T17:00",
                 "endTime": "@future:3T18:00"
-              }
+              },
+              "as": "board"
             },
             {
               "procedure": "governance.event.create",
@@ -78,21 +79,25 @@
               "procedure": "governance.proposal.create",
               "input": {
                 "title": "Adopt the 2027 operating budget",
-                "description": "Approve the budget the treasurer circulated last week."
-              }
+                "description": "Approve the budget the treasurer circulated last week.",
+                "status": "open"
+              },
+              "as": "budget"
             },
             {
               "procedure": "governance.proposal.create",
               "input": {
                 "title": "Publish meeting minutes within 48 hours",
-                "description": "Minutes go to the documents page two days after each meeting."
+                "description": "Minutes go to the documents page two days after each meeting.",
+                "status": "open"
               }
             },
             {
               "procedure": "governance.proposal.create",
               "input": {
                 "title": "Move hosting to a cheaper region",
-                "description": "Cut the Fly bill by moving the platform to the Chicago region."
+                "description": "Cut the Fly bill by moving the platform to the Chicago region.",
+                "status": "open"
               }
             },
             {
@@ -106,7 +111,8 @@
               "procedure": "governance.proposal.create",
               "input": {
                 "title": "Sponsor the local open source meetup",
-                "description": "A small monthly sponsorship for pizza and the venue."
+                "description": "A small monthly sponsorship for pizza and the venue.",
+                "status": "open"
               }
             },
             {
@@ -255,6 +261,85 @@
                 "title": "Meeting Template",
                 "description": "Standard agenda and minutes layout."
               }
+            },
+            {
+              "procedure": "governance.proposal.vote",
+              "input": {
+                "proposalId": "@id:budget",
+                "choice": "for"
+              }
+            },
+            {
+              "procedure": "governance.minutes.create",
+              "input": {
+                "eventId": "@id:board",
+                "title": "Board Meeting Minutes"
+              },
+              "as": "minutes"
+            },
+            {
+              "procedure": "governance.dev.seedTranscript",
+              "input": {
+                "minutesId": "@id:minutes",
+                "lines": [
+                  {
+                    "speaker": "Dustin Dowell",
+                    "text": "Alright, everyone is here, let's get started. First item is the treasurer report."
+                  },
+                  {
+                    "speaker": "Maria Alvarez",
+                    "text": "Cash on hand is up a bit from last month. The hosting bill dropped after the machine resizing."
+                  },
+                  {
+                    "speaker": "Sam Okafor",
+                    "text": "How much did we save?"
+                  },
+                  {
+                    "speaker": "Maria Alvarez",
+                    "text": "About thirteen dollars a month. Small, but it adds up over the year."
+                  },
+                  {
+                    "speaker": "Dustin Dowell",
+                    "text": "Good. Next is the client pipeline. Sam, you had two proposals out."
+                  },
+                  {
+                    "speaker": "Sam Okafor",
+                    "text": "One signed yesterday, the site rebuild for the bakery. The other is waiting on their board."
+                  },
+                  {
+                    "speaker": "Priya Nair",
+                    "text": "Do we have capacity for both if the second one lands?"
+                  },
+                  {
+                    "speaker": "Sam Okafor",
+                    "text": "If it starts in October, yes. Earlier than that and we'd need the contractor."
+                  },
+                  {
+                    "speaker": "Dustin Dowell",
+                    "text": "Let's put the hiring plan on next month's agenda then. Last item, the bylaws revision."
+                  },
+                  {
+                    "speaker": "Priya Nair",
+                    "text": "I posted the draft in documents. The main change is the quorum going to two thirds."
+                  },
+                  {
+                    "speaker": "Maria Alvarez",
+                    "text": "I read it. I'm fine with the quorum change, the rest is cleanup."
+                  },
+                  {
+                    "speaker": "Dustin Dowell",
+                    "text": "Then we vote on it at the members meeting. Anything for open floor?"
+                  },
+                  {
+                    "speaker": "Sam Okafor",
+                    "text": "Nothing from me."
+                  },
+                  {
+                    "speaker": "Dustin Dowell",
+                    "text": "Okay, that's the meeting. Thanks everyone."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -305,8 +390,9 @@
             "path": "/governance/members"
           },
           {
-            "name": "transcript",
-            "path": "/governance/playground/data/transcript-feed"
+            "name": "minutes-view",
+            "path": "/governance/minutes",
+            "click": "Board Meeting Minutes"
           }
         ]
       }
