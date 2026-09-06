@@ -10,7 +10,7 @@ order: 7
 
 Updated and maintained client sites in WordPress, Drupal, Sitefinity, and Joomla.
 
-Added features, adjusted designs, and updated content on client sites, and rebuilt one static Bootstrap site into a CMS site.
+Added features, adjusted designs, and updated content on client sites, and rebuilt static sites as CMS sites.
 
 Designed logos, business cards, infographics, and digital documents for clients.
 
