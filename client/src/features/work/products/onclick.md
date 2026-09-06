@@ -6,7 +6,7 @@ tagline: "Meeting governance for cooperatives: agendas, proposals, minutes, and 
 order: 2
 images:
   - src: /screenshots/onclick/01_overview.webp
-    alt: "Collective overview"
+    alt: "Overview with a live meeting transcription"
   - src: /screenshots/onclick/05_calendar.webp
     alt: "Meeting calendar"
   - src: /screenshots/onclick/02_proposals.webp
@@ -19,6 +19,8 @@ images:
     alt: "Meeting minutes with the transcript"
   - src: /screenshots/onclick/08_documents.webp
     alt: "Documents"
+  - src: /screenshots/onclick/02_get-started.webp
+    alt: "Get started checklist"
 ---
 
 ## ABOUT
